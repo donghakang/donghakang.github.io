@@ -37,6 +37,7 @@ social:
 
 # Postal address (add as many lines as necessary)
 address:
+  - line: 대한민국
   - line: 서울시 광진구 구의강변로3길 16 파르네빌아파트 203호
   - line: 16, Guuigangbyeon-ro 3-gil, Gwangjin-gu, Seoul, Republic of Korea
 
