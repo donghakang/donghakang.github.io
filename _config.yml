@@ -106,40 +106,37 @@ analytics:
 
 # Site Author
 author:
-  name             : 강동하 / Dongha Kang / 姜東河
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name             : "강동하"
+  name             : "Dongha Kang"
+  name             : "姜東河"
+  avatar           : "/_img/passport.png"
   bio              : "I am an amazing person."
-  location         : "Minneapolis, MN / Seoul, South Korea"
+  location         : "Minneapolis, MN"
+  location         : "Seoul, South Korea"
   email            : "dkang0602@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+      url: mailto:dkang0602@gmail.com
+    # - label: "Website"
+    #   icon: "fas fa-fw fa-link"
+    #   # url: "https://your-website.com"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "https://facebook.com/donghakang95"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/donghakang"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://instagram.com/donghakang/"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url:
+      url: "https://facebook.com/donghakang95"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       # url:
