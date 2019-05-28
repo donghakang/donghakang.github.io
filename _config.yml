@@ -106,27 +106,21 @@ analytics:
 
 # Site Author
 author:
-  name             : "강동하"
-  name             : "Dongha Kang"
-  name             : "姜東河"
+  name             : "강동하, Dongha Kang"
   avatar           : "/_img/passport.png"
-  bio              : "I am an amazing person."
+  bio              : "Computer Science Student who likes to experiment"
   location         : "Minneapolis, MN"
-  location         : "Seoul, South Korea"
   email            : "dkang0602@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:dkang0602@gmail.com
     # - label: "Website"
     #   icon: "fas fa-fw fa-link"
     #   # url: "https://your-website.com"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: "https://facebook.com/donghakang95"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/donghakang"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      url: "https://facebook.com/donghakang95"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/donghakang/"
@@ -139,7 +133,7 @@ footer:
       url: "https://facebook.com/donghakang95"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/donghakang"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -148,7 +142,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: "https://instagram.com/donghakang"
 
 
 # Reading Files
