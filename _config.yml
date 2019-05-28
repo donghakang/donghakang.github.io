@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Dongha Kang"
 title_separator          : "-"
-name                     : "Your Name"
+name                     : "Dongha Kang (강동하)"
 description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -106,11 +106,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : 강동하 / Dongha Kang / 姜東河
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  location         : "Minneapolis, MN / Seoul, South Korea"
+  email            : "dkang0602@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -293,3 +293,11 @@ defaults:
       comments: # true
       share: true
       related: true
+
+  # Pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
