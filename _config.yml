@@ -106,8 +106,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "강동하, Dongha Kang"
-  avatar           : "/_img/passport.png"
+  name             : "Dongha Kang, 강동하"
+  avatar           : "/image/passport.png"
   bio              : "Computer Science Student who likes to experiment"
   location         : "Minneapolis, MN"
   email            : "dkang0602@gmail.com"

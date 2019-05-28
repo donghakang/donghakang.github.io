@@ -1,6 +1,6 @@
 ---
-title: "Bio"
-permalink: /bio/
+title: "Unreal Engine4 를 사용한 간단한 자동차 게임"
+permalink: /UnrealEngine/
 header:
   image: "/image/portfolio/game.png"
 ---

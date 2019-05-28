@@ -1,6 +1,6 @@
 ---
-title: "Bio"
-permalink: /bio/
+title: "Shell Implementation"
+permalink: /shell/
 header:
   image: "/image/portfolio/game.png"
 ---
