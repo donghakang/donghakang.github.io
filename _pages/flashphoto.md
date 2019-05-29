@@ -13,16 +13,15 @@ header:
  - 학교에 기존에 깔려있는 MingFX 라는 라이브러리를 사용해서 그림판을 만들어서 로컬 컴퓨터로는 실행이 불가능한 것이 장애물 요소.
 
 
-
 ## 그림판 예시
-<img src="/image/Flashphoto/FlashphotoApp1.png">
-<img src="/image/Flashphoto/FlashphotoApp2.png">
+<img src="/image/Flashphoto/FlashphotoApp1.png" width="30%" height="30%">
+<img src="/image/Flashphoto/FlashphotoApp2.png" width="30%" height="30%">
 
 
 ## 그리기 도구 예시
-<img src="/image/Flashphoto/chalk_example.png">
-<img src="/image/Flashphoto/highlighter_example.png">
-<img src="/image/Flashphoto/eraser_example.png">
+<img src="/image/Flashphoto/chalk_example.png" width="30%" height="30%">
+<img src="/image/Flashphoto/highlighter_example.png" width="30%" height="30%">
+<img src="/image/Flashphoto/eraser_example.png" width="30%" height="30%">
 
  - 도구 총 8개
 
@@ -31,9 +30,9 @@ header:
 
 ## 필터 효과 예시
  - picture by sambypen / copyright by sambypen
-<img src="/image/Flashphoto/blur-5.0-out.png" width="33%" height="33%">
-<img src="/image/Flashphoto/green-5.0-out.png" width="200" height="200">
-<img src="/image/Flashphoto/saturate-5.0-out.png" width="200" height="200">
+<img src="/image/Flashphoto/blur-5.0-out.png" width="30%" height="30%">
+<img src="/image/Flashphoto/green-5.0-out.png" width="30%" height="30%">
+<img src="/image/Flashphoto/saturate-5.0-out.png" width="30%" height="30%">
 
  - 필터 (Convolution Filter, Normal Filter) 총 8개
  <img src="/image/Flashphoto/classimage__tools_1_1Filter__inherit__graph.png">
@@ -46,4 +45,6 @@ header:
 
 ### UML Diagram
 <img src="/image/Flashphoto/Template.png">
-<img src="/image/kangx637_Iteration1_UML.pdf">
+
+
+- To see the codes in github, [click here](https://github.com/donghakang/Flashphoto_Application)
