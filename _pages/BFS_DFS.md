@@ -23,7 +23,7 @@ header:
 1. BFS
  - Breadth-first search
  - Code
-```
+```python
 def find_path(start_node):
     start_node.set_color("gray")
     start_node.depth = 0
@@ -48,13 +48,12 @@ def find_path(start_node):
         tempNode = tempNode.prev
 
     return list
-
 ```
 
 2. DFS
  - Depth-first search
  - Code
-```
+```python
 def find_path(start_node):
     start_node.set_color("gray")
     start_node.prev = None
@@ -83,4 +82,6 @@ def DFS_Visit(u):
             DFS_Visit(vertex)
     return saveVertex
 ```
-2.
+
+- from [my github folder (Algorithm/PA7 and PA8)](https://github.com/donghakang/Algorithms)
+- for more algorithms, [click here](https://github.com/donghakang/Algorithms)
