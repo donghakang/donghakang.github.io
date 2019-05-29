@@ -31,7 +31,6 @@ def find_path(start_node):
     Q = deque()
     Q.append(start_node)  # setting up the start node as gray.
     tempNode = start_node
-
     while tempNode.val != 2:
         tempNode = Q.popleft()
         for vertex in tempNode.adj:
@@ -41,12 +40,10 @@ def find_path(start_node):
                 vertex.prev = tempNode
                 Q.append(vertex)
         tempNode.set_color("black")
-
     list = []
     while tempNode != None:
         list.insert(0, tempNode)
         tempNode = tempNode.prev
-
     return list
 ```
 
@@ -57,22 +54,17 @@ def find_path(start_node):
 def find_path(start_node):
     start_node.set_color("gray")
     start_node.prev = None
-
-
     destination = DFS_Visit(start_node)
     print(destination)
-
     list = []
     while destination != None:
         list.insert(0,destination)
         destination = destination.prev
-
     return list
-
-
+```
+```python
 def DFS_Visit(u):
     global saveVertex
-
     u.set_color("gray")
     for vertex in u.adj:
         if vertex.val == 2:
