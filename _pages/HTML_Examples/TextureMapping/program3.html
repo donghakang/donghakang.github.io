@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+        <title>Programming Assignment 2: Surface of Revolution</title>
+
+        <script id="vertex-shader" type="x-shader/x-vertex">
+            attribute vec3 vPosition; // vec4 in new file.
+            attribute vec3 vNormal;
+            attribute vec2 vTexCoord; // texture coordinates
+
+            varying vec4 color;
+            varying vec2 texCoord;    // texture coordinates
+
+            uniform vec4 AmbientProduct;
+            uniform vec4 DiffuseProduct;
+            uniform vec4 SpecularProduct;
+
+            uniform mat4 modelView;
+            uniform mat4 projection;
+
+            uniform vec4 LightPosition;
+            uniform float Shininess;
+
+            void main()
+            {
+                texCoord = vTexCoord;     // sending to frag shader.
+                vec3 pos = (modelView * vec4(vPosition, 0)).xyz;
+                vec3 L = normalize(LightPosition.xyz - pos);
+                vec3 E = normalize(-pos);
+                vec3 H = normalize(L + E);
+                vec3 N = normalize(vec3(modelView * vec4(vNormal, 0)));
+
+                vec4 ambient = AmbientProduct;
+
+                float Kd = max(dot(L,N), 0.0);
+                vec4 diffuse = Kd * DiffuseProduct;
+
+                float Ks = pow(max(dot(N,H), 0.0), Shininess);
+                vec4 specular;
+                if (dot(L,N) < 0.0) {
+                  specular = vec4(0.0, 0.0, 0.0, 1.0);
+                } else {
+                  specular = Ks * SpecularProduct;
+                }
+
+                gl_Position = projection * modelView * vec4(vPosition, 1.0);
+
+                color = ambient + diffuse + specular;
+                color.a = 1.0;
+            }
+        </script>
+
+        <script id="fragment-shader" type="x-shader/x-fragment">
+            precision mediump float;
+            varying vec2 texCoord;
+
+            varying vec4 color;
+
+            uniform sampler2D texMap;
+
+            uniform int textureOn;
+
+            void main()
+            {
+                if (textureOn == 1) {
+                  gl_FragColor = color * texture2D(texMap, texCoord);
+                } else {
+                  gl_FragColor = color;
+                }
+            }
+        </script>
+        <img id="tile-img" src="http://i.imgur.com/DsJDMHZ.png" crossorigin="anonymous" hidden="hidden" />
+        <img id="wood-img" src="http://imgur.com/9Ejk1BD.png" hidden="hidden"/>
+        <script type="text/javascript" src="webgl-utils.js"></script>
+        <script type="text/javascript" src="initShaders.js"></script>
+        <script type="text/javascript" src="MV.js"></script>
+        <script type="text/javascript" src="program3.js"></script>
+    </head>
+
+    <body>
+        <canvas id="gl-canvas" width="512" height="400">
+            Oops ... your browser doesn't support the HTML5 canvas element
+        </canvas>
+        <div>
+            Shape:
+            <select id="shape-select">
+                <option value="profile1">Profile 1</option>
+                <option value="profile2">Profile 2</option>
+                <option value="profile3">Profile 3</option>
+                <option value="profile4">Profile 4</option>
+                <option value="profile5">Profile 5</option>
+            </select>
+        </div>
+        <div>
+            Number of angles: <input id="numAngles" type="number" value="8" min="3" max="25" step="1" />
+        </div>
+        <div>
+            Number of steps per curve: <input id="stepsPerCurve" type="number" value="6" min="2" max="10" step="1" />
+        </div>
+        <div>
+            Material:
+            <select id="material">
+                <option value="plastic" selected="selected">Yellow Plastic</option>
+                <option value="brass">Brass Metal</option>
+                <option value="texture">Texture Map</option>
+            </select>
+        </div>
+    </body>
+</html>

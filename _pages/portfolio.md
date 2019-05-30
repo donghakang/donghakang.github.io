@@ -9,10 +9,9 @@ header:
 
 <!-- writing something here about Portfolio // pictures needed -->
 
-
-1. [Visually show BFS and DFS](/BFS_DFS.md)
-<!-- 2. [Shell Implementation, 쉘의 재구성](/shell.md) -->
+1. [Car game with Unreal Engine](/UnrealEngine.md)
 2. [Flashphoto App](/flashphoto.md)
-3. [Car game with Unreal Engine](/UnrealEngine.md)
-4. [L-System](/l_system.md)
-5. [Bezier Curve and 3D modeling](/beziercurve.md)
+<!-- 2. [Shell Implementation, 쉘의 재구성](/shell.md) -->
+3. [L-System](/l_system.md)
+4. [Bezier Curve and 3D modeling](/beziercurve.md)
+5. [Visually show BFS and DFS](/BFS_DFS.md)
