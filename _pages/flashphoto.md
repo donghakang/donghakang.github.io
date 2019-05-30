@@ -14,8 +14,8 @@ header:
 
 
 ## 그림판 예시
-<img src="/image/Flashphoto/FlashphotoApp1.png" width="30%" height="30%">
-<img src="/image/Flashphoto/FlashphotoApp2.png" width="30%" height="30%">
+<img src="/image/Flashphoto/FlashphotoApp1.png" width="50%" height="50%">
+<img src="/image/Flashphoto/FlashphotoApp2.png" width="50%" height="50%">
 
 
 ## 그리기 도구 예시
