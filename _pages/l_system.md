@@ -15,7 +15,8 @@ L-System 은 Lindenmayer System 의 약자이며, Axiom (주로 알파벳)을 �
 
 L-System을 Processing 이라는 언어로 구상해보았습니다.
 
-##### L-System Example 1
+#### L-System Example 1
+```
 variables : A B
 constants : none
 axiom : A
@@ -27,7 +28,7 @@ n = 2 : ABA
 n = 3 : ABAAB
 n = 4 : ABAABABA
 n = 5 : ABAABABAABAAB**
-
+```
 
 ## Programming Example
 <img src="/image/L-system/1.png" width="45%" height="45%">
