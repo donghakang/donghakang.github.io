@@ -16,9 +16,11 @@ header:
 - [W] [S] 버튼을 사용해서 앞으로 뒤로 움직인다.
 
 <img src="/image/unreal/normal.png" alt="Normal Game Play">
+Normal Game Play
 - [Spacebar] 버튼을 눌러서 카메라의 방향을 수직으로 바꾼다.
 
 <img src="/image/unreal/top.png" alt="Top View Game Play">
+Top View Game Play
 
 ### 게임플레이
 - 오랫동안 차를 움직이지 않으면 트랙이 없어진다. 그 트랙이 없어지는지는 옆에있는 불들이 경고하는데, 불이 파랑색에서 보라, 보라색에서
@@ -36,17 +38,21 @@ Game Over
 - 영화 '트론' 에서 영향을 받아 어둡고 파란색 네온으로 꾸밈. 차를 포함, 배경도 파랑색과 검정색으로 꾸밈.
 <img src="/image/unreal/vehicle.png">
 <img src="/image/unreal/landscape.png">
-<img src="/image/unreal/material.png" alt="This is the Material That I created by Increasing Emissive Light">
+<img src="/image/unreal/material.png" alt="This is the Material That I created by Increasing Emissive Light" align="middle">
+
 This is the Material That I created by Increasing Emissive Light
 
 ### 블루 프린트
 <img src="/image/unreal/a.png" alt="Blueprint about game ending and respawn">
+Blueprint about game ending and respawn
 
 
 <img src="/image/unreal/b.png" alt="Blueprint about vehicle movement">
+Blueprint about vehicle movement
 
 ### C++
 <img src="/image/unreal/c++.png" alt="C++ implementation about time on the screen">
+C++ implementation about time on the screen
 
 
 ### 개선사항 및 배운 것들
