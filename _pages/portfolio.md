@@ -4,10 +4,9 @@ permalink: /portfolio/
 title: "Portfolio"
 author_profile: true
 header:
-  image:
+  image: "/image/portfolio/header/header.png"
 ---
 
-<!-- writing something here about Portfolio // pictures needed -->
 
 1. [Car game with Unreal Engine](/UnrealEngine.md)
 2. [Flashphoto App](/flashphoto.md)

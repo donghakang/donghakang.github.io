@@ -1,6 +1,6 @@
 # main links
 main:
-  - title: "Bio"
-    url: /bio/
+  # - title: "Bio"
+  #   url: /bio/
   - title: "Portfolio"
     url: /portfolio/
