@@ -1,6 +1,5 @@
 ---
-layout: archive
-permalink: /portfolio/
+layout: home
 title: "Portfolio"
 author_profile: true
 header:
