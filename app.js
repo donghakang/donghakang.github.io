@@ -1,37 +1,50 @@
-const intro = document.querySelector(".intro");
-const video = intro.querySelector("video");
-const text = intro.querySelector("h1");
+const cursor_speed = 530;
+const typing_speed = 120;
+const erasing_speed = 300;
+var i = 0;
+var text = "Hello, World"
+var text2 = "Hello, it's Dongha!"
 
-const section = document.querySelector("section");
-const end = section.querySelector("h1");
 
+var isCursor = true;
 
-// SCROLL MAGIC
-const controller = new ScrollMagic.Controller();
+// cursor
+function cursorBlink() {
+    if (isCursor) {
+        document.getElementById("cursor").style.backgroundColor = "white"
+        isCursor = !isCursor;
+    } else {
+        document.getElementById("cursor").style.backgroundColor = "black";
+        isCursor = !isCursor;
+    }
+}
 
-// Scenes
-const scene = new ScrollMagic.Scene({
-    duration: 30000,            // duration of the scroll
-    triggerElemnt: intro,
-    triggerHook: 0              // trigger for a single screen
-})
-    // .addIndicators()
-    .setPin(intro)
-    .addTo(controller);
+// typing
+function start() {
+    if (i <= text.length) {
+        i++;
+        document.getElementById("intro_text").innerHTML = text.substring(0, i);
+    } else {
+        clearInterval(typingIntervalId)
+        setTimeout(function () { }, 1000);     // delay
+        var erasing = setInterval(function () {
+            // erasing
+            i--;
+            document.getElementById("intro_text").innerHTML = text.substring(0, i);
+            if (i == 6) {
+                clearInterval(erasing);
+                // re-writing
+                var rewriting = setInterval(function () {
+                    i++;
+                    document.getElementById("intro_text").innerHTML = text2.substring(0, i);
+                    if (i > text2.length) {
+                        clearInterval(rewriting);
+                    }
+                }, typing_speed)
+            }
+        }, erasing_speed);
+    }
+}
 
-// Video Animation
-let acc = 0.1;
-let scrollPosition = 0;
-let delay = 0;
-
-scene.on('update', e => {
-    scrollPosition = e.scrollPos / 1000;  // millisec to seconds
-});
-
-setInterval(() => {
-    delay += (scrollPosition - delay) * acc;
-    // video.currentTime = scrollPosition;
-    console.log(scrollPosition, delay);
-    video.currentTime = delay;
-}, 1000/30);
-
+var typingIntervalId = setInterval(start, typing_speed);
+var cursorIntervalId = setInterval(cursorBlink, cursor_speed);
