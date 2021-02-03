@@ -1,4 +1,4 @@
-import * as THREE from "https://donghakang.github.io/node_modules/three/build/three.module.js";
+import * as THREE from "./node_modules/three/build/three.module.js";
 
 function main() {
     // scene
