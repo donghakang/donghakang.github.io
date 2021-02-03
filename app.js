@@ -10,10 +10,13 @@ function main() {
     const near = 0.1;
     const far = 100;
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+    const PHONE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     camera.position.z = 15;
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color("white");
+    // scene.background = new THREE.Color("white");
+    if (PHONE) scene.background = new THREE.Color("white");
+    else scene.background = new THREE.Color("black");
     const pickingScene = new THREE.Scene();
     pickingScene.background = new THREE.Color(0);
 
@@ -54,7 +57,7 @@ function main() {
     for (let i = 0; i < numObjects; ++i) {
         const id = i + 1;
         const material = new THREE.MeshPhongMaterial({
-            color: 0xff0000,
+            color: 0xffff00,
             // map: texture,
             transparent: true,
             side: THREE.DoubleSide,
@@ -151,6 +154,7 @@ function main() {
                 picked = true;
 
                 this.pickingObjectId = id;
+                console.log(id);
                 // pick the first object. It's the closest one
                 this.pickedObject = intersectedObject;
                 this.pickedObject.rotation.y += 0.05;
@@ -203,37 +207,37 @@ function main() {
         const pos = getCanvasRelativePosition(event);
         pickPosition.x = pos.x;
         pickPosition.y = pos.y;
+        // window.location.href = "https://www.github.com/donghakang";          --> works
     }
 
-    function printPickPosition(event) {
-        const pos = getCanvasRelativePosition(event);
+    function printPickPosition() {
         if (picked) {
-            console.log(pos.x, pos.y);
-            console.log(pickHelper.pickingObjectId);
             switch (pickHelper.pickingObjectId) {
                 case 6:
-                    window.location = "https://www.github.com/donghakang";
+                    window.location.href = "https://www.github.com/donghakang";
                     break;
                 case 5:
-                    location.href = "https://www.naver.com";
+                    window.location.href = "https://www.naver.com";
                     break;
                 case 4:
                     window.location.href = "https://www.google.com";
                     break;
                 case 3:
-                    window.open("https://www.instagram.com/donghakang"); 
+                    window.location.href = "https://www.instagram.com/donghakang"; 
                     break;
                 case 2:
-                    location.href = "https://www.youtube.com";
+                    window.location.href = "https://www.youtube.com";
                     break;
                 case 1:
-                    location.href = "https://www.apple.co.kr";
+                    window.location.href = "https://www.apple.co.kr";
                     break;
                 default:
                     break;
             }
-            //
         }
+
+        
+
     }
 
     function clearPickPosition() {
@@ -245,26 +249,32 @@ function main() {
         pickPosition.y = -100000;
     }
 
-    window.addEventListener("mousemove", setPickPosition);
-    window.addEventListener("mouseout", clearPickPosition);
-    window.addEventListener("mouseleave", clearPickPosition);
-    window.addEventListener("click", printPickPosition);
+    function printClearPickPosition() {
+        clearPickPosition();
+        printPickPosition();
+    }
 
-    window.addEventListener(
-        "touchstart",
-        (event) => {
-            // prevent the window from scrolling
-            event.preventDefault();
-            setPickPosition(event.touches[0]);
-        },
-        { passive: false }
-    );
+    canvas.addEventListener("mousemove", setPickPosition);
+    canvas.addEventListener("mouseout", clearPickPosition);
+    canvas.addEventListener("mouseleave", clearPickPosition);
+    canvas.addEventListener("click", printPickPosition);
+    // canvas.addEventListener("mousedown", clearPickPosition);
+    // canvas.addEventListener("mouseup", printPickPosition);
 
-    window.addEventListener("touchmove", (event) => {
+
+    window.addEventListener('touchstart', (event) => {
+        // prevent the window from scrolling
+        event.preventDefault();
         setPickPosition(event.touches[0]);
-    });
+      }, {passive: false});
+    
+      window.addEventListener('touchmove', (event) => {
+        setPickPosition(event.touches[0]);
+      });
+    
+      window.addEventListener('touchend', printPickPosition);
+    
 
-    window.addEventListener("touchend", clearPickPosition);
 }
 
 main();
