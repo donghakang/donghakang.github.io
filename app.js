@@ -54,7 +54,7 @@ function main() {
     for (let i = 0; i < numObjects; ++i) {
         const id = i + 1;
         const material = new THREE.MeshPhongMaterial({
-            color: randomColor(),
+            color: 0xff0000,
             // map: texture,
             transparent: true,
             side: THREE.DoubleSide,
