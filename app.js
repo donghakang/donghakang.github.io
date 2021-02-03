@@ -212,22 +212,22 @@ function main() {
             console.log(pickHelper.pickingObjectId);
             switch (pickHelper.pickingObjectId) {
                 case 6:
-                    window.location = "https://www.github.com/donghakang";
+                    location.href = "https://www.github.com/donghakang";
                     break;
                 case 5:
-                    window.location = "https://www.naver.com";
+                    location.href = "https://www.naver.com";
                     break;
                 case 4:
-                    window.location = "https://www.google.com";
+                    location.href = "https://www.google.com";
                     break;
                 case 3:
-                    window.location = "https://www.instagram.com/donghakang";
+                    location.href = "https://www.instagram.com/donghakang";
                     break;
                 case 2:
-                    window.location = "https://www.youtube.com";
+                    location.href = "https://www.youtube.com";
                     break;
                 case 1:
-                    window.location = "https://www.apple.co.kr";
+                    location.href = "https://www.apple.co.kr";
                     break;
                 default:
                     break;
