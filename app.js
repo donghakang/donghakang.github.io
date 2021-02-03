@@ -10,7 +10,7 @@ function main() {
     const near = 0.1;
     const far = 100;
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-    camera.position.z = 20;
+    camera.position.z = 15;
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color("white");
@@ -55,7 +55,7 @@ function main() {
         const id = i + 1;
         const material = new THREE.MeshPhongMaterial({
             color: randomColor(),
-            map: texture,
+            // map: texture,
             transparent: true,
             side: THREE.DoubleSide,
             alphaTest: 0.5,
@@ -66,14 +66,14 @@ function main() {
         idToObject[id] = cube;
         cube.position.set(0, i * 3 - 9, 0);
         cube.rotation.set(rand(Math.PI), rand(Math.PI), 0);
-        cube.scale.set(1, 1, 1);
+        cube.scale.set(1.5, 1.5, 1.5);
 
         // 표시된 material
         const pickingMaterial = new THREE.MeshPhongMaterial({
             emissive: new THREE.Color(id),
             color: new THREE.Color(0, 0, 0),
             specular: new THREE.Color(0, 0, 0),
-            map: texture,
+            // map: texture,
             transparent: false,
             side: THREE.DoubleSide,
             alphaTest: 0.5,
@@ -153,6 +153,7 @@ function main() {
                 this.pickingObjectId = id;
                 // pick the first object. It's the closest one
                 this.pickedObject = intersectedObject;
+                this.pickedObject.rotation.y += 0.05;
                 // save its color
                 this.pickedObjectSavedColor = this.pickedObject.material.emissive.getHex();
                 // set its emissive color to flashing red/yellow
@@ -181,10 +182,13 @@ function main() {
 
         pickHelper.pick(pickPosition, pickingScene, camera, time);
 
+
         renderer.render(scene, camera);
 
         requestAnimationFrame(render);
+        
     }
+
     requestAnimationFrame(render);
 
     function getCanvasRelativePosition(event) {
