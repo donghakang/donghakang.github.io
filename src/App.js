@@ -7,6 +7,7 @@ import {
   softShadows,
   OrbitControls,
   MeshWobbleMaterial,
+  Html
 } from "@react-three/drei";
 
 softShadows();
@@ -71,6 +72,12 @@ const SpinningMesh = ({ position, size, color, speed }) => {
         speed={speed}
         factor={0.6}
       />
+      <Html scaleFactor={10}>
+        <div class="content">
+          Suspense <br />
+          Dongha Kang
+        </div>
+      </Html>
     </mesh>
   );
 };
