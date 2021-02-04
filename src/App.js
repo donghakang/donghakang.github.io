@@ -1,3 +1,4 @@
+import * as THREE from "three";
 import React, { useRef, useState } from "react";
 import "./App.scss";
 
@@ -36,28 +37,37 @@ const Light = () => {
 const SpinningMesh = ({ position, size, color, speed }) => {
   const mesh = useRef(null);
 
-  const [hovered, setHover] = useState(false)
-  const [active, setActive] = useState(false)
+  const [hovered, setHover] = useState(false);
+  const [active, setActive] = useState(false);
 
-
+  const vec = new THREE.Vector3(2, 2, 2);
+  const vec_origin = new THREE.Vector3(1, 1, 1);
   useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01
+    if (hovered) {
+      mesh.current.scale.lerp(vec, 0.1);
+    } else {
+      mesh.current.scale.lerp(vec_origin, 0.1);
+    }
+    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
   });
 
   return (
-    <mesh 
-      castShadow 
-      position={position} 
+    <mesh
+      castShadow
+      position={position}
       ref={mesh}
-      scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
-      onClick={(event) => window.location.href='https://www.github.com/donghakang'}
+      scale={[1,1,1]}
+      onClick={(event) =>
+        (window.location.href = "https://www.github.com/donghakang")
+      }
       onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}>
+      onPointerOut={(event) => setHover(false)}
+    >
       <boxBufferGeometry attach="geometry" args={size} />
       {/* <meshStandardMaterial attach="material" color={color} /> */}
       <MeshWobbleMaterial
         attach="material"
-        color={hovered ? {color} : 'hotpink'}
+        color={hovered ? { color } : "green"}
         speed={speed}
         factor={0.6}
       />
