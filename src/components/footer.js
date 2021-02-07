@@ -6,16 +6,16 @@ function Footer() {
       <nav>
         <ul>
           <li>
-            <a href="https://www.github.com/donghakang">github</a>
+            <a href="https://www.github.com/donghakang"><img src="./images/github.png" alt="github"/></a>
           </li>
           <li>
-            <a href="https://www.facebook.com/dkang0602">facebook</a>
+            <a href="https://www.facebook.com/dkang0602"><img src="./images/facebook.png" alt="facebook"/></a>
           </li>
           <li>
-            <a href="https://www.instagram.com/donghakang">instagram</a>
+            <a href="https://www.instagram.com/donghakang"><img src="./images/instagram.png" alt="instagram"/></a>
           </li>
           <li>
-            <a href="dkang0602@gmail.com">mail</a>
+            <a href="mailto: dkang0602@gmail.com"><img src="./images/gmail.png" alt="mail"/></a>
           </li>
         </ul>
       </nav>
