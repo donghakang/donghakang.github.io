@@ -10,6 +10,7 @@ import {
   OrbitControls,
   MeshWobbleMaterial,
   useGLTF,
+  Text,
   Html,
 } from "@react-three/drei";
 import { Material } from "three";
@@ -54,17 +55,13 @@ const Model = () => {
   const { nodes, scene } = useGLTF("/scene.gltf");
 
   const [active, setActive] = useState(false);
+  const [hovered, setHover] = useState(false);
   const mesh = useRef(null);
+  const content = useRef(null);
   const gltf = useGLTF("/scene.gltf");
 
   const vec = new THREE.Vector3(1.5, 1.5, 1.5);
   const vec_origin = new THREE.Vector3(1, 1, 1);
-
-  gltf.scene.children.forEach((mesh, i) => {
-    mesh.castShadow = true;
-  });
-  gltf.castShadow = true;
-  gltf.scene.castShadow = true;
 
   useFrame(() => {
     if (active) {
@@ -76,14 +73,26 @@ const Model = () => {
   });
 
   return (
-    <mesh 
-      castShadow 
-      // onClick={(event) => active ? setActive(false) : setActive(true)}
-      onPointerUp={(event) => active ? setActive(false) : setActive(true)}
-      ref={mesh} 
-      position={[0, 0, 0]}>
-      <primitive object={gltf.scene} dispose={null} />
-    </mesh>
+    <group>
+      <mesh
+        castShadow
+        // onClick={(event) => active ? setActive(false) : setActive(true)}
+        onPointerUp={(event) => (active ? setActive(false) : setActive(true))}
+        onPointerOver={(event) => setHover(true)}
+        onPointerOut={(event) => setHover(true)}
+        position={[0, 0, 0]}
+        ref={mesh}
+      >
+        <primitive object={gltf.scene} dispose={null} />
+      </mesh>
+      {active && (
+        <Html ref={content}>
+          <div className="content">
+            <h1>Resume</h1>
+          </div>
+        </Html>
+      )}
+    </group>
   );
 };
 
