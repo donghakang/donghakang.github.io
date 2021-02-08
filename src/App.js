@@ -52,9 +52,13 @@ const Ground = () => {
 
 const Model = () => {
   const { nodes, scene } = useGLTF("/scene.gltf");
-  console.log(nodes, scene);
+
+  const [active, setActive] = useState(false);
   const mesh = useRef(null);
   const gltf = useGLTF("/scene.gltf");
+
+  const vec = new THREE.Vector3(1.5, 1.5, 1.5);
+  const vec_origin = new THREE.Vector3(1, 1, 1);
 
   gltf.scene.children.forEach((mesh, i) => {
     mesh.castShadow = true;
@@ -63,18 +67,24 @@ const Model = () => {
   gltf.scene.castShadow = true;
 
   useFrame(() => {
+    if (active) {
+      mesh.current.scale.lerp(vec, 0.1);
+    } else {
+      mesh.current.scale.lerp(vec_origin, 0.1);
+    }
     mesh.current.rotation.y += 0.005;
   });
 
   return (
-    <mesh castShadow ref={mesh} position={[0, 0, 0]}>
+    <mesh 
+      castShadow 
+      onClick={(event) => active ? setActive(false) : setActive(true)}
+      onTouchEnd={(event) => active ? setActive(false) : setActive(true)}
+      ref={mesh} 
+      position={[0, 0, 0]}>
       <primitive object={gltf.scene} dispose={null} />
-
     </mesh>
   );
-
-
-  
 };
 
 function App() {
