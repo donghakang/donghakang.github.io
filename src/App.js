@@ -78,8 +78,8 @@ const Model = () => {
   return (
     <mesh 
       castShadow 
-      onClick={(event) => active ? setActive(false) : setActive(true)}
-      onTouchEnd={(event) => active ? setActive(false) : setActive(true)}
+      // onClick={(event) => active ? setActive(false) : setActive(true)}
+      onPointerUp={(event) => active ? setActive(false) : setActive(true)}
       ref={mesh} 
       position={[0, 0, 0]}>
       <primitive object={gltf.scene} dispose={null} />
