@@ -1,21 +1,16 @@
 import Footer from "./components/footer";
 
 import * as THREE from "three";
-import React, { Suspense, useRef, useMemo, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import "./App.scss";
 
 import { Canvas, useFrame } from "react-three-fiber";
 import {
-  softShadows,
   OrbitControls,
-  MeshWobbleMaterial,
   useGLTF,
-  Text,
+  ContactShadows,
   Html,
 } from "@react-three/drei";
-import { Material } from "three";
-
-softShadows();
 
 const Light = () => {
   return (
@@ -26,7 +21,7 @@ const Light = () => {
       <directionalLight
         castShadow
         position={[0, 10, 0]}
-        intensity={2.0}
+        intensity={3.0}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
         shadow-camera-far={50}
@@ -43,7 +38,7 @@ const Light = () => {
 const Ground = () => {
   return (
     <group>
-      <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -3, 0]}>
+      <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
         <planeBufferGeometry attach="geometry" args={[100, 100]} />
         <shadowMaterial attach="material" opacity={0.4} />
       </mesh>
@@ -51,42 +46,92 @@ const Ground = () => {
   );
 };
 
-const Model = () => {
-  const { nodes, scene } = useGLTF("/scene.gltf");
+function Model() {
+  const group = useRef();
+  const { nodes, materials } = useGLTF("/scene.gltf");
 
   const [active, setActive] = useState(false);
   const [hovered, setHover] = useState(false);
-  const mesh = useRef(null);
-  const content = useRef(null);
-  const gltf = useGLTF("/scene.gltf");
 
   const vec = new THREE.Vector3(1.5, 1.5, 1.5);
   const vec_origin = new THREE.Vector3(1, 1, 1);
 
   useFrame(() => {
     if (active) {
-      mesh.current.scale.lerp(vec, 0.1);
+      group.current.scale.lerp(vec, 0.1);
     } else {
-      mesh.current.scale.lerp(vec_origin, 0.1);
+      group.current.scale.lerp(vec_origin, 0.1);
     }
-    mesh.current.rotation.y += 0.005;
+    group.current.rotation.y += 0.005;
   });
 
   return (
     <group>
-      <mesh
+      <group
         castShadow
-        // onClick={(event) => active ? setActive(false) : setActive(true)}
-        onPointerUp={(event) => (active ? setActive(false) : setActive(true))}
-        onPointerOver={(event) => setHover(true)}
-        onPointerOut={(event) => setHover(true)}
-        position={[0, 0, 0]}
-        ref={mesh}
+        ref={group}
+        dispose={null}
+        // onClick={(event) => (active ? setActive(false) : setActive(true))}
+        onPointerOver={(e) => (active ? setActive(false) : setActive(true))}
+        // onPointerOut={(e) => e.intersections.length === 0 && set(null)}
+        // onPointerMissed={() => (state.current = null)}
+        onPointerDown={(e) => (active ? setActive(false) : setActive(true))}
       >
-        <primitive object={gltf.scene} dispose={null} />
-      </mesh>
+        <group rotation={[-Math.PI / 2, 0, 0]}>
+          <group position={[0, 0, 0]}>
+            <group scale={[0.93, 0.93, 0.93]}>
+              <mesh
+                material={materials.material}
+                geometry={nodes.Plane018_0.geometry}
+              />
+            </group>
+            <group
+              position={[-0.38, -0.81, 0.51]}
+              rotation={[1.03, -0.46, -0.93]}
+              scale={[0.29, 0.29, 0.29]}
+            />
+            <group scale={[0.93, 0.93, 0.93]}>
+              <mesh
+                castShadow
+                material={materials.material}
+                geometry={nodes.Plane003_0.geometry}
+              />
+            </group>
+            <group
+              position={[-0.38, -0.81, 0.51]}
+              rotation={[-1.06, 0.83, -0.56]}
+              scale={[0.29, 0.29, 0.29]}
+            />
+            <group
+              position={[-0.8, 0.45, 0.42]}
+              rotation={[-1.94, -0.24, 2.36]}
+              scale={[0.29, 0.29, 0.29]}
+            />
+            <group
+              position={[-0.38, -0.81, 0.51]}
+              rotation={[-2.51, -0.09, 0.56]}
+              scale={[0.29, 0.29, 0.29]}
+            />
+            <group
+              position={[-0.38, -0.81, 0.51]}
+              rotation={[-1.12, -0.72, -1.28]}
+              scale={[0.29, 0.29, 0.29]}
+            />
+            <group
+              position={[-0.33, 1.21, 0.57]}
+              rotation={[-1.94, -0.24, 2.36]}
+              scale={[0.29, 0.29, 0.29]}
+            />
+            <group
+              position={[1.3, -0.24, 0.62]}
+              rotation={[-1.94, -0.24, 2.36]}
+              scale={[0.29, 0.29, 0.29]}
+            />
+          </group>
+        </group>
+      </group>
       {active && (
-        <Html ref={content}>
+        <Html>
           <div className="content">
             <h1>Resume</h1>
           </div>
@@ -94,7 +139,7 @@ const Model = () => {
       )}
     </group>
   );
-};
+}
 
 function App() {
   return (
@@ -108,6 +153,15 @@ function App() {
         <Ground />
         <Suspense fallback={null}>
           <Model />
+          <ContactShadows
+            position={[0, -0.1, 0]}
+            opacity={1}
+            width={10}
+            height={10}
+            blur={1} // Amount of blue (default=1)
+            far={10} // Focal distance (default=10)
+            resolution={256} // Rendertarget resolution (default=256)
+          />
         </Suspense>
         <OrbitControls />
       </Canvas>
