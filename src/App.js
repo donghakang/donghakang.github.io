@@ -18,8 +18,8 @@ const Light = () => {
   return (
     <group>
       <ambientLight intensity={0.5} />
-      <pointLight position={[-5, 2, -10]} intensity={0.5} />
-      <pointLight position={[-10, 3, -5]} intensity={1.5} />
+      {/* <pointLight position={[-5, 2, -10]} intensity={0.5} />
+      <pointLight position={[-10, 3, -5]} intensity={1.5} /> */}
       <directionalLight
         castShadow
         position={[0, 10, 0]}
@@ -162,7 +162,7 @@ function App() {
         <Light />
         <Ground />
         <Suspense fallback={null}>
-          <Model />
+          <Burger />
           <ContactShadows
             position={[0, -0.1, 0]}
             opacity={1}
