@@ -12,6 +12,8 @@ import {
   Html,
 } from "@react-three/drei";
 
+import Burger from './components/Burger'
+
 const Light = () => {
   return (
     <group>
@@ -46,9 +48,10 @@ const Ground = () => {
   );
 };
 
+/*
 function Model() {
   const group = useRef();
-  const { nodes, materials } = useGLTF("/scene.gltf");
+  const { nodes, materials } = useGLTF("/burger.gltf");
 
   const [active, setActive] = useState(false);
   const [hovered, setHover] = useState(false);
@@ -140,6 +143,13 @@ function Model() {
     </group>
   );
 }
+*/
+
+function Model() {
+  const glt = useGLTF("burger.glb");
+  return <primitive object={glt.scene} dispose={null} />;
+}
+
 
 function App() {
   return (
