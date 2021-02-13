@@ -68,7 +68,7 @@ const SpinningMesh = ({ position, size, color, speed }) => {
       {/* <meshStandardMaterial attach="material" color={color} /> */}
       <MeshWobbleMaterial
         attach="material"
-        color={hovered ? { color } : "green"}
+        color={hovered ? { color } : "yellow"}
         speed={speed}
         factor={0.6}
       />
