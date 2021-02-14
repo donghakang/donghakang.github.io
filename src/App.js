@@ -1,30 +1,36 @@
+import Footer from "./components/footer";
+
 import * as THREE from "three";
-import React, { useRef, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import "./App.scss";
 
 import { Canvas, useFrame } from "react-three-fiber";
 import {
-  softShadows,
   OrbitControls,
-  MeshWobbleMaterial,
-  Html
+  useGLTF,
+  ContactShadows,
+  Html,
 } from "@react-three/drei";
 
-softShadows();
+import Statue from './components/Statue'
+import Mac from './components/Mac'
+import Record from './components/Record'
+import Burger from './components/Burger'
 
 const Light = () => {
   return (
     <group>
       <ambientLight intensity={0.5} />
-      <pointLight position={[-10, 0, -20]} intensity={0.5} />
-      <pointLight position={[0, -10, 0]} intensity={1.5} />
+      <pointLight position={[-5, 2, -10]} intensity={0.5} color="red"/>
+      <pointLight position={[10, 3, -5]} intensity={1.5} color="blue"/>
+      <pointLight position={[30, -10, -30]} intensity={1.5} color="green"/>
       <directionalLight
         castShadow
         position={[0, 10, 0]}
-        intensity={1.0}
+        intensity={3.0}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
-        shadow-camera-far={50}
+        shadow-camera-far={100}
         shadow-camera-left={-10}
         shadow-camera-right={10}
         shadow-camera-top={10}
@@ -35,52 +41,17 @@ const Light = () => {
   );
 };
 
-const SpinningMesh = ({ position, size, color, speed }) => {
-  const mesh = useRef(null);
-
-  const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
-
-  const vec = new THREE.Vector3(2, 2, 2);
-  const vec_origin = new THREE.Vector3(1, 1, 1);
-  useFrame(() => {
-    if (hovered) {
-      mesh.current.scale.lerp(vec, 0.1);
-    } else {
-      mesh.current.scale.lerp(vec_origin, 0.1);
-    }
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
-  });
-
+const Ground = () => {
   return (
-    <mesh
-      castShadow
-      position={position}
-      ref={mesh}
-      scale={[1,1,1]}
-      onClick={(event) =>
-        (window.location.href = "https://www.github.com/donghakang")
-      }
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
-    >
-      <boxBufferGeometry attach="geometry" args={size} />
-      {/* <meshStandardMaterial attach="material" color={color} /> */}
-      <MeshWobbleMaterial
-        attach="material"
-        color={hovered ? { color } : "yellow"}
-        speed={speed}
-        factor={0.6}
-      />
-      <Html scaleFactor={10}>
-        <div class="content">
-          Suspense <br />
-          Dongha Kang
-        </div>
-      </Html>
-    </mesh>
+    <group>
+      <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
+        <planeBufferGeometry attach="geometry" args={[100, 100]} />
+        <shadowMaterial attach="material" opacity={0.4} />
+      </mesh>
+    </group>
   );
 };
+
 
 function App() {
   return (
@@ -88,29 +59,19 @@ function App() {
       <Canvas
         shadowMap
         colorManagement
-        camera={{ position: [-5, 2, 10], fov: 60 }}
+        camera={{ position: [0, 0, -50], fov: 70 }}
       >
         <Light />
-        <group>
-          <mesh
-            receiveShadow
-            rotation={[-Math.PI / 2, 0, 0]}
-            position={[0, -3, 0]}
-          >
-            <planeBufferGeometry attach="geometry" args={[100, 100]} />
-            <shadowMaterial attach="material" opacity={0.4} />
-          </mesh>
-        </group>
-        <SpinningMesh
-          position={[0, 1, 0]}
-          size={[3, 1, 2]}
-          color="green"
-          speed={4}
-        />
-        <SpinningMesh position={[-2, 1, -5]} color="pink" speed={1} />
-        <SpinningMesh position={[5, 1, -2]} color="pink" speed={1} />
+        {/* <Ground /> */}
+        <Suspense fallback={null}>
+          <Statue />
+          <Mac />
+          <Record/>
+          <Burger/>
+        </Suspense>
         <OrbitControls />
       </Canvas>
+      <Footer />
     </>
   );
 }
