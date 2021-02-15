@@ -16,7 +16,8 @@ import Statue from './components/Statue'
 import Mac from './components/Mac'
 import Record from './components/Record'
 import Burger from './components/Burger'
-import Boombox from './components/Boombox'
+import Phone from './components/Phone'
+
 
 const Light = () => {
   return (
@@ -67,8 +68,8 @@ function App() {
         <Suspense fallback={null}>
           {/* <Statue /> */}
           {/* <Mac /> */}
-          <Boombox/>
           {/* <Burger/> */}
+          <Phone/>
         </Suspense>
         <OrbitControls />
       </Canvas>
