@@ -14,7 +14,7 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/burger.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={[5,5,5]}>
+      <group position={[7,-3,43]} rotation={[-Math.PI / 2, 0, 0]} scale={[6.5,6.5,6.5]}>
         <mesh material={materials.defaultMat} geometry={nodes.mesh_0.geometry} >
         <meshStandardMaterial
             attach="material"

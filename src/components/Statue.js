@@ -20,7 +20,7 @@ export default function Statue(props) {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, Math.PI / 2, Math.PI/8]}>
+      <group position={[-4, 6.8, 8]} rotation={[-Math.PI / 2, Math.PI / 2, Math.PI/8]}>
         <mesh castShadow material={materials.material_0} geometry={nodes.mesh_0.geometry}>
           <meshStandardMaterial
             attach="material"

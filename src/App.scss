@@ -56,3 +56,14 @@ footer {
   background: gray;
   transition: 5s;
 }
+
+
+#center {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 1vw;
+  height: 1vw;
+  background-color: red;
+  transform: translate(-50%, -50%);
+}

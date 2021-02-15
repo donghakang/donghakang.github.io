@@ -16,6 +16,7 @@ import Statue from './components/Statue'
 import Mac from './components/Mac'
 import Record from './components/Record'
 import Burger from './components/Burger'
+import Boombox from './components/Boombox'
 
 const Light = () => {
   return (
@@ -59,15 +60,15 @@ function App() {
       <Canvas
         shadowMap
         colorManagement
-        camera={{ position: [0, 0, -50], fov: 70 }}
+        camera={{ position: [50,0,0], fov: 70 }}
       >
         <Light />
         {/* <Ground /> */}
         <Suspense fallback={null}>
-          <Statue />
-          <Mac />
-          <Record/>
-          <Burger/>
+          {/* <Statue /> */}
+          {/* <Mac /> */}
+          <Boombox/>
+          {/* <Burger/> */}
         </Suspense>
         <OrbitControls />
       </Canvas>

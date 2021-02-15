@@ -14,7 +14,7 @@ export default function Mac(props) {
   const { nodes, materials } = useGLTF('/mac.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
-      <group scale={[.01, .01, .01]}>
+      <group position={[-4.7, 0, 0]} scale={[.0125, .0125, .0125]}>
         <mesh material={materials['Mac.Tri.Baked']} geometry={nodes.Mac_Tri_Baked_MacTriBaked_0.geometry} >
           <meshStandardMaterial
             attach="material"
