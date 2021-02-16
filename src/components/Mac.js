@@ -14,18 +14,20 @@ export default function Mac(props) {
   const { nodes, materials } = useGLTF('/mac.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[-4.7, 0, 0]} scale={[.0125, .0125, .0125]}>
-        <mesh material={materials['Mac.Tri.Baked']} geometry={nodes.Mac_Tri_Baked_MacTriBaked_0.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-
-      </group>
-
+      <group position={[20, 0, 10]}>
+        <group position={[-4.7, 0, 0]} scale={[.01, .01, .01]}>
+          <mesh material={
+            materials['Mac.Tri.Baked']}
+            geometry={nodes.Mac_Tri_Baked_MacTriBaked_0.geometry}
+          >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2} />
+          </mesh>
+        </group>
+      </group >
     </group>
   )
 }

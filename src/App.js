@@ -61,13 +61,13 @@ function App() {
       <Canvas
         shadowMap
         colorManagement
-        camera={{ position: [50,0,0], fov: 70 }}
+        camera={{ position: [0,0,50], fov: 70 }}
       >
         <Light />
         {/* <Ground /> */}
         <Suspense fallback={null}>
-          {/* <Statue /> */}
-          {/* <Mac /> */}
+          <Statue />
+          <Mac />
           {/* <Burger/> */}
           <Phone/>
         </Suspense>

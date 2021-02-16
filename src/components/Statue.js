@@ -14,13 +14,14 @@ export default function Statue(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/statue.gltf')
   useFrame(() => {
-    // group.current.rotation.y += 0.01;
+    group.current.rotation.y += 0.01;
   });
 
 
   return (
+  <group position={[0, 0, -15]}>
     <group ref={group} {...props} dispose={null}>
-      <group position={[-4, 6.8, 8]} rotation={[-Math.PI / 2, Math.PI / 2, Math.PI/8]}>
+      <group position={[4.6, 6.8, -8.4]} rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 8]}>
         <mesh castShadow material={materials.material_0} geometry={nodes.mesh_0.geometry}>
           <meshStandardMaterial
             attach="material"
@@ -110,8 +111,8 @@ export default function Statue(props) {
           />
         </mesh>
       </group>
-
     </group>
+  </group>
   )
 }
 

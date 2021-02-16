@@ -14,127 +14,129 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/phone.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[3,0,0]} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
-        <mesh material={materials.material_0} geometry={nodes.mesh_0.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials.Phone_body} geometry={nodes.mesh_1.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials.Ariel} geometry={nodes.mesh_2.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials['Material.002']} geometry={nodes.mesh_3.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials.phone_Face} geometry={nodes.mesh_4.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials['Material.003']} geometry={nodes.mesh_5.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials.Screen} geometry={nodes.mesh_6.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials['Material.004']} geometry={nodes.mesh_7.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials['Material.005']} geometry={nodes.mesh_8.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials['Material.010']} geometry={nodes.mesh_9.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials['Material.006']} geometry={nodes.mesh_10.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials['Material.007']} geometry={nodes.mesh_11.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials['Material.008']} geometry={nodes.mesh_12.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials['Material.009']} geometry={nodes.mesh_13.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh material={materials.SVGMat} geometry={nodes.mesh_14.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
+      <group position={[-20, 0, 10]}>
+        <group scale={[.7, .7, .7]} position={[0, 0, 2.5]} rotation={[Math.PI / 2, 0, 0]}>
+          <mesh material={materials.material_0} geometry={nodes.mesh_0.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials.Phone_body} geometry={nodes.mesh_1.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials.Ariel} geometry={nodes.mesh_2.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials['Material.002']} geometry={nodes.mesh_3.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials.phone_Face} geometry={nodes.mesh_4.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials['Material.003']} geometry={nodes.mesh_5.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials.Screen} geometry={nodes.mesh_6.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials['Material.004']} geometry={nodes.mesh_7.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials['Material.005']} geometry={nodes.mesh_8.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials['Material.010']} geometry={nodes.mesh_9.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials['Material.006']} geometry={nodes.mesh_10.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials['Material.007']} geometry={nodes.mesh_11.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials['Material.008']} geometry={nodes.mesh_12.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials['Material.009']} geometry={nodes.mesh_13.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh material={materials.SVGMat} geometry={nodes.mesh_14.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+        </group>
       </group>
     </group>
   )

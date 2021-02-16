@@ -14,16 +14,17 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/burger.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[7,-3,43]} rotation={[-Math.PI / 2, 0, 0]} scale={[6.5,6.5,6.5]}>
-        <mesh material={materials.defaultMat} geometry={nodes.mesh_0.geometry} >
-        <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-
-        </mesh>
+      <group position={[20, 0, 10]}>
+        <group position={[3.5, -5, 54]} rotation={[-Math.PI / 2, 0, 0]} scale={[8, 8, 8]}>
+          <mesh material={materials.defaultMat} geometry={nodes.mesh_0.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+        </group>
       </group>
     </group>
   )
