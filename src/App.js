@@ -85,107 +85,106 @@ function Statue(props) {
   const { nodes, materials } = useGLTF('/statue.gltf')
 
   return (
-  <group position={[0, 0, -15]}>
-    <group ref={group} {...props} dispose={null}>
-      <group position={[4.6, 6.8, -8.4]} rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 8]}>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_0.geometry}>
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_1.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_2.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_3.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_4.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_5.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_6.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_7.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_8.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_9.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
-        <mesh castShadow material={materials.material_0} geometry={nodes.mesh_10.geometry} >
-          <meshStandardMaterial
-            attach="material"
-            color="white"
-            roughness={0.3}
-            metalness={0.2}
-          />
-        </mesh>
+    <group position={[0, 0, -15]}>
+      <group ref={group} {...props} dispose={null}>
+        <group position={[4.6, 6.8, -8.4]} rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 8]}>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_0.geometry}>
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_1.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_2.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_3.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_4.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_5.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_6.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_7.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_8.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_9.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_10.geometry} >
+            <meshStandardMaterial
+              attach="material"
+              color="white"
+              roughness={0.3}
+              metalness={0.2}
+            />
+          </mesh>
+        </group>
       </group>
     </group>
-  </group>
   )
 }
 
 function Phone(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/phone.gltf')
-
   return (
     <group position={[-20, 0, 10]}>
       <group ref={group} {...props} dispose={null}>
@@ -316,6 +315,25 @@ function Phone(props) {
   )
 }
 
+function Objects(props) {
+  const obj = useRef();
+  const statue = useRef();
+  useFrame(() => {
+    // ref.current.updateMatrixWorld();
+    obj.current.rotation.y += 0.005
+    statue.current.rotation.z += 0.01
+  })
+  return (
+    <group ref={obj}>
+      <group ref={statue} >
+        <Statue/>
+      </group>
+      
+      <Mac />
+      <Phone />
+    </group>
+  )
+}
 
 
 function Camera(props) {
@@ -328,7 +346,7 @@ function Camera(props) {
     // ref.current.updateMatrixWorld();
     ref.current.rotation.y += 0.01
   })
-  return <orthographicCamera ref={ref} {...props} />
+  return <perspectiveCamera ref={ref} {...props} />
 }
 
 
@@ -338,17 +356,18 @@ function App() {
       <Canvas
         shadowMap
         colorManagement
+        camera={{ position: [10, 20, 40], fov: 70 }}
       >
-        <Camera position={[0, 0, 0]} rotation={[0, -Math.PI/4, 0]}/>
+        {/* <Camera position={[0, 0, 0]} rotation={[0, -Math.PI/4, 0]}/> */}
         <Light />
         {/* <Ground /> */}
         <Suspense fallback={null}>
-            <Statue />
+          <Objects />
+          {/* <Statue />
             <Mac />
-            {/* <Burger/> */}
-            <Phone/>
+            <Phone/> */}
         </Suspense>
-        {/* <OrbitControls /> */}
+        <OrbitControls />
       </Canvas>
       <Footer />
     </>
