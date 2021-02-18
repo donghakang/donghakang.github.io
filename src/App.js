@@ -8,17 +8,13 @@ import { Canvas, useFrame, useThree } from "react-three-fiber";
 import {
   OrbitControls,
   useGLTF,
-  ContactShadows,
-  Html,
-  OrthographicCamera,
+  softShadows,
+  MeshWobbleMaterial
 } from "@react-three/drei";
+import { MeshPhongMaterial } from "three";
 
-// import Statue from './components/Statue'
-// // import Mac from './components/Mac'
-// import Record from './components/Record'
-// import Burger from './components/Burger'
-// import Phone from './components/Phone'
 
+softShadows();
 
 const Light = () => {
   return (
@@ -29,43 +25,58 @@ const Light = () => {
       <pointLight position={[30, -10, -30]} intensity={1.5} color="green" />
       <directionalLight
         castShadow
-        position={[0, 10, 0]}
+        position={[0, 40, 20]}
         intensity={3.0}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
         shadow-camera-far={100}
-        shadow-camera-left={-10}
-        shadow-camera-right={10}
-        shadow-camera-top={10}
-        shadow-camera-bottom={-10}
+        shadow-camera-left={-100}
+        shadow-camera-right={100}
+        shadow-camera-top={100}
+        shadow-camera-bottom={-100}
         shadow-radius={8}
       />
     </group>
   );
 };
 
+
 const Ground = () => {
+  const { viewport } = useThree()
   return (
     <group>
-      <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
-        <planeBufferGeometry attach="geometry" args={[100, 100]} />
-        <shadowMaterial attach="material" opacity={0.4} />
+      <mesh
+        receiveShadow
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -20, 0]}  >
+        <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
+        <meshPhongMaterial attach="material" color="#cccccc" />
       </mesh>
     </group>
   );
 };
 
 
+
+
+
 function Mac(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/mac.gltf')
+
+  useFrame(() => {
+    group.current.rotation.x += 0.02
+    group.current.rotation.y += 0.01
+  })
 
   return (
     <group position={[20, 0, 10]}>
       <group ref={group} {...props} dispose={null}>
         <group position={[-4.7, 0, 0]} scale={[.01, .01, .01]}>
-          <mesh material={
-            materials['Mac.Tri.Baked']}
+          <mesh
+            castShadow
+            material={
+              materials['Mac.Tri.Baked']}
             geometry={nodes.Mac_Tri_Baked_MacTriBaked_0.geometry}
           >
             <meshStandardMaterial
@@ -84,10 +95,21 @@ function Statue(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/statue.gltf')
 
+  useFrame(() => {
+    group.current.rotation.x += 0.02
+  })
+
   return (
     <group position={[0, 0, -15]}>
-      <group ref={group} {...props} dispose={null}>
+      <group  {...props} dispose={null}>
         <group position={[4.6, 6.8, -8.4]} rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 8]}>
+        <group ref={group}>
+
+        <mesh scale={[10,-12,12]}>
+          <boxBufferGeometry position={[-1.2, 0, 0]} />
+          <meshStandardMaterial color="green" opacity={0.2} />
+        </mesh>
+        </group>
           <mesh castShadow material={materials.material_0} geometry={nodes.mesh_0.geometry}>
             <meshStandardMaterial
               attach="material"
@@ -185,11 +207,15 @@ function Statue(props) {
 function Phone(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/phone.gltf')
+  useFrame(() => {
+    group.current.rotation.y += 0.1
+  })
+
   return (
     <group position={[-20, 0, 10]}>
       <group ref={group} {...props} dispose={null}>
         <group scale={[.7, .7, .7]} position={[0, 0, 2.5]} rotation={[Math.PI / 2, 0, 0]}>
-          <mesh material={materials.material_0} geometry={nodes.mesh_0.geometry} >
+          <mesh castShadow material={materials.material_0} geometry={nodes.mesh_0.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -197,7 +223,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials.Phone_body} geometry={nodes.mesh_1.geometry} >
+          <mesh castShadow material={materials.Phone_body} geometry={nodes.mesh_1.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -205,7 +231,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials.Ariel} geometry={nodes.mesh_2.geometry} >
+          <mesh castShadow material={materials.Ariel} geometry={nodes.mesh_2.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -213,7 +239,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials['Material.002']} geometry={nodes.mesh_3.geometry} >
+          <mesh castShadow material={materials['Material.002']} geometry={nodes.mesh_3.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -221,7 +247,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials.phone_Face} geometry={nodes.mesh_4.geometry} >
+          <mesh castShadow material={materials.phone_Face} geometry={nodes.mesh_4.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -229,7 +255,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials['Material.003']} geometry={nodes.mesh_5.geometry} >
+          <mesh castShadow material={materials['Material.003']} geometry={nodes.mesh_5.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -237,7 +263,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials.Screen} geometry={nodes.mesh_6.geometry} >
+          <mesh castShadow material={materials.Screen} geometry={nodes.mesh_6.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -245,7 +271,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials['Material.004']} geometry={nodes.mesh_7.geometry} >
+          <mesh castShadow material={materials['Material.004']} geometry={nodes.mesh_7.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -253,7 +279,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials['Material.005']} geometry={nodes.mesh_8.geometry} >
+          <mesh castShadow material={materials['Material.005']} geometry={nodes.mesh_8.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -261,7 +287,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials['Material.010']} geometry={nodes.mesh_9.geometry} >
+          <mesh castShadow material={materials['Material.010']} geometry={nodes.mesh_9.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -269,7 +295,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials['Material.006']} geometry={nodes.mesh_10.geometry} >
+          <mesh castShadow material={materials['Material.006']} geometry={nodes.mesh_10.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -277,7 +303,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials['Material.007']} geometry={nodes.mesh_11.geometry} >
+          <mesh castShadow material={materials['Material.007']} geometry={nodes.mesh_11.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -285,7 +311,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials['Material.008']} geometry={nodes.mesh_12.geometry} >
+          <mesh castShadow material={materials['Material.008']} geometry={nodes.mesh_12.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -293,7 +319,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials['Material.009']} geometry={nodes.mesh_13.geometry} >
+          <mesh castShadow material={materials['Material.009']} geometry={nodes.mesh_13.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -301,7 +327,7 @@ function Phone(props) {
               metalness={0.2}
             />
           </mesh>
-          <mesh material={materials.SVGMat} geometry={nodes.mesh_14.geometry} >
+          <mesh castShadow material={materials.SVGMat} geometry={nodes.mesh_14.geometry} >
             <meshStandardMaterial
               attach="material"
               color="white"
@@ -318,36 +344,24 @@ function Phone(props) {
 function Objects(props) {
   const obj = useRef();
   const statue = useRef();
+  const mac = useRef();
+  const phone = useRef();
   useFrame(() => {
-    // ref.current.updateMatrixWorld();
     obj.current.rotation.y += 0.005
-    statue.current.rotation.z += 0.01
   })
+
   return (
     <group ref={obj}>
-      <group ref={statue} >
-        <Statue/>
-      </group>
-      
-      <Mac />
-      <Phone />
+      <Mac
+        onPointerDown={(e) => console.log("Mac Clicked")}
+      />
+      <Statue onPointerDown={(e) => console.log("Statue clicked")} />
+      < Phone onPointerDown={(e) => console.log("Phone clicked")} />
     </group>
   )
 }
 
 
-function Camera(props) {
-  const ref = useRef()
-  const { setDefaultCamera } = useThree()
-  // Make the camera known to the system
-  useEffect(() => void setDefaultCamera(ref.current), [])
-  // Update it every frame
-  useFrame(() => {
-    // ref.current.updateMatrixWorld();
-    ref.current.rotation.y += 0.01
-  })
-  return <perspectiveCamera ref={ref} {...props} />
-}
 
 
 function App() {
@@ -358,9 +372,9 @@ function App() {
         colorManagement
         camera={{ position: [10, 20, 40], fov: 70 }}
       >
-        {/* <Camera position={[0, 0, 0]} rotation={[0, -Math.PI/4, 0]}/> */}
+        <Ground />
         <Light />
-        {/* <Ground /> */}
+
         <Suspense fallback={null}>
           <Objects />
           {/* <Statue />
