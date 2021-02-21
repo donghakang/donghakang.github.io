@@ -41,20 +41,8 @@ footer {
 
 
 .content {
-  transform: translate3d(30vw, 0, 0);
+  transform: translate3d(0, 0, 0);
   transition: transform 1s;
-}
-
-.content::after {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  content: "";
-  width: 28vw;
-  transform: translate3d(-30vw, 0, 0);
-  height: 1px;
-  background: gray;
-  transition: 5s;
 }
 
 

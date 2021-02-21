@@ -1,7 +1,5 @@
 import Footer from "./components/footer";
 
-import * as THREE from "three";
-
 import React, { Suspense, useRef, useState } from "react";
 import "./App.scss";
 
@@ -19,8 +17,6 @@ import {
 let PhoneClicked = false;
 let StatueClicked = false;
 let MacClicked = false;
-
-
 
 
 
@@ -78,18 +74,9 @@ function Mac(props) {
   const [active, setActive] = useState(false)
   const animate = useSpring({ opacity: active ? 1 : 0 })
 
-  const vec        = new THREE.Vector3(2, 2, 2);
-  const vec_origin = new THREE.Vector3(1, 1, 1);
-
   useFrame(() => {
     group.current.rotation.x += 0.02
     group.current.rotation.y += 0.01
-
-    if (active) {
-      group.current.scale.lerp(vec, 0.1);
-    } else {
-      group.current.scale.lerp(vec_origin, 0.1);
-    }
   })
 
   return (
@@ -133,21 +120,11 @@ function Statue(props) {
   const [active, setActive] = useState(false)
   const animate = useSpring({ opacity: active ? 1 : 0 })
 
-  const vec        = new THREE.Vector3(2, 2, 2);
-  const vec_origin = new THREE.Vector3(1, 1, 1);
-
-  useFrame(state => {
-    const time = state.clock.getElapsedTime();
-
-    group.current.rotation.y += 0.025
-    group.current.rotation.z = 0.5 * Math.sin(time) ;         // Back and forth animation
-    if (active) {
-      group.current.scale.lerp(vec, 0.1);
-    } else {
-      group.current.scale.lerp(vec_origin, 0.1);
-    }
+  useFrame(() => {
+    group.current.rotation.x += 0.02
   })
 
+  // TODO: clickable change
   return (
     <group position={[0, 0, -15]}>
       <group ref={group}  {...props} dispose={null}>
@@ -155,9 +132,6 @@ function Statue(props) {
           <group
             onPointerDown={(e) => {
               StatueClicked = !StatueClicked
-              MacClicked = false;
-              PhoneClicked = false;
-
               setActive(!active)
               }} >
 
@@ -259,7 +233,7 @@ function Statue(props) {
       <Html scaleFactor={80}>
         <animated.div style={animate} className="content">
           ABOUT ME
-        </animated.div>
+                </animated.div>
       </Html>
     </group>
   )
@@ -274,18 +248,8 @@ function Phone(props) {
 
   const [active, setActive] = useState(false)
   const animate = useSpring({ opacity: active ? 1 : 0 })
-
-  const vec        = new THREE.Vector3(2, 2, 2);
-  const vec_origin = new THREE.Vector3(1, 1, 1);
-
-
   useFrame(() => {
     group.current.rotation.y += 0.1
-    if (active) {
-      group.current.scale.lerp(vec, 0.1);
-    } else {
-      group.current.scale.lerp(vec_origin, 0.1);
-    }
   })
 
   return (
@@ -295,10 +259,8 @@ function Phone(props) {
         <group scale={[.7, .7, .7]} position={[0, 0, 2.5]} rotation={[Math.PI / 2, 0, 0]}>
           <group
             onPointerDown={(e) => {
+              
               PhoneClicked = !PhoneClicked;
-              MacClicked = false;
-              StatueClicked = false;
-
               setActive(!active)
             }
             } >
