@@ -4,7 +4,7 @@ import * as THREE from "three";
 
 import React, { Suspense, useRef, useState } from "react";
 import "../App.scss";
-
+import { useHistory } from "react-router-dom";
 import { Canvas, useFrame, useThree } from "react-three-fiber";
 import { useSpring, animated } from "react-spring";
 import {
@@ -79,10 +79,11 @@ function Mac(props) {
   const vec        = new THREE.Vector3(2, 2, 2);
   const vec_origin = new THREE.Vector3(1, 1, 1);
 
-  useFrame(() => {
-    group.current.rotation.x += 0.02
-    group.current.rotation.y += 0.01
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
 
+    group.current.rotation.y += 0.03
+    group.current.rotation.z = .25 * Math.sin(time) ;         // Back and forth animation
     if (active) {
       group.current.scale.lerp(vec, 0.1);
     } else {
@@ -134,6 +135,7 @@ function Statue(props) {
   const vec        = new THREE.Vector3(2, 2, 2);
   const vec_origin = new THREE.Vector3(1, 1, 1);
 
+
   useFrame(state => {
     const time = state.clock.getElapsedTime();
 
@@ -157,6 +159,7 @@ function Statue(props) {
               PhoneClicked = false;
 
               setActive(!active)
+              window.location.href = "/shop"
               }} >
 
             <mesh position={[10, 6.5, 5]} rotation={[0, 0, -Math.PI / 8]} scale={[20, 10, 10]}>
@@ -276,9 +279,12 @@ function Phone(props) {
   const vec        = new THREE.Vector3(2, 2, 2);
   const vec_origin = new THREE.Vector3(1, 1, 1);
 
+  
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
 
-  useFrame(() => {
-    group.current.rotation.y += 0.1
+    group.current.rotation.y -= 0.04
+    group.current.rotation.z = 0.27 * Math.sin(time) ;         // Back and forth animation
     if (active) {
       group.current.scale.lerp(vec, 0.1);
     } else {
@@ -298,8 +304,9 @@ function Phone(props) {
               StatueClicked = false;
 
               setActive(!active)
-            }
-            } >
+
+              window.location.href = 'https://www.github.com/donghakang'; 
+            }} >
             <mesh position={[0, -5, 0]} rotation={[0, 0, 0]} scale={[10, 10, 30]}>
               <boxBufferGeometry position={[0, 0, 0]} />
               <meshStandardMaterial transparent={true} opacity={0.0} />
@@ -440,9 +447,6 @@ function Phone(props) {
 
 function Objects(props) {
   const obj = useRef();
-  const statue = useRef();
-  const mac = useRef();
-  const phone = useRef();
   useFrame(() => {
     if (!(PhoneClicked || MacClicked || StatueClicked)) {
       obj.current.rotation.y += 0.005
