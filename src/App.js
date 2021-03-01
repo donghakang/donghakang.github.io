@@ -1,16 +1,23 @@
-import "./App.scss";
-import Shop from "./components/Shop";
-import Home from "./components/Home"
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from './components/Home'
+import Project from './components/Project'
+import About from './components/About'
+import Contact from './components/Contact'
+
+import './App.scss'
 
 function App() {
   return (
-    <Router>
       <div className="App">
-        <Home/>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/project" component={Project} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
       </div>
-    </Router>
+    
   );
 }
 

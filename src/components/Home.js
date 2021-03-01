@@ -4,7 +4,6 @@ import * as THREE from "three";
 
 import React, { Suspense, useRef, useState } from "react";
 import "../App.scss";
-import { useHistory } from "react-router-dom";
 import { Canvas, useFrame, useThree } from "react-three-fiber";
 import { useSpring, animated } from "react-spring";
 import {
@@ -95,7 +94,9 @@ function Mac(props) {
     <group
       onPointerDown={(e) => {
         MacClicked = !MacClicked
-        setActive(!active)}}
+        setActive(!active)
+        window.appHistory.push("/project")
+      }}
     >
       <group position={[20, 0, 10]} >
         <group ref={group} {...props} dispose={null}>
@@ -159,7 +160,7 @@ function Statue(props) {
               PhoneClicked = false;
 
               setActive(!active)
-              window.location.href = "/shop"
+              window.appHistory.push("/about")
               }} >
 
             <mesh position={[10, 6.5, 5]} rotation={[0, 0, -Math.PI / 8]} scale={[20, 10, 10]}>
@@ -304,8 +305,8 @@ function Phone(props) {
               StatueClicked = false;
 
               setActive(!active)
-
-              window.location.href = 'https://www.github.com/donghakang'; 
+              window.appHistory.push("/contact")
+              // window.location.href = 'https://www.github.com/donghakang'; 
             }} >
             <mesh position={[0, -5, 0]} rotation={[0, 0, 0]} scale={[10, 10, 30]}>
               <boxBufferGeometry position={[0, 0, 0]} />
@@ -467,7 +468,7 @@ function Objects(props) {
 
 function Home() {
   return (
-    <div className="Canvas">
+    <div>
       <Canvas
         shadowMap
         colorManagement
