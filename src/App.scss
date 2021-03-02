@@ -1,5 +1,4 @@
-
-body {  
+body {
   position: fixed;
 }
 
@@ -22,16 +21,47 @@ Canvas {
 .contact {
   position: absolute;
   width: 60vw;
-  
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // background-color: coral;
-  ul {
-    display: flex;
-  justify-content: space-between;
-    list-style: none;
 
-    
+  display: flex;
+  justify-content: space-between;
+  // justify-items: center;
+  a {
+    position: relative;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+    div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    span {
+      font-family: Roboto;
+      font-weight: 200;
+      font-size: 1.25vw;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 0.7em;
+      margin-right: -0.7em;
+      opacity: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      span {
+        display: none;
+      }
+    }
+    span:hover {
+      opacity: 100;
+    }
   }
 }
