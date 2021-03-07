@@ -16,6 +16,16 @@ Canvas {
   background-color: #f1f1f1;
   width: 100vw;
   height: 100vh;
+
+}
+
+.navbar {
+  .home_button {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
 }
 
 .contact {
@@ -63,5 +73,44 @@ Canvas {
     span:hover {
       opacity: 100;
     }
+  }
+}
+
+
+
+// Sample for responsive web
+
+// /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .about_page {
+    background-color: yellowgreen;
+  }
+}
+
+// /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .about_page {
+    background-color: yellow;
+  }
+}
+
+// /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .about_page {
+    background-color: coral;
+  }
+}
+
+// /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .about_page {
+    background-color: orange;
+  }
+}
+
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .about_page {
+    background-color: red;
   }
 }

@@ -449,9 +449,10 @@ function Phone(props) {
 function Objects(props) {
   const obj = useRef();
   useFrame(() => {
-    if (!(PhoneClicked || MacClicked || StatueClicked)) {
-      obj.current.rotation.y += 0.005
-    }
+    // if (!(PhoneClicked || MacClicked || StatueClicked)) {
+    //   obj.current.rotation.y += 0.005
+    // }
+    obj.current.rotation.y += 0.005
   })
 
   return (
