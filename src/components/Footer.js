@@ -1,42 +1,35 @@
-import Nav from "./Nav";
-
 import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
-import "../App.scss";
+import '../App.scss'
 
-export default function Contact() {
-  const m_size = 60;
+export default function Footer() {
+  const m_size = 24;
   const m_style = { color: "#dddddd" };
   return (
-    <>
-      <Nav />
+    <div className="footer">
       <div className={"contact"}>
         <a href="https://www.github.com/donghakang">
-          <div>
+          <div className="icon">
             <FaGithub size={m_size} style={m_style} />
           </div>
-          <span>Github</span>
         </a>
         <a href="https://www.instagram.com/donghakang">
-          <div>
+          <div className="icon">
             <FaInstagram size={m_size} style={m_style} />
           </div>
-          <span>Instagram</span>
         </a>
         <a href="https://www.facebook.com/dkang0602">
-          <div>
+          <div className="icon">
             <FaFacebook size={m_size} style={m_style} />
           </div>
-          <span>facebook</span>
         </a>
         <a href="mailto:dkang0602@gmail.com">
-          <div>
+          <div className="icon">
             <FiMail size={m_size} style={m_style} />
           </div>
-          <span>mail</span>
         </a>
       </div>
-    </>
+    </div>
   );
 }

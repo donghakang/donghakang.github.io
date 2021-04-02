@@ -1,9 +1,5 @@
-import Nav from './Nav'
+import React, { Component } from "react";
+
 export default function Project() {
-    return (
-        <div>
-            <Nav/>
-            Project Page
-        </div>
-    );
+  return <div className="project">Project Page Coming Soon...</div>;
 }

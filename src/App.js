@@ -1,23 +1,21 @@
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import "./App.scss";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from './components/Home'
-import Project from './components/Project'
-import About from './components/About'
-import Contact from './components/Contact'
-
-import './App.scss'
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import About from "./components/About";
+import Project from "./components/Project";
 
 function App() {
   return (
-      <div className="App">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/project" component={Project} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
-      </div>
-    
+    <div className="App">
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/project" component={Project} />
+      </Switch>
+      <Footer />
+    </div>
   );
 }
 

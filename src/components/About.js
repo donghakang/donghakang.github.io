@@ -1,39 +1,82 @@
-import Nav from "./Nav";
-import "../App.scss";
-import { GrLanguage } from "react-icons/gr";
-import React, { useState, Component } from "react";
+import React, { Component } from 'react'
+import ReactDOM from "react-dom";
 
-function Main(props) {
-  console.log(props.lang)
-  if (props.lang) {
+export class Letter extends Component {
+    
+  constructor(props) {
+    super(props);
+    this.state = { 
+        current: props.start,
+        words: ['S', 'ㄱ', '!@', '^$', 'Z', 'K', 'ㄹ', 'k', '$$'],
+        count: 9,
+        step: 0
+    };
+    // this.current = this.current.bind(this);
+  }
+
+
+  componentDidMount() {
+    // this.interval = setInterval(() => console.log('hello'), 1000);
+  }
+
+  componentWillUnmount() {
+    // clearInterval(this.state.current);
+  }
+
+  tick() {
+    this.state.step += 1
+    this.setState({
+        current: this.state.words[this.state.step % this.state.count]
+    });
+
+    if (this.state.step == 10) {
+        clearInterval(this.interval)
+        this.setState({
+            step: 0
+        })
+    }
+  }
+
+  printStart = function() {
+    
+    this.interval = setInterval(() => {
+        this.tick()
+    }, 50);
+
+    // this.setState({
+    //     current: "A"
+    // })
+  }
+
+  printEnd = () => {
+    clearInterval(this.interval)
+    this.setState({
+        current: this.props.end,
+        step: 0
+    })
+  }
+
+  render() {
     return (
-        <div>
-          <h2>Hi, My name is Dongha.</h2>
-          <div>I recently graduated from University of Minnesota - Twin Cities</div>
-        </div>
-      );
-  } else {
-      return (
-          <div>
-              <h2>안녕하세요, 강동하입니다.</h2>
-              <div></div>
-          </div>
-      )
+      <div className="word"
+        onMouseEnter={
+            () => this.printStart()
+        }
+        onMouseOut= {
+            () => this.printEnd()
+        }
+        >   
+        {this.state.current}
+      </div>
+    );
   }
 }
 
 
 export default function About() {
-    const [language, setLanguage] = useState(false)
-    console.log(language)
-  return (
-    <div className="about_page">
-        <div onClick={() => setLanguage(!language)}>
-                <GrLanguage color="#cccccc"/>
-            </div>
-      <Nav />
-      <h1>About Me</h1>
-        <Main lang={language}/>
-    </div>
-  );
+    return (
+        <div className="about">
+            <Letter start="D" end="ㄷ" />
+        </div>
+    );
 }

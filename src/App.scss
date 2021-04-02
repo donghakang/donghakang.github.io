@@ -1,116 +1,88 @@
-body {
-  position: fixed;
-}
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 
 .App {
-  width: 100vw;
-  height: 100vh;
-}
-
-Canvas {
-  background-color: #f1f1f1;
-  width: 100vw;
-  height: 100vh;
-
-}
-
-.navbar {
-  .home_button {
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-bottom: 20px;
-    font-size: 40px;
-  }
-}
-
-.contact {
-  position: absolute;
-  width: 60vw;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  display: flex;
-  justify-content: space-between;
-  // justify-items: center;
-  a {
-    position: relative;
-    width: 20vw;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    text-decoration: none;
+    align-items: center;
+}
 
-    div {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: -1;
+
+.footer {
+    position: absolute;
+    top: 90%;
+    left: 100%;
+    transform: translate(-200%, -80%);
+    height: 20vh;
+    .contact {
+        justify-content: space-between;
+        div {
+            margin-bottom: 2vh;
+        }
     }
+}
 
-    span {
-      font-family: Roboto;
-      font-weight: 200;
-      font-size: 1.25vw;
-      color: black;
-      text-transform: uppercase;
-      letter-spacing: 0.7em;
-      margin-right: -0.7em;
-      opacity: 0;
+// About Me, Project. React HTML
+.content {
+    color: greenyellow;
+    font-size: 2.4vw;
+    width: 20vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.home {
+   
+    .name {
+        margin-left: 4vw;
+        width: 50vw;
+        color: yellowgreen;
+        font-size: 14vw;
+        line-height: 12vw;
     }
+    .description {
+        position: relative;
+        top: 6vh;
+        left: 4vw;
+        width: 50vw;
+        color: yellowgreen;
+        font-size: 1.2vw;
+    }    
+}
 
-    @media screen and (max-width: 768px) {
-      span {
-        display: none;
-      }
+.Home { 
+    Canvas {
+        // background-color: yellow;
     }
-    span:hover {
-      opacity: 100;
-    }
-  }
 }
 
 
 
-// Sample for responsive web
+// -------------------------- Project Page --------------------------
 
-// /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .about_page {
-    background-color: yellowgreen;
-  }
+.project {
+    font-size: 4vw;
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: greenyellow;
 }
 
-// /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .about_page {
-    background-color: yellow;
-  }
-}
+// -------------------------- About  Page --------------------------
 
-// /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .about_page {
-    background-color: coral;
-  }
-}
-
-// /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .about_page {
-    background-color: orange;
-  }
-}
-
-// /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .about_page {
-    background-color: red;
-  }
+.about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 32vw;
+    transform: translate(-50%, -50%);
+    color: greenyellow;
 }
