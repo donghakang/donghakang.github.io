@@ -1,5 +1,14 @@
 import React, { Component } from "react";
 
-export default function Project() {
-  return <div className="project">Project Page Coming Soon...</div>;
+function Project() {
+  return (
+    <div className="project">
+      <div className="tasks row1">project coming soon</div>
+      <div className="tasks row2">project coming soon</div>
+      <div className="tasks row3">project coming soon</div>
+
+    </div>
+  );
 }
+
+export default Project;
