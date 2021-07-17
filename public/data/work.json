@@ -1,0 +1,28 @@
+[
+  {
+    "id": "id_0",
+    "title": "Researcher, Developer at SNUH",
+    "date": "February 2021 - Current",
+    "info": [
+
+    ]
+  },
+  {
+    "id": "id_1",
+    "title": "Teaching Assistant at University of Minnesota",
+    "date": "September 2019 - January 2020",
+    "info": [
+      "Assisted in freshmen seminar class, Survey of Computer Science using computer games",
+      "Helped students who exposed Unreal Engine 4 for the first time"
+    ]
+  },
+  {
+    "id": "id_2",
+    "title": "Squad Commander at Korean Army Training Center",
+    "date": "August 2014 - May 2020",
+    "info": [
+      "Directed new Korean soldiers, who joined the army for the first time to adjust in Korean army",
+      "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
+    ]
+  }
+]

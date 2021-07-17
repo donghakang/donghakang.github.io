@@ -1,21 +1,35 @@
-import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Footer from "./components/Footer";
-import Home from "./components/Home";
-import About from "./components/About";
-import Project from "./components/Project";
+import Home from "./components/home";
+import About from "./components/about";
+import Project from "./components/project";
 
+import styled, { ThemeProvider } from "styled-components";
+import { light, dark } from "./theme/theme.js";
+import { useSelector, useDispatch } from "react-redux";
+
+const ThemeWrapper = styled.div`
+  background-color: ${(props) => props.theme.background.primary};
+  color: ${(props) => props.theme.text.primary};
+  & a {
+    color: ${(props) => props.theme.text.primary};
+  }
+`;
 function App() {
+  const { theme } = useSelector((state) => state.theme);
+
   return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/project" component={Project} />
-      </Switch>
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme ? light : dark}>
+      <ThemeWrapper>
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/project" component={Project} />
+          </Switch>
+        </Router>
+      </ThemeWrapper>
+    </ThemeProvider>
   );
 }
 
