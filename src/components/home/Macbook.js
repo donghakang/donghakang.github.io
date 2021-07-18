@@ -28,7 +28,7 @@ function Model(props, ref) {
       onPointerOver={() => setActive(false)}
       onPointerOut={() => setActive(true)}
     >
-      <a.meshPhongMaterial color="lightgreen" />
+      <a.meshPhongMaterial color={props.color} />
     </a.mesh>
   );
 }

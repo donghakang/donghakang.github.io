@@ -1,9 +1,11 @@
 import React, { useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
+
 import { OrbitControls, Stats, softShadows } from "@react-three/drei";
 import Headphone from "./Headphone";
 import Macbook from "./Macbook";
 import Keyboard from "./Keyboard";
+import { useSelector } from "react-redux";
 
 softShadows();
 
@@ -17,6 +19,7 @@ function GroundPlane() {
 }
 
 export default function Scene() {
+  const { theme } = useSelector((state) => state.theme);
   const lightRef1 = useRef();
   const lightRef2 = useRef();
   const headphoneBloomRef = useRef();
@@ -39,9 +42,24 @@ export default function Scene() {
       }}
     >
       <Suspense fallback={null}>
-        <Headphone ref={headphoneBloomRef} position={[2, 0, 0]} castShadow />
-        <Keyboard ref={keyboardBloomRef} position={[-3, 0, 1]} castShadow />
-        <Macbook ref={macbookBloomRef} position={[-3, 0, -2]} castShadow />
+        <Headphone
+          ref={headphoneBloomRef}
+          position={[2, 0, 0]}
+          castShadow
+          color={theme ? "green" : "orange"}
+        />
+        <Keyboard
+          ref={keyboardBloomRef}
+          position={[-3, 0, 1]}
+          color={theme ? "green" : "orange"}
+          castShadow
+        />
+        <Macbook
+          ref={macbookBloomRef}
+          position={[-3, 0, -2]}
+          color={theme ? "green" : "orange"}
+          castShadow
+        />
         <GroundPlane />
 
         <group>

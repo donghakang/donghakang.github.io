@@ -32,7 +32,7 @@ function Model(props, ref) {
         setRotationAngle(Math.random() * Math.PI * 4 - 2 * Math.PI);
       }}
     >
-      <a.meshStandardMaterial color="red" />
+      <a.meshStandardMaterial color={props.color} />
     </a.mesh>
   );
 }

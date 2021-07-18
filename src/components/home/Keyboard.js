@@ -18,7 +18,7 @@ function Model(props, ref) {
       material={materials["Material.002"]}
       scale={0.18}
     >
-      <meshPhongMaterial color="darkgreen" />
+      <meshPhongMaterial color={props.color} />
     </mesh>
   );
 }
