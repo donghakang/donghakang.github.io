@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { FaInstagram, FaGithub, FaFacebook } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { useSpring, animated } from "react-spring";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const IntroductionAnimation = () => {
   return (
@@ -72,10 +74,21 @@ const ContactButton = () => {
 };
 
 export default function Introduction() {
+  const { t, i18n } = useTranslation();
+  const { language } = useSelector((state) => state.language);
+
+  useEffect(() => {
+    console.log("hello");
+    function handleChangeLanguage() {
+      i18n.changeLanguage(language ? "en" : "ko");
+    }
+
+    handleChangeLanguage();
+  }, [language]);
   return (
     <div className="introduction">
       <div className="introduction-title">
-        <h1>Hello World!</h1>
+        <h1>{t("Title.main")}</h1>
       </div>
       <div className="intro-content">
         <div className="intro-wrapper">

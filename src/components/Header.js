@@ -5,6 +5,7 @@ import styled from "styled-components";
 import "../App.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { changeMode } from "../redux/theme";
+import { changeLanguage } from "../redux/language";
 
 const Nav = styled.nav`
   display: flex;
@@ -14,14 +15,10 @@ const Nav = styled.nav`
   height: 60px;
 `;
 
-const SwitchButton = () => {
-  const { theme } = useSelector((state) => state.theme);
-  const dispatch = useDispatch();
-
+const SwitchButton = (props) => {
   return (
     <Switch
-      checked={theme}
-      onChange={() => dispatch(changeMode())}
+      {...props}
       name="checkedA"
       inputProps={{ "aria-label": "secondary checkbox" }}
     />
@@ -29,6 +26,10 @@ const SwitchButton = () => {
 };
 
 export default function Header() {
+  const { theme } = useSelector((state) => state.theme);
+  const { language } = useSelector((state) => state.language);
+  const dispatch = useDispatch();
+
   return (
     <Nav className="nav-bar">
       <div className="brand">
@@ -38,7 +39,16 @@ export default function Header() {
       </div>
       <ul>
         <li className="menu">
-          <SwitchButton />
+          <SwitchButton
+            checked={language}
+            onChange={() => dispatch(changeLanguage())}
+          />
+        </li>
+        <li className="menu">
+          <SwitchButton
+            checked={theme}
+            onChange={() => dispatch(changeMode())}
+          />
         </li>
         <li className="menu">
           <Link to="/about" className="nav-link">
