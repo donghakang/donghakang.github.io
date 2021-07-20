@@ -6,13 +6,14 @@ import { useSpring, animated } from "react-spring";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-const IntroductionAnimation = () => {
+const IntroductionAnimation = (props) => {
+  const { t, i18n } = props;
   return (
     <div style={{ marginLeft: "4px" }} className="animated-text">
-      <div className="animated-text-desc">👨🏻‍💻 Fullstack developer</div>
-      <div className="animated-text-desc">🧑🏻‍🎨 Web designer</div>
-      <div className="animated-text-desc">👨🏻‍🔬 Computer Scientist</div>
-      <div className="animated-text-desc">👨🏻‍💻 Fullstack developer</div>
+      <div className="animated-text-desc">👨🏻‍💻 {t("home:status.1")}</div>
+      <div className="animated-text-desc">🧑🏻‍🎨 {t("home:status.2")}</div>
+      <div className="animated-text-desc">👨🏻‍🔬 {t("home:status.3")}</div>
+      <div className="animated-text-desc">👨🏻‍💻 {t("home:status.1")}</div>
     </div>
   );
 };
@@ -74,7 +75,7 @@ const ContactButton = () => {
 };
 
 export default function Introduction() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["home"]);
   const { language } = useSelector((state) => state.language);
 
   useEffect(() => {
@@ -88,15 +89,15 @@ export default function Introduction() {
   return (
     <div className="introduction">
       <div className="introduction-title">
-        <h1>{t("Title.main")}</h1>
+        <h1>{t("home:main")}</h1>
       </div>
       <div className="intro-content">
         <div className="intro-wrapper">
-          I am <IntroductionAnimation />
+          {t("home:submain1")}
+          <IntroductionAnimation t={t} i18n={i18n} />
+          {t("home:submain2")}
         </div>
-        <div className="intro-hide">
-          Who wants to become a developer, not a programmer
-        </div>
+        <div className="intro-hide">{t("home:description")}</div>
       </div>
       <br />
       <ContactButton />

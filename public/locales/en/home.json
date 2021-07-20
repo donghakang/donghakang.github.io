@@ -1,0 +1,11 @@
+{
+  "main": "Hello World",
+  "submain1": "I am",
+  "submain2": "",
+  "status": {
+    "1": "Fullstack Developer",
+    "2": "Web Designer",
+    "3": "Computer Scientist"
+  },
+  "description": "Who wants to become a developer, not a programmer"
+}

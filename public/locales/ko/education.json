@@ -1,0 +1,20 @@
+[
+  {
+    "id": "id_2",
+    "title": "고용노동부 국비지원",
+    "date": "2020년 9월 - 2021년 2월",
+    "info": ["학습 언어: Java, JSP, Android"]
+  },
+  {
+    "id": "id_1",
+    "title": "미네소타 대학교 - Twin Cities",
+    "date": "2014년 8월 - 2020년 5월",
+    "info": ["학사, 컴퓨터 공학과", "GPA: 3.45/4.0"]
+  },
+  {
+    "id": "id_0",
+    "title": "Cuyahoga Valley Christian Academy",
+    "date": "2011년 1월 - 2014년 5월",
+    "info": []
+  }
+]

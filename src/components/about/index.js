@@ -1,50 +1,26 @@
-import React, { useState, useEffect } from "react";
-
+import React, { Suspense, useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import Header from "../Header";
 import { Education, Work, Skill } from "./Info";
 
 import "../../App.scss";
 
-const useFetch = (dir) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [info, setInfo] = useState([]);
-  useEffect(() => {
-    const fetchEducation = () => {
-      fetch("/data/education.json")
-        .then((res) => {
-          return res.json();
-        })
-        .then((json) => {
-          setInfo(json);
-        })
-        .then(setIsLoading(false))
-        .catch((err) => {
-          console.error("cannot fetch data: " + err);
-        });
-    };
-
-    fetchEducation();
-  }, []);
-
-  return isLoading;
-};
-
 export default function About() {
-  const isLoading = useFetch("/data/education.json");
+  const { language } = useSelector((state) => state.language);
+
   return (
     <>
-      {isLoading ? (
-        <div> is loading ... </div>
-      ) : (
-        <>
-          <Header />
-          <div className="about">
-            <Education />
-            <Work />
-            <Skill />
-          </div>
-        </>
-      )}
+      <Header />
+      <div className="about">
+        <Suspense fallback={<div>listening..</div>}>
+          <Education language={language ? "en" : "ko"} />
+          <Work language={language ? "en" : "ko"} />
+          <Skill />
+        </Suspense>
+      </div>
+      <br />
+      <br />
+      <br />
     </>
   );
 }

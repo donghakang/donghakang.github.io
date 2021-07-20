@@ -1,0 +1,85 @@
+[
+  {
+    "id": "project_1",
+    "title": "Pulmorad",
+    "date": "February 2021 - Current",
+    "info": ["Pulmorad"],
+    "img": "img/pulmorad.png"
+  },
+  {
+    "id": "project_2",
+    "title": "OatJang",
+    "date": "August 2014 - May 2020",
+    "info": [
+      "Directed new Korean soldiers, who joined the army for the first time to adjust in Korean army",
+      "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
+    ],
+    "importance": "2",
+    "img": "img/oatjang.png"
+  },
+  {
+    "id": "project_3",
+    "title": "Merona Todolist",
+    "date": "August 2014 - May 2020",
+    "info": [
+      "Directed new Korean soldiers, who joined the army for the first time to adjust in Korean army",
+      "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
+    ],
+    "importance": "2",
+    "img": "img/merona.png"
+  },
+  {
+    "id": "project_4",
+    "title": "Animation",
+    "date": "August 2014 - May 2020",
+    "info": [
+      "Directed new Korean soldiers, who joined the army for the first time to adjust in Korean army",
+      "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
+    ],
+    "importance": "3",
+    "img": "img/animation.png"
+  },
+  {
+    "id": "project_5",
+    "title": "ITKSNAP",
+    "date": "August 2014 - May 2020",
+    "info": [
+      "Directed new Korean soldiers, who joined the army for the first time to adjust in Korean army",
+      "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
+    ],
+    "importance": "1",
+    "img": "merona.png"
+  },
+  {
+    "id": "project_6",
+    "title": "Football POV",
+    "date": "August 2014 - May 2020",
+    "info": [
+      "Directed new Korean soldiers, who joined the army for the first time to adjust in Korean army",
+      "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
+    ],
+    "importance": "2",
+    "img": "img/football.png"
+  },
+  {
+    "id": "project_7",
+    "title": "VR Paint",
+    "date": "August 2014 - May 2020",
+    "info": [
+      "Directed new Korean soldiers, who joined the army for the first time to adjust in Korean army",
+      "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
+    ],
+    "img": "img/vrpaint.png"
+  },
+  {
+    "id": "project_8",
+    "title": "Bezier Curve Generator",
+    "date": "August 2014 - May 2020",
+    "info": [
+      "Directed new Korean soldiers, who joined the army for the first time to adjust in Korean army",
+      "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
+    ],
+    "importance": "1",
+    "img": "img/bezier.png"
+  }
+]

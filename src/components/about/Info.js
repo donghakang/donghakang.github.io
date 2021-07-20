@@ -15,7 +15,7 @@ const Info = (props) => {
     };
 
     fetchData();
-  }, []);
+  }, [props]);
   return (
     <>
       {!isLoading ? (
@@ -63,14 +63,16 @@ const InfoComponent = (props) => {
   return <>{info}</>;
 };
 
-export function Education() {
-  return <Info name="Education" emoji="👨🏻‍🎓" data="/data/education.json" />;
+export function Education(props) {
+  const data = `/locales/${props.language}/education.json`;
+  return <Info name="Education" emoji="👨🏻‍🎓" data={data} />;
 }
 
-export function Work() {
-  return <Info name="Work" emoji="👷🏻‍♂️" data="/data/work.json" />;
+export function Work(props) {
+  const data = `/locales/${props.language}/work.json`;
+  return <Info name="Work" emoji="👷🏻‍♂️" data={data} />;
 }
 
 export function Skill() {
-  return <VisualInfo name="Skill" emoji="👨🏻‍💻" data="/data/skill.json" />;
+  return <VisualInfo name="Skill" emoji="👨🏻‍💻" />;
 }

@@ -46,18 +46,18 @@ export default function Scene() {
           ref={headphoneBloomRef}
           position={[2, 0, 0]}
           castShadow
-          color={theme ? "green" : "orange"}
+          color={theme ? "#388e3c" : "#ff8f00"}
         />
         <Keyboard
           ref={keyboardBloomRef}
           position={[-3, 0, 1]}
-          color={theme ? "green" : "orange"}
+          color={theme ? "#2e7d32" : "#ff6f00"}
           castShadow
         />
         <Macbook
           ref={macbookBloomRef}
           position={[-3, 0, -2]}
-          color={theme ? "green" : "orange"}
+          color={theme ? "#43a047" : "#ffa000"}
           castShadow
         />
         <GroundPlane />

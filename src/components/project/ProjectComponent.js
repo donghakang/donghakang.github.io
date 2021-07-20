@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const ProjectContent = (props) => {
   const { item } = props;
@@ -8,16 +9,12 @@ const ProjectContent = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const hoverTitle = () => {
-    console.log("hoverTitle function", item.img);
-  };
-
   return (
     <>
       <div
         className="col-md-4 padding-0 w-100 project-content"
         onClick={handleShow}
-        onPointerOver={hoverTitle}
+        // onPointerOver={hoverTitle}
       >
         <div
           className="w-100 h-100 project-content-img"
@@ -38,15 +35,7 @@ const ProjectContent = (props) => {
         <Modal.Header closeButton>
           <Modal.Title>{item.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          Woohoo, you're reading this text in a modal!Woohoo, you're reading
-          this text in a modal!Woohoo, you're reading this text in a
-          modal!Woohoo, you're reading this text in a modal!Woohoo, you're
-          reading this text in a modal!Woohoo, you're reading this text in a
-          modal!Woohoo, you're reading this text in a modal!Woohoo, you're
-          reading this text in a modal!Woohoo, you're reading this text in a
-          modal!
-        </Modal.Body>
+        <Modal.Body>{item.info}</Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>
             Link
@@ -58,20 +47,23 @@ const ProjectContent = (props) => {
 };
 
 export default function ProjectComponent() {
+  const { language } = useSelector((state) => state.language);
+
   const [project, setProject] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = () => {
-      fetch("/data/project.json")
+    const data = `/locales/${language ? "en" : "ko"}/project.json`;
+    const fetchData = (dir) => {
+      fetch(dir)
         .then((res) => res.json())
         .then((res) => setProject(res))
         .then(setIsLoading(false))
         .catch((err) => console.log("cannot fetch a data: ", err));
     };
 
-    fetchData();
-  }, []);
+    fetchData(data);
+  }, [language]);
 
   return (
     <div className="container-fluid mx-0 px-0 project-container">
@@ -80,7 +72,12 @@ export default function ProjectComponent() {
           <ProjectContent key={item.id} item={item} />
         ))}
         <div className="col-md-4 project-content" style={{ height: "33vh" }}>
-          <h1 className="project-content-last">More coming soon..</h1>
+          <h1
+            className="project-content-last project-row"
+            style={{ color: "darkgray" }}
+          >
+            More coming soon..
+          </h1>
         </div>
       </div>
     </div>
