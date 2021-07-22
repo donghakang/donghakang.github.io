@@ -3,8 +3,9 @@
     "id": "project_1",
     "title": "Pulmorad",
     "date": "February 2021 - Current",
-    "info": ["폴모레드"],
-    "img": "img/pulmorad.png"
+    "language": "React",
+    "img": "img/pulmorad.png",
+    "source-code": "https://github.com/donghakang/Pulmorad"
   },
   {
     "id": "project_2",

@@ -1,20 +1,17 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import { ThemeProvider } from "styled-components";
+import { light, dark } from "./theme/theme.js";
+import { useSelector } from "react-redux";
+
+// Components
 import Home from "./components/home";
 import About from "./components/about";
 import Project from "./components/project";
 
-import styled, { ThemeProvider } from "styled-components";
-import { light, dark } from "./theme/theme.js";
-import { useSelector, useDispatch } from "react-redux";
+// Style
+import { ThemeWrapper } from "./theme/App.css.js";
 
-const ThemeWrapper = styled.div`
-  background-color: ${(props) => props.theme.background.primary};
-  color: ${(props) => props.theme.text.primary};
-  & a {
-    color: ${(props) => props.theme.text.primary};
-  }
-`;
 function App() {
   const { theme } = useSelector((state) => state.theme);
 
