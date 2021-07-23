@@ -6,9 +6,10 @@ import React, { useState, forwardRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useSpring } from "@react-spring/core";
 import { a } from "@react-spring/three";
+import { MetalMaterial } from "./MetalMaterial";
 
 function Model(props, ref) {
-  const { nodes, materials } = useGLTF("/macbook.gltf");
+  const { nodes } = useGLTF("/macbook.gltf");
   const [active, setActive] = useState(false);
 
   const { rotateY } = useSpring({
@@ -28,7 +29,7 @@ function Model(props, ref) {
       onPointerOver={() => setActive(false)}
       onPointerOut={() => setActive(true)}
     >
-      <a.meshPhongMaterial color={props.color} />
+      <MetalMaterial />
     </a.mesh>
   );
 }

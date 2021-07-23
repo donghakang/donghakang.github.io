@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import Switch from "@material-ui/core/Switch";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "../App.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { changeMode } from "../redux/theme";
 import { changeLanguage } from "../redux/language";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const Nav = styled.nav`
   display: flex;
@@ -15,13 +15,29 @@ const Nav = styled.nav`
   height: 60px;
 `;
 
+// const SwitchButton = (props) => {
+//   return (
+//     <Switch
+//       {...props}
+//       name="checkedA"
+//       inputProps={{ "aria-label": "secondary checkbox" }}
+//     />
+//   );
+// };
+
 const SwitchButton = (props) => {
+  const style = {
+    border: "none",
+    background: "none",
+    color: "inherit",
+    fontSize: "20px",
+  };
+  const { theme, on, off, onClick } = props;
+
   return (
-    <Switch
-      {...props}
-      name="checkedA"
-      inputProps={{ "aria-label": "secondary checkbox" }}
-    />
+    <button onClick={onClick} style={style}>
+      {theme ? on : off}
+    </button>
   );
 };
 
@@ -39,15 +55,23 @@ export default function Header() {
       </div>
       <ul>
         <li className="menu">
-          <SwitchButton
+          {/* <SwitchButton
             checked={language}
             onChange={() => dispatch(changeLanguage())}
+          /> */}
+          <SwitchButton
+            theme={language}
+            on={<span>Ko</span>}
+            off={<span>En</span>}
+            onClick={() => dispatch(changeLanguage())}
           />
         </li>
         <li className="menu">
           <SwitchButton
-            checked={theme}
-            onChange={() => dispatch(changeMode())}
+            theme={theme}
+            on={<FaMoon />}
+            off={<FaSun />}
+            onClick={() => dispatch(changeMode())}
           />
         </li>
         <li className="menu">

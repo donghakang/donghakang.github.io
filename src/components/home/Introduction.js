@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 const IntroductionAnimation = (props) => {
-  const { t, i18n } = props;
+  const { t } = props;
   return (
     <div style={{ marginLeft: "4px" }} className="animated-text">
       <div className="animated-text-desc">👨🏻‍💻 {t("home:status.1")}</div>
@@ -104,3 +104,5 @@ export default function Introduction() {
     </div>
   );
 }
+
+export { ContactButton };

@@ -80,7 +80,16 @@ const ProjectContent = (props) => {
           <ProjectModal item={item} />
         </ModalBody>
         <ModalFooter>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose}>
+            {t("home:project.cancel_button")}
+          </Button>
+          <Button
+            variant="primary"
+            onClick={(event) => {
+              event.preventDefault();
+              window.location.href = item.link;
+            }}
+          >
             {t("home:project.link_button")}
           </Button>
         </ModalFooter>

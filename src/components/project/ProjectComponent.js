@@ -10,7 +10,7 @@ export default function ProjectComponent() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const data = `/locales/${language ? "en" : "ko"}/project.json`;
+    const data = "data/project.json";
     const fetchData = (dir) => {
       fetch(dir)
         .then((res) => res.json())

@@ -1,7 +1,7 @@
 import React, { useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import { OrbitControls, Stats, softShadows } from "@react-three/drei";
+import { softShadows } from "@react-three/drei";
 import Headphone from "./Headphone";
 import Macbook from "./Macbook";
 import Keyboard from "./Keyboard";
@@ -33,7 +33,7 @@ export default function Scene() {
     <Canvas
       shadows
       orthographic
-      style={{ width: "50%", height: "100%" }}
+      style={{ width: "100%", height: "100%" }}
       camera={{
         near: -100,
         far: 100,
@@ -80,7 +80,7 @@ export default function Scene() {
         </group>
       </Suspense>
 
-      <OrbitControls />
+      {/* <OrbitControls /> */}
     </Canvas>
   );
 }
