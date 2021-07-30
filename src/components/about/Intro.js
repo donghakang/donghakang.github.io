@@ -5,8 +5,6 @@ import { Controller, Scene } from "react-scrollmagic";
 import { Timeline, Tween } from "react-gsap";
 import { FaInstagram, FaGithub, FaFacebook } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
-import { Canvas } from "@react-three/fiber";
-import Contact from "./Contact";
 
 import Skill from "./Skill";
 
@@ -48,6 +46,12 @@ function Ability() {
   );
 }
 
+// function ContactView() {
+//   return (
+
+//   );
+// }
+
 function ScrollView() {
   return (
     <Suspense fallback={null}>
@@ -66,81 +70,58 @@ function ScrollView() {
                 <Tween from={{ scale: "0" }} to={{ scale: "1" }}>
                   <section
                     style={{
+                      display: "flex",
                       backgroundColor: "blue",
                       justifyContent: "center",
+                      alignItems: "center",
                     }}
                   >
-                    <h1>Contact me</h1>
-                    <div style={{ display: "flex", justifyContent: "center" }}>
-                      <a
-                        href="https://github.com/donghakang"
-                        style={{ display: "flex", margin: "auto 16px" }}
+                    <img src="ear.png" alt="ear" />
+                    <div>
+                      <h1 style={{ backgroundColor: "pink", fontSize: "8vw" }}>
+                        Contact me
+                      </h1>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
                       >
-                        <h4>
-                          <FaGithub />
-                        </h4>
-                      </a>
-                      <a
-                        href="https://facebook.com/dkang0602"
-                        style={{ display: "flex", margin: "auto 16px" }}
-                      >
-                        <h4>
-                          <FaFacebook />
-                        </h4>
-                      </a>
-                      <a
-                        href="https://instagram.com/donghakang"
-                        style={{ display: "flex", margin: "auto 16px" }}
-                      >
-                        <h4>
-                          <FaInstagram />
-                        </h4>
-                      </a>
-                      <a
-                        href="mailto:dkang0602@gmail.com"
-                        style={{ display: "flex", margin: "auto 16px" }}
-                      >
-                        <h4>
-                          <FiMail />
-                        </h4>
-                      </a>
+                        <a
+                          href="https://github.com/donghakang"
+                          style={{ display: "flex", margin: "auto 16px" }}
+                        >
+                          <h4>
+                            <FaGithub />
+                          </h4>
+                        </a>
+                        <a
+                          href="https://facebook.com/dkang0602"
+                          style={{ display: "flex", margin: "auto 16px" }}
+                        >
+                          <h4>
+                            <FaFacebook />
+                          </h4>
+                        </a>
+                        <a
+                          href="https://instagram.com/donghakang"
+                          style={{ display: "flex", margin: "auto 16px" }}
+                        >
+                          <h4>
+                            <FaInstagram />
+                          </h4>
+                        </a>
+                        <a
+                          href="mailto:dkang0602@gmail.com"
+                          style={{ display: "flex", margin: "auto 16px" }}
+                        >
+                          <h4>
+                            <FiMail />
+                          </h4>
+                        </a>
+                      </div>
                     </div>
                   </section>
-                </Tween>
-                <Tween from={{ opacity: 0 }} to={{ opacity: "1" }}>
-                  <Canvas
-                    shadows
-                    orthographic
-                    camera={{
-                      near: -100,
-                      far: 100,
-                      zoom: 10,
-                      position: [1, 1, 1],
-                    }}
-                    style={{ height: "100vh" }}
-                  >
-                    <Suspense fallback={null}>
-                      <Contact />
-
-                      <group>
-                        <ambientLight intensity={0.4} />
-                        <directionalLight
-                          castShadow
-                          position={[2.5, 8, 5]}
-                          intensity={1.5}
-                          shadow-mapSize-width={1024}
-                          shadow-mapSize-height={1024}
-                          shadow-camera-far={50}
-                          shadow-camera-left={-10}
-                          shadow-camera-right={10}
-                          shadow-camera-top={10}
-                          shadow-camera-bottom={-10}
-                        />
-                      </group>
-                    </Suspense>
-
-                    {/* <OrbitControls /> */}
-                  </Canvas>
                 </Tween>
               </Timeline>
             </section>
@@ -199,39 +180,6 @@ function Intro() {
           </Col>
         </Row>
       </Container>
-      <Canvas
-        shadows
-        orthographic
-        camera={{
-          near: -100,
-          far: 100,
-          zoom: 10,
-          position: [1, 1, 1],
-        }}
-        style={{ height: "100vh" }}
-      >
-        <Suspense fallback={null}>
-          <Contact />
-
-          <group>
-            <ambientLight intensity={0.4} />
-            <directionalLight
-              castShadow
-              position={[2.5, 8, 5]}
-              intensity={1.5}
-              shadow-mapSize-width={1024}
-              shadow-mapSize-height={1024}
-              shadow-camera-far={50}
-              shadow-camera-left={-10}
-              shadow-camera-right={10}
-              shadow-camera-top={10}
-              shadow-camera-bottom={-10}
-            />
-          </group>
-        </Suspense>
-
-        {/* <OrbitControls /> */}
-      </Canvas>
     </>
   );
 }

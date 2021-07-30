@@ -350,3 +350,23 @@
 //     transform: translate(-100%, 0);
 //   }
 // }
+
+.globe {
+  height: 700px;
+  width: 700px;
+  border: 1px solid #333333;
+  border-radius: 50%;
+  overflow: hidden;
+  svg {
+    animation: rotation 5s linear 0s infinite;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: translateX(0);
+  }
+  from {
+    transform: translateX(-50%);
+  }
+}

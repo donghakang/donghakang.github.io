@@ -40,9 +40,18 @@
             "primitives" : [
                 {
                     "attributes" : {
-                        "POSITION" : 0
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3,
+                        "TEXCOORD_2" : 4,
+                        "TEXCOORD_3" : 5,
+                        "TEXCOORD_4" : 6,
+                        "TEXCOORD_5" : 7,
+                        "TEXCOORD_6" : 8,
+                        "TEXCOORD_7" : 9
                     },
-                    "indices" : 1
+                    "indices" : 10
                 }
             ]
         }
@@ -51,7 +60,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 747243,
+            "count" : 782842,
             "max" : [
                 9.522758483886719,
                 20.07455062866211,
@@ -66,6 +75,60 @@
         },
         {
             "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 782842,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 782842,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 782842,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 782842,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 782842,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 782842,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 782842,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 782842,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 782842,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 10,
             "componentType" : 5125,
             "count" : 3470916,
             "type" : "SCALAR"
@@ -74,18 +137,63 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 8966916,
+            "byteLength" : 9394104,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
+            "byteLength" : 9394104,
+            "byteOffset" : 9394104
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6262736,
+            "byteOffset" : 18788208
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6262736,
+            "byteOffset" : 25050944
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6262736,
+            "byteOffset" : 31313680
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6262736,
+            "byteOffset" : 37576416
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6262736,
+            "byteOffset" : 43839152
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6262736,
+            "byteOffset" : 50101888
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6262736,
+            "byteOffset" : 56364624
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6262736,
+            "byteOffset" : 62627360
+        },
+        {
+            "buffer" : 0,
             "byteLength" : 13883664,
-            "byteOffset" : 8966916
+            "byteOffset" : 68890096
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 22850580,
+            "byteLength" : 82773760,
             "uri" : "contact.bin"
         }
     ]
