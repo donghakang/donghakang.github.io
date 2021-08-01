@@ -1,28 +1,25 @@
-// import React, { Suspense, useState, useEffect } from "react";
 import React from "react";
-import { useSelector } from "react-redux";
 import Header from "../Header";
-// import { Education, Work, Skill } from "./Info";
-
-import Intro from "./Intro";
 import "../../App.scss";
 
+import Intro from "./Intro";
+import Skill from "./Skill";
+import Work from "./Work";
 export default function About() {
-  // const { language } = useSelector((state) => state.language);
-
   return (
     <>
       <Header />
       <div className="about">
-        {/* <Suspense fallback={<div>listening..</div>}>
-          <Education language={language ? "en" : "ko"} />
-          <Work language={language ? "en" : "ko"} />
+        <section style={{ backgroundColor: "green" }}>
+          <Intro />
+        </section>
+        <section style={{ backgroundColor: "hotpink" }}>
+          <Work />
+        </section>
+        <section style={{ backgroundColor: "pink" }}>
           <Skill />
-        </Suspense> */}
-        {/* <Suspense fallback={<div>Loading..</div>}>
-          <Skill />
-        </Suspense> */}
-        <Intro />
+        </section>
+        <section style={{ backgroundColor: "blue" }}>Contact Me</section>
       </div>
     </>
   );

@@ -1,187 +1,145 @@
-import React, { Suspense, useState, useEffect, useRef } from "react";
-
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { Controller, Scene } from "react-scrollmagic";
-import { Timeline, Tween } from "react-gsap";
-import { FaInstagram, FaGithub, FaFacebook } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
 
-import Skill from "./Skill";
+import { useTranslation } from "react-i18next";
 
-function DonghaKang() {
+const IntroductionAnimation = (props) => {
+  const { t, i18n } = useTranslation(["home"]);
   return (
-    <div style={{ margin: "40px" }}>
-      <h1 style={{ fontSize: "120px" }}>Dongha Kang</h1>
-      <br />
-      <span>
-        강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.강동하입니다.
-      </span>
+    <div style={{ marginLeft: "4px" }} className="animated-text">
+      <div className="animated-text-desc">👨🏻‍💻 {t("home:status.1")}</div>
+      <div className="animated-text-desc">🧑🏻‍🎨 {t("home:status.2")}</div>
+      <div className="animated-text-desc">👨🏻‍🔬 {t("home:status.3")}</div>
+      <div className="animated-text-desc">👨🏻‍💻 {t("home:status.1")}</div>
     </div>
   );
-}
-
-function Exposure() {
-  return (
-    <div className="exposure">
-      <ul className="list1">
-        <li>Animation</li>
-        <li>Computer Vision</li>
-        <li>Algorithm</li>
-        <li>Data Structure</li>
-        <li>Web Development</li>
-        <li>Web Design</li>
-        <li>Algorithm</li>
-        <li>Data Structure</li>
-        <li>Web Development</li>
-      </ul>
-    </div>
-  );
-}
-
-function Ability() {
-  return (
-    <div style={{ backgroundColor: "blue" }}>
-      <Exposure />
-    </div>
-  );
-}
+};
 
 // function ContactView() {
 //   return (
 
 //   );
 // }
-
-function ScrollView() {
-  return (
-    <Suspense fallback={null}>
-      <Controller>
-        <Scene triggerHook="onLeave" indicators duration={1000} pin>
-          {(progress) => (
-            <section
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100vh",
-              }}
-            >
-              <Timeline totalProgress={progress} paused>
-                <Tween from={{ scale: "0" }} to={{ scale: "1" }}>
-                  <section
-                    style={{
-                      display: "flex",
-                      backgroundColor: "blue",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img src="ear.png" alt="ear" />
-                    <div>
-                      <h1 style={{ backgroundColor: "pink", fontSize: "8vw" }}>
-                        Contact me
-                      </h1>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <a
-                          href="https://github.com/donghakang"
-                          style={{ display: "flex", margin: "auto 16px" }}
-                        >
-                          <h4>
-                            <FaGithub />
-                          </h4>
-                        </a>
-                        <a
-                          href="https://facebook.com/dkang0602"
-                          style={{ display: "flex", margin: "auto 16px" }}
-                        >
-                          <h4>
-                            <FaFacebook />
-                          </h4>
-                        </a>
-                        <a
-                          href="https://instagram.com/donghakang"
-                          style={{ display: "flex", margin: "auto 16px" }}
-                        >
-                          <h4>
-                            <FaInstagram />
-                          </h4>
-                        </a>
-                        <a
-                          href="mailto:dkang0602@gmail.com"
-                          style={{ display: "flex", margin: "auto 16px" }}
-                        >
-                          <h4>
-                            <FiMail />
-                          </h4>
-                        </a>
-                      </div>
-                    </div>
-                  </section>
-                </Tween>
-              </Timeline>
-            </section>
-          )}
-        </Scene>
-      </Controller>
-      <section></section>
-    </Suspense>
-  );
-}
 function Intro() {
   return (
-    <>
-      <Container fluid={true}>
-        <Row>
-          <Col
-            md={8}
+    <Container>
+      <Row>
+        <Col
+          md={5}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "0",
+          }}
+        >
+          <img
+            src="IMG_1455.jpg"
+            alt="face"
             style={{
-              backgroundColor: "darkblue",
+              margin: "0",
+              width: "300px",
+              height: "300px",
+              borderRadius: "150px",
+              objectFit: "cover",
             }}
-          >
-            <DonghaKang />
-          </Col>
-          <Col
-            md={4}
-            style={{
-              padding: 0,
-              height: "560px",
-            }}
-          >
-            <Skill />
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            md={4}
-            style={{
-              height: "560px",
-              backgroundImage: "url(IMG_1455.JPG)",
-              backgroundRepeat: "no-repeat",
-              backgroundAttachment: "scroll",
-            }}
-          ></Col>
-          <Col md={8} style={{ backgroundColor: "red", padding: 0 }}>
-            <Ability />
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            style={{
-              padding: 0,
-              backgroundColor: "green",
-            }}
-          >
-            <ScrollView />
-          </Col>
-        </Row>
-      </Container>
-    </>
+          />
+        </Col>
+        <Col md={7}>
+          <h1 style={{ fontSize: "4vw" }}>I want to be crazy</h1>
+          <p style={{ fontSize: "14px" }}>
+            저는 강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다 저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다저는
+            강동하입니다, 개발자가 되고싶습니다저는 강동하입니다, 개발자가
+            되고싶습니다저는 강동하입니다, 개발자가 되고싶습니다
+          </p>
+        </Col>
+      </Row>
+    </Container>
   );
 }
+// function Intro() {
+//   return (
+
+//     <div
+//       style={{
+//         display: "flex",
+//         justifyContent: "center",
+//         backgroundColor: "purple",
+//       }}
+//     >
+//       {/* <IntroductionAnimation /> */}
+//       <img
+//         src="IMG_1455.jpg"
+//         alt="face"
+//         style={{
+//           width: "400px",
+//           height: "400px",
+//           borderRadius: "200px",
+//           objectFit: "cover",
+//         }}
+//       />
+//       <div
+//         style={{
+//           width: "50%",
+//           display: "flex",
+//           flexDirection: "column",
+//           justifyContent: "center",
+//           margin: "16px",
+//         }}
+//       >
+
+//       </div>
+//     </div>
+//   );
+// }
 
 export default Intro;

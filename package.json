@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.1.10",
     "babel-plugin-glsl": "^1.0.0",
     "bootstrap": "4.6.0",
+    "dotenv": "^10.0.0",
     "gsap": "^3.7.1",
     "i18next": "^20.3.3",
     "i18next-browser-languagedetector": "^6.1.2",

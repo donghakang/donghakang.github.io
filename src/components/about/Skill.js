@@ -1,84 +1,29 @@
-import React, { useEffect, Suspense, useRef } from "react";
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { Container, Row, Col } from "react-bootstrap";
+import LanguageScene from "./LanguageScene";
 
-const lang = [
-  "python",
-  "javascript",
-  "java",
-  "android",
-  "swift",
-  "React",
-  "Node.js",
-];
-
-// Camera Controller
-const CameraController = () => {
-  const { camera, gl } = useThree();
-  useEffect(() => {
-    const controls = new OrbitControls(camera, gl.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.25;
-
-    return () => {
-      controls.dispose();
-    };
-  }, [camera, gl]);
-  return null;
-};
-
-// Languages that are shown
-const Languages = () => {
-  const mesh = useRef();
-  useFrame((state) => (mesh.current.rotation.y += 0.002));
-
-  const handleClick = (lang) => {
-    // when language is clicked, pops out the information about the language
-    // console.log('clicked ', lang)
-    console.log(lang);
-  };
-
-  const textLanguages = lang.map((l) => (
-    <mesh
-      position={[
-        Math.floor(Math.random() * 40 - 20),
-        Math.floor(Math.random() * 20 - 10),
-        Math.floor(Math.random() * 20 - 10),
-      ]}
-      key={l}
-    >
-      <Html distanceFactor={30}>
-        <h1 onClick={() => handleClick(l)}>{l}</h1>
-      </Html>
-    </mesh>
-  ));
-
+function Skill() {
   return (
-    <mesh ref={mesh}>
-      <mesh position={[0, 0, 0]}>{textLanguages}</mesh>
-    </mesh>
-  );
-};
+    <Container>
+      <Row style={{ backgroundColor: "purple" }}>
+        <Col style={{ backgroundColor: "yellowgreen" }}>
+          <h2>Exposed to...</h2>
+          <ul>
+            <li>Algorithm / Data Structure</li>
+            <li>Computer Vision</li>
+            <li>Graphics & Gaming</li>
+            <li>Software Developing</li>
+            <li>App Developing</li>
+            <li>Web Developing</li>
+          </ul>
 
-const Skill = (props) => {
-  return (
-    <Canvas
-      camera={{ position: [0, 0, -20], fov: 90 }}
-      style={{
-        margin: "0",
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      <CameraController />
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Suspense fallback={null}>
-        <Languages />
-      </Suspense>
-    </Canvas>
+          <h2></h2>
+        </Col>
+        <Col style={{ backgroundColor: "cyan" }}>
+          <LanguageScene />
+        </Col>
+      </Row>
+    </Container>
   );
-};
+}
 
 export default Skill;

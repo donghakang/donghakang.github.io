@@ -133,52 +133,6 @@
   }
 }
 
-// About ------------------------
-.about {
-  margin: auto;
-  // background-color: green;
-  .info {
-    // background-color: pink;
-    .title-row {
-      .title-col-emoji {
-        font-size: 28px;
-      }
-      .title-col-name {
-        font-size: 28px;
-        font-weight: bolder;
-      }
-    }
-
-    .task {
-      // background-color: mediumblue;
-      margin: 4px 16px;
-      .task-title {
-        // background: yellowgreen;
-        font-weight: bold;
-        font-size: 16px;
-      }
-      .task-date {
-        text-align: right;
-        // background: yellow;
-        font-style: italic;
-        color: #333333;
-        font-family: Times, Times New Roman, serif;
-      }
-      .task-info {
-        // background: bisque;
-        padding: 0;
-        margin: 0;
-        .task-info-ul {
-          list-style: none;
-          padding: 4px 16px;
-          // .task-info-li {
-          // }
-        }
-      }
-    }
-  }
-}
-
 // Project --------------------------------
 :root {
   --project-component-height: 40vh;
@@ -368,5 +322,40 @@
   }
   from {
     transform: translateX(-50%);
+  }
+}
+
+.animated-text {
+  height: 40px;
+  overflow: hidden;
+  .animated-text-desc {
+    height: 80px;
+    transform: translateY(40px);
+    // background-color: green;
+    animation: slide 10s ease-in-out infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateY(0px);
+    }
+    16% {
+      transform: translateY(-80px);
+    }
+    33% {
+      transform: translateY(-80px);
+    }
+    49% {
+      transform: translateY(-160px);
+    }
+    66% {
+      transform: translateY(-160px);
+    }
+    82% {
+      transform: translateY(-240px);
+    }
+    100% {
+      transform: translateY(-240px);
+    }
   }
 }
