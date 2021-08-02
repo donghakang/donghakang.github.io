@@ -4,13 +4,23 @@ import { Html } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const lang = [
-  "python",
-  "javascript",
-  "java",
-  "android",
-  "swift",
+  "Python",
+  "Javascript",
+  "Java",
+  "Android",
+  "Swift",
   "React",
   "Node.js",
+  "Unreal\ Engine",
+  "WebGL",
+  "Html",
+  "CSS",
+  "C#\ Unity",
+  "C++",
+  "Linux",
+  "Windows",
+  "MacOS",
+  "Processing",
 ];
 
 // Camera Controller
@@ -28,9 +38,32 @@ const CameraController = () => {
   return null;
 };
 
+function fibonacciSphere(samples) {
+  let points = [];
+
+  let phi = Math.PI * (3 - Math.sqrt(5));
+
+  for (let i = 0; i < samples; i++) {
+    let y = 1 - (i / (samples - 1)) * 2;
+    console.log(y);
+    let radius = Math.sqrt(1 - y * y);
+
+    let theta = phi * i;
+
+    let x = Math.cos(theta) * radius;
+    let z = Math.sin(theta) * radius;
+
+    points.push([x * 20, y * 20, z * 20]);
+  }
+  console.log(points);
+  return points;
+}
+
 // Languages that are shown
 const Languages = () => {
   const mesh = useRef();
+  const fib = fibonacciSphere(lang.length);
+
   useFrame((state) => (mesh.current.rotation.y += 0.002));
 
   const handleClick = (lang) => {
@@ -39,15 +72,8 @@ const Languages = () => {
     console.log(lang);
   };
 
-  const textLanguages = lang.map((l) => (
-    <mesh
-      position={[
-        Math.floor(Math.random() * 40 - 20),
-        Math.floor(Math.random() * 20 - 10),
-        Math.floor(Math.random() * 20 - 10),
-      ]}
-      key={l}
-    >
+  const textLanguages = lang.map((l, index) => (
+    <mesh position={[fib[index][0], fib[index][1], fib[index][2]]} key={l}>
       <Html distanceFactor={30}>
         <h1 onClick={() => handleClick(l)}>{l}</h1>
       </Html>
@@ -67,7 +93,7 @@ const LanguageScene = (props) => {
       camera={{ position: [0, 0, -20], fov: 90 }}
       style={{
         margin: "0",
-        width: "50vh",
+        width: "100%",
         height: "50vh",
         backgroundColor: "black",
       }}

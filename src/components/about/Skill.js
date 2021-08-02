@@ -1,28 +1,34 @@
 import { Container, Row, Col } from "react-bootstrap";
+import Contribution from "./Contribution";
 import LanguageScene from "./LanguageScene";
+import SkillInformation from "./SkillInformation";
 
 function Skill() {
   return (
-    <Container>
-      <Row style={{ backgroundColor: "purple" }}>
-        <Col style={{ backgroundColor: "yellowgreen" }}>
-          <h2>Exposed to...</h2>
-          <ul>
-            <li>Algorithm / Data Structure</li>
-            <li>Computer Vision</li>
-            <li>Graphics & Gaming</li>
-            <li>Software Developing</li>
-            <li>App Developing</li>
-            <li>Web Developing</li>
-          </ul>
-
-          <h2></h2>
-        </Col>
-        <Col style={{ backgroundColor: "cyan" }}>
-          <LanguageScene />
-        </Col>
-      </Row>
-    </Container>
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}>
+      <Container>
+        <Row style={{ backgroundColor: "purple" }}>
+          <Col lg={6} style={{ backgroundColor: "yellowgreen" }}>
+            <SkillInformation />
+          </Col>
+          <Col
+            lg={6}
+            style={{
+              padding: "0",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <LanguageScene />
+          </Col>
+        </Row>
+        <Row style={{ backgroundColor: "purple" }}>
+          <Col style={{ backgroundColor: "" }}>
+            <Contribution />
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 

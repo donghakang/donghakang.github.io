@@ -4,7 +4,7 @@ import "../../App.scss";
 
 import Intro from "./Intro";
 import Skill from "./Skill";
-import Work from "./Work";
+import Timeline from "./Timeline";
 export default function About() {
   return (
     <>
@@ -14,7 +14,7 @@ export default function About() {
           <Intro />
         </section>
         <section style={{ backgroundColor: "hotpink" }}>
-          <Work />
+          <Timeline />
         </section>
         <section style={{ backgroundColor: "pink" }}>
           <Skill />

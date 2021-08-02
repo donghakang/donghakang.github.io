@@ -4,7 +4,6 @@ const Api = () => {
   const [totalCount, setTotalCount] = useState(0);
   const [totalContributions, setTotalContributions] = useState([]);
   const API_KEY = process.env.REACT_APP_API_KEY;
-  console.log(API_KEY);
   const headers = {
     "Content-type": "application/json",
     Authorization: "token " + API_KEY,
@@ -36,6 +35,7 @@ const Api = () => {
         method: "POST",
         headers: headers,
         body: JSON.stringify(gql),
+        mode: "cors",
       })
         .then((response) => response.json()) //Converting the response to a JSON object
         .then(
