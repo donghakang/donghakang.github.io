@@ -5,6 +5,8 @@ import "../../App.scss";
 import Intro from "./Intro";
 import Skill from "./Skill";
 import Timeline from "./Timeline";
+import Contact from "./Contact";
+
 export default function About() {
   return (
     <>
@@ -19,7 +21,9 @@ export default function About() {
         <section style={{ backgroundColor: "pink" }}>
           <Skill />
         </section>
-        <section style={{ backgroundColor: "blue" }}>Contact Me</section>
+        <section style={{ backgroundColor: "blue" }}>
+          <Contact />
+        </section>
       </div>
     </>
   );

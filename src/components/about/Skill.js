@@ -23,7 +23,7 @@ function Skill() {
           </Col>
         </Row>
         <Row style={{ backgroundColor: "purple" }}>
-          <Col style={{ backgroundColor: "" }}>
+          <Col style={{ backgroundColor: "cyan" }}>
             <Contribution />
           </Col>
         </Row>

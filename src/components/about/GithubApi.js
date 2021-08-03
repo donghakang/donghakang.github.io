@@ -35,7 +35,6 @@ const Api = () => {
         method: "POST",
         headers: headers,
         body: JSON.stringify(gql),
-        mode: "cors",
       })
         .then((response) => response.json()) //Converting the response to a JSON object
         .then(

@@ -15,11 +15,11 @@ const IntroductionAnimation = (props) => {
 function SkillInformation() {
   return (
     <>
-      <h1 style={{display: 'flex', padding: '12px'}}>
+      <h1 style={{display: 'flex', padding: '12px', fontSize: '32px'}}>
         나는야 <IntroductionAnimation/>
       </h1>
       <div>
-        <h2 style={{fontFamily: 'Didot, serif', fontStyle: 'italic'}}>Familiar with...</h2>
+        <h2>Familiar with...</h2>
         <ul style={{ padding: "8px", columns: "2" }}>
           <li>Web/App Development</li>
           <li>Software Development</li>
@@ -27,7 +27,7 @@ function SkillInformation() {
         </ul>
       </div>
       <div>
-        <h2 style={{fontFamily: 'Didot, serif', fontStyle: 'italic'}}>Exposed to...</h2>
+        <h2>Exposed to...</h2>
         <ul style={{ padding: "8px", columns: "2" }}>
           <li>Practice of Database</li>
           <li>Algorithm / Data Structure</li>

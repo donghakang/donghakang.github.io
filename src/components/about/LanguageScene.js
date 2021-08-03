@@ -55,7 +55,6 @@ function fibonacciSphere(samples) {
 
     points.push([x * 20, y * 20, z * 20]);
   }
-  console.log(points);
   return points;
 }
 
