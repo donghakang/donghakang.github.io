@@ -1,18 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-import { useTranslation } from "react-i18next";
 
-
-
-// function ContactView() {
-//   return (
-
-//   );
-// }
-function Intro() {
+function Introduction() {
   return (
-    <Container>
+    <Container style={{height: '100vh'}}>
       <Row>
         <Col
           md={5}
@@ -98,4 +90,4 @@ function Intro() {
 }
 
 
-export default Intro;
+export default Introduction;

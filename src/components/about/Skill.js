@@ -1,14 +1,14 @@
 import { Container, Row, Col } from "react-bootstrap";
-import Contribution from "./Contribution";
-import LanguageScene from "./LanguageScene";
-import SkillInformation from "./SkillInformation";
+import Contribution from "./SkillComponent/Contribution";
+import LanguageScene from "./SkillComponent/LanguageScene";
+import SkillInformation from "./SkillComponent/SkillInformation";
 
 function Skill() {
   return (
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}>
       <Container>
-        <Row style={{ backgroundColor: "purple" }}>
-          <Col lg={6} style={{ backgroundColor: "yellowgreen" }}>
+        <Row>
+          <Col lg={6} style={{borderRadius: '12px', boxShadow: '0px 0px 4px 4px #444444'}}>
             <SkillInformation />
           </Col>
           <Col
@@ -22,8 +22,8 @@ function Skill() {
             <LanguageScene />
           </Col>
         </Row>
-        <Row style={{ backgroundColor: "purple" }}>
-          <Col style={{ backgroundColor: "cyan" }}>
+        <Row>
+          <Col>
             <Contribution />
           </Col>
         </Row>

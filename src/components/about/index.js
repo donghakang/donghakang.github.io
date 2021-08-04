@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Header";
 import "../../App.scss";
 
-import Intro from "./Intro";
+import Introduction from "./Introduction";
 import Skill from "./Skill";
 import Timeline from "./Timeline";
 import Contact from "./Contact";
@@ -12,16 +12,16 @@ export default function About() {
     <>
       <Header />
       <div className="about">
-        <section style={{ backgroundColor: "green" }}>
-          <Intro />
+        <section>
+          <Introduction />
         </section>
-        <section style={{ backgroundColor: "hotpink" }}>
+        <section>
           <Timeline />
         </section>
-        <section style={{ backgroundColor: "pink" }}>
+        <section>
           <Skill />
         </section>
-        <section style={{ backgroundColor: "blue" }}>
+        <section>
           <Contact />
         </section>
       </div>

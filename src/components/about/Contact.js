@@ -12,8 +12,14 @@ function Contact() {
         justifyContent: "center",
       }}
     >
-      <div style={{ display: "flex", backgroundColor: 'purple' }}>
-        <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', backgroundColor: 'pink'}}>
+      <div style={{ display: "flex" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
           <h1 style={{ fontSize: "80px" }}>Contact me</h1>
           <p>
             I am waiting for bigger developer community. I really want to work
@@ -26,13 +32,13 @@ function Contact() {
             style={{
               display: "flex",
               margin: "auto 16px",
-              backgroundColor: "red",
               width: "60px",
               height: "60px",
               borderRadius: "30px",
+              backgroundColor: "#111111",
               alignItems: "center",
               justifyContent: "center",
-              margin: '16px 32px',
+              margin: "16px 32px",
             }}
           >
             <h4>
@@ -44,13 +50,13 @@ function Contact() {
             style={{
               display: "flex",
               margin: "auto 16px",
-              backgroundColor: "red",
+              backgroundColor: "#111111",
               width: "60px",
               height: "60px",
               borderRadius: "30px",
               alignItems: "center",
               justifyContent: "center",
-              margin: '16px 32px',
+              margin: "16px 32px",
             }}
           >
             <h4>
@@ -62,13 +68,13 @@ function Contact() {
             style={{
               display: "flex",
               margin: "auto 16px",
-              backgroundColor: "red",
+              backgroundColor: "#111111",
               width: "60px",
               height: "60px",
               borderRadius: "30px",
               alignItems: "center",
               justifyContent: "center",
-              margin: '16px 32px',
+              margin: "16px 32px",
             }}
           >
             <h4>
@@ -80,12 +86,12 @@ function Contact() {
             style={{
               display: "flex",
               margin: "auto 16px",
-              backgroundColor: "red",
+              backgroundColor: "#111111",
               width: "60px",
               height: "60px",
               borderRadius: "30px",
               alignItems: "center",
-              margin: '16px 32px',
+              margin: "16px 32px",
               justifyContent: "center",
             }}
           >

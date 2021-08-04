@@ -49,7 +49,6 @@ const Contribution = () => {
   return (
     <div
       style={{
-        backgroundColor: "yellow",
         display: "flex",
         alignItems: "center",
         margin: "20px 0",

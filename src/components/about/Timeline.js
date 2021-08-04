@@ -1,4 +1,3 @@
-import { Container, Row, Col } from "react-bootstrap";
 import "./Work.css";
 
 function Work() {

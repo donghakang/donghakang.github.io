@@ -66,9 +66,7 @@ const Languages = () => {
   useFrame((state) => (mesh.current.rotation.y += 0.002));
 
   const handleClick = (lang) => {
-    // when language is clicked, pops out the information about the language
-    // console.log('clicked ', lang)
-    console.log(lang);
+  //   console.log(lang);
   };
 
   const textLanguages = lang.map((l, index) => (
@@ -94,7 +92,7 @@ const LanguageScene = (props) => {
         margin: "0",
         width: "100%",
         height: "50vh",
-        backgroundColor: "black",
+
       }}
     >
       <CameraController />

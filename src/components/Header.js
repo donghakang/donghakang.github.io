@@ -8,11 +8,14 @@ import { changeLanguage } from "../redux/language";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 const Nav = styled.nav`
+  position: sticky;
+  top: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin: 0 20px;
-  z-index: 100;
   height: 60px;
+  justify-content: space-between;
+  margin: 0;
+  z-index: 100;
 `;
 
 // const SwitchButton = (props) => {
