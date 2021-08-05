@@ -7,11 +7,14 @@ import Skill from "./Skill";
 import Timeline from "./Timeline";
 import Contact from "./Contact";
 
+import styled from 'styled-components';
+
+
 export default function About() {
   return (
     <>
       <Header />
-      <div className="about">
+      <div>
         <section>
           <Introduction />
         </section>

@@ -72,7 +72,7 @@ const Languages = () => {
   const textLanguages = lang.map((l, index) => (
     <mesh position={[fib[index][0], fib[index][1], fib[index][2]]} key={l}>
       <Html distanceFactor={30}>
-        <h1 onClick={() => handleClick(l)}>{l}</h1>
+        <h1 style={{color: index % 2 ? 'green' : 'lightgreen'}} onClick={() => handleClick(l)}>{l}</h1>
       </Html>
     </mesh>
   ));
@@ -87,12 +87,11 @@ const Languages = () => {
 const LanguageScene = (props) => {
   return (
     <Canvas
-      camera={{ position: [0, 0, -20], fov: 90 }}
+      camera={{ position: [0, 0, -40], fov: 90 }}
       style={{
         margin: "0",
         width: "100%",
-        height: "50vh",
-
+        height: "100%",
       }}
     >
       <CameraController />

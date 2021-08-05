@@ -1,6 +1,7 @@
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Api from "./GithubApi";
 
+
 const ContributionSVG = () => {
   const github = ["#eeeeee", "#9be9a8", "#40c463", "#30a14e", "#216e39"];
   const { totalCount, totalContributions } = Api();
@@ -54,7 +55,7 @@ const Contribution = () => {
         margin: "20px 0",
       }}
     >
-      <h1>I actually enjoy coding</h1>
+      <h1 style={{color: 'white', width: '300px'}}>I actually enjoy coding 🤑</h1>
       <ContributionSVG />
     </div>
   );
