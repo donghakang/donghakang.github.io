@@ -79,8 +79,6 @@ export default function Scene() {
           />
         </group>
       </Suspense>
-
-      {/* <OrbitControls /> */}
     </Canvas>
   );
 }

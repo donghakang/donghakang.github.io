@@ -4,13 +4,11 @@ import { FaInstagram, FaGithub, FaFacebook } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
 const ContactDiv = styled.div`
-  position: absolute;
-  top: 0;
   display: flex;
-  min-width: 100vw;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  background-color: lightgreen;
 
   .contact-content {
     display: flex;

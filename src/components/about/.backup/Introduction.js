@@ -3,13 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import styled from "styled-components";
 
 const IntroductionDiv = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-
   .introduction-container {
+    background-color: gray;
     min-height: 100vh;
     min-width: 100vw;
+
   }
 
   .introduction-column {
