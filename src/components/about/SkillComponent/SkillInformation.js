@@ -37,6 +37,10 @@ const IntroductionAnimationDiv = styled.div`
       transform: translateY(-300px);
     }
   }
+
+  
+
+
 `;
 
 const SkillInformationDiv = styled.div`
@@ -63,6 +67,13 @@ const SkillInformationDiv = styled.div`
   .skill-content ul li {
     font-size: 14px;
   }
+
+  @media only screen and (max-width: 768px) {
+    .skill-information-title {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
 
 const IntroductionAnimation = (props) => {
@@ -81,7 +92,7 @@ function SkillInformation(props) {
   return (
     <SkillInformationDiv>
       <h1 className="skill-information-title">
-        나는야 <IntroductionAnimation />
+        <span>나는야</span> <IntroductionAnimation />
       </h1>
       <div className="skill-content">
         <h2>Familiar with...</h2>

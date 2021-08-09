@@ -4,8 +4,6 @@ import { FaInstagram, FaGithub, FaFacebook } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
 const ContactDiv = styled.div`
-  position: absolute;
-  top: 0;
   display: flex;
   min-width: 100vw;
   min-height: 100vh;
@@ -37,6 +35,36 @@ const ContactDiv = styled.div`
     justify-content: center;
     margin: 16px 32px;
   }
+
+  @media only screen and (max-width: 768px) {
+
+    .contact-content {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .contact-description {
+      padding: 20px;
+    }
+
+    .contact-description h1{
+      font-size: 52px;
+    }
+
+    .contact-description p {
+      font-size: 14px;
+    }
+   
+    .contact-buttons {
+      margin: 32px 20px;
+      display: flex;
+      justify-content: space-between;
+
+    }
+    .contact-buttons a {
+      margin: 0;
+    }
+  }
 `;
 
 function Contact() {
@@ -50,7 +78,7 @@ function Contact() {
             together!
           </p>
         </div>
-        <div>
+        <div className="contact-buttons">
           <a href="https://github.com/donghakang" style={{}}>
             <h4>
               <FaGithub />

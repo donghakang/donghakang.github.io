@@ -1,7 +1,23 @@
 import React, { useEffect, Suspense, useRef } from "react";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
+import styled from 'styled-components'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
+
+const CanvasDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    height: 50vh;
+    margin: 0;
+    padding: 0;
+  }
+`
 
 const lang = [
   "Python",
@@ -23,20 +39,20 @@ const lang = [
   "Processing",
 ];
 
-// Camera Controller
-const CameraController = () => {
-  const { camera, gl } = useThree();
-  useEffect(() => {
-    const controls = new OrbitControls(camera, gl.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.25;
+// // Camera Controller
+// const CameraController = () => {
+//   const { camera, gl } = useThree();
+//   useEffect(() => {
+//     const controls = new OrbitControls(camera, gl.domElement);
+//     controls.enableDamping = true;
+//     controls.dampingFactor = 0.25;
 
-    return () => {
-      controls.dispose();
-    };
-  }, [camera, gl]);
-  return null;
-};
+//     return () => {
+//       controls.dispose();
+//     };
+//   }, [camera, gl]);
+//   return null;
+// };
 
 function fibonacciSphere(samples) {
   let points = [];
@@ -45,7 +61,6 @@ function fibonacciSphere(samples) {
 
   for (let i = 0; i < samples; i++) {
     let y = 1 - (i / (samples - 1)) * 2;
-    console.log(y);
     let radius = Math.sqrt(1 - y * y);
 
     let theta = phi * i;
@@ -53,7 +68,7 @@ function fibonacciSphere(samples) {
     let x = Math.cos(theta) * radius;
     let z = Math.sin(theta) * radius;
 
-    points.push([x * 20, y * 20, z * 20]);
+    points.push([x * 25, y * 25, z * 25]);
   }
   return points;
 }
@@ -86,6 +101,7 @@ const Languages = () => {
 
 const LanguageScene = (props) => {
   return (
+<CanvasDiv>
     <Canvas
       camera={{ position: [0, 0, -40], fov: 90 }}
       style={{
@@ -101,6 +117,7 @@ const LanguageScene = (props) => {
         <Languages />
       </Suspense>
     </Canvas>
+    </CanvasDiv>
   );
 };
 

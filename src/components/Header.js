@@ -8,7 +8,7 @@ import { changeLanguage } from "../redux/language";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 const Nav = styled.nav`
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   display: flex;

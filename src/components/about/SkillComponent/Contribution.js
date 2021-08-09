@@ -1,16 +1,27 @@
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Api from "./GithubApi";
+import styled from "styled-components";
 
+const ContributionDiv = styled.div`
+  display: flex;
+  alignItems: center;
+  margin: 40px 0;
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
 
 const ContributionSVG = () => {
   const github = ["#eeeeee", "#9be9a8", "#40c463", "#30a14e", "#216e39"];
   const { totalCount, totalContributions } = Api();
-  console.log(totalCount, totalContributions);
   return (
     <svg
       width={14 * 53}
       height={14 * 7}
       style={{ background: "white", margin: "auto" }}
+      className="contribution-svg"
     >
       {totalContributions.map((contribution, idx) =>
         contribution.map((contrib, index) => {
@@ -48,16 +59,12 @@ const ContributionSVG = () => {
 
 const Contribution = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        margin: "20px 0",
-      }}
-    >
-      <h1 style={{color: 'white', width: '300px'}}>I actually enjoy coding 🤑</h1>
-      <ContributionSVG />
-    </div>
+    <ContributionDiv>
+      <h1 style={{ color: "white", width: "300px" }}>
+        I actually enjoy coding
+      </h1>
+      {/* <ContributionSVG /> */}
+    </ContributionDiv>
   );
   // return <div>{!isLoading ? (<svg>{contribution}</svg>) : (<span> is .. loading ... </span>)}</div>;
 };

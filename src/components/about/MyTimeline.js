@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const TimelineDiv = styled.div`
+
   position: absolute;
 
-  // background-color: green;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -29,7 +29,8 @@ const TimelineDiv = styled.div`
   .timeline ul li {
     display: flex;
     align-items: center;
-    background-color: #1e1f22;
+    background-color: ${(props) => props.theme.background.primary};
+    box-shadow: 1px 1px 2px 2px lightgray;
     border-radius: 10px;
     padding: 20px;
   }
@@ -118,6 +119,36 @@ const TimelineDiv = styled.div`
       margin-top: 12px;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .timeline::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      margin-left: 50%;
+      width: 2px;
+      background-color: gray;
+    }
+    .timeline ul li {
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .timeline ul li .timeline-paragraph {
+      visibility: hidden;
+      height: 0vh;
+      opacity: 0;
+      transition: height 0.3s, opacity 0.5s;
+      margin: 0;
+    }
+
+    .timeline ul li:hover .timeline-paragraph {
+      visibility: visible;
+      height: 80px;
+      opacity: 1;
+      margin-top: 12px;
+    }
+  }
 `;
 
 function MyTimeline() {
@@ -131,6 +162,7 @@ function MyTimeline() {
               <div className="timeline-paragraph">
                 <p>
                   <strong>🚀 On my way to the United States!</strong>.
+                  <br />
                   <span>2011-01 ~ 2014-05</span>
                 </p>
               </div>
@@ -141,7 +173,8 @@ function MyTimeline() {
               <h3>University of Minnesota - Twin Cities</h3>
               <div className="timeline-paragraph">
                 <p>
-                  <h6>👨🏻‍💻 I think, I want to be a developer!</h6>.
+                  <strong>👨🏻‍💻 I think, I want to be a developer!</strong>.
+                  <br />
                   <span>2014-09 ~ 2020-05</span>
                 </p>
               </div>
@@ -151,7 +184,8 @@ function MyTimeline() {
             <div className="timeline-content">
               <h3>Web development academy</h3>
               <div className="timeline-paragraph">
-                <h6>🤡 But, I never learned Web before ;(</h6>
+                <strong>🤡 But, I never learned Web before ;(</strong>
+                <br />
                 <span>2020-09 ~ 2021-02</span>
               </div>
             </div>
@@ -161,7 +195,8 @@ function MyTimeline() {
               <h3>Seoul National University Hospital</h3>
               <div className="timeline-paragraph">
                 <p>
-                  <h6>🥸 Whoa, I am crazy about the Frontend</h6>
+                  <strong>🥸 Whoa, I am crazy about the Frontend</strong>
+                  <br />
                   <span>2021-02 ~ Current</span>
                 </p>
               </div>

@@ -14,7 +14,6 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
           backgroundSize: "100vw 100vh",
-          marginTop: "-60px",
           width: "100%",
           height: "100%",
           display: "flex",
