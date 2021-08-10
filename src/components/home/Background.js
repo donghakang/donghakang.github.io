@@ -8,11 +8,12 @@ const Background = () => {
       <HeatMap
         style={{
           position: "absolute",
-          top: "40vh",
-          left: "80vw",
+          top: "95%",
+          left: "95%",
           backgroundColor: "red",
           width: "200px",
-          height: "200px",
+          height: "100px",
+          transform: 'translate(-100%, -100%)'
         }}
       />
     </>
