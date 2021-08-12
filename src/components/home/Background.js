@@ -4,19 +4,21 @@ import HeatMap from "./HeatMap";
 
 const Background = () => {
   return (
-    <>
+    <div style={{ position: "absolute", top: "60%", left: "80%" }}>
+      <img
+        src="./img/frame-removebg-preview.png"
+        alt="qr"
+        width="100px"
+        height="100px"
+      />
       <HeatMap
         style={{
-          position: "absolute",
-          top: "95%",
-          left: "95%",
           backgroundColor: "red",
           width: "200px",
           height: "100px",
-          transform: 'translate(-100%, -100%)'
         }}
       />
-    </>
+    </div>
   );
 };
 

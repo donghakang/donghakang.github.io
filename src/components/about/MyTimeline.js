@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const TimelineDiv = styled.div`
-
   position: absolute;
 
   min-height: 100vh;
@@ -164,6 +163,7 @@ function MyTimeline() {
                   <strong>🚀 On my way to the United States!</strong>.
                   <br />
                   <span>2011-01 ~ 2014-05</span>
+                  <p>Graduated high school, located in Akron, Ohio.</p>
                 </p>
               </div>
             </div>
@@ -176,6 +176,11 @@ function MyTimeline() {
                   <strong>👨🏻‍💻 I think, I want to be a developer!</strong>.
                   <br />
                   <span>2014-09 ~ 2020-05</span>
+                  <p>
+                    Graduated with Bachelor of Science, in Computer science.{" "}
+                    <br />
+                    Specialized in Graphics and Human interaction
+                  </p>
                 </p>
               </div>
             </div>
@@ -187,6 +192,10 @@ function MyTimeline() {
                 <strong>🤡 But, I never learned Web before ;(</strong>
                 <br />
                 <span>2020-09 ~ 2021-02</span>
+                <p>
+                  Attended academy, located in Gangnam, Seoul <br />
+                  Learned Java, JSP, Spring Framework, and Android
+                </p>
               </div>
             </div>
           </li>
@@ -198,6 +207,7 @@ function MyTimeline() {
                   <strong>🥸 Whoa, I am crazy about the Frontend</strong>
                   <br />
                   <span>2021-02 ~ Current</span>
+                  <p>Work as a researcher in SNUH <br />Used React framework to modify a medical website <br />Used C++ to modify a medical software</p>
                 </p>
               </div>
             </div>
