@@ -207,7 +207,11 @@ function MyTimeline() {
                   <strong>🥸 Whoa, I am crazy about the Frontend</strong>
                   <br />
                   <span>2021-02 ~ Current</span>
-                  <p>Work as a researcher in SNUH <br />Used React framework to modify a medical website <br />Used C++ to modify a medical software</p>
+                  <p>
+                    Work as a researcher in SNUH <br />
+                    Used React framework to modify a medical website <br />
+                    Used C++ to modify a medical software
+                  </p>
                 </p>
               </div>
             </div>

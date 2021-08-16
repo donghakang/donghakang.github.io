@@ -18,15 +18,18 @@ const Nav = styled.nav`
   z-index: 100;
 `;
 
-// const SwitchButton = (props) => {
-//   return (
-//     <Switch
-//       {...props}
-//       name="checkedA"
-//       inputProps={{ "aria-label": "secondary checkbox" }}
-//     />
-//   );
-// };
+const NavItem = [
+  {
+    name: "About",
+    link: "/about",
+    cName: "menu_items",
+  },
+  {
+    name: "Project",
+    link: "/project",
+    cName: "menu_items",
+  },
+];
 
 const SwitchButton = (props) => {
   const style = {
@@ -58,10 +61,6 @@ export default function Header() {
       </div>
       <ul>
         <li className="menu">
-          {/* <SwitchButton
-            checked={language}
-            onChange={() => dispatch(changeLanguage())}
-          /> */}
           <SwitchButton
             theme={language}
             on={<span>Ko</span>}

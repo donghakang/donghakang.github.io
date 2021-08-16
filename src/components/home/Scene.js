@@ -44,19 +44,20 @@ export default function Scene() {
       <Suspense fallback={null}>
         <Headphone
           ref={headphoneBloomRef}
-          position={[2, 0, 0]}
+          position={[3.3, 0, 0.5]}
           castShadow
           color={theme ? "#388e3c" : "#ff8f00"}
         />
         <Keyboard
           ref={keyboardBloomRef}
-          position={[-3, 0, 1]}
+          position={[-1, 0, 3]}
+          rotation={[0, -0.2, 0]}
           color={theme ? "#2e7d32" : "#ff6f00"}
           castShadow
         />
         <Macbook
           ref={macbookBloomRef}
-          position={[-3, 0, -2]}
+          position={[-1, 0, -1]}
           color={theme ? "#43a047" : "#ffa000"}
           castShadow
         />

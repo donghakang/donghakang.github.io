@@ -5,19 +5,21 @@ import Scene from "./Scene";
 import Background from "./Background";
 import styled from "styled-components";
 
-const Heading = styled.h1`
+const Heading1 = styled.h1`
   position: absolute;
   font-size: 20vw;
-  top: 54%;
+  top: 50%;
   transform: translate(0, -50%);
   font-weight: 800;
+`;
 
-  @media only screen and (max-width: 768px) {
-    top: 40%;
-    font-size: 80vw;
-    // font-style: italic;
-    font-weight: 800;
-  }
+const Heading2 = styled.h1`
+  position: absolute;
+  font-size: 80vw;  
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
 `;
 
 function useWindowWidth() {
@@ -45,24 +47,9 @@ export default function Home() {
   return (
     <div className="home">
       <Header />
-
-      <div
-        style={{
-          backgroundImage: "url(IMG_1477.JPG)",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          backgroundSize: "100vw 100vh",
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Heading>{windowMode ? "DONGHA KANG" : "D"}</Heading>
-        <Scene />
-        <Background />
-        {/* <Introduction /> */}
-      </div>
+      {windowMode ? <Heading1>DONGHA KANG</Heading1> : <Heading2>D</Heading2>}
+      <Scene />
+      <Background />
     </div>
   );
 }
