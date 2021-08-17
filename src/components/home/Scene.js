@@ -37,7 +37,7 @@ export default function Scene() {
       camera={{
         near: -100,
         far: 100,
-        zoom: 50,
+        zoom: 30,
         position: [-1, 1, 1],
       }}
     >
