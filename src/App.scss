@@ -1,29 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 
-// Nav bar ------------------------------------
-.nav-bar {
-  .nav-link:hover {
-    color: gray;
-  }
 
-  .brand {
-    margin: 0;
-    span {
-      font-size: xx-large;
-      margin: auto;
-    }
-  }
-
-  ul {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    .menu {
-      margin: auto 1vw;
-    }
-  }
-}
 
 // Home ----------
 .home {

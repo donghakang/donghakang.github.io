@@ -1,23 +1,24 @@
-import React, { useEffect, Suspense, useRef } from "react";
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import React, {  Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
-import styled from 'styled-components'
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
+import styled from "styled-components";
 
 const CanvasDiv = styled.div`
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  z-index: 1;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
     height: 50vh;
     margin: 0;
     padding: 0;
+    position: relative;
+    z-index: 1;
   }
-`
+`;
 
 const lang = [
   "Python",
@@ -27,11 +28,11 @@ const lang = [
   "Swift",
   "React",
   "Node.js",
-  "Unreal\ Engine",
+  "Unreal Engine",
   "WebGL",
   "Html",
   "CSS",
-  "C#\ Unity",
+  "C# Unity",
   "C++",
   "Linux",
   "Windows",
@@ -81,13 +82,18 @@ const Languages = () => {
   useFrame((state) => (mesh.current.rotation.y += 0.002));
 
   const handleClick = (lang) => {
-  //   console.log(lang);
+    //   console.log(lang);
   };
 
   const textLanguages = lang.map((l, index) => (
     <mesh position={[fib[index][0], fib[index][1], fib[index][2]]} key={l}>
-      <Html distanceFactor={30}>
-        <h1 style={{color: index % 2 ? 'green' : 'lightgreen'}} onClick={() => handleClick(l)}>{l}</h1>
+      <Html distanceFactor={30} zIndexRange={[100, 0]}>
+        <h1
+          style={{ color: index % 2 ? "green" : "lightgreen" }}
+          onClick={() => handleClick(l)}
+        >
+          {l}
+        </h1>
       </Html>
     </mesh>
   ));
@@ -101,22 +107,22 @@ const Languages = () => {
 
 const LanguageScene = (props) => {
   return (
-<CanvasDiv>
-    <Canvas
-      camera={{ position: [0, 0, -40], fov: 90 }}
-      style={{
-        margin: "0",
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      {/* <CameraController /> */}
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Suspense fallback={null}>
-        <Languages />
-      </Suspense>
-    </Canvas>
+    <CanvasDiv>
+      <Canvas
+        camera={{ position: [0, 0, -40], fov: 90 }}
+        style={{
+          margin: "0",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        {/* <CameraController /> */}
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        <Suspense fallback={null}>
+          <Languages />
+        </Suspense>
+      </Canvas>
     </CanvasDiv>
   );
 };

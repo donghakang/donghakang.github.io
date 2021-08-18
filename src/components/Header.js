@@ -16,7 +16,7 @@ const Nav = styled.nav`
   height: 60px;
   justify-content: space-between;
   margin: 0;
-  z-index: 100;
+  z-index: 4;
 
   .brand {
     margin: 0;
@@ -49,6 +49,11 @@ const Nav = styled.nav`
       display: flex;
       margin: auto 4vw;
       font-size: 24px;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      transform: translate(-50%, -50%);
+      z-index: 99;
     }
   }
 `;
@@ -61,27 +66,38 @@ const NavMenu = styled.ul`
 
   @media only screen and (max-width: 768px) {
     transform: ${(props) =>
-      props.clicked ? "translateX(0);" : "translateX(100vw);"};
-    margin-top: 60px;
+      props.clicked ? "translateX(40vw);" : "translateX(100vw);"};
+    background-color: ${(props) => props.theme.background.primary};
     padding: 0;
     position: absolute;
     display: flex;
     flex-direction: column;
     list-style: none;
     height: 100vh;
-    width: 100%;
+    width: 60%;
     transition: 0.3s ease-in-out;
-    background-color: ${(props) => props.theme.background.primary};
 
     .menu {
       margin: 0;
       transition: 0.3s ease-in-out;
     }
+    
+    li:nth-child(n + 3) {
+      position: absolute;
+      top: 100px;
+      transform: translateY(-50%);
+    }
+
+    li:nth-child(n + 4) {
+      position: absolute;
+      top: 140px;
+      transform: translateY(-50%);
+    }
 
     li:nth-child(-n + 2) {
       position: absolute;
-      bottom: 5%;
-      transform: translateY(-100%);
+      bottom: 20px;
+      transform: translateY(-50%);
     }
 
     li:nth-child(2) {

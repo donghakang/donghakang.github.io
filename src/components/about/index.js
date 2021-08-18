@@ -41,25 +41,3 @@ export default function About() {
   );
 }
 
-// export default function About() {
-//   return (
-//     <>
-//       <Header />
-//       <section className="panel">
-//         <Introduction />
-//       </section>
-
-//       <section className="panel">
-//         <MyTimeline />
-//       </section>
-
-//       <section className="panel">
-//         <Skill />
-//       </section>
-
-//       <section className="panel">
-//         <Contact />
-//       </section>
-//     </>
-//   );
-// }
