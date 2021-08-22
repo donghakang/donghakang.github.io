@@ -1,0 +1,37 @@
+{
+  "title": "특이해지고 싶다!",
+  "description": "단순히 프로그래머가 아닌, 사용자에게 이롭고 편리한 어플리케이션을 제작하는 개발자가 되겠습니다",
+  
+  "timeline": {
+    "1": {
+      "title": "Cuyahoga Valley Christian Academy",
+      "date": "2011-01 ~ 2014-05",
+      "subtitle": "🚀 미국으로 이륙!",
+      "description": "Akron, Ohio에 있는 ..."
+    },
+    "2": {
+      "title": "University of Minnesota - Twin Cities",
+      "date": "2014-09 ~ 2020-05",
+      "subtitle": "👨🏻‍💻  I think, I want to be a developer!",
+      "description": "Graduated with Bachelor of Science, in Computer science.\n Specialized in Graphics and Human interaction"
+    },
+    "3": {
+      "title": "Web development academy",
+      "date": "2020-09 ~ 2021-02",
+      "subtitle": "🤡 But, I never learned Web before",
+      "description": "Attended academy, located in Gangnam, Seoul. Learned Java, JSP, Spring Framework, and Android"
+    },
+    "4": {
+      "title": "Seoul National University Hospital",
+      "date": "2021-02 ~ Current",
+      "subtitle": "🥸 Whoa, I am crazy about the Frontend",
+      "description": "Work as a researcher in SNUH. Used React framework to modify a medical website. Used C++ to modify a medical software"
+    }
+  },
+  "submain": "나는야",
+  "status": {
+    "1": "풀스택 개발자",
+    "2": "웹 개발자",
+    "3": "소프트웨어 개발자"
+  }
+}

@@ -34,14 +34,14 @@ const TimelineDiv = styled.div`
     padding: 20px;
   }
 
-  .timeline ul li h3 {
+  .timeline ul li h4 {
     margin: 0;
   }
 
   .timeline-content {
     flex-direction: column;
   }
-  .timeline-content h3 {
+  .timeline-content h4 {
     width: 100%;
     height: 100%;
   }
@@ -143,79 +143,36 @@ const TimelineDiv = styled.div`
 
     .timeline ul li:hover .timeline-paragraph {
       visibility: visible;
-      height: 80px;
+      height: 120px;
       opacity: 1;
       margin-top: 12px;
     }
   }
 `;
 
-function MyTimeline() {
+function MyTimeline({t}) {
+
+  const timeline = [1,2,3,4];
+
   return (
     <TimelineDiv>
       <div className="timeline">
         <ul>
-          <li>
+          {timeline.map(e => (
+            <li key={`timeline${e}`}>
             <div className="timeline-content">
-              <h3>Cuyahoga Falls Christian Academy</h3>
+              <h4>{t(`about:timeline.${e}.title`)}</h4>
               <div className="timeline-paragraph">
-                <p>
-                  <strong>🚀 On my way to the United States!</strong>.
+                <div>
+                  <strong>{t(`about:timeline.${e}.subtitle`)}</strong>.
                   <br />
                   <span>2011-01 ~ 2014-05</span>
-                  <p>Graduated high school, located in Akron, Ohio.</p>
-                </p>
+                  <p>{t(`about:timeline.${e}.description`)}</p>
+                </div>
               </div>
             </div>
           </li>
-          <li>
-            <div className="timeline-content">
-              <h3>University of Minnesota - Twin Cities</h3>
-              <div className="timeline-paragraph">
-                <p>
-                  <strong>👨🏻‍💻 I think, I want to be a developer!</strong>.
-                  <br />
-                  <span>2014-09 ~ 2020-05</span>
-                  <p>
-                    Graduated with Bachelor of Science, in Computer science.{" "}
-                    <br />
-                    Specialized in Graphics and Human interaction
-                  </p>
-                </p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="timeline-content">
-              <h3>Web development academy</h3>
-              <div className="timeline-paragraph">
-                <strong>🤡 But, I never learned Web before ;(</strong>
-                <br />
-                <span>2020-09 ~ 2021-02</span>
-                <p>
-                  Attended academy, located in Gangnam, Seoul <br />
-                  Learned Java, JSP, Spring Framework, and Android
-                </p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="timeline-content">
-              <h3>Seoul National University Hospital</h3>
-              <div className="timeline-paragraph">
-                <p>
-                  <strong>🥸 Whoa, I am crazy about the Frontend</strong>
-                  <br />
-                  <span>2021-02 ~ Current</span>
-                  <p>
-                    Work as a researcher in SNUH <br />
-                    Used React framework to modify a medical website <br />
-                    Used C++ to modify a medical software
-                  </p>
-                </p>
-              </div>
-            </div>
-          </li>
+          ))}
         </ul>
       </div>
     </TimelineDiv>

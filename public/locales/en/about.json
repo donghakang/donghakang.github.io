@@ -1,0 +1,36 @@
+{
+  "title": "I want to be crazy!",
+  "description": "Who wants to become a developer, not a programmer",
+  "submain": "I am",
+  "status": {
+    "1": "Fullstack Developer",
+    "2": "Web Designer",
+    "3": "Computer Scientist"
+  },
+  "timeline": {
+    "1": {
+      "title": "Cuyahoga Valley Christian Academy",
+      "date": "2011-01 ~ 2014-05",
+      "subtitle": "🚀  On my way to the United States!",
+      "description": "Graduated high school, located in Akron, Ohio"
+    },
+    "2": {
+      "title": "University of Minnesota - Twin Cities",
+      "date": "2014-09 ~ 2020-05",
+      "subtitle": "👨🏻‍💻  I think, I want to be a developer!",
+      "description": "Graduated with Bachelor of Science, in Computer science.\n Specialized in Graphics and Human interaction"
+    },
+    "3": {
+      "title": "Web development academy",
+      "date": "2020-09 ~ 2021-02",
+      "subtitle": "🤡 But, I never learned Web before",
+      "description": "Attended academy, located in Gangnam, Seoul. Learned Java, JSP, Spring Framework, and Android"
+    },
+    "4": {
+      "title": "Seoul National University Hospital",
+      "date": "2021-02 ~ Current",
+      "subtitle": "🥸 Whoa, I am crazy about the Frontend",
+      "description": "Work as a researcher in SNUH. Used React framework to modify a medical website. Used C++ to modify a medical software"
+    }
+  }
+}

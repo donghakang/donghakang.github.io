@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HeatMap from "./HeatMap";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const BackgroundDiv = styled.div`
   position: absolute; 
@@ -8,33 +9,13 @@ const BackgroundDiv = styled.div`
   right 5%;
 `;
 
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({ windowX: window.innerWidth, windowY: window.innerHeight });
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        windowX: window.innerWidth,
-        windowY: window.innerHeight,
-      });
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  return windowSize;
-};
-
 const Background = () => {
-  const { windowX, windowY } = useWindowSize();
+  const { screenMode } = useSelector((state) => state.screenMode);
 
   let canvasWidth = 0;
   let canvasHeight = 0;
 
-  if (windowX > 768) {
+  if (screenMode) {
     canvasWidth = 200;
     canvasHeight = 100;
   } else {
@@ -42,10 +23,9 @@ const Background = () => {
     canvasHeight = 50;
   }
 
-  console.log(windowX);
   return (
     <BackgroundDiv>
-      {windowX > 768 ? (
+      {screenMode ? (
         <img
           src="./img/frame-removebg-preview.png"
           alt="qr"

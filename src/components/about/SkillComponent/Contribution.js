@@ -15,7 +15,6 @@ const ContributionDiv = styled.div`
   }
 
   .contribution-container {
-    background-color: yellow;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -80,6 +79,7 @@ const ContributionSVG = () => {
               return (
                 <OverlayTrigger
                   placement="bottom"
+                  key={contrib.date}
                   overlay={
                     <Tooltip id="button-tooltip">
                       {contrib.date}

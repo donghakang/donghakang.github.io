@@ -1,7 +1,11 @@
 import React, { useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import { softShadows } from "@react-three/drei";
+import {
+  softShadows,
+  OrthographicCamera,
+  OrbitControls,
+} from "@react-three/drei";
 import Headphone from "./Headphone";
 import Macbook from "./Macbook";
 import Keyboard from "./Keyboard";
@@ -20,27 +24,25 @@ function GroundPlane() {
 
 export default function Scene() {
   const { theme } = useSelector((state) => state.theme);
+  const { screenMode } = useSelector((state) => state.screenMode);
+
   const lightRef1 = useRef();
   const lightRef2 = useRef();
   const headphoneBloomRef = useRef();
   const keyboardBloomRef = useRef();
   const macbookBloomRef = useRef();
 
-  // const { size, viewport } = useThree();
-  // const aspect_ratio = size.width / viewport.width;
-
   return (
-    <Canvas
-      shadows
-      orthographic
-      style={{ width: "100%", height: "100%" }}
-      camera={{
-        near: -100,
-        far: 100,
-        zoom: 30,
-        position: [-1, 1, 1],
-      }}
-    >
+    <Canvas shadows>
+      <OrthographicCamera
+        makeDefault
+        position={[-1, 1, 1]}
+        rotation={[-Math.PI/4.0, -Math.PI/8.0, -Math.PI/8.0]}
+        zoom={screenMode ? 50 : 30}
+        near={-100}
+        far={100}
+      />
+      {/* <OrbitControls /> */}
       <Suspense fallback={null}>
         <Headphone
           ref={headphoneBloomRef}

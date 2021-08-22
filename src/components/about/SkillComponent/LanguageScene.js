@@ -69,7 +69,7 @@ function fibonacciSphere(samples) {
     let x = Math.cos(theta) * radius;
     let z = Math.sin(theta) * radius;
 
-    points.push([x * 25, y * 25, z * 25]);
+    points.push([x * 22, y * 22, z * 22]);
   }
   return points;
 }
@@ -81,16 +81,11 @@ const Languages = () => {
 
   useFrame((state) => (mesh.current.rotation.y += 0.002));
 
-  const handleClick = (lang) => {
-    //   console.log(lang);
-  };
-
   const textLanguages = lang.map((l, index) => (
-    <mesh position={[fib[index][0], fib[index][1], fib[index][2]]} key={l}>
+    <mesh position={[fib[index][0] + 5, fib[index][1], fib[index][2] + 1]} key={l}>
       <Html distanceFactor={30} zIndexRange={[100, 0]}>
         <h1
           style={{ color: index % 2 ? "green" : "lightgreen" }}
-          onClick={() => handleClick(l)}
         >
           {l}
         </h1>

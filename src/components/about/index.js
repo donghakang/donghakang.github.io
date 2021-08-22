@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import Header from "../Header";
 import "../../App.scss";
 
@@ -7,9 +8,9 @@ import Skill from "./Skill";
 import MyTimeline from "./MyTimeline";
 import Contact from "./Contact";
 
-import { Controller, Scene } from "react-scrollmagic";
-import { Timeline, Tween } from "react-gsap";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const AboutDiv = styled.div`
   .panel {
@@ -20,24 +21,33 @@ const AboutDiv = styled.div`
 `;
 
 export default function About() {
+  const { t, i18n } = useTranslation(["about"]);
+  const { language } = useSelector((state) => state.language);
+
+  useEffect(() => {
+    function handleChangeLanguage() {
+      i18n.changeLanguage(language ? "en" : "ko");
+    }
+    handleChangeLanguage();
+  }, [language]);
+
   return (
     <>
       <AboutDiv>
         <Header />
         <section>
-          <Introduction />
+          <Introduction t={t} />
         </section>
         <section className="panel">
-          <MyTimeline />
+          <MyTimeline t={t} />
         </section>
         <section className="panel">
-          <Skill />
+          <Skill t={t} />
         </section>
         <section className="panel">
-          <Contact />
+          <Contact t={t} />
         </section>
       </AboutDiv>
     </>
   );
 }
-

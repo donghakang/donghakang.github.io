@@ -5,6 +5,13 @@ import Scene from "./Scene";
 import Background from "./Background";
 import styled from "styled-components";
 
+const HomeDiv = styled.div`
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+`
+
+
 const Heading1 = styled.h1`
   position: absolute;
   font-size: 20vw;
@@ -45,11 +52,11 @@ export default function Home() {
   const windowMode = useWindowWidth();
 
   return (
-    <div className="home">
+    <HomeDiv>
       <Header />
       {windowMode ? <Heading1>DONGHA KANG</Heading1> : <Heading2>D</Heading2>}
       <Scene />
       <Background />
-    </div>
+    </HomeDiv>
   );
 }

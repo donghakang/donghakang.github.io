@@ -15,13 +15,13 @@ const SkillDiv = styled.div`
   }
 `;
 
-function Skill() {
+function Skill({t}) {
   return (
     <SkillDiv>
       <Container>
         <Row>
           <Col lg={6}>
-            <SkillInformation />
+            <SkillInformation t={t}/>
           </Col>
           <Col lg={6} className="skill-language">
             <LanguageScene />

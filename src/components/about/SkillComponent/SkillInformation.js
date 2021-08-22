@@ -76,23 +76,23 @@ const SkillInformationDiv = styled.div`
   }
 `;
 
-const IntroductionAnimation = (props) => {
-  const { t, i18n } = useTranslation(["home"]);
+const IntroductionAnimation = ({t}) => {
+
   return (
     <IntroductionAnimationDiv>
-      <div className="animated-text-desc">👨🏻‍💻 {t("home:status.1")}</div>
-      <div className="animated-text-desc">🧑🏻‍🎨 {t("home:status.2")}</div>
-      <div className="animated-text-desc">👨🏻‍🔬 {t("home:status.3")}</div>
-      <div className="animated-text-desc">👨🏻‍💻 {t("home:status.1")}</div>
+      <div className="animated-text-desc">👨🏻‍💻 {t("about:status.1")}</div>
+      <div className="animated-text-desc">🧑🏻‍🎨 {t("about:status.2")}</div>
+      <div className="animated-text-desc">👨🏻‍🔬 {t("about:status.3")}</div>
+      <div className="animated-text-desc">👨🏻‍💻 {t("about:status.1")}</div>
     </IntroductionAnimationDiv>
   );
 };
 
-function SkillInformation(props) {
+function SkillInformation({t}) {
   return (
     <SkillInformationDiv>
       <h1 className="skill-information-title">
-        <span>나는야</span> <IntroductionAnimation />
+        <span>{t("about:submain")}</span> <IntroductionAnimation t={t}/>
       </h1>
       <div className="skill-content">
         <h2>Familiar with...</h2>
