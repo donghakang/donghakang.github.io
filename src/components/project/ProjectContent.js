@@ -14,7 +14,16 @@ import {
   ModalFooter,
 } from "./ProjectContent.css.js";
 
-import { Pulmorad } from "./modal";
+import {
+  Pulmorad,
+  Oatjang,
+  Merona,
+  Animation,
+  Itksnap,
+  Football,
+  VR,
+  Bezier,
+} from "./modal";
 
 const ProjectContent = (props) => {
   const { item } = props;
@@ -28,6 +37,21 @@ const ProjectContent = (props) => {
     // console.log(item, item.title);
     if (item.title == "Pulmorad")
       return <Pulmorad language={props.language} item={item} />;
+    else if (item.title == "OatJang")
+      return <Oatjang language={props.language} item={item} />;
+    else if (item.title == "Merona Todolist")
+      return <Merona language={props.language} item={item} />;
+    else if (item.title == "Animation")
+      return <Animation language={props.language} item={item} />;
+    else if (item.title == "ITKSNAP")
+      return <Itksnap language={props.language} item={item} />;
+    else if (item.title == "Football POV")
+      return <Football language={props.language} item={item} />;
+    else if (item.title == "VR Paint")
+      return <VR language={props.language} item={item} />;
+    else if (item.title == "Bezier Curve Generator")
+      return <Bezier language={props.language} item={item} />;
+
     return <div>Description coming soon...</div>;
   };
 

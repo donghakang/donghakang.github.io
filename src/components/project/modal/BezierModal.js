@@ -78,7 +78,7 @@ const KoreanVersion = (props) => {
   );
 };
 
-export default function PulmoradModal(props) {
+export default function BezierModal(props) {
   const { language, item } = props; // 'en' : 'ko'
   console.log(language, item);
   return (

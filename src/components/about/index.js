@@ -38,9 +38,9 @@ export default function About() {
         <section>
           <Introduction t={t} />
         </section>
-        <section className="panel">
+        {/* <section className="panel">
           <MyTimeline t={t} />
-        </section>
+        </section> */}
         <section className="panel">
           <Skill t={t} />
         </section>
