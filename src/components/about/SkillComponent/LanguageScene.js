@@ -1,7 +1,9 @@
-import React, {  Suspense, useRef } from "react";
+import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { dark, light } from "../../../theme/theme";
 
 const CanvasDiv = styled.div`
   width: 100%;
@@ -75,17 +77,28 @@ function fibonacciSphere(samples) {
 }
 
 // Languages that are shown
-const Languages = () => {
+const Languages = ({ theme }) => {
   const mesh = useRef();
   const fib = fibonacciSphere(lang.length);
 
   useFrame((state) => (mesh.current.rotation.y += 0.002));
 
   const textLanguages = lang.map((l, index) => (
-    <mesh position={[fib[index][0] + 5, fib[index][1], fib[index][2] + 1]} key={l}>
+    <mesh
+      position={[fib[index][0] + 5, fib[index][1], fib[index][2] + 1]}
+      key={l}
+    >
       <Html distanceFactor={30} zIndexRange={[100, 0]}>
         <h1
-          style={{ color: index % 2 ? "green" : "lightgreen" }}
+          style={{
+            color: theme
+              ? index % 2
+                ? light.skill.primary
+                : light.skill.secondary
+              : index % 2
+              ? dark.skill.primary
+              : dark.skill.secondary,
+          }}
         >
           {l}
         </h1>
@@ -100,7 +113,7 @@ const Languages = () => {
   );
 };
 
-const LanguageScene = (props) => {
+const LanguageScene = ({ theme }) => {
   return (
     <CanvasDiv>
       <Canvas
@@ -115,7 +128,7 @@ const LanguageScene = (props) => {
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <Suspense fallback={null}>
-          <Languages />
+          <Languages theme={theme} />
         </Suspense>
       </Canvas>
     </CanvasDiv>

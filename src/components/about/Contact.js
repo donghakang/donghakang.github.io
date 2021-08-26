@@ -41,6 +41,7 @@ const ContactDiv = styled.div`
     .contact-content {
       display: flex;
       flex-direction: column;
+      
     }
     
     .contact-description {
@@ -67,36 +68,35 @@ const ContactDiv = styled.div`
   }
 `;
 
-function Contact() {
+function Contact({t}) {
   return (
     <ContactDiv>
       <div className="contact-content">
-        <div className="contact-description">
-          <h1>Contact me</h1>
+        <div className="contact-description" style={{whiteSpace: 'pre-line'}}>
+          <h1>{t("about:contact.title")}</h1>
           <p>
-            I am waiting for bigger developer community. I really want to work
-            together!
+            {t("about:contact.description")}
           </p>
         </div>
         <div className="contact-buttons">
           <a href="https://github.com/donghakang" style={{}}>
             <h4>
-              <FaGithub />
+              <FaGithub style={{color: 'white'}}/>
             </h4>
           </a>
           <a href="https://facebook.com/dkang0602">
             <h4>
-              <FaFacebook />
+              <FaFacebook style={{color: 'white'}}/>
             </h4>
           </a>
           <a href="https://instagram.com/donghakang" style={{}}>
             <h4>
-              <FaInstagram />
+              <FaInstagram style={{color: 'white'}}/>
             </h4>
           </a>
           <a href="mailto:dkang0602@gmail.com">
             <h4>
-              <FiMail />
+              <FiMail style={{color: 'white'}}/>
             </h4>
           </a>
         </div>

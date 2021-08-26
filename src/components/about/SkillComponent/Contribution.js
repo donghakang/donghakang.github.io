@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Api from "./GithubApi";
 import styled from "styled-components";
+import { dark, light } from "../../../theme/theme";
+import { useSelector } from "react-redux";
 
 const ContributionDiv = styled.div`
   display: flex;
@@ -44,7 +46,10 @@ const useContribution = () => {
 };
 
 const ContributionSVG = () => {
-  const github = ["#eeeeee", "#9be9a8", "#40c463", "#30a14e", "#216e39"];
+  const {theme} = useSelector(state => state.theme)
+  const githubTheme = theme ? light : dark
+  const github = Object.values(githubTheme.github)
+
   const { totalContributions } = Api();
   const windowX = useContribution();
 
@@ -111,7 +116,7 @@ const ContributionSVG = () => {
 const Contribution = () => {
   return (
     <ContributionDiv>
-      <h1 style={{ color: "white", width: "300px" }}>
+      <h1 style={{ width: "300px" }}>
         I actually enjoy coding
       </h1>
       <ContributionSVG />

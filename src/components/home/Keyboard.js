@@ -7,7 +7,6 @@ import { useGLTF } from "@react-three/drei";
 
 function Model(props, ref) {
   const { nodes, materials } = useGLTF("/keyboard.gltf");
-  console.log(props);
   return (
     <mesh
       ref={ref}

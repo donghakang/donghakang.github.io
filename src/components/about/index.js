@@ -13,11 +13,11 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 const AboutDiv = styled.div`
-  .panel {
-    background-color: ${(props) => props.theme.background.primary};
-    min-width: 100vw;
-    min-height: 100vh;
-  }
+  // .panel {
+  //   background-color: ${(props) => props.theme.background.primary};
+  //   min-width: 100vw;
+  //   min-height: 100vh;
+  // }
 `;
 
 export default function About() {

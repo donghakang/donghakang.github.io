@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import JsxParser from "react-jsx-parser";
+
 import { useSelector } from "react-redux";
 
 // Style
-import styled, { ThemeProvider } from "styled-components";
+
 import {
   ModalHeader,
   ModalTitle,
-  CloseButton,
   ModalBody,
   ModalFooter,
 } from "./ProjectContent.css.js";
@@ -34,7 +33,6 @@ const ProjectContent = (props) => {
   const ProjectModal = (itemInfo) => {
     const { item } = itemInfo;
 
-    // console.log(item, item.title);
     if (item.title == "Pulmorad")
       return <Pulmorad language={props.language} item={item} />;
     else if (item.title == "OatJang")

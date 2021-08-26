@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import styled from "styled-components";
 
 const IntroductionDiv = styled.div`
   width: 100%;
-  min-height: 100%;
+  // min-height: 100%;
   padding: 100px 0;
 
   .introduction-column {
@@ -23,17 +23,24 @@ const IntroductionDiv = styled.div`
   }
 
   .introduction-title {
-    font-size: 4vw;
+    // font-size: 4vw;
+    font-size: 120px;
     font-weight: 600;
   }
 
   .introduction-paragraph {
     font-size: 14px;
+    white-space: pre-line;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .introduction-title{
+      font-size: 70px;
+    }
   }
 `;
 
-function Introduction({t}) {
-  
+function Introduction({ t }) {
   return (
     <IntroductionDiv>
       <Container className="introduction-container">
@@ -45,11 +52,9 @@ function Introduction({t}) {
               className="introduction-main-image"
             />
           </Col>
-          <Col md={7}>
+          <Col md={7} style={{whiteSpace:'pre-line'}}>
             <h1 className="introduction-title">{t("about:title")}</h1>
-            <p className="introduction-paragraph">{t("about:description")}
-
-            </p>
+            <p className="introduction-paragraph">{(t("about:description"))}</p>
           </Col>
         </Row>
       </Container>

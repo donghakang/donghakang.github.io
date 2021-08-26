@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const IntroductionAnimationDiv = styled.div`
   margin-left: 12px;
   height: 50px;
   overflow: hidden;
-  color: lightgreen;
 
   .animated-text-desc {
     height: 100px;
@@ -48,7 +48,7 @@ const SkillInformationDiv = styled.div`
 
   .skill-information-title {
     display: flex;
-    color: lightgreen;
+    color: ${(props) => props.theme.skill.primary};
   }
 
   .skill-content {
@@ -57,7 +57,7 @@ const SkillInformationDiv = styled.div`
 
   .skill-content h2 {
     font-size: 28px;
-    color: lightgreen;
+    color: ${(props) => props.theme.skill.primary};
   }
 
   .skill-content ul {
@@ -88,7 +88,8 @@ const IntroductionAnimation = ({t}) => {
   );
 };
 
-function SkillInformation({t}) {
+function SkillInformation({t, theme}) {
+  
   return (
     <SkillInformationDiv>
       <h1 className="skill-information-title">

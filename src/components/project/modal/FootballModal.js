@@ -3,7 +3,6 @@ import React from "react";
 
 const EnglishVersion = (props) => {
   const { item } = props;
-  console.log(item);
   return (
     <div className="project-modal">
       <img
@@ -30,7 +29,6 @@ const EnglishVersion = (props) => {
 
 const KoreanVersion = (props) => {
   const { item } = props;
-  console.log(item);
   return (
     <div className="project-modal">
       <img
@@ -56,7 +54,6 @@ const KoreanVersion = (props) => {
 
 export default function FootballModal(props) {
   const { language, item } = props; // 'en' : 'ko'
-  console.log(language, item);
   return (
     <>
       {language ? (
