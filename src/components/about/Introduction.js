@@ -47,7 +47,7 @@ function Introduction({ t }) {
         <Row className="introduction-row">
           <Col md={5} className="introduction-column">
             <img
-              src="IMG_1455.jpg"
+              src="/IMG_1455.png"
               alt="face"
               className="introduction-main-image"
             />
