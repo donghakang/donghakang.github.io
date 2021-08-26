@@ -1,6 +1,6 @@
 {
-  "title": "I want to be crazy!",
-  "description": "Who wants to become a developer, not a programmer",
+  "title": "About me",
+  "description": "👨🏻‍🎓 Graduated in May, 2020 in University of Minnesota, B.S in Computer science. Went to academy to learn more about Web/app development and currently, working in Seoul National University hospital as a Web/software developer. \n🧑🏻‍🎨 Based on what I love and what I learned, my goals are to create better web/app services and upgrade applications more convenient and fun way for the users. \n👨🏻‍💻 Today, I opened my laptop to become not just a programmer but a developer",
   "submain": "I am",
   "status": {
     "1": "Fullstack Developer",
@@ -32,5 +32,9 @@
       "subtitle": "🥸 Whoa, I am crazy about the Frontend",
       "description": "Work as a researcher in SNUH. Used React framework to modify a medical website. Used C++ to modify a medical software"
     }
+  }
+  ,"contact": {
+    "title": "Contact me",
+    "description": "Let's be honest, who wants to code by themselves.\n I want to be part of bigger and better developer community. \n Really, I want to work with you!"
   }
 }
