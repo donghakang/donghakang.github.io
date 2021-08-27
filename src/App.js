@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // redux
@@ -12,6 +12,7 @@ import Home from "./components/home";
 import About from "./components/about";
 import Project from "./components/project";
 
+import Loading from "./components/Loading.js";
 // Style
 import { ThemeWrapper } from "./theme/App.css.js";
 
@@ -26,6 +27,9 @@ function App() {
 
   return (
     <ThemeProvider theme={theme ? light : dark}>
+      <Suspense fallback={ <Loading text="D O N G H A K A N G" theme={theme}/>}>
+
+      
       <ThemeWrapper>
         <Router>
           <Switch>
@@ -35,7 +39,9 @@ function App() {
           </Switch>
         </Router>
       </ThemeWrapper>
+      </Suspense>
     </ThemeProvider>
+    
   );
 }
 

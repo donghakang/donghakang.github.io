@@ -9,9 +9,7 @@ import "./i18n";
 
 ReactDOM.render(
   <Provider store={store}>
-    <Suspense fallback={<div>Loading..</div>}>
       <App />
-    </Suspense>
   </Provider>,
   document.getElementById("root")
 );

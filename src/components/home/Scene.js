@@ -43,7 +43,6 @@ export default function Scene() {
         far={100}
       />
       {/* <OrbitControls /> */}
-      <Suspense fallback={null}>
         <Headphone
           ref={headphoneBloomRef}
           position={[3.3, 0, 0.5]}
@@ -81,7 +80,6 @@ export default function Scene() {
             shadow-camera-bottom={-10}
           />
         </group>
-      </Suspense>
     </Canvas>
   );
 }

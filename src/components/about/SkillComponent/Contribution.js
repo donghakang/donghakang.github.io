@@ -46,9 +46,9 @@ const useContribution = () => {
 };
 
 const ContributionSVG = () => {
-  const {theme} = useSelector(state => state.theme)
-  const githubTheme = theme ? light : dark
-  const github = Object.values(githubTheme.github)
+  const { theme } = useSelector((state) => state.theme);
+  const githubTheme = theme ? light : dark;
+  const github = Object.values(githubTheme.github);
 
   const { totalContributions } = Api();
   const windowX = useContribution();
@@ -66,61 +66,62 @@ const ContributionSVG = () => {
 
   return (
     <div className="contribution-container">
-      {windowX > 768 ? (
-        <svg
-          width={14 * 53}
-          height={14 * 7}
-          style={{ background: "white" }}
-          className="contribution-svg"
-        >
-          {totalContributions.map((contribution, idx) =>
-            contribution.map((contrib, index) => {
-              let color = "#eeeeee";
-              if (contrib.contributionCount >= 4) {
-                color = github[4];
-              } else {
-                color = github[contrib.contributionCount];
-              }
-              return (
-                <OverlayTrigger
-                  placement="bottom"
-                  key={contrib.date}
-                  overlay={
-                    <Tooltip id="button-tooltip">
-                      {contrib.date}
-                      <br />
-                      <strong>contribution </strong>:{" "}
-                      {contrib.contributionCount}
-                    </Tooltip>
-                  }
-                >
-                  <rect
-                    x={14 * idx + 1 - contributionMargin}
-                    y={14 * index + 1}
-                    width={12}
-                    height={12}
-                    fill={color}
-                  />
-                </OverlayTrigger>
-              );
-            })
-          )}
-        </svg>
-      ) : (
-        <div></div>
-      )}
+      <svg
+        width={14 * 53}
+        height={14 * 7}
+        style={{ background: "white" }}
+        className="contribution-svg"
+      >
+        {totalContributions.map((contribution, idx) =>
+          contribution.map((contrib, index) => {
+            let color = "#eeeeee";
+            if (contrib.contributionCount >= 4) {
+              color = github[4];
+            } else {
+              color = github[contrib.contributionCount];
+            }
+            return (
+              <OverlayTrigger
+                placement="bottom"
+                key={contrib.date}
+                overlay={
+                  <Tooltip id="button-tooltip">
+                    {contrib.date}
+                    <br />
+                    <strong>contribution </strong>: {contrib.contributionCount}
+                  </Tooltip>
+                }
+              >
+                <rect
+                  x={14 * idx + 1 - contributionMargin}
+                  y={14 * index + 1}
+                  width={12}
+                  height={12}
+                  fill={color}
+                />
+              </OverlayTrigger>
+            );
+          })
+        )}
+      </svg>
     </div>
   );
 };
 
 const Contribution = () => {
+  const windowX = useContribution();
+
   return (
-    <ContributionDiv>
-      <h1 style={{ width: "300px" }}>
-        I actually enjoy coding
-      </h1>
-      <ContributionSVG />
-    </ContributionDiv>
+    <>
+      {windowX > 768 ? (
+        <ContributionDiv>
+          <h1 style={{ width: "300px" }}>I actually enjoy coding</h1>
+          <ContributionSVG />
+        </ContributionDiv>
+      ) : (
+        <div></div>
+      )}
+    </>
   );
   // return <div>{!isLoading ? (<svg>{contribution}</svg>) : (<span> is .. loading ... </span>)}</div>;
 };

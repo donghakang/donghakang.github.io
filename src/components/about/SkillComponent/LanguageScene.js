@@ -85,10 +85,10 @@ const Languages = ({ theme }) => {
 
   const textLanguages = lang.map((l, index) => (
     <mesh
-      position={[fib[index][0] + 5, fib[index][1], fib[index][2] + 1]}
+      position={[fib[index][0], fib[index][1], fib[index][2]]}
       key={l}
     >
-      <Html distanceFactor={30} zIndexRange={[100, 0]}>
+      <Html center distanceFactor={30} zIndexRange={[100, 0]}>
         <h1
           style={{
             color: theme

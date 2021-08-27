@@ -15,7 +15,8 @@
       "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
     ],
     "importance": "2",
-    "img": "img/oatjang.png"
+    "img": "img/oatjang.png",
+    "link": "https://github.com/donghakang/OatJang"
   },
   {
     "id": "project_3",
@@ -26,7 +27,8 @@
       "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
     ],
     "importance": "2",
-    "img": "img/merona.png"
+    "img": "img/merona.png",
+    "link": "https://github.com/donghakang/Merona_TodoList"
   },
   {
     "id": "project_4",
@@ -37,7 +39,8 @@
       "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
     ],
     "importance": "3",
-    "img": "img/animation.png"
+    "img": "img/animation.png",
+    "link": "https://sites.google.com/umn.edu/donghakang-csci5611"
   },
   {
     "id": "project_6",
@@ -48,7 +51,8 @@
       "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
     ],
     "importance": "2",
-    "img": "img/football.png"
+    "img": "img/football.png",
+    "link": "https://github.com/donghakang/Football_POV"
   },
   {
     "id": "project_7",
@@ -58,7 +62,8 @@
       "Directed new Korean soldiers, who joined the army for the first time to adjust in Korean army",
       "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
     ],
-    "img": "img/vrpaint.png"
+    "img": "img/vrpaint.png",
+    "link": "https://github.com/donghakang/VR_Paint"
   },
   {
     "id": "project_8",
@@ -69,6 +74,7 @@
       "Awarded with 'the most motivational squad commander chosen by trainers', from Korean Army Training Center Major General"
     ],
     "importance": "1",
-    "img": "img/bezier.png"
+    "img": "img/bezier.png",
+    "link": "https://github.com/donghakang/Bezier_Curve_3D"
   }
 ]
