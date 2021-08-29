@@ -96,7 +96,7 @@ const NavMenu = styled.ul`
 
     li:nth-child(-n + 2) {
       position: absolute;
-      bottom: 20px;
+      bottom: 100px;
       transform: translateY(-50%);
     }
 

@@ -25,7 +25,7 @@ const Background = () => {
 
   return (
     <BackgroundDiv>
-      {screenMode ? (
+      {/* {screenMode ? (
         <img
           src="./img/frame-removebg-preview.png"
           alt="qr"
@@ -34,7 +34,7 @@ const Background = () => {
         />
       ) : (
         <></>
-      )}
+      )} */}
 
       <HeatMap
         className="heat-map"
