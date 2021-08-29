@@ -33,11 +33,11 @@ function Skill({t}) {
             <LanguageScene theme={theme}/>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col>
             <Contribution theme={theme}/>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </SkillDiv>
   );
