@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "./src/index.tsx"),
@@ -33,6 +34,13 @@ module.exports = {
         },
       },
       {
+        test: /\.(bin|glb|gltf)$/,
+        loader: "file-loader",
+        options: {
+          esModule: false,
+        },
+      },
+      {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
@@ -49,7 +57,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./build"),
     filename: "index.bundle.js",
-    publicPath: '/'
+    publicPath: "/",
   },
   devServer: {
     historyApiFallback: true,
@@ -57,6 +65,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./public/index.html"),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "./public/img", to: "img" },
+        { from: "./public/obj", to: "obj" },
+      ],
     }),
   ],
   mode: "development",
