@@ -24,4 +24,4 @@ function Model(props, ref) {
 
 export default forwardRef(Model);
 
-useGLTF.preload("/macbook.gltf");
+useGLTF.preload("/obj/macbook.gltf");

@@ -33,6 +33,6 @@ const Model = (props, ref) => {
   );
 };
 
-useGLTF.preload("/headphone.gltf");
+useGLTF.preload("/obj/headphone.gltf");
 
 export default forwardRef(Model);

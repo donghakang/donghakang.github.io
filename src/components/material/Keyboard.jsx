@@ -21,6 +21,6 @@ function Model(props, ref) {
   );
 }
 
-useGLTF.preload("/keyboard.gltf");
+useGLTF.preload("/obj/keyboard.gltf");
 
 export default forwardRef(Model);
