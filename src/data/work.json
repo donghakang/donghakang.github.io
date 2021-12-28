@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Pulmorad",
+    "slug": "pulmorad",
+    "link": "https://github.com/donghakang/Pulmorad",
+    "content": {
+      "title": "Pulmorad",
+      "image": "pulmorad.png",
+      "data": "<h4>🎉 Pulmorad 란?</h4><p><b>Pulmorad</b>는 React 기반 웹사이트로서 의료이미지(DICOM)를 오픈하고 이미지를 변형 할 수 있게해주는 툴입니다. OHIF Viewer라는 기존에 있는 오픈소스를 사용했으며, 추가적인 기능을 cornerstone-tools, dicomweb-client와 React를 이용하여 구현 했습니다.</p><br /><h4>👨🏻‍💻 개인의 역할</h4><ul><li>이미지의 Threshold를 바꿀 수 있는 UI 개발</li><li>Fastapi, Postgres를 사용하여 Annotation 저장 기능 구현</li><li>Annotation 저장시 자기에게만/그룹에게/모두에게 공유할 수 있는 기능 구현</li><li>기타 등등 ...</li></ul>"
+    }
+  },
+  {
+    "title": "Oatjang",
+    "slug": "oatjang",
+    "content": {
+      "title": "옷장, 중고 옷거래",
+      "image": "oatjang.png",
+      "data": "<h4>🎉 옷장 이란?</h4><p><b>OatJang</b>은 Java, JSP, SQL을 사용한 웹사이트이며,이 웹사이트는 중고 옷 거래를 하는 커뮤니티 웹사이트입니다.</p><br /><h4>👨🏻‍💻 개인의 역할</h4><ul><li>카카오 맵 API 를 사용한 맵 뷰</li><li>백엔드 전체적인 설계</li></ul>"
+    }
+  },
+  {
+    "title": "Merona Todolist",
+    "slug": "merona",
+    "content": {
+      "title": "올때, 메로나",
+      "image": "merona.png",
+      "data": "<h4>🎉 올때, 메로나란?</h4> <p> <b>올때, 메로나</b>는 Android 어플리케이션으로 사용자들과 해야할 일들을 저장 및 공유할 수 있는 어플리케이션입니다. </p>"
+    }
+  },
+  {
+    "title": "animation",
+    "slug": "animation",
+    "content": {
+      "title": "Animation",
+      "image": "animation.png",
+      "data": "<h4>Animation</h4> <p> <b>Animation</b>은 Processing으로 쓰여졌으며, A*, Boid 등과 같은 알고리즘을 사용하고, Cloth 시뮬레이션, Particle 시뮬레이션 등을 구현했습니다. </p>"
+    }
+  },
+  {
+    "title": "Football POV",
+    "slug": "football",
+    "content": {
+      "title": "Football POV",
+      "image": "football.png",
+      "data": "<p><b>Football POV </b>는 컴퓨터 비젼 수업시 opencv 와 numpy를 사용해서 만들어진 스크립트입니다. 이 프로젝트는 미국 미식축구 공에 카메라를 부착하여 촬영된 동영상을 실제로 보여지는 동영상과 같이 만들어 줍니다.</p>"
+    }
+  },
+  {
+    "title": "VR Paint",
+    "slug": "vr-paint",
+    "content": {
+      "title": "VR Paint",
+      "image": "vrpaint.png",
+      "data": "<p><b>VR Paint</b>는 Unity 와 C#을 사용하여 만들어진 어플리케이션으로, Oculus 등 VR 을 끼고 가상환경에 그림을 그릴 수 있는 3D 그림판어플리케이션 입니다. 선 뿐만아니라 색깔 및 텍스쳐까지 바꿀 수 있도록구현하고, 또한 User Interface의 중요성을 강조하기 위해 손목에 tool을넣는 구현도 했습니다.</p>"
+    }
+  },
+  {
+    "title": "Bezier Curve",
+    "slug": "bezier-curve",
+    "content": {
+      "title": "Bezier Curve",
+      "image": "bezier.png",
+      "data": "<p></p>"
+    }
+  }
+]

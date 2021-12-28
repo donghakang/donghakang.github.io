@@ -111,6 +111,12 @@
 
 			};
 
+			this.getDistance = function () {
+
+				return this.object.position.distanceTo( this.target );
+
+			};
+
 			this.listenToKeyEvents = function ( domElement ) {
 
 				domElement.addEventListener( 'keydown', onKeyDown );
@@ -258,8 +264,8 @@
 				scope.domElement.removeEventListener( 'pointerdown', onPointerDown );
 				scope.domElement.removeEventListener( 'pointercancel', onPointerCancel );
 				scope.domElement.removeEventListener( 'wheel', onMouseWheel );
-				scope.domElement.ownerDocument.removeEventListener( 'pointermove', onPointerMove );
-				scope.domElement.ownerDocument.removeEventListener( 'pointerup', onPointerUp );
+				scope.domElement.removeEventListener( 'pointermove', onPointerMove );
+				scope.domElement.removeEventListener( 'pointerup', onPointerUp );
 
 				if ( scope._domElementKeyEvents !== null ) {
 
@@ -508,9 +514,6 @@
 
 			}
 
-			function handleMouseUp( ) { // no-op
-			}
-
 			function handleMouseWheel( event ) {
 
 				if ( event.deltaY < 0 ) {
@@ -690,9 +693,6 @@
 				if ( scope.enableZoom ) handleTouchMoveDolly( event );
 				if ( scope.enableRotate ) handleTouchMoveRotate( event );
 
-			}
-
-			function handleTouchEnd( ) { // no-op
 			} //
 			// event handlers - FSM: listen for events and reset state
 			//
@@ -704,8 +704,9 @@
 
 				if ( pointers.length === 0 ) {
 
-					scope.domElement.ownerDocument.addEventListener( 'pointermove', onPointerMove );
-					scope.domElement.ownerDocument.addEventListener( 'pointerup', onPointerUp );
+					scope.domElement.setPointerCapture( event.pointerId );
+					scope.domElement.addEventListener( 'pointermove', onPointerMove );
+					scope.domElement.addEventListener( 'pointerup', onPointerUp );
 
 				} //
 
@@ -742,26 +743,18 @@
 
 			function onPointerUp( event ) {
 
-				if ( scope.enabled === false ) return;
-
-				if ( event.pointerType === 'touch' ) {
-
-					onTouchEnd();
-
-				} else {
-
-					onMouseUp( event );
-
-				}
-
-				removePointer( event ); //
+				removePointer( event );
 
 				if ( pointers.length === 0 ) {
 
-					scope.domElement.ownerDocument.removeEventListener( 'pointermove', onPointerMove );
-					scope.domElement.ownerDocument.removeEventListener( 'pointerup', onPointerUp );
+					scope.domElement.releasePointerCapture( event.pointerId );
+					scope.domElement.removeEventListener( 'pointermove', onPointerMove );
+					scope.domElement.removeEventListener( 'pointerup', onPointerUp );
 
 				}
+
+				scope.dispatchEvent( _endEvent );
+				state = STATE.NONE;
 
 			}
 
@@ -874,17 +867,9 @@
 
 			}
 
-			function onMouseUp( event ) {
-
-				handleMouseUp( event );
-				scope.dispatchEvent( _endEvent );
-				state = STATE.NONE;
-
-			}
-
 			function onMouseWheel( event ) {
 
-				if ( scope.enabled === false || scope.enableZoom === false || state !== STATE.NONE && state !== STATE.ROTATE ) return;
+				if ( scope.enabled === false || scope.enableZoom === false || state !== STATE.NONE ) return;
 				event.preventDefault();
 				scope.dispatchEvent( _startEvent );
 				handleMouseWheel( event );
@@ -996,14 +981,6 @@
 						state = STATE.NONE;
 
 				}
-
-			}
-
-			function onTouchEnd( event ) {
-
-				handleTouchEnd( event );
-				scope.dispatchEvent( _endEvent );
-				state = STATE.NONE;
 
 			}
 

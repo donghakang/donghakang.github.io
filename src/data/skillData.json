@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "title": "Python",
+    "slug": "python",
+    "data": [
+      "Python Data goes here...",
+      "Python Data goes here...",
+      "Python Data goes here..."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "JavaScript",
+    "slug": "javascript",
+    "data": [
+      "Python Data goes here...",
+      "Python Data goes here...",
+      "Python Data goes here..."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Java",
+    "slug": "java",
+    "data": [
+      "Python Data goes here...",
+      "Python Data goes here...",
+      "Python Data goes here..."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Android",
+    "slug": "android",
+    "data": [
+      "Python Data goes here...",
+      "Python Data goes here...",
+      "Python Data goes here..."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "React",
+    "slug": "react",
+    "data": [
+      "Python Data goes here...",
+      "Python Data goes here...",
+      "Python Data goes here..."
+    ]
+  },
+  {
+    "id": 6,
+    "title": "WebGL",
+    "slug": "web-gl",
+    "data": [
+      "Python Data goes here...",
+      "Python Data goes here...",
+      "Python Data goes here..."
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Processing",
+    "slug": "processing",
+    "data": [
+      "Python Data goes here...",
+      "Python Data goes here...",
+      "Python Data goes here..."
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Github",
+    "slug": "github",
+    "data": [
+      "Python Data goes here...",
+      "Python Data goes here...",
+      "Python Data goes here..."
+    ]
+  },
+  {
+    "id": 9,
+    "title": "CSS",
+    "slug": "css",
+    "data": [
+      "CSS을 이용하여 웹사이트 디자인을 해본 경험이 있습니다",
+      "CSS 뿐만 아니라, SCSS 혹은 styled-component를 이용하여 다양한 디자인을 해보았습니다."
+    ]
+  }
+]
