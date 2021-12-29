@@ -12,7 +12,7 @@ const App: React.FC<{}> = () => {
         style={{ height: "1px", width: "1px" }}
         children={undefined}
       ></Canvas>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

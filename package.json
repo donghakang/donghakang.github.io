@@ -1,7 +1,9 @@
 {
   "name": "donghakang.github.io",
   "version": "1.0.0",
+  "homepage": "https://donghakang.github.io/",
   "description": "",
+
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
