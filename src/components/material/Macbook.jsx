@@ -6,7 +6,7 @@ import React, { forwardRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 function Model(props, ref) {
-  const { nodes } = useGLTF("/obj/macbook.gltf");
+  const { nodes } = useGLTF("obj/macbook.gltf");
 
   return (
     <mesh
@@ -24,4 +24,4 @@ function Model(props, ref) {
 
 export default forwardRef(Model);
 
-useGLTF.preload("/obj/macbook.gltf");
+useGLTF.preload("obj/macbook.gltf");

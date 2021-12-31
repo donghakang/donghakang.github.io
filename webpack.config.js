@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src/index.tsx"),
+  entry: path.resolve(__dirname, "src/index.tsx"),
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
   },
@@ -28,16 +28,30 @@ module.exports = {
         ],
       },
       {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: {
+              minimize: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.(eot|md)$/,
         use: {
           loader: "file-loader",
+          options: {
+            name: "[name].[contenthash].[ext]",
+            outputPath: "post" 
+          },
         },
       },
       {
         test: /\.(bin|glb|gltf)$/,
-        loader: "file-loader",
-        options: {
-          esModule: false,
+        use: {
+          loader: "file-loader",
         },
       },
       {
@@ -55,21 +69,23 @@ module.exports = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, "./build"),
-    filename: "index.bundle.js",
-    publicPath: "/",
+    path: path.resolve(__dirname, "build"),
+    filename: "main.[contenthash].js",
+    // publicPath: "/",
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [{ from: /\//, to: '/404.html' }],
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "./public/index.html"),
+      template: path.resolve(__dirname, "public/index.html"),
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: "./public/img", to: "img" },
-        { from: "./public/obj", to: "obj" },
+        { from: "public/img", to: "img" },
+        { from: "public/obj", to: "obj" },
       ],
     }),
   ],

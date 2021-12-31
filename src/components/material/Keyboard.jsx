@@ -6,7 +6,7 @@ import React, { forwardRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 function Model(props, ref) {
-  const { nodes, materials } = useGLTF("/obj/keyboard.gltf");
+  const { nodes, materials } = useGLTF("obj/keyboard.gltf");
   return (
     <mesh
       ref={ref}
@@ -21,6 +21,6 @@ function Model(props, ref) {
   );
 }
 
-useGLTF.preload("/obj/keyboard.gltf");
+useGLTF.preload("obj/keyboard.gltf");
 
 export default forwardRef(Model);

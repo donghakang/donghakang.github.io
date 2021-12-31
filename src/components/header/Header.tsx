@@ -46,9 +46,9 @@ const Header: React.FC = (): JSX.Element => {
       </ul>
       <button className="hamburger-menu" onClick={() => setOpen(!open)}>
         {open ? (
-          <BiX size={24} color={headerColor} />
+          <BiX size={32} color={headerColor} />
         ) : (
-          <BiMenu size={24} color={headerColor} />
+          <BiMenu size={32} color={headerColor} />
         )}
       </button>
     </Styled.Header>

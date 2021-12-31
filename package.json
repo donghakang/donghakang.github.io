@@ -1,13 +1,11 @@
 {
   "name": "donghakang.github.io",
   "version": "1.0.0",
-  "homepage": "https://donghakang.github.io/",
   "description": "",
-
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve",
+    "start": "webpack-dev-server --open",
     "build": "webpack",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -20,7 +18,7 @@
     "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.2.4",
     "@react-spring/parallax": "^9.3.1",
-    "@react-spring/web": "^9.3.1",
+    "@react-spring/web": "^9.3.2",
     "@react-three/cannon": "^4.2.0",
     "@react-three/drei": "^8.2.1",
     "@react-three/fiber": "^7.0.24",
@@ -54,6 +52,7 @@
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
     "gh-pages": "^3.2.3",
+    "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
     "path": "^0.12.7",
     "style-loader": "^3.3.1",

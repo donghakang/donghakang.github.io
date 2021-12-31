@@ -1,3 +1,3 @@
-import ErrorView from './ErrorView'
+import PageNotFound from './PageNotFound'
 
-export default ErrorView;
+export default PageNotFound;

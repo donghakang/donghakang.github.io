@@ -9,7 +9,7 @@ import { useGLTF } from "@react-three/drei";
 import { a } from "@react-spring/three";
 
 const Model = (props, ref) => {
-  const { nodes, materials } = useGLTF("/obj/headphone.gltf");
+  const { nodes, materials } = useGLTF("obj/headphone.gltf");
 
   // const { rotateY } = useSpring({
   //   rotateY: props.active,
@@ -33,6 +33,6 @@ const Model = (props, ref) => {
   );
 };
 
-useGLTF.preload("/obj/headphone.gltf");
+useGLTF.preload("obj/headphone.gltf");
 
 export default forwardRef(Model);

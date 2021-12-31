@@ -23,15 +23,11 @@ const HomeView: React.FC<{}> = (): JSX.Element => {
               color: headerColor,
             }}
           >
-            DO
-            <br />
-            NG
+            DONG
             <br />
             HA
             <br />
-            KA
-            <br />
-            NG
+            KANG
           </div>
           <div
             className="sub-head"

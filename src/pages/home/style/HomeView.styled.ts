@@ -44,6 +44,7 @@ export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
         top: 70%;
         left: 16%;
         letter-spacing: -0.05em;
+        
         padding: 0;
       }
     }

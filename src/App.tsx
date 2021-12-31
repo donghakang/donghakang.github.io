@@ -4,6 +4,8 @@ import { Canvas } from "@react-three/fiber";
 // import { About, Blog, Contact, Tag, Home, Project } from "./pages";
 // import HomeView from "./pages/home";
 import { Home, About, Contact, Project, Blog, Tag } from "./pages";
+import PageNotFound from "./components/404";
+// import { Redirect } from "react-router-dom";
 
 const App: React.FC<{}> = () => {
   return (
@@ -12,7 +14,7 @@ const App: React.FC<{}> = () => {
         style={{ height: "1px", width: "1px" }}
         children={undefined}
       ></Canvas>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -21,16 +23,7 @@ const App: React.FC<{}> = () => {
           <Route path="/blog/:slug" element={<Blog />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/tag" element={<Tag />} />
-          {/* <Route path="/home" element={Home} />
-        <Route path="/about" element={About} />
-        <Route path="/blog/:slug" element={Blog} />
-        <Route path="/project">
-          <Project />
-        </Route>
-        
-        <Route path="/tag" element={Tag} /> */}
-          {/* 😖 Error, Redirect to different page */}
-          {/* <Route path="/blog" exact element={Tag} /> */}
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
     </>
