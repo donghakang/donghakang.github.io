@@ -5,7 +5,7 @@ import * as Styled from "./style/DescriptionLayer.styled";
 
 function DescriptionLayer() {
   return (
-    <Styled.DescriptionLayer>
+    <Styled.DescriptionLayer className="layer">
       <div className="description-container">
         <Trail>
           <h1>About page</h1>

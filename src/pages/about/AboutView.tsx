@@ -1,12 +1,13 @@
 import Header from "../../components/header";
 import AboutParallaxView from "./AboutParallaxView";
+import * as Styled from "./style/AboutView.styled";
 
 function AboutView() {
   return (
-    <div className="aboutpage">
+    <Styled.AboutView H1={"orange"}>
       <Header />
       <AboutParallaxView />
-    </div>
+    </Styled.AboutView>
   );
 }
 

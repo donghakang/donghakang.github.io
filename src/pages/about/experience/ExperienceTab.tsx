@@ -25,17 +25,16 @@ const ExperienceTab: React.FC<ExperienceTabProps> = ({
     <div className="timeline">
       <ul>
         {timeline.map((time_content, index) => (
-          <li key={index} style={{ display: "flex" }}>
+          <li key={index}>
             <div className="time">
               <span className="timepoint"></span>
               <span className="time-milestone"></span>
             </div>
             <div
               className="time-title"
-              onMouseOver={() => console.log("mouse over")}
-              onMouseOut={() => console.log("mouse out")}
+              // onMouseOver={() => console.log("mouse over")}
+              // onMouseOut={() => console.log("mouse out")}
               onClick={() => handleClick(index)}
-              style={{ color: "red" }}
             >
               <div>{time_content.title}</div>
             </div>

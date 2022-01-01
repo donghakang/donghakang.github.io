@@ -10,7 +10,7 @@ import * as server_config from "../../server.config";
 import { useTagsMenu } from "../../hooks/useTagsMenu";
 import TagNavbar from "./TagNavbar";
 import TagTitleView from "./TagTitleView";
-
+import { tagMenuBackground, blueColor1 } from "../../components/color";
 
 export interface TagViewProps {
   data: {
@@ -49,7 +49,7 @@ const ServerTagView: React.FC<TagViewProps> = ({
   return (
     <>
       {isLoaded ? (
-        <Styled.TagView>
+        <Styled.TagView tagMenuBackgroundColor={blueColor1} chipColor={"lightblue"}>
           <div className={"tag-wrapper"}>Coming soon...</div>
         </Styled.TagView>
       ) : (
@@ -66,7 +66,7 @@ const DevTagView: React.FC<TagViewProps> = ({
 }) => {
   return (
     <>
-      <Styled.TagView>
+      <Styled.TagView tagMenuBackgroundColor={tagMenuBackground} chipColor="lightblue">
         <div className={"tag-wrapper"}>
           <TagNavbar
             data={data}

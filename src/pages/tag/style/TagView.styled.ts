@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const TagView = styled.div`
+interface TagViewProps {
+  tagMenuBackgroundColor: string;
+  chipColor: string;
+}
+
+export const TagView = styled.div<TagViewProps>`
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -9,7 +14,6 @@ export const TagView = styled.div`
   .tag-wrapper {
     display: flex;
     width: 860px;
-
 
     .tag-nav {
       width: 180px;
@@ -33,12 +37,16 @@ export const TagView = styled.div`
     }
 
     .tag-title-view {
-      background-color: darkgray;
+
       width: 100%;
       overflow: hidden;
-
+      a {
+        text-decoration: none;
+      }
       .tag-title-item {
-        background-color: skyblue;
+        color: black;
+        background-color: ${({ tagMenuBackgroundColor }) =>
+          tagMenuBackgroundColor};
         border-radius: 12px;
         padding: 16px;
         margin: 12px;
@@ -48,16 +56,12 @@ export const TagView = styled.div`
           overflow: scroll;
 
           .tag-chip {
-            background-color: lightgreen;
+            background-color: ${({ chipColor }) => chipColor};
             padding: 2px 12px;
             border-radius: 12px;
             margin: 4px 8px;
           }
         }
-      }
-
-      & > * {
-        text-decoration: none;
       }
     }
   }
@@ -68,9 +72,7 @@ export const TagView = styled.div`
     .tag-wrapper {
       flex-direction: column;
       .tag-nav {
-
         width: 100vw;
-        background-color: pink;
         overflow: hidden;
 
         ul {
@@ -88,9 +90,9 @@ export const TagView = styled.div`
               /* background-color: hotpink; */
               margin: 0.44em;
               padding: 0.2em 1em;
-              background-color: yellow;
+              background-color: ${({ chipColor }) => chipColor};
               border-radius: 1em;
-              
+
               a {
                 span {
                   display: none;

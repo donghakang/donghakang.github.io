@@ -5,6 +5,12 @@ import {
   planeColor,
   headerColor,
   subheaderColor,
+  blueColor1,
+  darkblueColor1,
+  blueColor2,
+  darkblueColor2,
+  tagMenuBackground,
+  chipColor,
 } from "./Color";
 
 export {
@@ -14,4 +20,10 @@ export {
   planeColor,
   headerColor,
   subheaderColor,
+  blueColor1,
+  darkblueColor1,
+  blueColor2,
+  darkblueColor2,
+  tagMenuBackground,
+  chipColor,
 };

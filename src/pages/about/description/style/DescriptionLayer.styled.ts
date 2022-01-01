@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const DescriptionLayer = styled.div`
-  max-width: 860px;
-  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,21 +9,22 @@ export const DescriptionLayer = styled.div`
   img {
     width: 300px;
     border-radius: 150px;
+    margin: 1em;
   }
 
   .description-container {
-    padding-right: 40px;
+    
 
     div {
       width: 100%;
     }
   }
-
-  h1 {
-    font-weight: 700;
-  }
   .description-text {
     width: 540px;
+    
+    div {
+      margin-top: 1em;
+    }
   }
 
   @media screen and (max-width: 640px) {
@@ -33,8 +32,6 @@ export const DescriptionLayer = styled.div`
     flex-direction: column-reverse;
 
     .description-container {
-
-      padding: 1em;
     }
 
   }

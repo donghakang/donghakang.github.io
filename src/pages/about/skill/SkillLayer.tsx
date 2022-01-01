@@ -9,11 +9,9 @@ function SkillLayer() {
   const [tabChange, setTabChange] = useState<boolean>(false);
 
   return (
-    <Styled.SkillLayer>
-      <h1 className="skill-title">
-        Familiar with
-      </h1>
-      <div className="skill-section" style={{ display: "flex" }}>
+    <Styled.SkillLayer className="layer">
+      <h1 className="skill-title">Familiar with</h1>
+      <div className="skill-section">
         <SkillScene
           setTab={setTimepage}
           skills={skillData}

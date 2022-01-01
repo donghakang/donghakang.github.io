@@ -9,19 +9,39 @@ function ExperienceLayer() {
   const [tabChange, setTabChange] = useState<boolean>(false);
 
   return (
-    <Styled.ExperienceLayer>
-      <ExperienceTab
-        setTab={setTimepage}
-        timeline={aboutData}
-        tabChange={tabChange}
-        setTabChange={setTabChange}
-      />
-      <ExperienceContent
-        tab={timepage}
-        timeline={aboutData}
-        tabChange={tabChange}
-        setTabChange={setTabChange}
-      />
+    <Styled.ExperienceLayer className="layer">
+      <div className="experience-container">
+        <h1>Experience</h1>
+      </div>
+      <div className="experience-content">
+        <ExperienceTab
+          setTab={setTimepage}
+          timeline={aboutData}
+          tabChange={tabChange}
+          setTabChange={setTabChange}
+        />
+        <ExperienceContent
+          tab={timepage}
+          timeline={aboutData}
+          tabChange={tabChange}
+          setTabChange={setTabChange}
+        />
+      </div>
+
+      {/* <div className="experience-container">
+        <ExperienceTab
+          setTab={setTimepage}
+          timeline={aboutData}
+          tabChange={tabChange}
+          setTabChange={setTabChange}
+        />
+        <ExperienceContent
+          tab={timepage}
+          timeline={aboutData}
+          tabChange={tabChange}
+          setTabChange={setTabChange}
+        />
+      </div> */}
     </Styled.ExperienceLayer>
   );
 }

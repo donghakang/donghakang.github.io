@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const ExperienceLayer = styled.div`
+  /* background-color: yellow; */
+
+  
   .experience-container {
-    width: 100%;
-  }
-  .experience-content {
     display: flex;
     .timeline {
       padding: 1em;
@@ -57,9 +57,10 @@ export const ExperienceLayer = styled.div`
         }
       }
     }
+
     .content {
       background-color: rgba(240, 248, 255, 0.6);
-      border-radius: 1em;
+      border-radius: 1em; 
       padding: 1em;
 
       .content-title {
@@ -80,23 +81,21 @@ export const ExperienceLayer = styled.div`
   }
 
   @media screen and (max-width: 640px) {
-    .experience-content {
+    .experience-container {
+      background-color: green;
       flex-direction: column;
       .timeline {
         ul {
-          /* display: flex;
+          margin: 0;
+          padding: 0;
+          display: flex;
           flex-direction: row-reverse;
           white-space: nowrap;
           overflow-x: auto;
-          -webkit-overflow-scrolling: touch; */
-          /* margin: 0;
-          padding: 0; */
-          /* display: flex; */
-          /* 
-           */
+          -webkit-overflow-scrolling: touch;
 
           li {
-            /* display: inline-block; */
+            display: inline-block;
             .time {
               display: none;
               .timepoint {
@@ -115,6 +114,7 @@ export const ExperienceLayer = styled.div`
           }
         }
       }
+
       .content {
         /* background-color: aliceblue; */
         height: 100%;

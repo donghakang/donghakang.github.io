@@ -10,6 +10,7 @@ import data from "../../data/work.json";
 import ProjectItem from "./ProjectItem";
 
 import { useTrail, a } from "@react-spring/web";
+import {blueColor1, darkblueColor1 } from '../../components/color'
 
 const Trail: React.FC<{ children: React.ReactNode; className: string }> = ({
   children,
@@ -37,8 +38,8 @@ const Trail: React.FC<{ children: React.ReactNode; className: string }> = ({
 
 function ProjectView() {
   const color = {
-    start: "#03a9f4",
-    end: "#67daff",
+    start: blueColor1,
+    end: darkblueColor1,
     text: "white",
     hoverText: hoverTextColor,
   };
