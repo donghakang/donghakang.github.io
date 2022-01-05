@@ -14,8 +14,12 @@ const ExperienceTab: React.FC<ExperienceTabProps> = ({
   setTabChange,
 }) => {
   const [active, setActive] = useState(0);
-  
-  function handleClick(index: number) {
+
+  function handleClick(
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    index: number
+  ) {
+    e.stopPropagation();
     setActive(index);
     setTabChange(!tabChange);
     setTab(index);
@@ -24,22 +28,24 @@ const ExperienceTab: React.FC<ExperienceTabProps> = ({
   return (
     <div className="timeline">
       <ul>
-        {timeline.map((time_content, index) => (
-          <li key={index}>
-            <div className="time">
-              <span className="timepoint"></span>
-              <span className="time-milestone"></span>
-            </div>
-            <div
-              className="time-title"
-              // onMouseOver={() => console.log("mouse over")}
-              // onMouseOut={() => console.log("mouse out")}
-              onClick={() => handleClick(index)}
-            >
-              <div>{time_content.title}</div>
-            </div>
-          </li>
-        ))}
+        <div>
+          {timeline.map((time_content, index) => (
+            <li key={index}>
+              <div className="time">
+                <span className="timepoint"></span>
+                <span className="time-milestone"></span>
+              </div>
+              <div
+                className="time-title"
+                // onMouseOver={() => console.log("mouse over")}
+                // onMouseOut={() => console.log("mouse out")}
+                onClick={(e) => handleClick(e, index)}
+              >
+                <div>{time_content.title}</div>
+              </div>
+            </li>
+          ))}
+        </div>
       </ul>
     </div>
   );

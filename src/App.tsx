@@ -24,6 +24,7 @@ const App: React.FC<{}> = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/tag" element={<Tag />} />
           <Route path="*" element={<PageNotFound />} />
+          
         </Routes>
       </Router>
     </>

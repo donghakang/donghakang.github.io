@@ -51,7 +51,8 @@ const Languages = ({ skills, setTab, setTabChange, tabChange }) => {
     }
   });
 
-  function handleClick(lang) {
+  function handleClick(e, lang) {
+    e.stopPropagation();
     setTabChange(!tabChange);
     setTab(lang);
   }
@@ -79,7 +80,7 @@ const Languages = ({ skills, setTab, setTabChange, tabChange }) => {
             setIsRotate(true);
             setIsPoint("");
           }}
-          onClick={(e) => handleClick(l)}
+          onClick={(e) => handleClick(e, l)}
         >
           {l}
         </h1>
@@ -107,7 +108,10 @@ const SkillScene = ({ setTab, skills, tabChange, setTabChange }) => {
           tabChange={tabChange}
           setTabChange={setTabChange}
         />
-        <OrbitControls enableZoom={false} />
+        <OrbitControls
+          enableZoom={false}
+          onClick={(e) => e.stopPropagation()}
+        />
       </Canvas>
     </Suspense>
   );

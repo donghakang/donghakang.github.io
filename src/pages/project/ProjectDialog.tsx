@@ -12,6 +12,8 @@ import {
 interface ProjectDialogProps {
   open: boolean;
   onClose: () => void;
+  demo?: string[];
+  link?: string;
   content: { title: string; image: string; data: string };
 }
 
@@ -19,7 +21,11 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
   open,
   onClose,
   content,
+  link,
+  demo,
 }) => {
+  console.log(demo);
+
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>{content.title}</DialogTitle>
@@ -41,8 +47,28 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose}>Disagree</Button>
-        <Button onClick={onClose}>Agree</Button>
+        <Button onClick={onClose}>Cancel</Button>
+        {demo &&
+          demo.map((d) => (
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = d;
+              }}
+            >
+              Demo
+            </Button>
+          ))}
+        {link && (
+          <Button
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = link;
+            }}
+          >
+            Link
+          </Button>
+        )}
       </DialogActions>
     </Dialog>
   );

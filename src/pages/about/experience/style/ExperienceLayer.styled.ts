@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ExperienceLayer = styled.div`
+  margin-top: 20vh;
   .experience-container {
     width: 100%;
   }
@@ -12,46 +13,48 @@ export const ExperienceLayer = styled.div`
       ul {
         margin: 0;
         padding: 0;
-        li {
-          display: flex;
-
-          .time {
+        div {
+          li {
             display: flex;
-            flex-direction: column;
-            margin: 0 12px;
-            justify-content: center;
-            align-items: center;
 
-            .timepoint {
-              margin: 8px 0;
-              padding: 4px;
-              background-color: aliceblue;
+            .time {
+              display: flex;
+              flex-direction: column;
+              margin: 0 12px;
+              justify-content: center;
+              align-items: center;
 
-              border-style: solid;
-              border-radius: 50%;
-              border-color: black;
-            }
+              .timepoint {
+                margin: 8px 0;
+                padding: 4px;
+                background-color: aliceblue;
 
-            .time-milestone {
-              flex-grow: 1;
-              width: 2px;
-              background-color: aliceblue;
-            }
-          }
+                border-style: solid;
+                border-radius: 50%;
+                border-color: black;
+              }
 
-          .time-title {
-            margin-bottom: 20px;
-          }
-
-          // hover click
-          &:hover {
-            .timepoint {
-              background-color: blue;
-              border-color: blue;
+              .time-milestone {
+                flex-grow: 1;
+                width: 2px;
+                background-color: aliceblue;
+              }
             }
 
             .time-title {
-              color: blue;
+              margin-bottom: 20px;
+            }
+
+            // hover click
+            &:hover {
+              .timepoint {
+                background-color: blue;
+                border-color: blue;
+              }
+
+              .time-title {
+                color: blue;
+              }
             }
           }
         }
@@ -61,6 +64,7 @@ export const ExperienceLayer = styled.div`
       background-color: rgba(240, 248, 255, 0.6);
       border-radius: 1em;
       padding: 1em;
+      min-height: 40vh;
 
       .content-title {
         display: flex;
@@ -80,37 +84,41 @@ export const ExperienceLayer = styled.div`
   }
 
   @media screen and (max-width: 640px) {
+    margin-top: 8vh;
     .experience-content {
       flex-direction: column;
       .timeline {
+        width: calc(100vw - 2em);
+        padding: 1em 0;
+        overflow: hidden;
+
         ul {
-          /* display: flex;
-          flex-direction: row-reverse;
+          margin: 0;
+          padding: 0;
           white-space: nowrap;
           overflow-x: auto;
-          -webkit-overflow-scrolling: touch; */
-          /* margin: 0;
-          padding: 0; */
-          /* display: flex; */
-          /* 
-           */
+          -webkit-overflow-scrolling: touch;
+          
+          div {
+            display: flex;
+            flex-direction: reverse;
 
-          li {
-            /* display: inline-block; */
-            .time {
-              display: none;
-              .timepoint {
+            li {
+              .time {
                 display: none;
+                .timepoint {
+                  display: none;
+                }
+                .time-milestone {
+                  display: none;
+                }
               }
-              .time-milestone {
-                display: none;
+              .time-title {
+                margin: 0.44em;
+                padding: 0.2em 1em;
+                background-color: aliceblue;
+                border-radius: 1em;
               }
-            }
-            .time-title {
-              margin: 0.44em;
-              padding: 0.2em 1em;
-              background-color: aliceblue;
-              border-radius: 1em;
             }
           }
         }

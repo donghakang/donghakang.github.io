@@ -4,9 +4,10 @@
     "title": "Python",
     "slug": "python",
     "data": [
-      "Python Data goes here...",
-      "Python Data goes here...",
-      "Python Data goes here..."
+      "Python을 이용하여 알고리즘, 자료구조 공부를 한 경험이 있습니다",
+      "OpenCV, PyTorch를 이용하여 가장 기본적인 딥러닝을 접해본 경험이 있습니다",
+      "PyQt, tkinter를 이용하여 GUI 소프트웨어를 만들어본 경험이 있습니다.",
+      "Pydicom, SimpleITK 등과 같은 다양한 라이브러리를 접해본 경험이 있습니다."
     ]
   },
   {
@@ -34,9 +35,8 @@
     "title": "Android",
     "slug": "android",
     "data": [
-      "Python Data goes here...",
-      "Python Data goes here...",
-      "Python Data goes here..."
+      "Java 기반의 안드로이드 수업을 들어서 App 개발을 배운 경험이 있습니다.",
+      "카카오 맵 API를 이용하여 지도에서 볼 수 있는 해야 할 일 어플리케이션을 개발한 경험이 있습니다."
     ]
   },
   {

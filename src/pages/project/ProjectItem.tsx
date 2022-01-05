@@ -1,3 +1,4 @@
+import { useConvexPolyhedron } from "@react-three/cannon";
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { hoverTextColor } from "../../components/color/Color";
@@ -10,6 +11,7 @@ interface ProjectItemProps {
     title: string;
     slug: string;
     link?: string;
+    demo?: string[];
     content: { title: string; image: string; data: string };
   };
   theme: {
@@ -56,7 +58,13 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ slug, item, theme }) => {
           {item.title}
         </StyledProjectItem>
       </animated.div>
-      <ProjectDialog open={open} onClose={handleClose} content={item.content} />
+      <ProjectDialog
+        open={open}
+        onClose={handleClose}
+        content={item.content}
+        link={item.link}
+        demo={item.demo}
+      />
     </>
   );
 };

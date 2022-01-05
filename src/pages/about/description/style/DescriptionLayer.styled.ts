@@ -28,8 +28,14 @@ export const DescriptionLayer = styled.div`
   }
 
   @media screen and (max-width: 640px) {
-    margin-top: 40px;
+    margin-top: 100px;
     flex-direction: column-reverse;
+
+    img {
+      width: 75vw;
+      border-radius: 37.5vw;
+      margin: 1em;
+    }
 
     .description-container {
     }

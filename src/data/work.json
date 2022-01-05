@@ -21,6 +21,7 @@
   {
     "title": "Merona Todolist",
     "slug": "merona",
+    "link": "https://github.com/donghakang/Merona_TodoList",
     "content": {
       "title": "올때, 메로나",
       "image": "merona.png",
@@ -30,6 +31,7 @@
   {
     "title": "animation",
     "slug": "animation",
+    "link": "https://sites.google.com/umn.edu/donghakang-csci5611/home?authuser=1",
     "content": {
       "title": "Animation",
       "image": "animation.png",
@@ -39,6 +41,7 @@
   {
     "title": "Football POV",
     "slug": "football",
+    "link": "https://github.com/donghakang/Football_POV",
     "content": {
       "title": "Football POV",
       "image": "football.png",
@@ -48,6 +51,7 @@
   {
     "title": "VR Paint",
     "slug": "vr-paint",
+    "link": "https://github.com/donghakang/VR_Paint",
     "content": {
       "title": "VR Paint",
       "image": "vrpaint.png",
@@ -57,6 +61,8 @@
   {
     "title": "Bezier Curve",
     "slug": "bezier-curve",
+    "demo": ["https://codepen.io/donghakang/pen/QWqrJQY", "https://codepen.io/donghakang/pen/qBPYQKR"],
+    "link": "https://github.com/donghakang/Bezier_Curve_3D",
     "content": {
       "title": "Bezier Curve",
       "image": "bezier.png",

@@ -1,4 +1,5 @@
 import Header from "../../components/header";
+import { Scroll } from "../../components/scroll";
 import AboutParallaxView from "./AboutParallaxView";
 import * as Styled from "./style/AboutView.styled";
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const SkillLayer = styled.div`
+  margin-top: 20vh;
   .skill-title {
     /* padding-left: 100px; */
   }
@@ -38,13 +39,14 @@ export const SkillLayer = styled.div`
   }
 
   @media screen and (max-width: 640px) {
+    margin-top: 8vh;
     .skill-section {
       flex-direction: column;
       .skill-canvas {
-        /* background-color: aquamarine; */
-        margin: auto;
+
+        /* margin: auto; */
         canvas {
-          width: 300px;
+          width: 80vw;
           height: 300px;
         }
       }
