@@ -7,6 +7,7 @@ import {
   DialogTitle,
   Button,
   Typography,
+  styled,
 } from "@mui/material";
 
 interface ProjectDialogProps {
@@ -24,11 +25,14 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
   link,
   demo,
 }) => {
-  console.log(demo);
-
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>{content.title}</DialogTitle>
+      <DialogTitle
+        id="alert-dialog-title"
+        sx={{ fontWeight: 700, letterSpacing: -0.3, fontSize: "2em" }}
+      >
+        {content.title}
+      </DialogTitle>
       <DialogContent>
         <DialogContentText>
           <img
@@ -48,17 +52,6 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose}>Cancel</Button>
-        {demo &&
-          demo.map((d) => (
-            <Button
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = d;
-              }}
-            >
-              Demo
-            </Button>
-          ))}
         {link && (
           <Button
             onClick={(e) => {

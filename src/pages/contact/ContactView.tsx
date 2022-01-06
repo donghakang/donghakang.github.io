@@ -15,6 +15,7 @@ import {
 import { Trail, VerticalTrail } from "../../components/animation";
 
 import Layout from "../../components/layout";
+import Emoji from "../../components/emoji/Emoji";
 
 function ContactView() {
   const color = {
@@ -33,9 +34,13 @@ function ContactView() {
           <Trail>
             <h1>Contact me</h1>
             <p>
-              솔직히 말해서 혼자 코딩하면 재미없잖아요, 저는 스케일이 크고 멋진
-              개발 커뮤니티를 만들고 싶습니다.
-              <br /> 정말로, 같이 일하면 어떨까요?
+              제가 제일 후회하는 것이 있다면, 발 벗고 뛰어 다니면서 팰로우
+              프로그래머들과 선배 프로그래머들에게 많이 배우지 못한 것, 혼자서
+              코딩을 하는 것을 즐거워 했다는 것 입니다.
+              <br />
+              <br /> 겸손한 자세로 많은 사람들과 소통하며 많이 성장하고
+              싶습니다.
+              <br /> 같이 코딩해요! <Emoji label="code" symbol="👨🏻‍💻"/>
             </p>
           </Trail>
         </div>

@@ -46,8 +46,8 @@ export const SkillLayer = styled.div`
 
         /* margin: auto; */
         canvas {
-          width: 80vw;
-          height: 300px;
+          width: calc(100vw - 2em);
+          height: 50vh;
         }
       }
     }

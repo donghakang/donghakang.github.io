@@ -11,7 +11,7 @@ const SkillLayer = ({ scrollMagic }: { scrollMagic?: () => void }) => {
 
   return (
     <Styled.SkillLayer className="layer">
-      <h1 className="skill-title">Familiar with</h1>
+      <h1 className="skill-title">Skillset</h1>
       <div className="skill-section">
         <SkillScene
           setTab={setTimepage}
@@ -31,8 +31,8 @@ const SkillLayer = ({ scrollMagic }: { scrollMagic?: () => void }) => {
           style={{
             zIndex: 2,
             position: "fixed",
-            bottom: "10%",
-            right: "5%",
+            bottom: "-15%",
+            right: "calc(50% - 25px)",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
