@@ -16,7 +16,6 @@ const TagTitleView: React.FC<TagViewProps> = ({
   tabChange,
   setTabChange,
 }) => {
-  console.log("??", data);
 
   const location = useLocation();
   const { tag } = qs.parse(location.search);
@@ -46,7 +45,6 @@ const TagTitleView: React.FC<TagViewProps> = ({
     <div className={"tag-title-view"}>
       <Trail key={String(tabChange)}>
         {sortByTagName.map((blog) => {
-          console.log("???", blog);
           return (
             <TagTitleItem
               key={`blog-${blog.id}`}

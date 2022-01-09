@@ -8,7 +8,8 @@ export const ContactView = styled.div<{
     hoverTextColor: string;
   };
 }>`
-  width: 100vw;
+
+  width:  100vw;
   height: 100vh;
   min-height: -webkit-fill-available;
   display: flex;
@@ -17,8 +18,11 @@ export const ContactView = styled.div<{
   justify-content: center;
 
   .contact-content {
+    max-width: 640px;
+    width: 100%;
+    
     h1 {
-      font-size: 80px;
+      font-size: 4rem;
       font-weight: 700;
     }
   }
@@ -41,7 +45,7 @@ export const ContactView = styled.div<{
     justify-content: center;
     margin: 40px;
     border-radius: 12px;
-    font-size: 24px;
+    font-size: 1.5rem;
     transition: 0.3s;
 
     * {
@@ -56,10 +60,15 @@ export const ContactView = styled.div<{
   // Phone View
   @media screen and (max-width: 640px) {
     .contact-content {
-      padding: 1.125em;
+      padding: 1em;
+      width: calc(100% - 2em);
 
       h1 {
-        font-size: 48px;
+        font-size: 2.75rem;
+      }
+      div {
+        line-height: -0.04em
+        margin: 1em  0;
       }
     }
 

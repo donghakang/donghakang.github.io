@@ -8,6 +8,7 @@ import PageNotFound from "./components/404";
 // import { Redirect } from "react-router-dom";
 
 const App: React.FC<{}> = () => {
+
   return (
     <>
       <Canvas
@@ -24,7 +25,6 @@ const App: React.FC<{}> = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/tag" element={<Tag />} />
           <Route path="*" element={<PageNotFound />} />
-          
         </Routes>
       </Router>
     </>

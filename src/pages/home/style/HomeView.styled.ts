@@ -24,7 +24,7 @@ export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
       font-style: italic;
       font-weight: 500;
       line-height: 1em;
-      font-size: 1em;
+      font-size: 1rem;
     }
   }
 

@@ -20,7 +20,7 @@ export const Header = styled.nav<HeaderProps>`
     margin-left: 20px;
 
     * {
-      font-size: 2em;
+      font-size: 2rem;
       font-family: helvetica;
       font-weight: 700;
       color: ${(props) => props.color};
@@ -42,7 +42,7 @@ export const Header = styled.nav<HeaderProps>`
         font-family: helvetica;
         font-weight: 550;
         letter-spacing: -0.04em;
-        font-size: 1.2em;
+        font-size: 1.2rem;
         color: ${(props) => props.color};
 
         &:hover {
@@ -68,6 +68,7 @@ export const Header = styled.nav<HeaderProps>`
     & {
       ul {
         background: linear-gradient(217deg, white, skyblue);
+        z-index: 98;
         margin: 0;
         padding: 20px 0 0 0;
         position: absolute;
@@ -100,6 +101,18 @@ export const Header = styled.nav<HeaderProps>`
         display: flex;
         z-index: 99;
         fill: orange;
+      }
+
+      .nav-background {
+        z-index: 10;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0;
       }
     }
   }

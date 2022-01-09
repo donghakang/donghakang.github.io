@@ -65,6 +65,7 @@ export const ExperienceLayer = styled.div`
       border-radius: 1em;
       padding: 1em;
       min-height: 40vh;
+      width: 60vw;
 
       .content-title {
         display: flex;
@@ -126,6 +127,7 @@ export const ExperienceLayer = styled.div`
       .content {
         /* background-color: aliceblue; */
         height: 100%;
+        width: inherit;
 
         .content-title {
           display: flex;

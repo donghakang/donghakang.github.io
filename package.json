@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open",
-    "build": "webpack",
+    "build": "rimraf build && webpack",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build && cp CNAME ./build"
   },
   "keywords": [],
   "author": "",

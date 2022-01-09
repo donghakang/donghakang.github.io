@@ -44,7 +44,7 @@ module.exports = {
           loader: "file-loader",
           options: {
             name: "[name].[contenthash].[ext]",
-            outputPath: "post" 
+            outputPath: "post",
           },
         },
       },
@@ -75,7 +75,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: {
-      rewrites: [{ from: /\//, to: '/404.html' }],
+      rewrites: [{ from: /\//, to: "public/404.html" }],
     },
   },
   plugins: [
@@ -84,6 +84,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
+        {
+          from: path.resolve(__dirname, "public/404.html"),
+          to: path.resolve(__dirname, "build"),
+        },
         { from: "public/img", to: "img" },
         { from: "public/obj", to: "obj" },
       ],

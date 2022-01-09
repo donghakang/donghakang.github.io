@@ -18,6 +18,16 @@ export const TagView = styled.div<TagViewProps>`
     .tag-nav {
       width: 180px;
 
+      .tag-nav-title {
+        div {
+          font-weight: 700;
+          color: lightblue;
+        }
+        hr {
+          border-color: blue;
+        }
+      }
+
       ul {
         padding: 40px 0px;
         margin: 0;
@@ -26,18 +36,23 @@ export const TagView = styled.div<TagViewProps>`
         li {
           a {
             text-decoration: none;
+            /* color: black; */
             color: black;
 
             &:hover {
               color: gray;
             }
           }
+
+          .selected {
+            color: blue;
+            font-weight: 500;
+          }
         }
       }
     }
 
     .tag-title-view {
-
       width: 100%;
       overflow: hidden;
       a {
@@ -77,7 +92,7 @@ export const TagView = styled.div<TagViewProps>`
 
         ul {
           margin: 0;
-          padding: 0;
+          padding: 1rem 0;
           white-space: nowrap;
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
@@ -86,6 +101,10 @@ export const TagView = styled.div<TagViewProps>`
           div {
             /* background-color: cyan; */
             display: inline-block;
+
+            .tag-nav-title {
+              display: none;
+            }
             li {
               /* background-color: hotpink; */
               margin: 0.44em;
@@ -94,10 +113,15 @@ export const TagView = styled.div<TagViewProps>`
               border-radius: 1em;
 
               a {
+                &:hover {
+                  color: gray;
+                }
+              }
+              /* a {
                 span {
                   display: none;
                 }
-              }
+              } */
             }
           }
         }

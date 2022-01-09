@@ -39,7 +39,7 @@ export const StyledProjectItem = styled.div<{
     background-position: center;
     color: ${(props) => props.theme.start};
     font-weight: 700;
-    font-size: 1em;
+    font-size: 1rem;
 
     display: flex;
     align-items: center;

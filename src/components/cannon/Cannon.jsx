@@ -1,4 +1,4 @@
-import React, { useRef, Suspense } from "react";
+import React, { useRef, Suspense, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
 import { OrthographicCamera, Loader } from "@react-three/drei";
@@ -12,6 +12,7 @@ import {
   headphoneColor,
   planeColor,
 } from "../color";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const Obj = (props) => {
   const { obj } = props;
@@ -32,6 +33,10 @@ const Cannon = () => {
   for (let i = 0; i < 50; i++) {
     items.push(i);
   }
+
+  // Change zoom value depending on the screen size
+  const size = useWindowSize();
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Canvas
@@ -42,7 +47,7 @@ const Cannon = () => {
           makeDefault
           position={[-1, 1, 1]}
           rotation={[-Math.PI / 4.0, -Math.PI / 8.0, -Math.PI / 8.0]}
-          zoom={100}
+          zoom={size.width > 640 ? 100 : 50}
           near={-100}
           far={100}
         />

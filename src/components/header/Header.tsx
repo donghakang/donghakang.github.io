@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { Link } from "gatsby";
 // import { ThemeSwitch, LangSwitch } from "../switch";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { LanguageSwitch, ThemeSwitch } from "../switch";
 import { BiMenu, BiX } from "react-icons/bi";
 import * as Styled from "./style/Header.styled";
@@ -9,7 +9,12 @@ import { headerColor } from "../color";
 
 const Header: React.FC = (): JSX.Element => {
   const [open, setOpen] = useState<boolean>(false);
-  const location = useLocation();
+
+  const handleCloseMenu = () => {
+    // when pressed, chnage the menu open state
+    console.log('???')
+    setOpen(!open);
+  };
 
   return (
     <Styled.Header open={open} color={headerColor}>
@@ -44,13 +49,19 @@ const Header: React.FC = (): JSX.Element => {
           <ThemeSwitch />
         </li> */}
       </ul>
-      <button className="hamburger-menu" onClick={() => setOpen(!open)}>
+      <button className="hamburger-menu" onClick={handleCloseMenu}>
         {open ? (
           <BiX size={32} color={headerColor} />
         ) : (
           <BiMenu size={32} color={headerColor} />
         )}
       </button>
+      {open && (
+        <div
+          className="nav-background"
+          onClick={handleCloseMenu}
+        ></div>
+      )}
     </Styled.Header>
   );
 };

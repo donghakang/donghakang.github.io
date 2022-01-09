@@ -7,9 +7,9 @@ import ExperienceLayer from "./experience";
 import SkillLayer from "./skill";
 import { blueColor1, blueColor2 } from "../../components/color";
 import { IoIosArrowUp } from "react-icons/io";
+import Loading from "../../components/loading";
 
 const AboutParallaxView = () => {
-  
   const [posY, setPosY] = useState<number>(0);
   const [rotY, setRotY] = useState<number>(0);
   const parallax = useRef<any>(null);
@@ -18,7 +18,6 @@ const AboutParallaxView = () => {
       parallax.current.scrollTo(to);
     }
   };
-
 
   //TODO: 스크롤에 반응하는 오브젝트를 만들려 했지만 리렌더링 문제 때문에 실패했다...
   // const handleScroll = () => {
@@ -41,93 +40,81 @@ const AboutParallaxView = () => {
   //     setRotY((rotY + 1) % (365 * 2 * Math.PI));
   //   };
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+  useEffect(() => {
+    // image --> data,
+    // data.content.image has Image URL
+    const loadImage = (image: string) => {
+      return new Promise((resolve, reject) => {
+        const loadImage = new Image();
+        loadImage.src = image;
+
+        loadImage.onload = () => {
+          setTimeout(() => {
+            resolve(image);
+          }, 0);
+        };
+
+        loadImage.onerror = (err) => reject(err);
+      });
+    };
+
+    loadImage("img/profile.png")
+      .then((res) => setImageLoaded(true))
+      .catch((err) => console.error("Images cannot be loaded", err));
+  }, []);
+
   return (
-    <Parallax
-      pages={3.5}
-      style={{ top: "0", left: "0", bottom: '-20' }}
-      ref={parallax}
-      className={"my-class-name"}
-    >
-      <ParallaxLayer
-        offset={0}
-        speed={2.5}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        onClick={() => scroll(1)}
-      >
-        <DescriptionLayer />
-      </ParallaxLayer>
-      <ParallaxLayer offset={1} speed={2}>
-        <MacbookLayer rotation={[0, rotY / 365.0, 0]} color={blueColor1} />
-      </ParallaxLayer>
-      <ParallaxLayer
-        offset={1}
-        speed={0.5}
-        onClick={() => scroll(2)}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <ExperienceLayer />
-      </ParallaxLayer>
-      <ParallaxLayer offset={2} speed={1.0}>
-        <KeyboardLayer rotation={[0, rotY / 365.0, 0]} color={blueColor2} />
-      </ParallaxLayer>
-      <ParallaxLayer
-        offset={2}
-        speed={0.5}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          minHeight: "100vh",
-          height: "120vh"
-        }}
-        // onClick={() => scroll(0)}
-      >
-    
-
-        {/* <SkillLayer scrollMagic={() => scroll(0)} /> */}
-        <SkillLayer/>
-      </ParallaxLayer>
-
-      {/* {phoneMode && (
-        <ParallaxLayer
-          offset={2.1}
-          speed={0.5}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            // backgroundColor: "blue",
-          }}
-          onClick={() => scroll(0)}
-        >
-          <div
+    <>
+      {imageLoaded ? (
+        <Parallax pages={3.3} ref={parallax} className={"my-class-name"}>
+          <ParallaxLayer
+            offset={0}
+            speed={2.5}
             style={{
-              zIndex: 2,
-              position: "fixed",
-              bottom: "10%",
-              right: "5%",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              borderRadius: "25px",
-              width: "50px",
-              height: "50px",
-              backgroundColor: "lightgreen",
-              cursor: "pointer",
             }}
-            onClick={() => scroll(0)}
+            onClick={() => scroll(1)}
           >
-            <IoIosArrowUp />
-          </div>
-        </ParallaxLayer> */}
-    
-    </Parallax>
+            <DescriptionLayer />
+          </ParallaxLayer>
+          <ParallaxLayer offset={1} speed={2}>
+            <MacbookLayer rotation={[0, rotY / 365.0, 0]} color={blueColor1} />
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={1}
+            speed={0.5}
+            onClick={() => scroll(2)}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <ExperienceLayer />
+          </ParallaxLayer>
+          <ParallaxLayer offset={2} speed={1.0}>
+            <KeyboardLayer rotation={[0, rotY / 365.0, 0]} color={blueColor2} />
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={2}
+            speed={0.5}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              minHeight: "100vh",
+              height: "120vh",
+            }}
+          >
+            <SkillLayer />
+          </ParallaxLayer>
+        </Parallax>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
-}
+};
 
 export default AboutParallaxView;
