@@ -45,28 +45,28 @@ function BlogView() {
       <Styled.BlogView>
         {blog ? (
           blogLoaded ? (
-              <div className={"main"}>
-                <div className="main-container">
-                  <div className={"title-section"}>
-                    <h1>{blog.title}</h1>
-                    <div className={"title-info"}>
-                      <Emoji label="writer" symbol="👨🏻‍💻" />
-                      <strong>{blog.author}</strong>
-                      <span>{blog.date}</span>
-                      {/* TODO: get tag data */}
-                    </div>
-                    <div className="chip-info">
-                      <Chip tags={blog.tag} />
-                    </div>
+            <div className={"main"}>
+              <div className="main-container">
+                <div className={"title-section"}>
+                  <h1>{blog.title}</h1>
+                  <div className={"title-info"}>
+                    <Emoji label="writer" symbol="👨🏻‍💻" />
+                    <strong>{blog.author}</strong>
+                    <span>{blog.date}</span>
+                    {/* TODO: get tag data */}
                   </div>
-                  <BlogContent filename={blog.filename} />
-
-                  <div className={"footer-section"}>
-                    <a href="/tag?tag=all">&lt; Back</a>
-                    <Scroll showBelow={250} />
+                  <div className="chip-info">
+                    <Chip tags={blog.tag} />
                   </div>
                 </div>
+                <BlogContent filename={blog.filename} />
+
+                <div className={"footer-section"}>
+                  <a href="/tag?tag=all">&lt; Back</a>
+                  <Scroll showBelow={250} />
+                </div>
               </div>
+            </div>
           ) : (
             <Loading />
           )

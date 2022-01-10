@@ -55,7 +55,7 @@
     "content": {
       "title": "VR Paint",
       "image": "vrpaint.png",
-      "data": "<p><b>VR Paint</b>는 Unity 와 C#을 사용하여 만들어진 어플리케이션으로, Oculus 등 VR 을 끼고 가상환경에 그림을 그릴 수 있는 3D 그림판어플리케이션 입니다. 선 뿐만아니라 색깔 및 텍스쳐까지 바꿀 수 있도록구현하고, 또한 User Interface의 중요성을 강조하기 위해 손목에 tool을넣는 구현도 했습니다.</p>"
+      "data": "<h2>🎉 VR Paint</h2><p><b>VR Paint</b>는 Unity 와 C#을 사용하여 만들어진 어플리케이션으로, Oculus를 끼고 가상환경에 그림을 그릴 수 있는 3D 그림판 어플리케이션 입니다. 선 뿐만아니라 색깔 및 텍스쳐를 바꿀 수 있도록 구현하고, 또한 User Interface의 중요성을 강조하기 위해 손목에 tool을넣는 구현도 했습니다.</p>"
     }
   },
   {
@@ -69,7 +69,7 @@
     "content": {
       "title": "Bezier Curve",
       "image": "bezier.png",
-      "data": "<h4>Demo</h4><ul><li><a href='https://codepen.io/donghakang/pen/QWqrJQY'>Bezier Curve</a></li><li><a href='https://codepen.io/donghakang/pen/qBPYQKR'>Texture Mapping</a></li></ul>"
+      "data": "<h2>🎉 Bezier Curve / Texture Mapping</h2><p><strong>Bezier curve, Texture mapping</strong>은 WebGL, JavaScript 프로젝트이며, Bezier curve를 회전축으로 돌려서 3D 형상화 시키는 것과 3D 오브젝트에 빛과 색을 적용시키고 패턴을 입히는 프로젝트를 진행했습니다.</p><h4>Demo</h4><ul><li><a href='https://codepen.io/donghakang/pen/QWqrJQY'>Bezier Curve</a></li><li><a href='https://codepen.io/donghakang/pen/qBPYQKR'>Texture Mapping</a></li></ul>"
     }
   }
 ]

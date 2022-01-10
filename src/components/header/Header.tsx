@@ -12,7 +12,6 @@ const Header: React.FC = (): JSX.Element => {
 
   const handleCloseMenu = () => {
     // when pressed, chnage the menu open state
-    console.log('???')
     setOpen(!open);
   };
 
