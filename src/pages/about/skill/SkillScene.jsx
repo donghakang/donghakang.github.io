@@ -1,22 +1,7 @@
 import React, { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
-import { SkillProps } from "./SkillContent";
-
-// // Camera Controller
-// const CameraController = () => {
-//   const { camera, gl } = useThree();
-//   useEffect(() => {
-//     const controls = new OrbitControls(camera, gl.domElement);
-//     controls.enableDamping = true;
-//     controls.dampingFactor = 0.25;
-
-//     return () => {
-//       controls.dispose();
-//     };
-//   }, [camera, gl]);
-//   return null;
-// };
+import { theme } from "../../../components/theme";
 
 function fibonacciSphere(samples) {
   let points = [];
@@ -68,7 +53,11 @@ const Languages = ({ skills, setTab, setTabChange, tabChange }) => {
           name={l}
           style={{
             color:
-              isPoint === l ? "orange" : index % 2 ? "darkblue" : "dodgerblue",
+              isPoint === l
+                ? theme.colors.main_orange
+                : index % 2
+                ? theme.colors.obj_3
+                : theme.colors.main_blue,
             fontSize: isPoint === l ? "60px" : "40px",
             cursor: isRotate ? "default" : "pointer",
           }}

@@ -9,52 +9,48 @@ export const ExperienceLayer = styled.div`
     display: flex;
     .timeline {
       padding: 1em;
-      /* background-color: pink; */
       ul {
         margin: 0;
         padding: 0;
-        div {
-          li {
+
+        li {
+          display: flex;
+
+          .time {
             display: flex;
+            flex-direction: column;
+            margin: 0 12px;
+            justify-content: center;
+            align-items: center;
 
-            .time {
-              display: flex;
-              flex-direction: column;
-              margin: 0 12px;
-              justify-content: center;
-              align-items: center;
+            .timepoint {
+              margin: 8px 0;
+              padding: 4px;
 
-              .timepoint {
-                margin: 8px 0;
-                padding: 4px;
-                background-color: aliceblue;
+              border-style: solid;
+              border-radius: 50%;
+              border-color: black;
+            }
 
-                border-style: solid;
-                border-radius: 50%;
-                border-color: black;
-              }
+            .time-milestone {
+              flex-grow: 1;
+              width: 2px;
+            }
+          }
 
-              .time-milestone {
-                flex-grow: 1;
-                width: 2px;
-                background-color: aliceblue;
-              }
+          .time-title {
+            margin-bottom: 20px;
+          }
+
+          // hover click
+          &:hover {
+            .timepoint {
+              background-color: ${(props) => props.theme.colors.main_blue};
+              border-color: ${(props) => props.theme.colors.main_blue};
             }
 
             .time-title {
-              margin-bottom: 20px;
-            }
-
-            // hover click
-            &:hover {
-              .timepoint {
-                background-color: blue;
-                border-color: blue;
-              }
-
-              .time-title {
-                color: blue;
-              }
+              color: ${(props) => props.theme.colors.obj_3};
             }
           }
         }
@@ -99,33 +95,29 @@ export const ExperienceLayer = styled.div`
           white-space: nowrap;
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
-          
-          div {
-            display: flex;
-            flex-direction: reverse;
+          display: flex;
+          flex-direction: reverse;
 
-            li {
-              .time {
+          li {
+            .time {
+              display: none;
+              .timepoint {
                 display: none;
-                .timepoint {
-                  display: none;
-                }
-                .time-milestone {
-                  display: none;
-                }
               }
-              .time-title {
-                margin: 0.44em;
-                padding: 0.2em 1em;
-                background-color: aliceblue;
-                border-radius: 1em;
+              .time-milestone {
+                display: none;
               }
+            }
+            .time-title {
+              margin: 0.44em;
+              padding: 0.2em 1em;
+              background-color: aliceblue;
+              border-radius: 1em;
             }
           }
         }
       }
       .content {
-        /* background-color: aliceblue; */
         height: 100%;
         width: inherit;
 
@@ -137,7 +129,6 @@ export const ExperienceLayer = styled.div`
             font-weight: 700;
           }
           span {
-            /* background-color: aliceblue; */
             font-style: italic;
           }
         }

@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 // import { LanguageSwitch, ThemeSwitch } from "../switch";
 import { BiMenu, BiX } from "react-icons/bi";
 import * as Styled from "./style/Header.styled";
-import { headerColor } from "../color";
 
-const Header: React.FC = (): JSX.Element => {
+const Header: React.FC<{ home?: boolean }> = ({
+  home
+}): JSX.Element => {
   const [open, setOpen] = useState<boolean>(false);
-
   const handleCloseMenu = () => {
     // when pressed, chnage the menu open state
     setOpen(!open);
   };
 
   return (
-    <Styled.Header open={open} color={headerColor}>
+    <Styled.Header open={open} home={home}>
       <div className="logo">
         <Link to="/">DH</Link>
       </div>
@@ -41,26 +41,11 @@ const Header: React.FC = (): JSX.Element => {
             contact
           </Link>
         </li>
-        {/* <li>
-          <LanguageSwitch />
-        </li> */}
-        {/* <li>
-          <ThemeSwitch />
-        </li> */}
       </ul>
       <button className="hamburger-menu" onClick={handleCloseMenu}>
-        {open ? (
-          <BiX size={32} color={headerColor} />
-        ) : (
-          <BiMenu size={32} color={headerColor} />
-        )}
+        {open ? <BiX size={32} /> : <BiMenu size={32} />}
       </button>
-      {open && (
-        <div
-          className="nav-background"
-          onClick={handleCloseMenu}
-        ></div>
-      )}
+      {open && <div className="nav-background" onClick={handleCloseMenu}></div>}
     </Styled.Header>
   );
 };

@@ -1,6 +1,4 @@
-html {
-  background-color: #e8e4e4;
-}
+
 
 body {
     margin: 0;
@@ -10,7 +8,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    font-size: 100%
   }
   
   code {
@@ -18,7 +15,3 @@ body {
       monospace;
   }
   
-
-  @media all and (max-width: 640px) {
-    html { font-size: 87.5%; } 
-  }

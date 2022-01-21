@@ -1,28 +1,41 @@
 import React, { useRef, Suspense, useEffect } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Physics } from "@react-three/cannon";
-import { OrthographicCamera, Loader } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Physics, useBox } from "@react-three/cannon";
+import { OrthographicCamera, Loader, OrbitControls } from "@react-three/drei";
 import MacbookRef from "./MacbookRef";
 import KeyboardRef from "./KeyboardRef";
 import HeadphoneRef from "./HeadphoneRef";
 import Plane from "./Plane";
-import {
-  keyboardColor,
-  macbookColor,
-  headphoneColor,
-  planeColor,
-} from "../color";
 import useWindowSize from "../../hooks/useWindowSize";
+import { theme } from "../theme";
 
 const Obj = (props) => {
   const { obj } = props;
   if (obj === 0) {
-    return <MacbookRef {...props} color={macbookColor} />;
+    return <KeyboardRef {...props} color={theme.colors.obj_1} />;
   } else if (obj === 1) {
-    return <KeyboardRef {...props} color={keyboardColor} />;
+    return <HeadphoneRef {...props} color={theme.colors.obj_2} />;
   } else {
-    return <HeadphoneRef {...props} color={headphoneColor} />;
+    return <MacbookRef {...props} color={theme.colors.obj_3} />;
   }
+};
+
+const PointerHandle = ({ size }) => {
+  const position = [0, 0, 0];
+  const args = [size / 2, size, size / 2];
+
+  const [ref, api] = useBox(() => ({ args, position, type: "Kinematic" }));
+
+  useFrame(({ mouse: { x, y }, viewport: { height, width } }) => {
+    api.position.set(x * width, 0, -1 * y * height);
+  });
+
+  return (
+    <mesh ref={ref}>
+      <boxBufferGeometry args={args} />
+      <meshPhongMaterial opacity={0} transparent />
+    </mesh>
+  );
 };
 
 const Cannon = () => {
@@ -52,30 +65,31 @@ const Cannon = () => {
           far={100}
         />
         <Physics>
+          <PointerHandle size={3} />
           <Plane
             position={[0, -3, 0]}
             rotation={[-Math.PI / 2, 0, 0]}
-            color={planeColor}
+            color={theme.colors.white}
           />
           <Plane
             position={[0, -3, 10]}
             rotation={[0, Math.PI, 0]}
-            color={planeColor}
+            color={theme.colors.white}
           />
           <Plane
             position={[0, -3, -10]}
             rotation={[0, 0, 0]}
-            color={planeColor}
+            color={theme.colors.white}
           />
           <Plane
             position={[-10, -3, 0]}
             rotation={[0, Math.PI / 2.0, 0]}
-            color={planeColor}
+            color={theme.colors.white}
           />
           <Plane
             position={[10, -3, 0]}
             rotation={[0, -Math.PI / 2.0, 0]}
-            color={planeColor}
+            color={theme.colors.white}
           />
           {items.map((item) => (
             <Obj

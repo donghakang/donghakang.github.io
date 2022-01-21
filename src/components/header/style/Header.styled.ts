@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface HeaderProps {
   open: boolean;
-  color: string;
+  home: boolean | undefined;
 }
 
 export const Header = styled.nav<HeaderProps>`
@@ -16,14 +16,18 @@ export const Header = styled.nav<HeaderProps>`
   align-items: center;
   justify-content: space-between;
   z-index: 99;
+  font-size: 1.125rem;
+  background-color: ${(props) =>
+    props.home ? "" : props.theme.colors.bg_gray};
+
   .logo {
     margin-left: 20px;
 
     * {
-      font-size: 2rem;
       font-family: helvetica;
       font-weight: 700;
-      color: ${(props) => props.color};
+      font-size: 2.25rem;
+      color: ${(props) => props.theme.colors.main_orange};
       letter-spacing: -0.125em;
       text-decoration: none;
     }
@@ -42,8 +46,7 @@ export const Header = styled.nav<HeaderProps>`
         font-family: helvetica;
         font-weight: 550;
         letter-spacing: -0.04em;
-        font-size: 1.2rem;
-        color: ${(props) => props.color};
+        color: ${(props) => props.theme.colors.main_orange};
 
         &:hover {
           color: orange;
@@ -67,7 +70,11 @@ export const Header = styled.nav<HeaderProps>`
   @media screen and (max-width: 640px) {
     & {
       ul {
-        background: linear-gradient(217deg, white, skyblue);
+        background: linear-gradient(
+          20deg,
+          ${(props) => props.theme.colors.alternate_blue_7},
+          ${(props) => props.theme.colors.alternate_blue_6}
+        );
         z-index: 98;
         margin: 0;
         padding: 20px 0 0 0;
@@ -98,15 +105,16 @@ export const Header = styled.nav<HeaderProps>`
       }
 
       .hamburger-menu {
+        color: ${(props) => props.theme.colors.main_orange};
         display: flex;
         z-index: 99;
-        fill: orange;
       }
 
       .nav-background {
         z-index: 10;
         position: absolute;
         top: 0%;
+
         left: 0%;
 
         width: 100vw;

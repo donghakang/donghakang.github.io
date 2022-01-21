@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
-export const ContactView = styled.div<{
-  theme: string & {
-    start: string;
-    end: string;
-    text: string;
-    hoverTextColor: string;
-  };
-}>`
+export const ContactView = styled.div`
 
   width:  100vw;
   height: 100vh;
@@ -35,10 +28,10 @@ export const ContactView = styled.div<{
     display: flex;
     margin: auto 16px;
     background: linear-gradient(
-      100deg,
-      ${(props) => props.theme.start},
-      ${(props) => props.theme.end}
-    );
+              40deg,
+              ${({ theme }) => theme.colors.main_blue},
+              ${({ theme }) => theme.colors.alternate_blue_5}
+            );
     width: 60px;
     height: 60px;
     align-items: center;

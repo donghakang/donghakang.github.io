@@ -18,7 +18,6 @@ export const Footer = styled.footer`
 
   & > div > span {
     margin-bottom: 12px;
-    font-size: 1.25rem;
   }
   a {
     color: darkorange;

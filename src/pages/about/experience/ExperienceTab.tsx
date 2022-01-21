@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { theme } from "../../../components/theme";
 
 interface ExperienceTabProps {
+  tab: number;
   timeline: { id: string; title: string; date: string }[];
   setTab: React.Dispatch<React.SetStateAction<number>>;
   tabChange: boolean;
@@ -8,6 +10,7 @@ interface ExperienceTabProps {
 }
 
 const ExperienceTab: React.FC<ExperienceTabProps> = ({
+  tab,
   timeline,
   setTab,
   tabChange,
@@ -28,8 +31,30 @@ const ExperienceTab: React.FC<ExperienceTabProps> = ({
   return (
     <div className="timeline">
       <ul>
-        <div>
-          {timeline.map((time_content, index) => (
+        {timeline.map((time_content, index) =>
+          timeline[tab].id === time_content.id ? (
+            <li key={index}>
+              <div className="time">
+                <span
+                  className="timepoint"
+                  style={{
+                    backgroundColor: theme.colors.main_orange,
+                    borderColor: theme.colors.main_orange,
+                  }}
+                ></span>
+                <span className="time-milestone"></span>
+              </div>
+              <div
+                className="time-title"
+                onClick={(e) => handleClick(e, index)}
+                style={{
+                  color: theme.colors.main_orange,
+                }}
+              >
+                <div>{time_content.title}</div>
+              </div>
+            </li>
+          ) : (
             <li key={index}>
               <div className="time">
                 <span className="timepoint"></span>
@@ -37,15 +62,13 @@ const ExperienceTab: React.FC<ExperienceTabProps> = ({
               </div>
               <div
                 className="time-title"
-                // onMouseOver={() => console.log("mouse over")}
-                // onMouseOut={() => console.log("mouse out")}
                 onClick={(e) => handleClick(e, index)}
               >
                 <div>{time_content.title}</div>
               </div>
             </li>
-          ))}
-        </div>
+          )
+        )}
       </ul>
     </div>
   );

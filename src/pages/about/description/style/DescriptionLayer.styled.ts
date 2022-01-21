@@ -4,7 +4,6 @@ export const DescriptionLayer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 
   img {
     width: 300px;
@@ -13,15 +12,13 @@ export const DescriptionLayer = styled.div`
   }
 
   .description-container {
-    
-
     div {
       width: 100%;
     }
   }
   .description-text {
     width: 540px;
-    
+
     div {
       margin-top: 1em;
     }
@@ -30,6 +27,7 @@ export const DescriptionLayer = styled.div`
   @media screen and (max-width: 640px) {
     margin-top: 100px;
     flex-direction: column-reverse;
+    justify-content: start;
 
     img {
       width: 75vw;
@@ -39,6 +37,5 @@ export const DescriptionLayer = styled.div`
 
     .description-container {
     }
-
   }
 `;

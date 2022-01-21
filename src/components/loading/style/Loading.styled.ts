@@ -1,31 +1,28 @@
 import styled from "styled-components";
 
-interface LoadingProps {
-    loadColor: string[];
-}
+export const Loading = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-export const Loading = styled.div<LoadingProps>`
-  .loading-container {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
   .loading-component {
     width: 60px;
     height: 60px;
-    position: absolute;
     margin: 0 auto;
+    position: relative;
   }
+  span {
+    margin: 8px auto;
+    font-weight: 600;
+  }
+
   .loading-circle2 {
-    background-color: ${({loadColor}) => loadColor[0]};
+    background-color: ${(props) => props.theme.colors.main_blue};
   }
   .loading-circle1 {
-    background-color: ${({loadColor}) => loadColor[1]};
+    background-color: ${(props) => props.theme.colors.main_orange};
   }
   .loading-circle1,
   .loading-circle2 {

@@ -1,15 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const TagChip: React.FC<{ tags: string[] }> = ({ tags }) => {
-  const renderTags = tags.map((tag, index) => (
-    <span key={index} className="tag-chip">
-      {tag}
-    </span>
-  ));
 
-  return <div className={"tag-chip-wrapper"}>{renderTags}</div>;
-};
 
 interface blogProps {
   keyValue: number;
@@ -19,6 +11,17 @@ interface blogProps {
   date: string;
   tags: string[];
 }
+
+
+export const TagChip: React.FC<{ tags: string[] }> = ({ tags }) => {
+  const renderTags = tags.map((tag, index) => (
+    <span key={index} className="tag-chip">
+      {tag}
+    </span>
+  ));
+
+  return <div className={"tag-chip-wrapper"}>{renderTags}</div>;
+};
 
 const TagTitleItem: React.FC<blogProps> = ({
   keyValue,

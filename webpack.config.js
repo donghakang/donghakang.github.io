@@ -71,12 +71,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "main.[contenthash].js",
-    // publicPath: "/",
+    publicPath: "/",
   },
   devServer: {
-    historyApiFallback: {
-      rewrites: [{ from: /\//, to: "public/404.html" }],
-    },
+    // historyApiFallback: {
+    //   rewrites: [{ from: /\//, to: "public/404.html" }],
+    // },
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({

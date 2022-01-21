@@ -4,6 +4,7 @@ import SkillScene from "./SkillScene";
 import SkillContent from "./SkillContent";
 import skillData from "../../../data/skillData.json";
 import { IoIosArrowUp } from "react-icons/io";
+import { Fade } from "react-awesome-reveal";
 
 const SkillLayer = ({ scrollMagic }: { scrollMagic?: () => void }) => {
   const [timepage, setTimepage] = useState<string>("Python");
@@ -11,21 +12,23 @@ const SkillLayer = ({ scrollMagic }: { scrollMagic?: () => void }) => {
 
   return (
     <Styled.SkillLayer className="layer">
-      <h1 className="skill-title">Skillset</h1>
-      <div className="skill-section">
-        <SkillScene
-          setTab={setTimepage}
-          skills={skillData}
-          tabChange={tabChange}
-          setTabChange={setTabChange}
-        />
-        <SkillContent
-          tab={timepage}
-          skills={skillData}
-          tabChange={tabChange}
-          setTabChange={setTabChange}
-        />
-      </div>
+      <Fade duration={2000}>
+        <h1 className="skill-title">Skillset</h1>
+        <div className="skill-section">
+          <SkillScene
+            setTab={setTimepage}
+            skills={skillData}
+            tabChange={tabChange}
+            setTabChange={setTabChange}
+          />
+          <SkillContent
+            tab={timepage}
+            skills={skillData}
+            tabChange={tabChange}
+            setTabChange={setTabChange}
+          />
+        </div>
+      </Fade>
       {scrollMagic && (
         <div
           style={{

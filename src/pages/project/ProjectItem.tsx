@@ -1,7 +1,5 @@
-import { useConvexPolyhedron } from "@react-three/cannon";
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
-import { hoverTextColor } from "../../components/color/Color";
 import ProjectDialog from "./ProjectDialog";
 import { StyledProjectItem } from "./style/ProjectItem.styled";
 
@@ -14,21 +12,9 @@ interface ProjectItemProps {
     demo?: string[];
     content: { title: string; image: string; data: string };
   };
-  theme: {
-    start: string;
-    end: string;
-    text: string;
-    hoverText: string;
-  };
 }
-const ProjectItem: React.FC<ProjectItemProps> = ({ slug, item, theme }) => {
+const ProjectItem: React.FC<ProjectItemProps> = ({ slug, item }) => {
   const [open, setOpen] = useState<boolean>(false);
-  const [{ color, transform }, set] = useSpring(() => ({
-    color: "white",
-    transform: "scale(1.0)",
-    delay: 10,
-  }));
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -39,25 +25,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ slug, item, theme }) => {
 
   return (
     <>
-      <animated.div
-        onMouseLeave={() => set({ color: "white", transform: "scale(1.0)" })}
-        onMouseEnter={() =>
-          set({ color: hoverTextColor, transform: "scale(1.1)" })
-        }
+      <StyledProjectItem
         onClick={handleClickOpen}
-        style={{ transform }}
-        className="item"
+        background={`img/${item.content.image}`}
       >
-        <StyledProjectItem
-          // as={animated.div}
-          // style={{ color }}
-
-          theme={theme}
-          background={`img/${item.content.image}`}
-        >
-          {item.title}
-        </StyledProjectItem>
-      </animated.div>
+        {item.title}
+      </StyledProjectItem>
       <ProjectDialog
         open={open}
         onClose={handleClose}

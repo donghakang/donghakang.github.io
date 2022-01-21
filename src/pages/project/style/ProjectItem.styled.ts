@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
 export const StyledProjectItem = styled.div<{
-  theme: { start: string; end: string; text: string; hoverText: string };
   background: string;
 }>`
-  background: linear-gradient(
-    100deg,
-    ${(props) => props.theme.start},
-    ${(props) => props.theme.end}
-  );
+  // Image
+  background-image: url(${(props) => props.background});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-  color: ${(props) => props.theme.text};
+  width: 100%;
+  height: 100%;
+
+  // font
   font-weight: 700;
-  font-size: 2.4rem;
+  font-size: 20px;
 
   display: flex;
   align-items: center;
@@ -20,26 +22,14 @@ export const StyledProjectItem = styled.div<{
   text-transform: uppercase;
   text-align: center;
 
-  width: 100%;
-  height: 100%;
-  border-radius: 1em;
-
-
-  &:hover {
-    background-image: url(${(props) => props.background});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
+  
 
   @media screen and (max-width: 870px) {
     background: url(${(props) => props.background});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: ${(props) => props.theme.start};
     font-weight: 700;
-    font-size: 1rem;
 
     display: flex;
     align-items: center;

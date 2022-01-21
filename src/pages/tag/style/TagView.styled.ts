@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
-interface TagViewProps {
-  tagMenuBackgroundColor: string;
-  chipColor: string;
-}
-
-export const TagView = styled.div<TagViewProps>`
+export const TagView = styled.div`
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -21,10 +16,10 @@ export const TagView = styled.div<TagViewProps>`
       .tag-nav-title {
         div {
           font-weight: 700;
-          color: lightblue;
+          color: ${({ theme }) => theme.colors.alternate_blue_2};
         }
         hr {
-          border-color: blue;
+          border-color: ${({ theme }) => theme.colors.main_orange};
         }
       }
 
@@ -36,16 +31,14 @@ export const TagView = styled.div<TagViewProps>`
         li {
           a {
             text-decoration: none;
-            /* color: black; */
             color: black;
-
             &:hover {
-              color: gray;
+              color: ${({ theme }) => theme.colors.main_blue};
             }
           }
 
           .selected {
-            color: blue;
+            color: ${({ theme }) => theme.colors.alternate_blue_2};
             font-weight: 500;
           }
         }
@@ -60,9 +53,12 @@ export const TagView = styled.div<TagViewProps>`
       }
       .tag-title-item {
         color: black;
-        background-color: ${({ tagMenuBackgroundColor }) =>
-          tagMenuBackgroundColor};
+        /* background-color: ${(props) => props.theme.colors.blue_7}; */
         border-radius: 12px;
+
+        -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
         padding: 16px;
         margin: 12px;
 
@@ -71,7 +67,14 @@ export const TagView = styled.div<TagViewProps>`
           overflow: scroll;
 
           .tag-chip {
-            background-color: ${({ chipColor }) => chipColor};
+            /* background-color: ${(props) => props.theme.colors.blue_7}; */
+            background: linear-gradient(
+              40deg,
+              ${({ theme }) => theme.colors.main_blue},
+              ${({ theme }) => theme.colors.alternate_blue_5}
+            );
+            color: white;
+            font-weight: 400;
             padding: 2px 12px;
             border-radius: 12px;
             margin: 4px 8px;
@@ -109,7 +112,8 @@ export const TagView = styled.div<TagViewProps>`
               /* background-color: hotpink; */
               margin: 0.44em;
               padding: 0.2em 1em;
-              background-color: ${({ chipColor }) => chipColor};
+              background-color: ${(props) => props.theme.colors.blue_7};
+              font-weight: 500;
               border-radius: 1em;
 
               a {
@@ -117,11 +121,6 @@ export const TagView = styled.div<TagViewProps>`
                   color: gray;
                 }
               }
-              /* a {
-                span {
-                  display: none;
-                }
-              } */
             }
           }
         }

@@ -2,6 +2,8 @@ import styled, { StyledComponent } from "styled-components";
 
 export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
   .home-container {
+    pointer-events: none;
+
     .main-head {
       position: absolute;
       transform: translate(-50%, -50%) scale(1, 0.8);
@@ -13,6 +15,8 @@ export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
       font-weight: 700;
 
       line-height: 0.7;
+
+      color: ${(props) => props.theme.colors.main_orange};
     }
 
     .sub-head {
@@ -25,6 +29,8 @@ export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
       font-weight: 500;
       line-height: 1em;
       font-size: 1rem;
+
+      color: ${(props) => props.theme.colors.main_orange};
     }
   }
 
@@ -44,7 +50,7 @@ export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
         top: 70%;
         left: 16%;
         letter-spacing: -0.05em;
-        
+
         padding: 0;
       }
     }
