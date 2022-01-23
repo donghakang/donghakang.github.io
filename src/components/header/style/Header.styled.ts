@@ -18,7 +18,7 @@ export const Header = styled.nav<HeaderProps>`
   z-index: 99;
   font-size: 1.125rem;
   background-color: ${(props) =>
-    props.home ? "" : props.theme.colors.bg_gray};
+    props.home ? "" : props.theme.colors.white};
 
   .logo {
     margin-left: 20px;

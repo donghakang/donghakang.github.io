@@ -12,7 +12,7 @@ function ExperienceLayer() {
 
   return (
     <Styled.ExperienceLayer className="layer">
-      <Fade duration={2000}>
+      <Fade duration={1500}>
         <div className="experience-container">
           <h1>Experience</h1>
         </div>

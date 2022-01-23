@@ -29,7 +29,6 @@ const BlogContent: React.FC<{ filename: string }> = ({ filename }) => {
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || "");
-          console.log("props...", props);
           return !inline && match ? (
             <SyntaxHighlighter
               children={String(children).replace(/\n$/, "")}

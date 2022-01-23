@@ -15,10 +15,10 @@ const TagTitleView: React.FC<TagViewProps> = ({
   data,
   tabChange,
   setTabChange,
+  tag,
 }) => {
-
   const location = useLocation();
-  const { tag } = qs.parse(location.search);
+  // const { tag } = qs.parse(location.search);
   const [sortByTagName, setSortByTagName] = useState<
     {
       id: number;
@@ -32,9 +32,9 @@ const TagTitleView: React.FC<TagViewProps> = ({
   >([]);
 
   useEffect(() => {
-    console.log(sortByTagName);
+    // console.log("tag, data", data, tag);
+    // console.log(sortByTagName);
     if (typeof tag === "string") {
-      console.log("==>", data, data.tag, tag);
       setSortByTagName(data.tag[tag]);
     } else {
       console.error("tag type has to be string.", typeof tag);

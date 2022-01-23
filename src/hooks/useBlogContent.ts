@@ -14,7 +14,5 @@ export const useBlogContent = (
       tag: string[];
     }
   | undefined => {
-  console.log(blogData);
-
   return blogData.find((blog) => blog.slug === slug);
 };

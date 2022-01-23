@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout";
+import qs from "query-string";
 // import { useBlogPost, useAllTags, useTagsMenu } from "../../../hooks/useBlogPost";
 // import ReactMarkdown from "react-markdown";
 import { Navigate, useParams, useLocation } from "react-router-dom";
@@ -36,6 +37,7 @@ export interface TagViewProps {
   };
   tabChange: boolean;
   setTabChange: React.Dispatch<React.SetStateAction<boolean>>;
+  tag: string | undefined;
 }
 
 const ServerTagView: React.FC<TagViewProps> = ({
@@ -62,6 +64,7 @@ const DevTagView: React.FC<TagViewProps> = ({
   data,
   tabChange,
   setTabChange,
+  tag,
 }) => {
   return (
     <>
@@ -71,11 +74,13 @@ const DevTagView: React.FC<TagViewProps> = ({
             data={data}
             tabChange={tabChange}
             setTabChange={setTabChange}
+            tag={tag}
           />
           <TagTitleView
             data={data}
             tabChange={tabChange}
             setTabChange={setTabChange}
+            tag={tag}
           />
         </div>
       </Styled.TagView>
@@ -83,19 +88,50 @@ const DevTagView: React.FC<TagViewProps> = ({
   );
 };
 
+function redirectToTagView() {
+  return <Navigate to="/tag?tag=all" />;
+}
+
 function TagView() {
   // const [blogPost, setBlogPost] = useBlogPost();
   // const [allTags, setAllTags] = useAllTags();
+  const [tabChange, setTabChange] = useState(false);
   const location = useLocation();
 
-  const [tabChange, setTabChange] = useState(false);
+  const [tag, setTag] = useState<string | undefined>("all"); // location can be undefined when it is wrong.
   const data = useTagsMenu();
 
   // if /blog, redirect to tag=all
-  console.log(location);
-  if (!location.search) {
+  // "TODO: Does it really re-render even though the page is in different location?"
+  if (location.pathname === "/tag" && !location.search) {
     return <Navigate to="/tag?tag=all" />;
   }
+
+  useEffect(() => {
+    function tagChange() {
+      if (location.pathname === "/tag") {
+        // search 가 없을 경우, redirect
+        if (!location.search) {
+          return redirectToTagView();
+        } else {
+          const currentTag = qs.parse(location.search).tag as string;
+          const getTags = Object.keys(data.tag);
+
+          // 현재 존재하는 태그인지 아닌지 구별한다. 없으면 redirect
+          if (!getTags.includes(currentTag)) {
+            return redirectToTagView();
+          } else {
+            setTag(currentTag);
+          }
+        }
+      }
+    }
+    tagChange();
+
+    return () => {
+      tagChange();
+    };
+  }, []);
 
   return (
     <Layout>
@@ -104,12 +140,14 @@ function TagView() {
           data={data}
           tabChange={tabChange}
           setTabChange={setTabChange}
+          tag={tag}
         />
       ) : (
         <DevTagView
           data={data}
           tabChange={tabChange}
           setTabChange={setTabChange}
+          tag={tag}
         />
       )}
     </Layout>

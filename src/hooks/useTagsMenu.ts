@@ -28,7 +28,9 @@ export const useTagsMenu = () => {
    * After this :
    * Tag: [blog... blog...]
    */
-  blogData.forEach((blog) => {
+   const reverseOrderedBlogData = blogData.sort((a, b) => b.id - a.id); // id 가 높을 수록 최신 블로그 이다.
+
+   reverseOrderedBlogData.forEach((blog) => {
     blog.tag.forEach((tag) => {
       // all section
       if (!sortByTags["all"].find((obj) => obj.id === blog.id)) {
@@ -46,5 +48,6 @@ export const useTagsMenu = () => {
     });
   });
 
-  return { blog: blogData, tag: sortByTags };
+  
+  return { blog: reverseOrderedBlogData, tag: sortByTags };
 };

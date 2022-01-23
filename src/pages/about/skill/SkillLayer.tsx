@@ -12,7 +12,7 @@ const SkillLayer = ({ scrollMagic }: { scrollMagic?: () => void }) => {
 
   return (
     <Styled.SkillLayer className="layer">
-      <Fade duration={2000}>
+      <Fade duration={1500}>
         <h1 className="skill-title">Skillset</h1>
         <div className="skill-section">
           <SkillScene

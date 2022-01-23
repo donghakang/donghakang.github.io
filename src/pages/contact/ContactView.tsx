@@ -14,17 +14,17 @@ import Emoji from "../../components/emoji/Emoji";
 
 function ContactView() {
   return (
-    <Layout>
+    <Layout home>
       <Styled.ContactView>
         <div className="contact-content">
           <Trail>
             <h1>Contact me</h1>
             <div>
               <h3>
-                Feel free to reach out
+                Feel free to reach out &nbsp;
                 <Emoji label="code" symbol="👨🏻‍💻" />
               </h3>
-              <span>피드백과 관심은 저에게 큰 도움이 됩니다🤣</span>
+              <span>피드백과 관심은 저에게 큰 도움이 됩니다! &nbsp;🤣</span>
             </div>
           </Trail>
         </div>

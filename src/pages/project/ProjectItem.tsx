@@ -29,7 +29,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ slug, item }) => {
         onClick={handleClickOpen}
         background={`img/${item.content.image}`}
       >
-        {item.title}
+        <div className="image-view"></div>
+        <h2 className="image-title">{item.title}</h2>
       </StyledProjectItem>
       <ProjectDialog
         open={open}

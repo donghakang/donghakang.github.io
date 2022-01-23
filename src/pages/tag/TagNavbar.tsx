@@ -8,22 +8,20 @@ const TagNavbar: React.FC<TagViewProps> = ({
   data,
   setTabChange,
   tabChange,
+  tag
 }) => {
-  const location = useLocation();
-  const { tag } = qs.parse(location.search);
-
   return (
     <nav className={"tag-nav"}>
       <ul>
-        <Trail>
+        <div>
           <div className={"tag-nav-title"}>
             <div>태그 목록</div>
-            <hr />
+            <div className="hr"></div>
           </div>
           {Object.keys(data.tag).map((tags, index) => (
             <li key={`tag-menu-${index}`}>
               <Link
-                className={`${tags === tag ? 'selected' : ''}`}
+                className={`${tags === tag ? "selected" : ""}`}
                 to={`?tag=${tags}`}
                 onClick={() => setTabChange(!tabChange)}
               >
@@ -31,7 +29,7 @@ const TagNavbar: React.FC<TagViewProps> = ({
               </Link>
             </li>
           ))}
-        </Trail>
+        </div>
       </ul>
     </nav>
   );

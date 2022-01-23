@@ -18,8 +18,11 @@ export const TagView = styled.div`
           font-weight: 700;
           color: ${({ theme }) => theme.colors.alternate_blue_2};
         }
-        hr {
-          border-color: ${({ theme }) => theme.colors.main_orange};
+        .hr {
+          background-color: ${({ theme }) => theme.colors.main_orange};
+          height: 2px;
+          width: 100%;
+          margin: 12px auto 8px auto;
         }
       }
 
@@ -103,7 +106,7 @@ export const TagView = styled.div`
 
           div {
             /* background-color: cyan; */
-            display: inline-block;
+            display: flex;
 
             .tag-nav-title {
               display: none;
@@ -112,7 +115,7 @@ export const TagView = styled.div`
               /* background-color: hotpink; */
               margin: 0.44em;
               padding: 0.2em 1em;
-              background-color: ${(props) => props.theme.colors.blue_7};
+              background-color: ${(props) => props.theme.colors.main_orange};
               font-weight: 500;
               border-radius: 1em;
 
