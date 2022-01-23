@@ -15,12 +15,12 @@ package.json
 ```json
 ...
 "scripts": {
-    "start": "webpack"
+  "start": "webpack"
 }
 ...
 "devDependencies": {
-    "webpack": "...",
-    "webpack-cli": "..."
+  "webpack": "...",
+  "webpack-cli": "..."
 }
 ```
 
@@ -31,10 +31,10 @@ package.json
 ```html
 <html>
 ...
-    <script src="..."></script>
-    <script src="..."></script>
-    <script src="..."></script>
-    <script src="..."></script>
+  <script src="..."></script>
+  <script src="..."></script>
+  <script src="..."></script>
+  <script src="..."></script>
 </html>
 ```
 
@@ -55,27 +55,27 @@ Webpack configuration을 하지 않았던 지금은 `index.js` 을 찾았었고 
 const path = require("path");
 
 module.exports = {
-    mode: "development",
-    entry: "./src/index.js",
-    output: {
-        filename: "main.js",
-        path: path.resolve(__dirname, "dist")
-    }
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+  filename: "main.js",
+  path: path.resolve(__dirname, "dist")
+  }
 }
 ```
 
 - mode: 어떤 방식으로 배포(?) 할 건지도 고를 수 있다. production 이 default 이다. (production, development, none)
 - entry: 최초의 시작 code. entrypoint
 - output: 배포시 생성되는 결과물
-    - filename: 결과물, 파일 이름
-    - path: 경로 (`__dirname`은 현재 `webpack.config.js`가 있는 폴더라고 생각하면 편하다. 실제로는 full path. 이것은 `const path = require(”path”)`가 꼭 있어야지 작동한다
+  - filename: 결과물, 파일 이름
+  - path: 경로 (`__dirname`은 현재 `webpack.config.js`가 있는 폴더라고 생각하면 편하다. 실제로는 full path. 이것은 `const path = require(”path”)`가 꼭 있어야지 작동한다
 
 `webpack.config.js`를 실행시키기 위해 package.json 도 수정한다.
 
 ```json
 ...
 "scripts": {
-    "start": "webpack --config webpack.config.js"
+  "start": "webpack --config webpack.config.js"
 }
 ...
 ```
@@ -100,15 +100,15 @@ npm install --save-dev style-loader css-loader
 
 ```jsx
 module.exports = {
-    ...
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-            }
-        ]
+  ...
+  module: {
+  rules: [
+    {
+    test: /\.css$/,
+    use: ['style-loader', 'css-loader'],
     }
+  ]
+  }
 }
 ```
 
@@ -137,11 +137,11 @@ Cache busting을 사용함으로서 실제 코드를 바꾸면 output file을 �
 const path = require("path");
 
 module.exports = {
-    entry: "./src/index.js",
-    output: {
-        filename: "main.[contentHash].js",
-        path: path.resolve(__dirname, "dist")
-    }
+  entry: "./src/index.js",
+  output: {
+  filename: "main.[contentHash].js",
+  path: path.resolve(__dirname, "dist")
+  }
 }
 ```
 
@@ -167,18 +167,18 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
 module.exports = {
-    entry: "./src/index.js",
-    output: {
-        filename: "main.[contentHash].js",
-        path: path.resolve(__dirname, "dist")
-    },
-    plugins: [
-        new HtmlWebpackPlugin(
-            {
-                template: "./src/template.html"
-            }
-        )
-    ]
+  entry: "./src/index.js",
+  output: {
+  filename: "main.[contentHash].js",
+  path: path.resolve(__dirname, "dist")
+  },
+  plugins: [
+  new HtmlWebpackPlugin(
+    {
+    template: "./src/template.html"
+    }
+  )
+  ]
 }
 ```
 
@@ -212,7 +212,7 @@ const common = require('./webpack.common');
 const merge = require('weback-merge');
 
 module.exports = merge(common, {
-	...
+  ...
 });
 ```
 
@@ -221,11 +221,11 @@ prod.js 나 dev.js 파일을 가지고 있는 것만으로도 npm start, npm run
 ```json
 // package.json
 {
-    ...,
-    "scripts": {
-        "start": "webpack --config webpack.dev.js",
-        "build": "webpack --config webpack.prod.js",
-    }	
+  ...,
+  "scripts": {
+  "start": "webpack --config webpack.dev.js",
+  "build": "webpack --config webpack.prod.js",
+  }	
 }
 ```
 
@@ -238,11 +238,11 @@ npm install --save-dev webpack-dev-server
 ```json
 // package.json
 {
-    ...,
-    "scripts": {
-        "start": "webpack-dev-server --config webpack.dev.js --open",
-        "build": "webpack --config webpack.prod.js",
-    }	
+  ...,
+  "scripts": {
+  "start": "webpack-dev-server --config webpack.dev.js --open",
+  "build": "webpack --config webpack.prod.js",
+  }	
 }
 ```
 
@@ -269,19 +269,19 @@ npm install --save-dev html-loader
 ```jsx
 // webpack.common.js
 module.exports = {
-    ...
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-            },
-            {
-                test: /\.html$/,
-                use: ['html-loader']
-            }
-        ]
+  ...
+  module: {
+  rules: [
+    {
+    test: /\.css$/,
+    use: ['style-loader', 'css-loader'],
+    },
+    {
+    test: /\.html$/,
+    use: ['html-loader']
     }
+  ]
+  }
 }
 ```
 
@@ -300,22 +300,22 @@ npm install --save-dev file-loader
 ```jsx
 // webpack.common.js
 module.exports = {
-    ...
-    module: {
-        rules: [
-            ...,
-            {
-                test: /\.(svg|png|jpg|gif)$/,
-                use: {
-                    loader: "file-loader",
-                    options: {
-                        name: "[name].[hash].[ext]"
-                        outputPath: "imgs",
-                    }
-                }
-            }
-        ]
+  ...
+  module: {
+  rules: [
+    ...,
+    {
+    test: /\.(svg|png|jpg|gif)$/,
+    use: {
+      loader: "file-loader",
+      options: {
+      name: "[name].[hash].[ext]"
+      outputPath: "imgs",
+      }
     }
+    }
+  ]
+  }
 }
 ```
 
@@ -343,8 +343,8 @@ production 모드에만 사용하는 plugin이니, webpack.prod.js에 넣어보�
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-	...
-	plugins: [new CleanWebpackPlugin()]
+  ...
+  plugins: [new CleanWebpackPlugin()]
 }
 ```
 
@@ -354,10 +354,10 @@ module.exports = {
 
 ```jsx
 module.exports = {
-    entry: {
-        main: "./src/index.js",
-        vendor: "./src/vendor.js",
-    }
+  entry: {
+  main: "./src/index.js",
+  vendor: "./src/vendor.js",
+  }
 }
 ```
 
@@ -388,23 +388,23 @@ npm install --save-dev mini-css-extract-plugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    ...
-    plugins: [
-        new MiniCssExtractPlugin({filename: "[name].[contentHash].css"}),
-        ...
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader"
-                ]
-            }
-        ]
+  ...
+  plugins: [
+  new MiniCssExtractPlugin({filename: "[name].[contentHash].css"}),
+  ...
+  ],
+  module: {
+  rules: [
+    {
+    test: /\.scss$/,
+    use: [
+      MiniCssExtractPlugin.loader,
+      "css-loader",
+      "sass-loader"
+    ]
     }
+  ]
+  }
 }
 ```
 
@@ -415,11 +415,11 @@ module.exports = {
 ```jsx
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin**");**
 module.exports = {
-    ...
-    optimization: {
-        minimizer: [new OptimizeCssAssetsPlugin()]
-    }
-    ...
+  ...
+  optimization: {
+  minimizer: [new OptimizeCssAssetsPlugin()]
+  }
+  ...
 }
 ```
 
@@ -429,11 +429,11 @@ module.exports = {
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin**");**
 const TerserPlugin = require("terser-webpack-plugin"**);**
 module.exports = {
-    ...
-    optimization: {
-        minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()]
-    }
-    ...
+  ...
+  optimization: {
+  minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()]
+  }
+  ...
 }
 ```
 
@@ -441,15 +441,15 @@ module.exports = {
 
 ```jsx
 module.exports = {
-    ...
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/template.html",
-            minify: {
-                removeAttributeQuotes: true,
-                collapseWhitespace: true,
-                removeComments: true
-            }})]}
+  ...
+  plugins: [
+  new HtmlWebpackPlugin({
+    template: "./src/template.html",
+    minify: {
+    removeAttributeQuotes: true,
+    collapseWhitespace: true,
+    removeComments: true
+    }})]}
 ```
 
 > 확실히 CRA는 편리하게 시작할 수 있지만, Web 상에서 더 많은 관리와 내가 원하는 입 맛으로 설정을 하고 싶다면 무조건 webpack & babel을 써야한다고 생각한다. 

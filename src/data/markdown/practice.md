@@ -12,7 +12,7 @@
 // javascript
 
 function add(num1, num2) {
-	return num1 + num2;
+  return num1 + num2;
 }
 
 console.log(add('2', '3'))
@@ -65,7 +65,7 @@ button.addEventListener("click", function () {
 // typescript
 const button = document.querySelector("button");
 const input1 = document.getElementById("num1")! as HTMLInputElement; // ! ==> this will never be null
-                                                                     // as HTMLInputElement ==> type is HTMLInputElement
+                                   // as HTMLInputElement ==> type is HTMLInputElement
 const input2 = document.getElementById("num2")! as HTMLInputElement; 
 
 // the input's type is number
