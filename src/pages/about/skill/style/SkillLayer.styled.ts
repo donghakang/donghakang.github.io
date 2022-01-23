@@ -20,7 +20,7 @@ export const SkillLayer = styled.div`
     }
     .skill-content {
       /* background-color: blue; */
-      background-color: rgba(240, 248, 255, 0.6);
+      background-color: ${(props) => props.theme.colors.alternate_blue_6 + "22"};
       border-radius: 1em;
       padding: 1em;
 

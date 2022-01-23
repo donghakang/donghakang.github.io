@@ -58,6 +58,7 @@ export const ExperienceLayer = styled.div`
     }
     .content {
       background-color: rgba(240, 248, 255, 0.6);
+      background-color: ${(props) => props.theme.colors.alternate_blue_6 + "22"};
       border-radius: 1em;
       padding: 1em;
       min-height: 40vh;

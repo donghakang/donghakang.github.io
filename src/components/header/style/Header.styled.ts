@@ -70,11 +70,7 @@ export const Header = styled.nav<HeaderProps>`
   @media screen and (max-width: 640px) {
     & {
       ul {
-        background: linear-gradient(
-          20deg,
-          ${(props) => props.theme.colors.alternate_blue_7},
-          ${(props) => props.theme.colors.alternate_blue_6}
-        );
+        background-color: white;
         z-index: 98;
         margin: 0;
         padding: 20px 0 0 0;
@@ -120,7 +116,8 @@ export const Header = styled.nav<HeaderProps>`
         width: 100vw;
         height: 100vh;
         background-color: black;
-        opacity: 0;
+        opacity: 0.8;
+        transition: all 0.2s;
       }
     }
   }
