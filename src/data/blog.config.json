@@ -133,5 +133,14 @@
     "author": "Dongha Kang",
     "date": "2022-01-21",
     "tag": ["React", "JavaScript"]
+  },
+  {
+    "id": 17,
+    "title": "GraphQL 맛보기",
+    "slug": "intro-to-graphql",
+    "filename": "graphql.md",
+    "author": "Dongha Kang",
+    "date": "2022-02-16",
+    "tag": ["GraphQL"]
   }
 ]
