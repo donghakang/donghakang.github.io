@@ -13,7 +13,7 @@ import PageNotFound from "./components/404";
 import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyles } from "./components/theme";
-
+import Cursor from './components/cursor'
 // import { Redirect } from "react-router-dom";
 
 const App: React.FC<{}> = () => {
@@ -21,6 +21,7 @@ const App: React.FC<{}> = () => {
 
   return (
     <>
+      <Cursor />
       <Canvas
         style={{ height: "1px", width: "1px" }}
         children={undefined}

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useProgress } from "../core/useProgress";
+import { useProgress } from '@react-three/drei';
 
 interface LoaderOptions {
   containerStyles: any;
@@ -27,7 +27,7 @@ export function Loader({
   const [shown, setShown] = React.useState(initialState(active));
 
   React.useEffect(() => {
-    let t;
+    let t: any;
     if (active !== shown) t = setTimeout(() => setShown(active), 300);
     return () => clearTimeout(t);
   }, [shown, active]);

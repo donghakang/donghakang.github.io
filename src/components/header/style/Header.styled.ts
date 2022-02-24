@@ -15,7 +15,7 @@ export const Header = styled.nav<HeaderProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 99;
+  z-index: 9;
   font-size: 1.125rem;
   background-color: ${(props) => (props.home ? "" : props.theme.colors.white)};
 
@@ -70,7 +70,7 @@ export const Header = styled.nav<HeaderProps>`
     & {
       ul {
         background-color: white;
-        z-index: 98;
+        z-index: 8;
         margin: 0;
         padding: 20px 0 0 0;
         position: absolute;
@@ -102,11 +102,11 @@ export const Header = styled.nav<HeaderProps>`
       .hamburger-menu {
         color: ${(props) => props.theme.colors.main_orange};
         display: flex;
-        z-index: 99;
+        z-index: 9;
       }
 
       .nav-background {
-        z-index: 10;
+        z-index: 7;
         position: absolute;
         top: 0%;
 
