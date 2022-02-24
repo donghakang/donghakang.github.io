@@ -1,7 +1,7 @@
 import React, { useRef, Suspense, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Physics, useBox } from "@react-three/cannon";
-import { OrthographicCamera, Loader, OrbitControls } from "@react-three/drei";
+import { Html, Loader, OrthographicCamera } from "@react-three/drei";
 import MacbookRef from "./MacbookRef";
 import KeyboardRef from "./KeyboardRef";
 import HeadphoneRef from "./HeadphoneRef";
@@ -51,7 +51,7 @@ const Cannon = () => {
   const size = useWindowSize();
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={null}>
       <Canvas
         resize={{ scroll: false }}
         style={{ width: "100vw", height: "100vh" }}
@@ -64,7 +64,7 @@ const Cannon = () => {
           near={-100}
           far={100}
         />
-        <Physics>
+        <Physics gravity={[0, -1, 0]}>
           <PointerHandle size={3} />
           <Plane
             position={[0, -3, 0]}
@@ -126,7 +126,7 @@ const Cannon = () => {
         </group>
         {/* <OrbitControls /> */}
       </Canvas>
-      <Loader />
+      <Loader containerStyles={{ backgroundColor: 'orange' }} defaultInterpolation={"donghak..."} />
     </Suspense>
   );
 };

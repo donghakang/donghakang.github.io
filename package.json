@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open",
-    "build": "rimraf build && webpack",
+    "build": "webpack",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build && cp CNAME ./build"
+    "deploy": "echo 'www.donghakang.xyz' > ./build/CNAME && gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "@react-three/drei": "^8.2.1",
     "@react-three/fiber": "^7.0.24",
     "@types/styled-components": "^5.1.18",
+    "@types/three": "^0.137.0",
     "framer-motion": "^6.0.0",
     "gray-matter": "^4.0.3",
     "query-string": "^7.0.1",
