@@ -4,11 +4,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import { LanguageSwitch, ThemeSwitch } from "../switch";
 import { BiMenu, BiX } from "react-icons/bi";
-import * as Styled from "./style/Header.styled";
+import * as Styled from "./style";
+import { Cursor } from "../cursor/style";
 
-const Header: React.FC<{ home?: boolean }> = ({
-  home
-}): JSX.Element => {
+const Header: React.FC<{ home?: boolean }> = ({ home }): JSX.Element => {
   const [open, setOpen] = useState<boolean>(false);
   const handleCloseMenu = () => {
     // when pressed, chnage the menu open state
@@ -23,22 +22,17 @@ const Header: React.FC<{ home?: boolean }> = ({
       <ul className="nav-menu">
         <li>
           <Link className={"link"} to="/about">
-            about
+            ABOUT
           </Link>
         </li>
         <li>
           <Link className={"link"} to="/project">
-            project
+            PROJECT
           </Link>
         </li>
         <li>
           <Link className={"link"} to="/tag?tag=all">
-            blog
-          </Link>
-        </li>
-        <li>
-          <Link className={"link"} to="/contact">
-            contact
+            BLOG
           </Link>
         </li>
       </ul>

@@ -5,7 +5,7 @@ import MacbookLayer from "./MacbookLayer";
 import KeyboardLayer from "./KeyboardLayer";
 import ExperienceLayer from "./experience";
 import SkillLayer from "./skill";
-import { theme } from "../../components/theme";
+import { theme } from "../../assets/theme";
 import Loading from "../../components/loading";
 
 const AboutParallaxView = () => {

@@ -20,7 +20,7 @@ export const Header = styled.nav<HeaderProps>`
   background-color: ${(props) => (props.home ? "" : props.theme.colors.white)};
 
   .logo {
-    margin-left: 20px;
+    margin-left: 2rem;
 
     * {
       font-family: helvetica;
@@ -33,6 +33,7 @@ export const Header = styled.nav<HeaderProps>`
   }
   ul {
     margin: 0;
+    margin-right: 2rem;
     padding: 0;
     list-style-type: none;
     display: flex;
@@ -40,15 +41,19 @@ export const Header = styled.nav<HeaderProps>`
 
     li {
       margin: 0px 20px;
+      
       .link {
+        display: inline-block;
         text-decoration: none;
-        font-family: helvetica;
-        font-weight: 550;
+        font-size: 1.25rem;
+        font-weight: 700;
         letter-spacing: -0.04em;
         color: ${(props) => props.theme.colors.main_orange};
+        transition: all 0.3s;
 
         &:hover {
           color: orange;
+          transform: scale(1, 0.8); 
         }
       }
       button {
@@ -65,6 +70,8 @@ export const Header = styled.nav<HeaderProps>`
     outline: inherit;
     margin-right: 20px;
   }
+
+
 
   @media screen and (max-width: 640px) {
     & {

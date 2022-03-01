@@ -1,3 +1,3 @@
-import Cursor from './Cursor'
+import Cursor from "./Cursor";
 
-export default Cursor
+export default Cursor;

@@ -7,7 +7,7 @@ import KeyboardRef from "./KeyboardRef";
 import HeadphoneRef from "./HeadphoneRef";
 import Plane from "./Plane";
 import useWindowSize from "../../hooks/useWindowSize";
-import { theme } from "../theme";
+import { theme } from "../../assets/theme";
 
 const Obj = (props) => {
   const { obj } = props;
@@ -64,7 +64,7 @@ const Cannon = () => {
           near={-100}
           far={100}
         />
-        <Physics gravity={[0, -1, 0]}>
+        <Physics gravity={[0, -9.81, 0]}>
           <PointerHandle size={3} />
           <Plane
             position={[0, -3, 0]}
@@ -126,7 +126,10 @@ const Cannon = () => {
         </group>
         {/* <OrbitControls /> */}
       </Canvas>
-      <Loader containerStyles={{ backgroundColor: 'orange' }} defaultInterpolation={"donghak..."} />
+      <Loader
+        containerStyles={{ backgroundColor: "orange" }}
+        defaultInterpolation={"donghak..."}
+      />
     </Suspense>
   );
 };

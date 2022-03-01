@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const ExperienceLayer = styled.div`
+background-color: dodgerblue;
+width: 100vw;
+min-height: 100vh;
   margin-top: 20vh;
   .experience-container {
     width: 100%;

@@ -6,7 +6,7 @@ const MetalMaterial = () => {
     <meshStandardMaterial
       attach="material"
       color={new THREE.Color("#cccccc")}
-      roughness={0.2}
+      roughness={0}
       metalness={1.0}
     />
   );

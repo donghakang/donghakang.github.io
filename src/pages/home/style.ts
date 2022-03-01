@@ -6,9 +6,10 @@ export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
 
     .main-head {
       position: absolute;
-      transform: translate(-50%, -50%) scale(1, 0.8);
       top: 50%;
       left: 50%;
+      transform: translate(-50%, -50%) scale(1, 0.8);
+      /* padding: 1rem; */
 
       letter-spacing: -4vw;
       font-size: 30vw;
@@ -17,6 +18,17 @@ export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
       line-height: 0.7;
 
       color: ${(props) => props.theme.colors.main_orange};
+
+      /* background: linear-gradient(
+        to right,
+        ${({ theme }) => theme.colors.main_orange},
+        orange
+      );
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      */
     }
 
     .sub-head {
@@ -25,7 +37,7 @@ export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
       padding: 1em;
       letter-spacing: -0.05em;
 
-      font-style: italic;
+      transform: scale(1, 0.8);
       font-weight: 500;
       line-height: 1em;
       font-size: 1rem;
@@ -34,10 +46,10 @@ export const HomeView: StyledComponent<"div", any, {}, never> = styled.div`
     }
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 768px) {
     .home-container {
       .main-head {
-        transform: translate(-50%, -50%);
+        /* transform: translate(-50%, -50%); */
         font-size: 12vw;
         letter-spacing: -1.75vw;
 

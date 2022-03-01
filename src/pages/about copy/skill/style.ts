@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const SkillLayer = styled.div`
+background-color: orange;
+width: 100vw;
+min-height: 100vh;
   margin-top: 20vh;
   .skill-title {
     /* padding-left: 100px; */

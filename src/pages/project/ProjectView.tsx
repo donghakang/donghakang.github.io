@@ -72,9 +72,13 @@ function ProjectView() {
       <Styled.ProjectView>
         {imagesLoaded ? (
           <Trail className={"project-container"}>
-            {data.map((item, index) => (
+            {/* {data.map((item, index) => (
               <ProjectItem key={index} slug={item.slug} item={item} />
-            ))}
+            ))} */}
+
+            {data.map((item, index) => 
+              <h1 key={index}>{item.title}</h1>
+            )}
           </Trail>
         ) : (
           <Loading />

@@ -23,11 +23,11 @@ const HomeView: React.FC<{}> = (): JSX.Element => {
             KANG
           </div>
 
-          {/* <div className="sub-head">
+          <div className="sub-head">
             There are things that can describe myself, <br /> headphones that I
             listen, keyboards that I smash, and laptop that I abuse. <br />{" "}
             Welcome to my personal space.
-          </div> */}
+          </div>
         </div>
       </Styled.HomeView>
     </Layout>

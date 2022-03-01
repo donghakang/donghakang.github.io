@@ -67,7 +67,7 @@ export const Loader = styled.div<{ progress: number }>`
 //     }
 //   }
 
-//   @media screen and (min-width: 640px) {
+//   @media screen and (min-width: 768px) {
 //     .home-container {
 //       .main-head {
 //         transform: translate(-50%, -50%);

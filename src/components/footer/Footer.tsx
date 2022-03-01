@@ -1,16 +1,25 @@
 import React from "react";
+import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+import { Trail, VerticalTrail } from "../animation";
 import Emoji from "../emoji/Emoji";
-import * as Styled from "./style/Footer.styled";
+import * as Styled from "./style";
 
 const Footer: React.FC = (): JSX.Element => {
   return (
     <Styled.Footer className="footer">
-      <div>
-        <Emoji label="hello" symbol="👋🏻" />
-        <div>
-          ©<a href="https://github.com/donghakang"> Dongha Kang</a>, 2021
-        </div>
-      </div>
+      <a href="https://github.com/donghakang">
+        <FaGithub size={24}/>
+      </a>
+      <a href="https://facebook.com/dkang0602">
+        <FaFacebook size={24}/>
+      </a>
+      <a href="https://instagram.com/donghakang">
+        <FaInstagram size={24}/>
+      </a>
+      <a href="mailto:dkang0602@gmail.com">
+        <FiMail size={24}/>
+      </a>
     </Styled.Footer>
   );
 };

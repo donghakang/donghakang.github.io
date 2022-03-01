@@ -12,18 +12,23 @@ const SkillLayer = ({ scrollMagic }: { scrollMagic?: () => void }) => {
 
   return (
     <Styled.SkillLayer className="layer">
-      <h2 className="title-header">My Superpower.</h2>
-      <div className="skill-section">
-        <SkillScene
-          skills={skillData}
-        />
-        {/* <SkillContent
-          tab={timepage}
-          skills={skillData}
-          tabChange={tabChange}
-          setTabChange={setTabChange}
-        /> */}
-      </div>
+      <Fade duration={1500}>
+        <h1 className="skill-title">Skillset</h1>
+        <div className="skill-section">
+          <SkillScene
+            setTab={setTimepage}
+            skills={skillData}
+            tabChange={tabChange}
+            setTabChange={setTabChange}
+          />
+          <SkillContent
+            tab={timepage}
+            skills={skillData}
+            tabChange={tabChange}
+            setTabChange={setTabChange}
+          />
+        </div>
+      </Fade>
       {scrollMagic && (
         <div
           style={{

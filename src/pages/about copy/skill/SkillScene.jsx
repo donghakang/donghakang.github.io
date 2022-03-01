@@ -1,7 +1,7 @@
 import React, { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
-import { theme } from "../../../components/theme";
+import { theme } from "../../../assets/theme";
 
 function fibonacciSphere(samples) {
   let points = [];
