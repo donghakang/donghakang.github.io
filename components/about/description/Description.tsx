@@ -14,8 +14,6 @@ const parentVariant = {
 };
 
 function Description() {
-  //   const dispatch = useCursorDispatch();
-  const { scrollY, scrollYProgress } = useViewportScroll();
 
   return (
     <div css={Styled.descriptionStyle}>

@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children, home }) => {
       {home ? (
         <>{children}</>
       ) : (
-        <div style={{ display: "flex", marginTop: "60px" }}>{children}</div>
+        <div style={{ marginTop: "60px" }}>{children}</div>
       )}
       <Footer />
     </>

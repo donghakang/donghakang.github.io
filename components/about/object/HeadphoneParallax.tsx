@@ -1,37 +1,39 @@
-import * as THREE from "three";
-import React, { Suspense, useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import { OrthographicCamera } from "@react-three/drei";
-import { Keyboard } from "../../object";
+import { Headphone } from "../../object";
+import { Suspense } from "react";
 
-interface KeyboardParallaxInterface {
+interface MacbookParallaxInterface {
   rotation: number[];
   color: string;
   style?: {};
 }
 
-const KeyboardParallax: React.FC<KeyboardParallaxInterface> = ({
+const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
+  style,
   rotation,
   color,
-  style,
 }) => {
   const lightRef1 = useRef();
   const lightRef2 = useRef();
-  const keyboardRef = useRef<THREE.Mesh>(null);
+  const macbookRef = useRef();
+
+  const [rot, setRot] = useState(0);
 
   return (
     <Canvas shadows style={style}>
       <OrthographicCamera
         makeDefault
-        position={[0, 0, 0]}
+        position={[0, 1, 0]}
         rotation={[0, 0, 0]}
         zoom={70}
         near={-100}
         far={100}
       />
-      <Keyboard
-        ref={keyboardRef}
+      <Headphone
+        ref={macbookRef}
         position={[0, 0, 0]}
         rotation={rotation}
         castShadow
@@ -57,4 +59,4 @@ const KeyboardParallax: React.FC<KeyboardParallaxInterface> = ({
   );
 };
 
-export default KeyboardParallax;
+export default MacbookParallax;

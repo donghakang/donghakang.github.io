@@ -1,3 +1,11 @@
+---
+title: Lerna, Spring boot
+author: "Dongha Kang"
+date: "2021-11-05"
+tag: ["JavaScript", "Spring Boot", "React"]
+---
+
+
 # 오늘 해본 것
 
 - 블로그에서 navigate에 absolute 경로로 바꾸어서 실제 블로그 포스트 안에서도 카테고리를 골라볼 수 있도록 설정 해보았다.
@@ -123,12 +131,12 @@
     └── StudentService.java
   ```
   
-  - `BackendApplication.java`: 가장 기본적인 java start 코드 이며, 이 코드를 실행시키면 코드가 시작된다.
-  - `Student.java`: Entity 클래스
-  - `StudentController.java`: Get, Post, Insert, Update 커맨드를 받는 컨트롤러 클래스 이다
-  - `StudentService.java`: Business 로직을 가지고 있는 클래스 이다. 흔히 StudentServiceImpl 라는 다른 클래스로 나누기도 한다. [링크](https://www.tutorialspoint.com/spring_boot/spring_boot_service_components.htm)
-  - `StudentRepository.java`: 나의 예시 같은경우 JpaRepository<T, ID> 를 이용하여 실제 데이터 베이스와 연결 시켜주는 클래스 이다.
-  - `StudentConfig.java`: 본인 같은경우 commandLineRunner를 여기에다가 집어넣었는데, Spring의 다양한 설정을 코드상에서 할 수 있게 해준다. (Bean)
+  - ```BackendApplication.java```: 가장 기본적인 java start 코드 이며, 이 코드를 실행시키면 코드가 시작된다.
+  - ```Student.java```: Entity 클래스
+  - ```StudentController.java```: Get, Post, Insert, Update 커맨드를 받는 컨트롤러 클래스 이다
+  - ```StudentService.java```: Business 로직을 가지고 있는 클래스 이다. 흔히 StudentServiceImpl 라는 다른 클래스로 나누기도 한다. [링크](https://www.tutorialspoint.com/spring_boot/spring_boot_service_components.htm)
+  - ```StudentRepository.java```: 나의 예시 같은경우 `JpaRepository<T, ID>` 를 이용하여 실제 데이터 베이스와 연결 시켜주는 클래스 이다.
+  - ```StudentConfig.java```: 본인 같은경우 commandLineRunner를 여기에다가 집어넣었는데, Spring의 다양한 설정을 코드상에서 할 수 있게 해준다. (Bean)
   
   ### 📝 Code
   
