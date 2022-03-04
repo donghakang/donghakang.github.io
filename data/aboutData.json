@@ -1,0 +1,33 @@
+[
+  {
+    "id": "0",
+    "title": "서울대학교병원",
+    "date": "2021-02 ~ Current",
+    "content": [
+      "React-FastAPI-nginx-docker-postgres를 사용, 웹 DICOM Viewer 개발",
+      "Material-UI, useSWR, toastify등 다양한 라이브러리 경험",
+      "C++로 작성된 DICOM-viewer (ITKSNAP)에 새로운 기능을 추가",
+      "PyQt를 이용하여 새로운 DICOM Viewer를 기획 및 개발"
+    ]
+  },
+  {
+    "id": "1",
+    "title": "웹/앱 아카데미",
+    "date": "2020-09 ~ 2021-02",
+    "content": [
+      "JSP, Spring Framework를 이용하여 중고 옷 거래 플랫폼을 제작",
+      "Java를 사용하여 '올때, 메로나'라는 Android 어플리케이션 제작",
+      "Java를 사용하여 다른 물리엔진 개발, 게임(Doodle Jump) 개발"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "University of Minnesota - Twin Cities",
+    "date": "2014-09 ~ 2020-05",
+    "content": [
+      "C++, Python 위주로 사용하여 다양한 알고리즘, 그래픽, 프로그래밍 수업을 이수",
+      "Unreal Engine을 사용하는 프로그램 수업에 멘토(TA) 역할",
+      "Intro to Data Structure and Program Development, Advanced Programming Principles, Program Design and Development, Algorithms & Data Structure, Practice of Database Systems, User Interface Design, VR and 3D Interaction, Computer Vision 등 수업 이수"
+    ]
+  }
+]

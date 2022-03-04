@@ -17,6 +17,7 @@ const Model = forwardRef<ObjectInterface, MeshProps>((props, ref) => {
       geometry={nodes.Skullcandy_Crusher_M_Skullcandy_Crusher_0.geometry}
       material={materials["Material.001"]}
       scale={0.3}
+      {...props}
     >
       <meshPhongMaterial color={props.color} />
     </mesh>

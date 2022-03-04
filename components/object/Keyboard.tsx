@@ -16,6 +16,7 @@ const Model = forwardRef<ObjectInterface, MeshProps>((props, ref) => {
       geometry={nodes.Keycaps_Keycaps_0001.geometry}
       material={materials["Material.002"]}
       scale={0.18}
+      {...props}
     >
       <meshPhongMaterial color={props.color} />
     </mesh>
