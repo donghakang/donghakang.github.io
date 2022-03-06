@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 
 import { OrthographicCamera } from "@react-three/drei";
 import { Macbook } from "../../object";
+import { Physics } from "@react-three/cannon";
 
 interface MacbookParallaxInterface {
   rotation: number[];
@@ -22,7 +23,7 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
   const [rot, setRot] = useState(0);
 
   return (
-    <Canvas shadows style={style}>
+    <Canvas style={style}>
       <OrthographicCamera
         makeDefault
         position={[0, 1, 0]}
@@ -31,13 +32,15 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
         near={-100}
         far={100}
       />
-      <Macbook
-        ref={macbookRef}
-        position={[0, 0, 0]}
-        rotation={rotation}
-        castShadow
-        color={color}
-      />
+      <Physics>
+        <Macbook
+          ref={macbookRef}
+          position={[0, 0, 0]}
+          rotation={rotation}
+          castShadow
+          color={color}
+        />
+      </Physics>
       <group>
         <ambientLight intensity={0.4} ref={lightRef1} />
         <directionalLight

@@ -16,6 +16,9 @@ export const titleStyle = styled(motion.h1)`
   display: flex;
   flex-direction: column;
   padding: 0 2vw;
+  font-size: 12.5vw;
+  line-height: 0.8;
+  letter-spacing: -0.09em;
 
   span:nth-child(2) {
     /* align-self: flex-end; */

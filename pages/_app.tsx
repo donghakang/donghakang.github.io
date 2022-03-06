@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Layout from "../components/layout";
 import { ThemeProvider } from "@emotion/react";
 import theme from "../assets/theme/theme";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();

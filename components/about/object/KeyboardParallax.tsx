@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 
 import { OrthographicCamera } from "@react-three/drei";
 import { Keyboard } from "../../object";
+import { Physics } from "@react-three/cannon";
 
 interface KeyboardParallaxInterface {
   rotation: number[];
@@ -30,13 +31,15 @@ const KeyboardParallax: React.FC<KeyboardParallaxInterface> = ({
         near={-100}
         far={100}
       />
-      <Keyboard
-        ref={keyboardRef}
-        position={[0, 0, 0]}
-        rotation={rotation}
-        castShadow
-        color={color}
-      />
+      <Physics>
+        <Keyboard
+          ref={keyboardRef}
+          position={[0, 0, 0]}
+          rotation={rotation}
+          castShadow
+          color={color}
+        />
+      </Physics>
       <group>
         <ambientLight intensity={0.4} ref={lightRef1} />
         <directionalLight

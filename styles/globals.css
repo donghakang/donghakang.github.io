@@ -2,6 +2,23 @@
   font-family: 'calfine';
   src: url('/fonts/Calfinedemo.otf'); 
  }
+ 
+ @font-face {
+  font-family: 'chillax';
+  src: url('/fonts/Chillax-Bold.otf'); 
+ }
+
+
+ @font-face {
+  font-family: 'nimbus';
+  src: url('/fonts/NimbusSanL-Bol.otf'); 
+ }
+
+ @font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter.ttf'); 
+ }
+
 
 html,
 body {
@@ -17,7 +34,7 @@ a {
 }
 
 h1 {
-  font-family: 'calfine', -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, sans-serif;
 }
 
 * {

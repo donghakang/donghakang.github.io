@@ -9,6 +9,7 @@ import {
   MacbookParallax,
   HeadphoneParallax,
 } from "../components/about/object";
+import Environment from "../components/environment";
 
 const About: NextPage = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();

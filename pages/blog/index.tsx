@@ -2,15 +2,33 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { NextPage } from "next";
+import { BlogHeader, BlogMain } from "../../components/blog";
 
-const Blog: NextPage = (props) => {
+export interface BlogInterface {
+  blogs: {
+    frontMatter: {
+      title: string;
+      author: string;
+      date: string;
+      tag: string[];
+    };
+    slug: string;
+  }[];
+}
+
+const Blog: NextPage<BlogInterface> = (props) => {
   console.log("===", props);
-  return <div>Blog</div>;
+  return (
+    <div>
+      <BlogHeader blogs={props.blogs} />
+      <BlogMain blogs={props.blogs} />
+    </div>
+  );
 };
 
 export const getStaticProps = async () => {
   const files = fs.readdirSync(path.join("posts"));
-  const posts = files.map((filename) => {
+  const blogs = files.map((filename) => {
     const markdownWithMeta = fs.readFileSync(
       path.join("posts", filename),
       "utf-8"
@@ -24,7 +42,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      posts,
+      blogs,
     },
   };
 };

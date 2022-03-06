@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrthographicCamera } from "@react-three/drei";
 import { Headphone } from "../../object";
 import { Suspense } from "react";
+import { Physics } from "@react-three/cannon";
 
 interface MacbookParallaxInterface {
   rotation: number[];
@@ -32,13 +33,15 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
         near={-100}
         far={100}
       />
-      <Headphone
-        ref={macbookRef}
-        position={[0, 0, 0]}
-        rotation={rotation}
-        castShadow
-        color={color}
-      />
+      <Physics>
+        <Headphone
+          ref={macbookRef}
+          position={[0, 0, 0]}
+          rotation={rotation}
+          castShadow
+          color={color}
+        />
+      </Physics>
       <group>
         <ambientLight intensity={0.4} ref={lightRef1} />
         <directionalLight

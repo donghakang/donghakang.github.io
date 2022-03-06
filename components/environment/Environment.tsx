@@ -14,15 +14,27 @@ export interface ObjInterface {
 const Obj: React.FC<ObjInterface> = ({ position, rotation, obj }) => {
   if (obj === 0) {
     return (
-      <KeyboardComponent rotation={rotation} position={position} color={"#0078f4"} />
+      <KeyboardComponent
+        rotation={rotation}
+        position={position}
+        color={"#0078f4"}
+      />
     );
   } else if (obj === 1) {
     return (
-      <HeadphoneComponent rotation={rotation} position={position} color={"#67a6ff"} />
+      <HeadphoneComponent
+        rotation={rotation}
+        position={position}
+        color={"#67a6ff"}
+      />
     );
   } else {
     return (
-      <MacbookComponent rotation={rotation} position={position} color={"#004dc0"} />
+      <MacbookComponent
+        rotation={rotation}
+        position={position}
+        color={"#004dc0"}
+      />
     );
   }
 };
@@ -58,7 +70,7 @@ const Environment = () => {
   // const size = useWindowSize();
 
   return (
-    <div>
+    <>
       <Canvas
         resize={{ scroll: false }}
         style={{ width: "100vw", height: "100vh" }}
@@ -133,10 +145,8 @@ const Environment = () => {
         </group>
         {/* <OrbitControls /> */}
       </Canvas>
-      <div>
-        <Loader containerStyles={{ backgroundColor: "orange" }} />
-      </div>
-    </div>
+      <Loader containerStyles={{ backgroundColor: "orange" }} />
+    </>
   );
 };
 

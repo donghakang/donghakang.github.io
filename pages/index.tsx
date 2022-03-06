@@ -16,12 +16,16 @@ const titleStyle = css`
   left: 50%;
   transform: translate(-50%, -50%);
   margin: auto;
-  font-size: 12vw;
+  font-size: 30vw;
+  font-family: 'Inter', sans-serif;
   color: ${theme.colors.main_orange};
-  line-height: 0.7;
+  font-weight: 900;
+  letter-spacing: -0.09em;
+  line-height: 0.8;
 
 
   @media screen and (min-width: 768px) {
+    font-size: 12.5vw;
     br {
       display: none;
     }
