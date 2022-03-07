@@ -27,7 +27,7 @@
     "id": 3,
     "title": "Java",
     "slug": "java",
-    "level": 4,
+    "level": 3,
     "data": [
       "Java를 이용한 알고리즘, 자료구조 공부",
       "Java를 기반으로 하는 웹(JSP, SpringFramework) 프로그래밍 경험",
@@ -49,7 +49,7 @@
     "id": 5,
     "title": "React",
     "slug": "react",
-    "level": 5,
+    "level": 6,
     "data": [
       "JavaScript에 능숙하며 주로 사용하는 프레임워크",
       "Babel, Webpack을 사용해서 웹사이트 관리 경험",
@@ -103,6 +103,26 @@
     "title": "Figma",
     "slug": "figma",
     "level": 2,
+    "data": [
+      "Figma를 이용하여 앱 어플리케이션의 블루프린트를 제작 경험",
+      "Adobe와 Figma를 이용하여 UI/UX/로고 디자인 경험"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Next",
+    "slug": "next",
+    "level": 4,
+    "data": [
+      "Figma를 이용하여 앱 어플리케이션의 블루프린트를 제작 경험",
+      "Adobe와 Figma를 이용하여 UI/UX/로고 디자인 경험"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "styled-components",
+    "slug": "styled",
+    "level": 4,
     "data": [
       "Figma를 이용하여 앱 어플리케이션의 블루프린트를 제작 경험",
       "Adobe와 Figma를 이용하여 UI/UX/로고 디자인 경험"

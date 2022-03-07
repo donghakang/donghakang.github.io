@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BlogInterface } from "../../pages/blog";
+import { blogContainer, blogFlex, blogList } from "./style";
 
 interface BlogItemInterface {
   blog: {
@@ -23,10 +24,12 @@ const BlogItem: React.FC<BlogItemInterface> = ({ blog }) => {
 const BlogMain: React.FC<BlogInterface> = ({ blogs }) => {
   //TODO: filter needs to be added
   return (
-    <main>
-      <ul>
+    <main css={blogContainer}>
+      <ul css={blogFlex}>
         {blogs.map((blog) => (
-          <li><BlogItem blog={blog}/></li>
+          <li css={blogList}>
+            <BlogItem blog={blog} />
+          </li>
         ))}
       </ul>
     </main>

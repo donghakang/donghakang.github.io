@@ -30,29 +30,6 @@ const About: NextPage = () => {
     ["#ffffff", "#1e90ff"]
   );
 
-  // useEffect(() => {
-  //   // image --> data,
-  //   // data.content.image has Image URL
-  //   const loadImage = (image: string) => {
-  //     return new Promise((resolve, reject) => {
-  //       const loadImage = new Image();
-  //       loadImage.src = image;
-
-  //       loadImage.onload = () => {
-  //         setTimeout(() => {
-  //           resolve(image);
-  //         }, 0);
-  //       };
-
-  //       loadImage.onerror = (err) => reject(err);
-  //     });
-  //   };
-
-  //   loadImage("img/profile.png")
-  //     .then((res) => setImageLoaded(true))
-  //     .catch((err) => console.error("Images cannot be loaded", err));
-  // }, []);
-
   return (
     <motion.div
       css={css`

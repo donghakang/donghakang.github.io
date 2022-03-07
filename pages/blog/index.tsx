@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { NextPage } from "next";
 import { BlogHeader, BlogMain } from "../../components/blog";
+import { css } from "@emotion/react";
 
 export interface BlogInterface {
   blogs: {
@@ -19,7 +20,12 @@ export interface BlogInterface {
 const Blog: NextPage<BlogInterface> = (props) => {
   console.log("===", props);
   return (
-    <div>
+    <div
+      css={css`
+        margin: auto;
+        max-width: var(--phone-view);
+      `}
+    >
       <BlogHeader blogs={props.blogs} />
       <BlogMain blogs={props.blogs} />
     </div>

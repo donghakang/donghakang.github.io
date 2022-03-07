@@ -53,7 +53,7 @@ const Languages: React.FC<SkillSphereInterface> = ({ skills }) => {
         <h3
           style={{
             color: "black",
-            fontSize: `${l.level * 20}px`,
+            fontSize: `${l.level * 1.1}em`,
           }}
         >
           {l.title}
@@ -68,8 +68,12 @@ const Languages: React.FC<SkillSphereInterface> = ({ skills }) => {
 const SkilllSphere: React.FC<SkillSphereInterface> = ({ skills }) => {
   return (
     <Canvas
-      className="skill-canvas"
       camera={{ position: [0, 0, -40], fov: 90 }}
+      style={{
+        width: "100%",
+        minHeight: "600px",
+        height: "100%",
+      }}
     >
       <ambientLight />
       <pointLight position={[10, 10, 10]} />

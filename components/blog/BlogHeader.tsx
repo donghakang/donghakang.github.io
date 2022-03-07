@@ -1,4 +1,5 @@
 import { BlogInterface } from "../../pages/blog";
+import { tagButton, tagContainer, tagFlex, tagList } from "./style";
 
 function getAllTags(
   blogs: {
@@ -32,11 +33,12 @@ function getAllTags(
 const BlogHeader: React.FC<BlogInterface> = ({ blogs }) => {
   const tagsOnly = getAllTags(blogs);
   return (
-    <nav>
-      <ul>
+    <nav css={tagContainer}>
+      <ul css={tagFlex}>
         {Object.keys(tagsOnly).map((tag) => (
-          <li>
-            {tag} ({tagsOnly[tag]})
+          <li css={tagList}>
+            <span>{tag}</span>
+            <div className={"badge"}><span>{tagsOnly[tag]}</span></div>
           </li>
         ))}
       </ul>

@@ -5,18 +5,29 @@ function Experience() {
   return (
     <div css={Styled.experienceStyle}>
       <div css={Styled.titleContainerStyle}>
-        <h2 css={Styled.titleStyle}>Experience</h2>
+        <h1 css={Styled.titleStyle}>
+          WHERE&nbsp;&nbsp;&nbsp;WAS&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;?
+        </h1>
       </div>
       <div css={Styled.experienceContainerStyle}>
-        {about.map((experience) => (
-          <div className="experience-content" key={experience.id}>
-            <h3 className="experience-title">{experience.title}</h3>
-            <ul>
-              {experience.content.map((content, idx) => (
-                <li key={idx}>{content}</li>
-              ))}
-            </ul>
-          </div>
+        {about.map((experience: any, idx: number) => (
+          <Styled.experienceContent key={experience.id}>
+            {idx % 2 === 0 ? (
+              <h2>
+                {experience.title}
+                {experience.skills.map((skill: string) => (
+                  <sup key={skill}>{skill}</sup>
+                ))}
+              </h2>
+            ) : (
+              <h2>
+                {experience.skills.map((skill: string) => (
+                  <sup key={skill}>{skill}</sup>
+                ))}
+                {experience.title}
+              </h2>
+            )}
+          </Styled.experienceContent>
         ))}
       </div>
     </div>

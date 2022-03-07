@@ -26,8 +26,13 @@ const colors = {
   main_orange: "#ff8d1e",
 };
 
+const screen = {
+  phone_view: "768px",
+};
+
 const theme = {
-  colors
-}
+  colors,
+  screen,
+};
 
 export default theme;

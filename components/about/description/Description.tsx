@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 import * as Styled from "./style";
 import Emoji from "../../emoji";
+import { useCursorDispatch } from "../../../context/CursorContext";
 
 const parentVariant = {
   hidden: {
@@ -14,7 +15,8 @@ const parentVariant = {
 };
 
 function Description() {
-
+  const dispatch = useCursorDispatch();
+  
   return (
     <div css={Styled.descriptionStyle}>
       <div css={Styled.titleContainerStyle}>
@@ -22,8 +24,8 @@ function Description() {
           <span>HELLO,</span>
           <span>MY NAME IS</span>
           <span
-          // onMouseOver={() => dispatch({ type: "CURSOR_IMAGE_ON" })}
-          // onMouseOut={() => dispatch({ type: "CURSOR_IMAGE_OFF" })}
+            onMouseOver={() => dispatch({ type: "CURSOR_IMAGE_ON" })}
+            onMouseOut={() => dispatch({ type: "CURSOR_IMAGE_OFF" })}
           >
             DONGHA KANG
           </span>

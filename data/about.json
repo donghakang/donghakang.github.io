@@ -7,7 +7,8 @@
       "DICOM 웹/소프트웨어 Viewer 개발",
       "React, Fastapi, Nginx, Docker를 사용 하여 웹 뷰어 개발",
       "C++로 작성된 DICOM-viewer에 새로운 기능을 추가"
-    ]
+    ],
+    "skills": ["Web Developer", "Software Developer", "React"]
   },
   {
     "id": "1",
@@ -17,7 +18,8 @@
       "JSP, Spring Framework를 이용하여 중고 옷 거래 플랫폼을 제작",
       "Java를 사용하여 '올때, 메로나'라는 Android 어플리케이션 제작",
       "Java를 사용하여 다른 물리엔진 개발, 게임(Doodle Jump) 개발"
-    ]
+    ],
+    "skills": ["JSP", "Java", "Spring"]
   },
   {
     "id": "2",
@@ -27,6 +29,7 @@
       "C++, Python 위주로 사용하여 다양한 알고리즘, 그래픽, 프로그래밍 수업을 이수",
       "Unreal Engine을 사용하는 프로그램 수업에 멘토(TA) 역할",
       "Intro to Data Structure and Program Development, Advanced Programming Principles, Program Design and Development, Algorithms & Data Structure, Practice of Database Systems, User Interface Design, VR and 3D Interaction, Computer Vision 등 수업 이수"
-    ]
+    ],
+    "skills": ["Graphics", "Algorithm", "Computer Science"]
   }
 ]

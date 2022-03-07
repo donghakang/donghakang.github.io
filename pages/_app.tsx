@@ -5,6 +5,10 @@ import Layout from "../components/layout";
 import { ThemeProvider } from "@emotion/react";
 import theme from "../assets/theme/theme";
 import Head from "next/head";
+import { CursorProvider } from "../context/CursorContext";
+import { Global } from "@emotion/react";
+import { global } from "../assets/theme/Global";
+import Cursor from "../components/cursor";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -12,15 +16,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThemeProvider theme={theme}>
-        {router.pathname === "/" ? (
-          <Layout home>
-            <Component {...pageProps} />
-          </Layout>
-        ) : (
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        )}
+        <CursorProvider>
+          <Global styles={global} />
+          <Cursor />
+          {router.pathname === "/" ? (
+            <Layout home>
+              <Component {...pageProps} />
+            </Layout>
+          ) : (
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          )}
+        </CursorProvider>
       </ThemeProvider>
     </>
   );

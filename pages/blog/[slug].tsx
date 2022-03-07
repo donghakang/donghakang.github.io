@@ -14,7 +14,6 @@ const PostPage = ({
   slug: string;
   mdxSource: any;
 }) => {
-  console.log("slugggg");
 
   return (
     <div className="mt-4">

@@ -7,7 +7,7 @@ const SkillLayer = () => {
   return (
     <div css={Styled.skillStyle}>
       <div css={Styled.titleContainerStyle}>
-        <h2 css={Styled.titleStyle}>My Superpower.</h2>
+        <h1 css={Styled.titleStyle}>MY&nbsp;&nbsp;&nbsp;SUPERPOWER</h1>
       </div>
       <div css={Styled.skillContainerStyle}>
         <SkillSphere skills={skills}/>

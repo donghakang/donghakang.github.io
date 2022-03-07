@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const descriptionStyle = css`
+  margin-top: 10vw;
 `;
 
 // TITLE
@@ -16,7 +17,7 @@ export const titleStyle = styled(motion.h1)`
   display: flex;
   flex-direction: column;
   padding: 0 2vw;
-  font-size: 12.5vw;
+  font-size: calc(1.5rem + 10vw);
   line-height: 0.8;
   letter-spacing: -0.09em;
 
