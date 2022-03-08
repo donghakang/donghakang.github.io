@@ -11,7 +11,7 @@ const Project: React.FC = () => {
       `}
     >
       {work.map((item, index) => (
-        <Link href={`project/3`}>
+        <Link href={`project/3`} key={index}>
           <a>
             <h1 key={index}>{item.title}</h1>
           </a>

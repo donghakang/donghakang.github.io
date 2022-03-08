@@ -27,7 +27,7 @@ const BlogMain: React.FC<BlogInterface> = ({ blogs }) => {
     <main css={blogContainer}>
       <ul css={blogFlex}>
         {blogs.map((blog) => (
-          <li css={blogList}>
+          <li key={blog.frontMatter.title} css={blogList}>
             <BlogItem blog={blog} />
           </li>
         ))}

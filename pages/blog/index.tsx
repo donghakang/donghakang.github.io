@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { NextPage } from "next";
 import { BlogHeader, BlogMain } from "../../components/blog";
 import { css } from "@emotion/react";
+import { useRouter } from "next/router";
 
 export interface BlogInterface {
   blogs: {
@@ -17,18 +18,35 @@ export interface BlogInterface {
   }[];
 }
 
-const Blog: NextPage<BlogInterface> = (props) => {
-  console.log("===", props);
+const Blog: NextPage<BlogInterface> = ({ blogs }) => {
+  const router = useRouter();
+  const { tag } = router.query;
   return (
-    <div
-      css={css`
-        margin: auto;
-        max-width: var(--phone-view);
-      `}
-    >
-      <BlogHeader blogs={props.blogs} />
-      <BlogMain blogs={props.blogs} />
-    </div>
+    <>
+      {!tag || tag === "all" ? (
+        <div
+          css={css`
+            margin: auto;
+            max-width: var(--phone-view);
+          `}
+        >
+          <BlogHeader blogs={blogs} />
+          <BlogMain blogs={blogs} />
+        </div>
+      ) : (
+        <div
+          css={css`
+            margin: auto;
+            max-width: var(--phone-view);
+          `}
+        >
+          <BlogHeader blogs={blogs} />
+          <BlogMain
+            blogs={blogs.filter((blog) => blog.frontMatter.tag.includes(tag))}
+          />
+        </div>
+      )}
+    </>
   );
 };
 

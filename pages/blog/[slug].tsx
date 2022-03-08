@@ -14,7 +14,6 @@ const PostPage = ({
   slug: string;
   mdxSource: any;
 }) => {
-
   return (
     <div className="mt-4">
       <h1>{frontMatter.title}</h1>

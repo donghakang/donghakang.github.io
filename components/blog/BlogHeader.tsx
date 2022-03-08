@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BlogInterface } from "../../pages/blog";
 import { tagButton, tagContainer, tagFlex, tagList } from "./style";
 
@@ -36,10 +37,14 @@ const BlogHeader: React.FC<BlogInterface> = ({ blogs }) => {
     <nav css={tagContainer}>
       <ul css={tagFlex}>
         {Object.keys(tagsOnly).map((tag) => (
-          <li css={tagList}>
-            <span>{tag}</span>
-            <div className={"badge"}><span>{tagsOnly[tag]}</span></div>
-          </li>
+          <Link key={tag} href={`/blog?tag=${tag}`} passHref>
+            <li css={tagList}>
+              <span>{tag}</span>
+              <div className={"badge"}>
+                <span>{tagsOnly[tag]}</span>
+              </div>
+            </li>
+          </Link>
         ))}
       </ul>
     </nav>
