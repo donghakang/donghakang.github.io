@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const descriptionStyle = css`
-  margin-top: 10vw;
+  /* background-color: yellowgreen; */
 `;
 
 // TITLE
@@ -13,7 +13,6 @@ export const titleContainerStyle = css`
 `;
 
 export const titleStyle = styled(motion.h1)`
-  margin: auto;
   display: flex;
   flex-direction: column;
   padding: 0 2vw;
@@ -43,6 +42,7 @@ export const descriptionTextStyle = styled(motion.div)`
   word-break: keep-all;
   .kr {
     display: flex;
+    align-items: center;
 
     span {
       margin-left: 12px;

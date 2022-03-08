@@ -27,7 +27,7 @@ export const global = css`
   h1 {
     font-family: "Inter", sans-serif;
     font-weight: 800;
-    letter-spacing: -0.09em;
+    /* letter-spacing: -0.09em; */
     line-height: 0.8;
   }
 `;

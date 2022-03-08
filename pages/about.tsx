@@ -16,9 +16,9 @@ const About: NextPage = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [y, setY] = useState(0);
 
-  const y1 = useTransform(scrollY, [0, 1300], [100, 700]);
-  const y2 = useTransform(scrollY, [500, 1800], [900, 1400]);
-  const y3 = useTransform(scrollY, [1200, 2000], [1500, 2000]);
+  const y1 = useTransform(scrollYProgress, [0, 0.4], [100, 700]);
+  const y2 = useTransform(scrollYProgress, [0.2, 0.7], [900, 1800]);
+  const y3 = useTransform(scrollYProgress, [0.6, 1], [1900, 2700]);
 
   scrollY.onChange((y) => {
     setY(y);

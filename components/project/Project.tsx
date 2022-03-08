@@ -1,22 +1,28 @@
-import { css } from "@emotion/react";
+
 import Link from "next/link";
 import work from "../../data/work.json";
+import { linkStyle, listStyle, projectContainer, ulContainer } from "./style";
 
-const Project: React.FC = () => {
+export interface ProjectInterface {
+  works: {
+    frontMatter: any;
+    slug: string;
+  }[];
+}
+
+const Project: React.FC<ProjectInterface> = ({ works }) => {
+  console.log(works);
   return (
-    <div
-      css={css`
-        margin: 10vh auto;
-        max-width: var(--phone-view);
-      `}
-    >
-      {work.map((item, index) => (
-        <Link href={`project/3`} key={index}>
-          <a>
-            <h1 key={index}>{item.title}</h1>
-          </a>
-        </Link>
-      ))}
+    <div css={projectContainer}>
+      <ul css={ulContainer}>
+        {works.map((item: any, index: number) => (
+          <li css={listStyle} key={index}>
+            <Link href={`project/${item.slug}`}>
+              <a css={linkStyle}>{item.frontMatter.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

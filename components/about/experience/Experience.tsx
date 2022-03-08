@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import about from "../../../data/about.json";
 import * as Styled from "./style";
 
@@ -8,6 +9,15 @@ function Experience() {
         <h1 css={Styled.titleStyle}>
           WHERE&nbsp;&nbsp;&nbsp;WAS&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;?
         </h1>
+        <img
+          src="/img/memoji.png"
+          css={css`
+            position: absolute;
+            width: 200px;
+            left: 4em;
+            z-index: 5;
+          `}
+        />
       </div>
       <div css={Styled.experienceContainerStyle}>
         {about.map((experience: any, idx: number) => (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BlogInterface } from "../../pages/blog";
-import { tagButton, tagContainer, tagFlex, tagList } from "./style";
+import { tagContainer, tagFlex, tagList } from "./style";
 
 function getAllTags(
   blogs: {

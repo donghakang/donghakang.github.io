@@ -2,33 +2,38 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const experienceStyle = css``;
+export const experienceStyle = css`
+  margin-top: 60vh;
+`;
 
 // TITLE
 export const titleContainerStyle = css`
   position: relative;
+  margin: 4em 0;
   z-index: 2;
+  display: flex;
 `;
 
 export const titleStyle = css`
-  margin: auto;
+  /* margin: auto; */
+  z-index: 3;
   display: flex;
   flex-direction: column;
   padding: 0 2vw;
   font-size: calc(1.5rem + 6vw);
+  letter-spacing: -0.09em;
 `;
 
 // DESCRIPTION
 export const experienceContainerStyle = css`
   max-width: var(--phone-view);
-  margin: auto;
-  margin-top: 40px;
+  margin: 4em auto;
   position: relative;
   z-index: 2;
 `;
 
 export const experienceContent = styled.div`
-  padding: 0.4em 0;
+  padding: 2em 0;
   h2 {
     font-size: 2em;
   }

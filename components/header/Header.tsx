@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { BiMenu, BiX } from "react-icons/bi";
 import * as Styled from "./style";
-
+import { css } from "@emotion/react";
 const LinkHeader = [
   { id: 0, title: "ABOUT", link: "/about" },
   { id: 1, title: "PROJECT", link: "/project" },
@@ -29,7 +29,7 @@ const Header: React.FC<{ home?: boolean }> = ({ home }): JSX.Element => {
       </div>
       <ul className="nav-menu">
         {LinkHeader.map((content) => (
-          <li key={content.id}> 
+          <li key={content.id}>
             <Link href={content.link}>
               <a>{content.title}</a>
             </Link>

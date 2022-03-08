@@ -4,15 +4,18 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import SyntaxHighlighter from "react-syntax-highlighter";
+import { NextPage } from "next";
 
-const PostPage = ({
-  frontMatter,
-  slug,
-  mdxSource,
-}: {
+interface BlogInterface {
   frontMatter: any;
   slug: string;
   mdxSource: any;
+}
+
+const PostPage: NextPage<BlogInterface> = ({
+  frontMatter,
+  slug,
+  mdxSource,
 }) => {
   return (
     <div className="mt-4">

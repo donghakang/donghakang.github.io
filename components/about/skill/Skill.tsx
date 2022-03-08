@@ -2,6 +2,7 @@ import SkillSphere from "../object";
 import * as Styled from "./style";
 // import SkillScene from "./SkillScene";
 import skills from '../../../data/skillData.json'
+import { css } from "@emotion/react";
 
 const SkillLayer = () => {
   return (
