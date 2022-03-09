@@ -2,7 +2,6 @@ import React from "react";
 import { Canvas } from "@react-three/fiber";
 import Header from "../header";
 import Footer from "../footer";
-import { Head } from "next/document";
 
 interface LayoutProps {
   children: React.ReactNode;

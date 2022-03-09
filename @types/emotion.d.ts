@@ -1,5 +1,11 @@
 declare module "@emotion/react" {
   export interface Theme {
+    screen: {
+      phone_view: string;
+      mq: {
+        mobile: string;
+      };
+    };
     colors: {
       black: string;
       white: string;

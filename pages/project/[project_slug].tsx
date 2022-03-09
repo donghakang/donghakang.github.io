@@ -6,6 +6,8 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import SyntaxHighlighter from "react-syntax-highlighter";
+import ProjectPost from "../../components/project/ProjectPost";
+import Post from "../../components/post";
 
 interface ProjectInterface {
   frontMatter: any;
@@ -21,10 +23,7 @@ const ProjectPage: NextPage<ProjectInterface> = ({
   const router = useRouter();
   console.log(router);
   return (
-    <div className="mt-4">
-      <h1>{frontMatter.title}</h1>
-      <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
-    </div>
+    <Post frontMatter={frontMatter} slug={slug} mdxSource={mdxSource} />
   );
 };
 

@@ -7,16 +7,16 @@ const Footer: React.FC = (): JSX.Element => {
   return (
     <Styled.Footer className="footer">
       <a href="https://github.com/donghakang">
-        <FaGithub size={24}/>
+        <FaGithub size={30}/>
       </a>
       <a href="https://facebook.com/dkang0602">
-        <FaFacebook size={24}/>
+        <FaFacebook size={30}/>
       </a>
       <a href="https://instagram.com/donghakang">
-        <FaInstagram size={24}/>
+        <FaInstagram size={30}/>
       </a>
       <a href="mailto:dkang0602@gmail.com">
-        <FiMail size={24}/>
+        <FiMail size={30}/>
       </a>
     </Styled.Footer>
   );

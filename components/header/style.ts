@@ -71,7 +71,7 @@ export const Header = styled.nav<HeaderProps>`
     margin-right: 20px;
   }
 
-  @media screen and (max-width: 640px) {
+  ${({ theme }) => theme.screen.mq.mobile} {
     & {
       ul {
         background-color: white;
@@ -105,6 +105,7 @@ export const Header = styled.nav<HeaderProps>`
       }
 
       .hamburger-menu {
+        color: ${({theme}) => theme.colors.main_orange};
         display: flex;
         z-index: 9;
       }

@@ -3,10 +3,11 @@ import { MDXRemote } from "next-mdx-remote";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import SyntaxHighlighter from "react-syntax-highlighter";
 import { NextPage } from "next";
+import Post from "../../components/post";
 
-interface BlogInterface {
+
+export interface BlogInterface {
   frontMatter: any;
   slug: string;
   mdxSource: any;
@@ -17,11 +18,9 @@ const PostPage: NextPage<BlogInterface> = ({
   slug,
   mdxSource,
 }) => {
+  console.log(mdxSource);
   return (
-    <div className="mt-4">
-      <h1>{frontMatter.title}</h1>
-      <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
-    </div>
+    <Post frontMatter={frontMatter} slug={slug} mdxSource={mdxSource} />
   );
 };
 

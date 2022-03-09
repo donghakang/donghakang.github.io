@@ -31,7 +31,7 @@ const Header: React.FC<{ home?: boolean }> = ({ home }): JSX.Element => {
         {LinkHeader.map((content) => (
           <li key={content.id}>
             <Link href={content.link}>
-              <a>{content.title}</a>
+              <a className="link">{content.title}</a>
             </Link>
           </li>
         ))}

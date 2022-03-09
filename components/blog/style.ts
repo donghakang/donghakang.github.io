@@ -1,8 +1,7 @@
 import { css } from "@emotion/react";
 
 // BLOG HEADER
-export const tagContainer = css`
-`;
+export const tagContainer = css``;
 
 export const tagFlex = css`
   list-style-type: none;
@@ -44,7 +43,6 @@ export const tagList = css`
   }
 `;
 
-
 // BLOG MAIN
 export const blogContainer = css`
   margin: 0;
@@ -68,3 +66,4 @@ export const blogList = css`
     font-size: calc(1.5rem + 1vw);
   }
 `;
+
