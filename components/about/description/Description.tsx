@@ -23,30 +23,11 @@ const titleContainer = {
   },
 };
 
-const descriptionContainer = {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.4,
-      staggerChildren: 0.5,
-    },
-  },
-};
-
 const item = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-  },
-};
-const descriptionItem = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-
   },
 };
 
@@ -58,11 +39,7 @@ function Description() {
   return (
     <div css={Styled.descriptionStyle}>
       <div css={Styled.titleContainerStyle}>
-        <Styled.titleStyle
-          variants={titleContainer}
-          initial="hidden"
-          animate="visible"
-        >
+        <Styled.titleStyle variants={titleContainer} initial="hidden" animate="visible">
           <motion.span variants={item}>HELLO,</motion.span>
           <motion.span variants={item}>MY NAME IS</motion.span>
           <motion.span
@@ -75,29 +52,15 @@ function Description() {
         </Styled.titleStyle>
       </div>
       <div css={Styled.descriptionContainerStyle}>
-        <Styled.descriptionTextStyle
-          variants={descriptionContainer}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div
-            variants={descriptionItem}
-            initial="hidden"
-            animate="visible"
-            className="kr"
-          >
+        <Styled.descriptionTextStyle>
+          <motion.div className="kr">
             <Emoji label="artist" symbol="🧑🏻‍🎨" />
             <span>
               저는 사용자들에게 편리함을 제공하며 동시에 재미를 주는 프론트엔드
               개발자입니다.
             </span>
           </motion.div>
-          <motion.div
-            variants={descriptionItem}
-            initial="hidden"
-            animate="visible"
-            className="kr"
-          >
+          <motion.div className="kr">
             <Emoji label="programmer" symbol="👨🏻‍💻" />
             <span>
               저는 프로그래머가 아닌 개발자가 되려고 오늘도 컴퓨터를 꺼냈습니다.

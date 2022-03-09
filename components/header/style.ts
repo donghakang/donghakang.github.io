@@ -105,7 +105,7 @@ export const Header = styled.nav<HeaderProps>`
       }
 
       .hamburger-menu {
-        color: ${({theme}) => theme.colors.main_orange};
+        color: ${({ theme }) => theme.colors.main_orange};
         display: flex;
         z-index: 9;
       }

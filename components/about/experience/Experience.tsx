@@ -1,23 +1,19 @@
 import { css } from "@emotion/react";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 import about from "../../../data/about.json";
 import * as Styled from "./style";
 
 function Experience() {
+  const { scrollY, scrollYProgress } = useViewportScroll();
+
+  const x1 = useTransform(scrollYProgress, [0, 0.4], [300, 0]);
+
   return (
     <div css={Styled.experienceStyle}>
       <div css={Styled.titleContainerStyle}>
-        <h1 css={Styled.titleStyle}>
+        <motion.h1 style={{ x: x1 }} css={Styled.titleStyle}>
           WHERE&nbsp;&nbsp;&nbsp;WAS&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;?
-        </h1>
-        {/* <img
-          src="/img/memoji.png"
-          css={css`
-            position: absolute;
-            width: 200px;
-            left: 4em;
-            z-index: 5;
-          `}
-        /> */}
+        </motion.h1>
       </div>
       <div css={Styled.experienceContainerStyle}>
         {about.map((experience: any, idx: number) => (
