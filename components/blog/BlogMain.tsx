@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { BlogInterface } from "../../pages/blog";
 import { blogContainer, blogFlex, blogList } from "./style";
+import { motion } from "framer-motion";
+import { container, content } from "../animation/framer";
 
 interface BlogItemInterface {
   blog: {
@@ -25,13 +27,22 @@ const BlogMain: React.FC<BlogInterface> = ({ blogs }) => {
   //TODO: filter needs to be added
   return (
     <main css={blogContainer}>
-      <ul css={blogFlex}>
+      <motion.ul
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        css={blogFlex}
+      >
         {blogs.map((blog) => (
-          <li key={blog.frontMatter.title} css={blogList}>
+          <motion.li
+            variants={content}
+            key={blog.frontMatter.title}
+            css={blogList}
+          >
             <BlogItem blog={blog} />
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </main>
   );
 };

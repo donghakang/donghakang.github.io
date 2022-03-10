@@ -8,12 +8,31 @@ export const PostContainer = styled.div`
   padding: 1rem;
 `;
 
-export const PostTitleStyle = styled.h1`
+export const PostTitleStyle = styled.div`
   margin: 4rem auto;
-  font-size: 4rem;
-  line-height: 1;
+
+  h1 {
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  .title-info {
+    display: flex;
+    align-items: center;
+    img {
+      width: 75px;
+      background-color: greenyellow;
+      border-radius: 50px;
+    }
+
+    * {
+      margin: 0.4rem;
+    }
+  }
 
   ${({ theme }) => theme.screen.mq.mobile} {
-    font-size: 3rem;
+    h1 {
+      font-size: 3rem;
+    }
   }
 `;

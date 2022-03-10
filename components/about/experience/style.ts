@@ -28,6 +28,7 @@ export const titleStyle = css`
 export const experienceContainerStyle = css`
   max-width: var(--phone-view);
   margin: 4em auto;
+  padding: 1rem;
   position: relative;
   z-index: 2;
 `;

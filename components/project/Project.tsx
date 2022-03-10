@@ -1,7 +1,7 @@
-
 import Link from "next/link";
 import work from "../../data/work.json";
 import { linkStyle, listStyle, projectContainer, ulContainer } from "./style";
+import { motion } from "framer-motion";
 
 export interface ProjectInterface {
   works: {
@@ -10,19 +10,44 @@ export interface ProjectInterface {
   }[];
 }
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const content = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 const Project: React.FC<ProjectInterface> = ({ works }) => {
   console.log(works);
   return (
     <div css={projectContainer}>
-      <ul css={ulContainer}>
+      <motion.ul
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        css={ulContainer}
+      >
         {works.map((item: any, index: number) => (
-          <li css={listStyle} key={index}>
+          <motion.li variants={content} css={listStyle} key={index}>
             <Link href={`project/${item.slug}`}>
               <a css={linkStyle}>{item.frontMatter.title}</a>
             </Link>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </div>
   );
 };

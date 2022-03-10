@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BlogInterface } from "../../pages/blog";
 import { tagContainer, tagFlex, tagList } from "./style";
+import { motion } from "framer-motion";
 
 function getAllTags(
   blogs: {
@@ -35,15 +36,17 @@ const BlogHeader: React.FC<BlogInterface> = ({ blogs }) => {
   const tagsOnly = getAllTags(blogs);
   return (
     <nav css={tagContainer}>
-      <ul css={tagFlex}>
+      <ul
+        css={tagFlex}
+      >
         {Object.keys(tagsOnly).map((tag) => (
           <Link key={tag} href={`/blog?tag=${tag}`} passHref>
-            <li css={tagList}>
+            <motion.li initial={{scale: 0}} animate={{scale: 1}} transition={{delay: Math.random() * 1.3}} css={tagList}>
               <span>{tag}</span>
               <div className={"badge"}>
                 <span>{tagsOnly[tag]}</span>
               </div>
-            </li>
+            </motion.li>
           </Link>
         ))}
       </ul>

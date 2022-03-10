@@ -6,7 +6,6 @@ import matter from "gray-matter";
 import { NextPage } from "next";
 import Post from "../../components/post";
 
-
 export interface BlogInterface {
   frontMatter: any;
   slug: string;
@@ -20,7 +19,7 @@ const PostPage: NextPage<BlogInterface> = ({
 }) => {
   console.log(mdxSource);
   return (
-    <Post frontMatter={frontMatter} slug={slug} mdxSource={mdxSource} />
+    <Post blog frontMatter={frontMatter} slug={slug} mdxSource={mdxSource} />
   );
 };
 

@@ -2,23 +2,21 @@ import type { NextPage } from "next";
 import { css } from "@emotion/react";
 import { motion } from "framer-motion";
 import { useTransform, useViewportScroll } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Description, Experience, Skill } from "../components/about";
 import {
   KeyboardParallax,
   MacbookParallax,
   HeadphoneParallax,
 } from "../components/about/object";
-import Environment from "../components/environment";
 
 const About: NextPage = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();
-  const [imageLoaded, setImageLoaded] = useState(false);
   const [y, setY] = useState(0);
 
   const y1 = useTransform(scrollYProgress, [0, 0.4], [100, 700]);
   const y2 = useTransform(scrollYProgress, [0.2, 0.7], [900, 1800]);
-  const y3 = useTransform(scrollYProgress, [0.6, 1], [1900, 2700]);
+  const y3 = useTransform(scrollYProgress, [0.6, 1], [1900, 3000]);
 
   scrollY.onChange((y) => {
     setY(y);
@@ -46,7 +44,7 @@ const About: NextPage = () => {
         css={css`
           position: absolute;
         `}
-        style={{ x: "30vw", y: y1 }}
+        style={{ y: y1 }}
       >
         <MacbookParallax
           style={{ width: "500px", height: "500px" }}
@@ -62,7 +60,7 @@ const About: NextPage = () => {
         css={css`
           position: absolute;
         `}
-        style={{ x: "50vw", y: y2 }}
+        style={{ y: y2 }}
       >
         <HeadphoneParallax
           style={{ width: "500px", height: "500px" }}

@@ -5,17 +5,42 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import okaidia from "react-syntax-highlighter/dist/cjs/styles/prism/okaidia";
 import { PostContainer, PostTitleStyle } from "./style";
 import { css } from "@emotion/react";
+import Utterance from "./Utterance";
+import Emoji from "../emoji";
+import { Chip } from "../chip";
 
 interface PostInterface {
+  blog?: boolean;
+  project?: boolean;
   frontMatter: any;
   slug: string;
   mdxSource: any;
 }
 
-const Post: React.FC<PostInterface> = ({ frontMatter, slug, mdxSource }) => {
+const Post: React.FC<PostInterface> = ({
+  blog,
+  project,
+  frontMatter,
+  slug,
+  mdxSource,
+}) => {
   return (
     <PostContainer>
-      <PostTitleStyle>{frontMatter.title}</PostTitleStyle>
+      {project && <PostTitleStyle>{frontMatter.title}</PostTitleStyle>}
+      {blog && (
+        <PostTitleStyle>
+          <h1>{frontMatter.title}</h1>
+          <div className={"title-info"}>
+            <img src="/img/memoji.png" alt="donghakang" />
+            <strong>{frontMatter.author}</strong>
+            <span>{frontMatter.date}</span>
+            {/* TODO: get tag data */}
+          </div>
+          <div className="chip-info">
+            <Chip tags={frontMatter.tag} />
+          </div>
+        </PostTitleStyle>
+      )}
       <MDXRemote
         {...mdxSource}
         components={{
@@ -43,10 +68,11 @@ const Post: React.FC<PostInterface> = ({ frontMatter, slug, mdxSource }) => {
                     monospace;
                   font-size: 0.875rem;
                   text-align: left;
-                  white-space: pre;
+                  /* white-space: pre; */
                   word-spacing: normal;
                   word-break: normal;
                   overflow-wrap: normal;
+                  overflow-x: scroll;
                   line-height: 1.5;
                   tab-size: 4;
                   hyphens: none;
@@ -58,6 +84,7 @@ const Post: React.FC<PostInterface> = ({ frontMatter, slug, mdxSource }) => {
           },
         }}
       />
+      {blog && <Utterance />}
     </PostContainer>
   );
 };
