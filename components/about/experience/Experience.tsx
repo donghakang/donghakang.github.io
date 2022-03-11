@@ -1,48 +1,80 @@
 import { css } from "@emotion/react";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { motion, useAnimation, useViewportScroll } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import about from "../../../data/about.json";
 import * as Styled from "./style";
-import Fade from "react-reveal/Fade";
 
 function Experience() {
-  const { scrollYProgress } = useViewportScroll();
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
 
-  const x1 = useTransform(scrollYProgress, [0, 0.4], [300, 0]);
-
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
 
   return (
-    <div css={Styled.experienceStyle}>
+    <section css={Styled.experienceStyle}>
       <div css={Styled.titleContainerStyle}>
-        <motion.h1 style={{ x: x1 }} css={Styled.titleStyle}>
+        <motion.h1
+          animate={controls}
+          initial="hidden"
+          variants={Styled.titleMotion}
+          css={Styled.titleStyle}
+        >
           WHERE&nbsp;&nbsp;&nbsp;WAS&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;?
         </motion.h1>
       </div>
-      <div css={Styled.experienceContainerStyle}>
+      <div css={Styled.experienceContainerStyle} ref={ref}>
         {about.map((experience: any, idx: number) => (
           <Styled.experienceContent key={experience.id}>
             {idx % 2 === 0 ? (
-              <Fade bottom>
-                <h2>
-                  {experience.title}
+              <motion.h2
+                animate={controls}
+                initial="hidden"
+                variants={Styled.containerMotion}
+              >
+                <motion.span>{experience.title}</motion.span>
+                <div className="sup-container">
                   {experience.skills.map((skill: string) => (
-                    <motion.sup key={skill}>{skill}</motion.sup>
+                    <motion.div
+                      className="sup"
+                      variants={Styled.supMotion}
+                      key={skill}
+                    >
+                      {skill}
+                    </motion.div>
                   ))}
-                </h2>
-              </Fade>
+                </div>
+              </motion.h2>
             ) : (
-              <Fade bottom>
-                <h2>
+              <motion.h2
+                animate={controls}
+                initial="hidden"
+                variants={Styled.containerMotion}
+              >
+                <div className="sup-container">
                   {experience.skills.map((skill: string) => (
-                    <sup key={skill}>{skill}</sup>
+                    <motion.div
+                      className="sup"
+                      variants={Styled.supMotion}
+                      key={skill}
+                    >
+                      {skill}
+                    </motion.div>
                   ))}
-                  {experience.title}
-                </h2>
-              </Fade>
+                </div>
+                <motion.span>{experience.title}</motion.span>
+              </motion.h2>
             )}
           </Styled.experienceContent>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -29,3 +29,15 @@ export const skillContainerStyle = css`
   z-index: 2;
   min-height: 800px;
 `;
+
+// ANIMATION
+export const titleMotion = {
+  hidden: { x: 300 },
+  visible: { x: 0 },
+};
+
+
+export const sphereMotion = {
+  hidden: { scale: 0 },
+  visible: { scale: 1 },
+};

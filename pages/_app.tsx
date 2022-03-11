@@ -10,6 +10,8 @@ import { global } from "../assets/theme/Global";
 import Cursor from "../components/cursor";
 import Router from "next/router";
 import { useEffect, useState } from "react";
+import Pacman from "../components/loader";
+import Loader from "../components/loader";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -37,7 +39,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Global styles={global} />
           <Cursor />
           {loading ? (
-            <div>Loading page...</div>
+            <Layout home>
+              <Loader />
+            </Layout>
           ) : (
             <>
               {router.pathname === "/" ? (

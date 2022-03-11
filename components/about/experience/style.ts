@@ -35,6 +35,7 @@ export const experienceContainerStyle = css`
 
 export const experienceContent = styled.div`
   padding: 2em 0;
+  display: flex;
   h2 {
     font-size: 2em;
   }
@@ -44,15 +45,39 @@ export const experienceContent = styled.div`
     text-align: end;
   }
 
-  sup {
-    padding: 0.2em 0.6em;
-    /* margin-left: 0.2em; */
-    margin: 0 0.2em;
-    border-radius: 30px;
-    color: #fff;
-    background: #ff8c00;
+  .sup-container {
+    display: flex;
+    .sup {
+      padding: 0.2em 0.6em;
+      /* margin-left: 0.2em; */
+      margin: 0 0.2em;
+      border-radius: 30px;
+      color: #fff;
+      background: #ff8c00;
 
-    font-weight: 400;
-    font-size: 0.875rem;
+      font-weight: 400;
+      font-size: 0.875rem;
+    }
   }
 `;
+
+export const titleMotion = {
+  hidden: { x: 300 },
+  visible: { x: 0 }
+}
+
+export const containerMotion = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+export const supMotion = {
+  hidden: { scale: 0 },
+  visible: { scale: 1 },
+};

@@ -32,6 +32,7 @@ const About: NextPage = () => {
     <motion.div
       css={css`
         /* background-color: ${backgroundColor}; */
+        position: relative;
         overflow-x: hidden;
         min-height: 300vh;
         display: flex;
@@ -43,6 +44,7 @@ const About: NextPage = () => {
       <motion.div
         css={css`
           position: absolute;
+          left: 20vw;
         `}
         style={{ y: y1 }}
       >
@@ -74,6 +76,7 @@ const About: NextPage = () => {
       </motion.div>
       <motion.div
         css={css`
+          left: 50vw;
           position: absolute;
         `}
         style={{ y: y3 }}

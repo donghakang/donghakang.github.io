@@ -3,17 +3,36 @@ import * as Styled from "./style";
 // import SkillScene from "./SkillScene";
 import skills from "../../../data/skillData.json";
 import { css } from "@emotion/react";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useTransform,
+  useViewportScroll,
+} from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const SkillLayer = () => {
-  const { scrollYProgress } = useViewportScroll();
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
 
-  const x1 = useTransform(scrollYProgress, [0, 0.4], [300, 0]);
-  console.log(scrollYProgress, x1);
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
     <div css={Styled.skillStyle}>
-      <div css={Styled.titleContainerStyle}>
-        <motion.h1 style={{ x: x1 }} css={Styled.titleStyle}>
+      <div css={Styled.titleContainerStyle} ref={ref}>
+        <motion.h1
+          animate={controls}
+          initial="hidden"
+          variants={Styled.titleMotion}
+          css={Styled.titleStyle}
+        >
           MY&nbsp;&nbsp;&nbsp;SUPERPOWER
         </motion.h1>
       </div>

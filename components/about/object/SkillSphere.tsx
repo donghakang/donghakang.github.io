@@ -39,7 +39,8 @@ const Languages: React.FC<SkillSphereInterface> = ({ skills }) => {
 
   useFrame((state) => {
     if (mesh.current !== null) {
-      mesh.current.rotation.y += 0.002;
+      mesh.current.rotation.y += 0.01;
+      mesh.current.rotation.x += 0.01;
     }
   });
 
@@ -68,7 +69,7 @@ const Languages: React.FC<SkillSphereInterface> = ({ skills }) => {
 const SkilllSphere: React.FC<SkillSphereInterface> = ({ skills }) => {
   return (
     <Canvas
-      camera={{ position: [0, 0, -40], fov: 90 }}
+      camera={{ position: [0, 0, -20], fov: 120 }}
       style={{
         width: "100%",
         minHeight: "600px",
