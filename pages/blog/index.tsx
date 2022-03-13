@@ -21,13 +21,15 @@ export interface BlogInterface {
 const Blog: NextPage<BlogInterface> = ({ blogs }) => {
   const router = useRouter();
   const { tag } = router.query;
+
+
   return (
     <>
       {!tag || tag === "all" ? (
         <div
           css={css`
             margin: auto;
-            max-width: var(--phone-view);
+            max-width: var(--mobile-view);
           `}
         >
           <BlogHeader blogs={blogs} />
@@ -37,7 +39,7 @@ const Blog: NextPage<BlogInterface> = ({ blogs }) => {
         <div
           css={css`
             margin: auto;
-            max-width: var(--phone-view);
+            max-width: var(--mobile-view);
           `}
         >
           <BlogHeader blogs={blogs} />

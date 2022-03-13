@@ -51,10 +51,10 @@ export const Header = styled.nav<HeaderProps>`
 
         transition: all 0.3s;
 
-        &:hover {
+        /* &:hover {
           color: orange;
           transform: scale(1, 0.8);
-        }
+        } */
       }
       button {
         background: none;

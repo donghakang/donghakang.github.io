@@ -7,6 +7,7 @@ export const tagFlex = css`
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
   margin: 0.25em;
   flex: 1 0 auto;
   justify-content: space-evenly;

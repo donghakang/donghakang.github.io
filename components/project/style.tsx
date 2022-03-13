@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 export const projectContainer = css`
   margin: auto;
   padding: 1em;
-  max-width: var(--phone-view);
+  max-width: var(--mobile-view);
   display: flex;
   flex-direction: column;
 `;

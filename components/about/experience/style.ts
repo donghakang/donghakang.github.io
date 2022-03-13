@@ -25,46 +25,63 @@ export const titleStyle = css`
 `;
 
 // DESCRIPTION
-export const experienceContainerStyle = css`
-  max-width: var(--phone-view);
+export const experienceContainerStyle = styled.div`
+  max-width: var(--mobile-view);
   margin: 4em auto;
   padding: 1rem;
   position: relative;
   z-index: 2;
-`;
 
-export const experienceContent = styled.div`
-  padding: 2em 0;
-  display: flex;
-  h2 {
-    font-size: 2em;
-  }
-
-  &:nth-child(2) {
+  .even-container {
     flex-direction: row-reverse;
     text-align: end;
+
+    .sup-container {
+
+      span:first-of-type {
+        flex: 1;
+      }
+    }
+  }
+  .container {
+    padding: 0 0;
+    display: flex;
+
+    h2 {
+      font-size: 2em;
+    }
+
+    /* &:nth-child(2n) {
+    flex-direction: row-reverse;
+    text-align: end;
+  } */
+
+    .sup-container {
+      display: flex;
+      .sup {
+        padding: 0.2em 0.6em;
+        /* margin-left: 0.2em; */
+        margin: 0 0.2em;
+        border-radius: 30px;
+        color: #fff;
+        background: #ff8c00;
+
+        font-weight: 400;
+        font-size: 0.875rem;
+      }
+    }
   }
 
-  .sup-container {
-    display: flex;
-    .sup {
-      padding: 0.2em 0.6em;
-      /* margin-left: 0.2em; */
-      margin: 0 0.2em;
-      border-radius: 30px;
-      color: #fff;
-      background: #ff8c00;
-
-      font-weight: 400;
-      font-size: 0.875rem;
-    }
+  .even-sup-container {
+    margin-right: 0;
+    margin-left: auto;
   }
 `;
 
 export const titleMotion = {
   hidden: { x: 300 },
-  visible: { x: 0 }
-}
+  visible: { x: 0 },
+};
 
 export const containerMotion = {
   hidden: { opacity: 1 },

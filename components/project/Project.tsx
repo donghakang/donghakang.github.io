@@ -31,7 +31,6 @@ const content = {
 };
 
 const Project: React.FC<ProjectInterface> = ({ works }) => {
-  console.log(works);
   return (
     <div css={projectContainer}>
       <motion.ul
@@ -40,13 +39,18 @@ const Project: React.FC<ProjectInterface> = ({ works }) => {
         animate="visible"
         css={ulContainer}
       >
-        {works.map((item: any, index: number) => (
-          <motion.li variants={content} css={listStyle} key={index}>
-            <Link href={`project/${item.slug}`}>
-              <a css={linkStyle}>{item.frontMatter.title}</a>
-            </Link>
-          </motion.li>
-        ))}
+        {works
+          .sort(
+            (a, b) =>
+              Date.parse(b.frontMatter.date) - Date.parse(a.frontMatter.date)
+          )
+          .map((item: any, index: number) => (
+            <motion.li variants={content} css={listStyle} key={index}>
+              <Link href={`project/${item.slug}`}>
+                <a css={linkStyle}>{item.frontMatter.title}</a>
+              </Link>
+            </motion.li>
+          ))}
       </motion.ul>
     </div>
   );

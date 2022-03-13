@@ -17,7 +17,6 @@ const PostPage: NextPage<BlogInterface> = ({
   slug,
   mdxSource,
 }) => {
-  console.log(mdxSource);
   return (
     <Post blog frontMatter={frontMatter} slug={slug} mdxSource={mdxSource} />
   );

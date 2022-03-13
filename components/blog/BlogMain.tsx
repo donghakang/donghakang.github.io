@@ -33,15 +33,20 @@ const BlogMain: React.FC<BlogInterface> = ({ blogs }) => {
         animate="visible"
         css={blogFlex}
       >
-        {blogs.map((blog) => (
-          <motion.li
-            variants={content}
-            key={blog.frontMatter.title}
-            css={blogList}
-          >
-            <BlogItem blog={blog} />
-          </motion.li>
-        ))}
+        {blogs
+          .sort(
+            (a, b) =>
+              Date.parse(b.frontMatter.date) - Date.parse(a.frontMatter.date)
+          )
+          .map((blog) => (
+            <motion.li
+              variants={content}
+              key={blog.frontMatter.title}
+              css={blogList}
+            >
+              <BlogItem blog={blog} />
+            </motion.li>
+          ))}
       </motion.ul>
     </main>
   );

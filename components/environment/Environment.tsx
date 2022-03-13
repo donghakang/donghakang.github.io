@@ -145,7 +145,7 @@ const Environment = () => {
         </group>
         {/* <OrbitControls /> */}
       </Canvas>
-      <Loader containerStyles={{ backgroundColor: "orange" }} />
+      {/* <Loader containerStyles={{ backgroundColor: "orange" }} /> */}
     </>
   );
 };

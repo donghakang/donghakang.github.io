@@ -32,12 +32,7 @@ const getPosts = () => {
 };
 
 const getPost = (pathname: string) => {
-  // const fileContent = fs.readFileSync(
-  //   path.join(process.cwd(), "pages", pathname),
-  //   "utf-8"
-  // );
 
-  console.log("getPost", pathname);
 };
 
 export { getPost, getPosts };

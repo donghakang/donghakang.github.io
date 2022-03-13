@@ -1,14 +1,15 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
 // BLOG POST
-export const PostContainer = styled.div`
+export const PostContainer = styled(motion.div)`
   margin: auto;
-  max-width: ${({ theme }) => theme.screen.phone_view};
+  max-width: ${({ theme }) => theme.screen.mobile_view};
   padding: 1rem;
 `;
 
-export const PostTitleStyle = styled.div`
+export const PostTitleStyle = styled(motion.div)`
   margin: 4rem auto;
 
   h1 {

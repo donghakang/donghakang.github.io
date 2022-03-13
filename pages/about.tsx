@@ -14,9 +14,9 @@ const About: NextPage = () => {
   const { scrollY, scrollYProgress } = useViewportScroll();
   const [y, setY] = useState(0);
 
-  const y1 = useTransform(scrollYProgress, [0, 0.4], [100, 700]);
-  const y2 = useTransform(scrollYProgress, [0.2, 0.7], [900, 1800]);
-  const y3 = useTransform(scrollYProgress, [0.6, 1], [1900, 3000]);
+  const y1 = useTransform(scrollYProgress, [0, 0.4], ["20vh", "80vh"]);
+  const y2 = useTransform(scrollYProgress, [0.2, 0.7], ["140vh", "200vh"]);
+  const y3 = useTransform(scrollYProgress, [0.6, 1], ["240vh", "300vh"]);
 
   scrollY.onChange((y) => {
     setY(y);
@@ -24,14 +24,13 @@ const About: NextPage = () => {
 
   const backgroundColor = useTransform(
     scrollYProgress,
-    [0, 1],
-    ["#ffffff", "#1e90ff"]
+    [0, 0.4, 0.5, 0.6, 1],
+    ["#ffffff", "#ffffff", "#1e90ff", "#1e90ff", "#000000"]
   );
 
   return (
     <motion.div
       css={css`
-        /* background-color: ${backgroundColor}; */
         position: relative;
         overflow-x: hidden;
         min-height: 300vh;

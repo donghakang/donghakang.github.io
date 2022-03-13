@@ -29,51 +29,57 @@ function Experience() {
           WHERE&nbsp;&nbsp;&nbsp;WAS&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;?
         </motion.h1>
       </div>
-      <div css={Styled.experienceContainerStyle} ref={ref}>
-        {about.map((experience: any, idx: number) => (
-          <Styled.experienceContent key={experience.id}>
-            {idx % 2 === 0 ? (
-              <motion.h2
-                animate={controls}
-                initial="hidden"
-                variants={Styled.containerMotion}
-              >
-                <motion.span>{experience.title}</motion.span>
-                <div className="sup-container">
-                  {experience.skills.map((skill: string) => (
-                    <motion.div
-                      className="sup"
-                      variants={Styled.supMotion}
-                      key={skill}
-                    >
-                      {skill}
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.h2>
-            ) : (
-              <motion.h2
-                animate={controls}
-                initial="hidden"
-                variants={Styled.containerMotion}
-              >
-                <div className="sup-container">
-                  {experience.skills.map((skill: string) => (
-                    <motion.div
-                      className="sup"
-                      variants={Styled.supMotion}
-                      key={skill}
-                    >
-                      {skill}
-                    </motion.div>
-                  ))}
-                </div>
-                <motion.span>{experience.title}</motion.span>
-              </motion.h2>
-            )}
-          </Styled.experienceContent>
-        ))}
-      </div>
+      <Styled.experienceContainerStyle ref={ref}>
+        {about
+          .sort((a, b) => b.id - a.id)
+          .map((experience: any, idx: number) => (
+            <div
+              key={experience.id}
+              className={idx % 2 ? "even-container container" : "odd-container container"}
+            >
+              {idx % 2 === 0 ? (
+                <motion.h2
+                  animate={controls}
+                  initial="hidden"
+                  variants={Styled.containerMotion}
+                >
+                  <motion.span>{experience.title}</motion.span>
+                  <div className="sup-container">
+                    {experience.skills.map((skill: string) => (
+                      <motion.span
+                        className="sup"
+                        variants={Styled.supMotion}
+                        key={skill}
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.h2>
+              ) : (
+                <motion.h2
+                  animate={controls}
+                  initial="hidden"
+                  variants={Styled.containerMotion}
+                >
+                  <motion.span>{experience.title}</motion.span>
+                  <div className="sup-container">
+                    <span></span>
+                    {experience.skills.map((skill: string) => (
+                      <motion.span
+                        className="sup"
+                        variants={Styled.supMotion}
+                        key={skill}
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.h2>
+              )}
+            </div>
+          ))}
+      </Styled.experienceContainerStyle>
     </section>
   );
 }

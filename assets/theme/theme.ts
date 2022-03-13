@@ -27,7 +27,7 @@ const colors = {
 };
 
 const screen = {
-  phone_view: "768px",
+  mobile_view: "768px",
   mq: {
     mobile: `@media only screen and (max-width: 768px)`,
   },

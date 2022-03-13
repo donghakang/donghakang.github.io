@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 
 const Utterance = () => {
-  console.log("utterence ...");
   return (
     <section
       css={css`

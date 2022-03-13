@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 export const global = css`
   :root {
-    --phone-view: 768px;
+    --mobile-view: 768px;
   }
 
   .c-hidden {

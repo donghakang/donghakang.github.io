@@ -33,7 +33,7 @@ const SkillLayer = () => {
           variants={Styled.titleMotion}
           css={Styled.titleStyle}
         >
-          MY&nbsp;&nbsp;&nbsp;SUPERPOWER
+          MY&nbsp;&nbsp;&nbsp;SUPERPOWERS
         </motion.h1>
       </div>
       <div css={Styled.skillContainerStyle}>

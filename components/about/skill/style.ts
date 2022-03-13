@@ -20,14 +20,16 @@ export const titleStyle = css`
   flex-direction: column;
   padding: 0 2vw;
   font-size: calc(1.5rem + 6vw);
+  color: white;
 `;
 
 // DESCRIPTION
 export const skillContainerStyle = css`
   margin-top: 40px;
+  margin-bottom: 0;
   position: relative;
   z-index: 2;
-  min-height: 800px;
+  /* min-height: 800px; */
 `;
 
 // ANIMATION

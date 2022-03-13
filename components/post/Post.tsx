@@ -8,6 +8,8 @@ import { css } from "@emotion/react";
 import Utterance from "./Utterance";
 import Emoji from "../emoji";
 import { Chip } from "../chip";
+import { container, content } from "../animation/framer";
+import { motion } from "framer-motion";
 
 interface PostInterface {
   blog?: boolean;
@@ -25,10 +27,14 @@ const Post: React.FC<PostInterface> = ({
   mdxSource,
 }) => {
   return (
-    <PostContainer>
-      {project && <PostTitleStyle>{frontMatter.title}</PostTitleStyle>}
-      {blog && (
+    <PostContainer variants={container} initial="hidden" animate="visible">
+      {project && (
         <PostTitleStyle>
+          <h1>{frontMatter.title}</h1>
+        </PostTitleStyle>
+      )}
+      {blog && (
+        <PostTitleStyle variants={content}>
           <h1>{frontMatter.title}</h1>
           <div className={"title-info"}>
             <img src="/img/memoji.png" alt="donghakang" />
@@ -41,50 +47,85 @@ const Post: React.FC<PostInterface> = ({
           </div>
         </PostTitleStyle>
       )}
-      <MDXRemote
-        {...mdxSource}
-        components={{
-          code({ node, inline, className, children, ...props }) {
-            const match = /language-(\w+)/.exec(className || "");
-            return !inline && match ? (
-              <SyntaxHighlighter
-                children={String(children).replace(/\n$/, "")}
-                style={okaidia}
-                language={match[1]}
-                PreTag="div"
-                // {...props}
-              />
-            ) : (
-              <code
-                className={className}
-                {...props}
-                css={css`
-                  padding: 0.125rem 0.5rem;
-                  border-radius: 0.5rem;
-                  color: rgb(248, 248, 242);
-                  background: rgb(39, 40, 34);
-                  text-shadow: rgb(0 0 0 / 30%) 0px 1px;
-                  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
-                    monospace;
-                  font-size: 0.875rem;
-                  text-align: left;
-                  /* white-space: pre; */
-                  word-spacing: normal;
-                  word-break: normal;
-                  overflow-wrap: normal;
-                  overflow-x: scroll;
-                  line-height: 1.5;
-                  tab-size: 4;
-                  hyphens: none;
-                `}
-              >
-                {children}
-              </code>
-            );
-          },
-        }}
-      />
-      {blog && <Utterance />}
+      <motion.div variants={content}>
+        <MDXRemote
+          {...mdxSource}
+          components={{
+            img({ alt, src, children, className }) {
+              return (
+                <div
+                  css={css`
+                    padding: 1rem;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  `}
+                >
+                  <img
+                    src={src}
+                    alt={alt}
+                    css={css`
+                      width: 100%;
+                    `}
+                  >
+                    {children}
+                  </img>
+                  <span
+                    css={css`
+                      color: #a3a3a3;
+                      padding: auto;
+                      text-align: center;
+                      font-size: 0.875rem;
+                    `}
+                  >
+                    {alt}
+                  </span>
+                </div>
+              );
+            },
+            code({ node, inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || "");
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  children={String(children).replace(/\n$/, "")}
+                  style={okaidia}
+                  language={match[1]}
+                  PreTag="div"
+                  // {...props}
+                />
+              ) : (
+                <code
+                  className={className}
+                  {...props}
+                  css={css`
+                    padding: 0.125rem 0.5rem;
+                    border-radius: 0.5rem;
+                    color: rgb(248, 248, 242);
+                    background: rgb(39, 40, 34);
+                    text-shadow: rgb(0 0 0 / 30%) 0px 1px;
+                    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+                      monospace;
+                    font-size: 0.875rem;
+                    text-align: left;
+                    /* white-space: pre; */
+                    word-spacing: normal;
+                    word-break: normal;
+                    overflow-wrap: normal;
+                    overflow-x: scroll;
+                    line-height: 1.5;
+                    tab-size: 4;
+                    hyphens: none;
+                  `}
+                >
+                  {children}
+                </code>
+              );
+            },
+          }}
+        />
+      </motion.div>
+      <motion.div variants={content}>{blog && <Utterance />}</motion.div>
     </PostContainer>
   );
 };

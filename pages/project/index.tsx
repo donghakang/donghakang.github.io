@@ -9,7 +9,6 @@ import { ProjectInterface } from "../../components/project/Project";
 
 
 const project: NextPage<ProjectInterface> = ({ works }) => {
-  console.log("work", works);
   return (
     <motion.div>
       <Project works={works}/>
