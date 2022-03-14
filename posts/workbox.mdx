@@ -1,0 +1,89 @@
+---
+title: Workbox📦 ?
+author: "Dongha Kang"
+date: "2022-03-08"
+tag: ["workbox", "Service Worker"]
+---
+
+## PWA 란
+
+전에 포스트를 했듯이, PWA는 Progressive Web App으로서 standalone 어플리케이션 처럼 만들 수 있는 웹기능 중 하나이다.
+
+## Service Worker란
+
+PWA가 standalone으로 사용할 수 있는 가장 큰 이유 중 하나는 service worker인데, service worker는 browser뒤에서 실행가능한 javascript 파일이며, network 인터셉션, 캐시 저장 및 불러오기, 푸시 알림 같은 기능을 실행시킬수 있는 기술이다.
+
+## Workbox ?
+
+Service worker를 더 잘 활용 할 수 있도록 Google에서 만든 library 이다.
+
+## 🔨 Installation
+
+```bash
+npm install workbox-cli -g
+```
+
+workbox-cli는 workbox를 실행해주는 커맨드고, -g 태그를 넣어서 어느 곳에서도 사용할 수 있도록 global하게 다운로드 해주는 커맨드 입니다.
+
+## ⚙️ Setup
+
+workbox를 제대로 쓰기전에 프로젝트는 있어야 할 거 같으니.. 프로젝트를 만들어보자
+
+```bash
+npx create-react-app <project name> --template cra-template-pwa
+npx create-react-app <project name> --template cra-template-pwa-typescript
+```
+
+이 프로젝트를 보게 된다면 `unregister`를 `register`로 바꾸고 빌드를 해주자.
+
+```jsx
+// src/index.js
+
+serviceWorkerRegistration.register();
+```
+
+```bash
+yarn run build
+```
+
+이제 workbox를 실행시켜보자
+
+```bash
+workbox wizard
+```
+
+커맨드대로 대답을 해주자
+
+```bash
+>> workbox wizard
+? What is the root of your web app (i.e. which directory do you deploy)? build/
+? Which file types would you like to precache? json, ico, png, txt, js, css, svg
+? Where would you like your service worker file to be saved? build/service-worker.js
+? Where would you like to save these configuration options? workbox-config.js
+? Does your web app manifest include search parameter(s) in the 'start_url', other than 'utm_' or 'fbclid' (like '?source=pwa')
+? No
+To build your service worker, run
+
+  workbox generateSW workbox-config.js
+
+as part of a build process. See https://goo.gl/fdTQBf for details.
+You can further customize your service worker by making changes to workbox-config.js. See https://goo.gl/gVo87N for details.
+```
+
+이제 workbox를 실행 시켜보자
+
+```bash
+workbox generateSW workbox-config.js
+```
+
+저 커맨드를 실행시키면, workbox 서비스 워커들이 만들어지고 build폴더에 있는 파일들이 캐시할 준비를 합니다.
+
+이제 serve -s build 를 사용해서 정적 웹사이트를 보게 된다면 ...
+
+![Workbox 예시](/img/workbox.png)
+
+제대로 Cache와 service worker가 작동 되는 것을 알 수 있다.
+
+웬만한 workbox recipes들은 [여기](https://developers.google.com/web/tools/workbox/guides/common-recipes)에서 확인 하자.
+
+recipe들을 변경한 이후는 `workbox injectManifest worker-config.js` 를 돌려주자

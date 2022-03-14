@@ -54,7 +54,7 @@ acme.sh --issue --dns -d <my domain>
 
 각 상황 별로 `—dns` 가 `—webroot`, `—nginx`등 다양한 flag가 필요할 수 도 있으니, 그에 알맞는 flag를 넣어서 인증서를 생성해보자. [여기](https://github.com/acmesh-official/acme.sh)를 참고하자
 
-여기 까지 다 완료가 되었다면 /root/.acme.sh 라는 폴더가 생성이 되었을 것이고, 그와 동시에 /root/.acme.sh/<my domain> 이라는 폴더도 생성 되었으며, 그 안에 실행 후 폴더를 확인해보면 `<url>.cer`, `<url>.key`, `ca.cer`, `fullchain.cer` 등 다양한 certificate 파일들이 생성이 되었을 것이다. 이렇게 되면 갱신이 완료 되었으며, `service nginx start` 으로 nginx service가 시작이 된다.
+여기 까지 다 완료가 되었다면 /root/.acme.sh 라는 폴더가 생성이 되었을 것이고, 그와 동시에 `/root/.acme.sh/<my domain>` 이라는 폴더도 생성 되었으며, 그 안에 실행 후 폴더를 확인해보면 `<url>.cer`, `<url>.key`, `ca.cer`, `fullchain.cer` 등 다양한 certificate 파일들이 생성이 되었을 것이다. 이렇게 되면 갱신이 완료 되었으며, `service nginx start` 으로 nginx service가 시작이 된다.
 
 재갱신 같은 경우
 

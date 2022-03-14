@@ -1,0 +1,131 @@
+---
+title: MUI customization 🚎
+author: "Dongha Kang"
+date: "2021-02-18"
+tag: ["React"]
+---
+
+
+
+
+솔직히 그냥 Javascript 와 CSS를 사용해도 모든 구현이 가능해질 정도로(완벽하지는 않지만) 스타일링을 익혔다.
+
+하지만 어쩔때는 그냥 Slider를 불러와서 사용하고 싶을 때도 있고, Switch 와 같은 우리가 평상시에 만들기 귀찮은 컴포넌트를 사용하고 싶을 때 언급되는 Framework중 개인적으로 MUI를 제일 선호 한다. (ant-design도 사용해 봤지만 나는 material ui 가 더 좋았다)
+
+하지만 정해진 색깔과 형식 그대로 사용한적은 단 한 번도 없었고 이번에 Customization을 하면서 느낀 것들을 여기에 작성해보려한다.
+
+## 🌐 Global
+
+Global 하게 만든 경우, `createTheme` 을 이용했다. styled-components 와 굉장히 비슷한 구조를 가지고 있어서 styled-components를 주로 사용하는 나에게는 적응하기 쉬운 편이었다.
+
+```tsx
+const theme = createTheme({
+  status: {
+    danger: orange[500],
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          width: 200,
+        },
+      },
+    },
+  },
+});
+```
+
+```tsx
+declare module '@mui/material/styles' {
+  interface Theme {
+    ...
+  }
+  interface ThemeOptions {
+    ...
+  }
+}
+```
+
+Typescript 같은 경우 declare module로 Theme의 전체적인 type을 지정해줄 수 도 있다.
+
+실제로 사용하게 된다면
+
+```tsx
+import * as React from "react";
+import Checkbox from "@mui/material/Checkbox";
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import { orange } from "@mui/material/colors";
+
+const CustomCheckbox = styled(Checkbox)(({ theme }) => ({
+  color: theme.status.danger,
+  "&.Mui-checked": {
+    color: theme.status.danger,
+  },
+}));
+
+const theme = createTheme({
+  status: {
+    danger: orange[500],
+  },
+});
+
+export default function CustomStyles() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CustomCheckbox defaultChecked />
+    </ThemeProvider>
+  );
+}
+```
+
+ThemeProvider로 theme 을 설정해주고 그 안에 있는 Checkbox 또한 색깔을 변경 시킬 수 있게 된다. Global Style 안에 미리 Checkbox 와 Button, Text Field등 다양한 스타일이 적용이 되어있거나, dark mode light mode로 전환할 때는 너무나도 큰 이익이 있을것 같다.
+
+하지만 개인적으로 Global은 잘 안사용하는 편인데 그 이유는
+
+- 웬만한 경우, material ui 에 의존하기 보다는 component를 사용하는 것을 더 좋아하기 때문에
+- styled-components와 곂치는 이름이 너무나도 많다. (ThemeProvider, theme 등등..) 그래서 왠만하면 styled-components를 주로 사용하고 mui를 import하는 형식으로 사용중이다.
+
+그러면 styled-components를 사용하면서 MUI component만 수정하는 방법중 나의 방법을 여기에 작성해본다.
+
+## ⚙️ Only Components
+
+나 같은 경우 항상 mui-styles.ts 라는 파일을 만들고 거기에 styled-components의 styled가 아닌 mui-material/styles의 styled를 넣는다
+
+```tsx
+import MuiSlider, { SliderThumb } from "@mui/material/Slider";
+import MuiInput from "@mui/material/Input";
+import { styled } from "@mui/material/styles";
+import { theme } from "../../assets/styles/theme";
+
+export const Slider = styled(MuiSlider)({
+  "& .MuiSlider-track": {
+    border: "none",
+    backgroundColor: theme.color.primary2,
+  },
+  "& .MuiSlider-thumb": {
+    backgroundColor: "#fff",
+    "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
+      backgroundColor: theme.color.primary2,
+    },
+  },
+  "& .MuiSlider-valueLabel": {
+    backgroundColor: theme.color.primary3,
+    color: "white",
+  },
+});
+
+export const Input = styled(MuiInput)({
+  color: "white",
+  "&:before": {
+    borderBottomColor: "white",
+  },
+  "&:after": {
+    borderBottomColor: theme.color.primary,
+  },
+  "&:hover:not(.Mui-focused):before": {
+    borderBottomColor: "white",
+  },
+});
+```
+
+저런 경우 theme.color.primary는 이미 정해놓은 styled-components에 있는 theme 색깔을 사용하고, Slider와 Input이라는 이름 변동 없이 자신만에 스타일을 입힐 수 있는거 같아서 참 좋다고 생각한다. 다만 불편한 점은 &, & .MuiSider-track 이런 점을 사용해야한다는 것인데, 그것은 console 창과 API 를 잘 사용해서 쓰면 된다.
