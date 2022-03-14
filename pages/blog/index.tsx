@@ -20,7 +20,7 @@ export interface BlogInterface {
 
 const Blog: NextPage<BlogInterface> = ({ blogs }) => {
   const router = useRouter();
-  const { tag } = router.query;
+  const tag = router.query.tag as string;
 
 
   return (

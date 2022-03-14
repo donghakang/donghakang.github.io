@@ -3,6 +3,7 @@ import React, { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import theme from "../../../assets/theme/theme";
+import { useTheme } from "@emotion/react";
 
 interface SkillSphereInterface {
   skills: {
@@ -38,6 +39,7 @@ function fibonacciSphere(samples: number) {
 const Languages: React.FC<SkillSphereInterface> = ({ skills }) => {
   const mesh = useRef<THREE.Mesh>(null);
   const fib = fibonacciSphere(skills.length);
+
 
   function getColor(level: number) {
     switch (level) {

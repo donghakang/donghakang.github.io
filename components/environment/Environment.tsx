@@ -1,7 +1,7 @@
 import { Suspense, useRef } from "react";
 import { Loader, OrthographicCamera } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Physics, useBox } from "@react-three/cannon";
+import { Physics, Triplet, useBox } from "@react-three/cannon";
 import { Plane } from "../object";
 import { HeadphoneComponent, KeyboardComponent, MacbookComponent } from ".";
 
@@ -40,8 +40,8 @@ const Obj: React.FC<ObjInterface> = ({ position, rotation, obj }) => {
 };
 
 const PointerHandle: React.FC<{ size: number }> = ({ size }) => {
-  const position = [0, 0, 0];
-  const args = [size / 2, size, size / 2];
+  const position: Triplet = [0, 0, 0];
+  const args: Triplet = [size / 2, size, size / 2];
 
   const [ref, api] = useBox(() => ({ args, position, type: "Kinematic" }));
 

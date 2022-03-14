@@ -24,7 +24,7 @@ export const Cursor = styled.div`
     width: 0;
     height: 0;
 
-    img {
+    .profile_image {
       width: 100%;
       height: 100%;
       border-radius: 100%;

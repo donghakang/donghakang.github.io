@@ -2,10 +2,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { BiMenu, BiX } from "react-icons/bi";
 import * as Styled from "./style";
-import { css } from "@emotion/react";
+import { css, useTheme } from "@emotion/react";
 import Footer from "../footer";
 import { useRouter } from "next/router";
-import theme from "../../assets/theme/theme";
+// import theme from "../../assets/theme/theme";
 const LinkHeader = [
   { id: 0, title: "ABOUT", link: "/about" },
   { id: 1, title: "PROJECT", link: "/project" },
@@ -23,6 +23,7 @@ const Header: React.FC<{ home?: boolean; mobile?: boolean }> = ({
     // when pressed, chnage the menu open state
     setOpen(!open);
   };
+  const theme = useTheme();
 
   return (
     <Styled.Header open={open} home={home}>

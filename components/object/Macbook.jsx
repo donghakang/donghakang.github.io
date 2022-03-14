@@ -7,7 +7,7 @@ import { MeshProps } from "@react-three/fiber";
 import { ObjectInterface } from "../../@types/interface";
 import { forwardRef } from "react";
 
-const Model = forwardRef<ObjectInterface, MeshProps>((props, ref) => {
+const Model = forwardRef((props, ref) => {
   const { nodes, materials } = useGLTF("obj/macbook.gltf");
 
   return (
@@ -25,5 +25,6 @@ const Model = forwardRef<ObjectInterface, MeshProps>((props, ref) => {
 });
 
 useGLTF.preload("obj/macbook.gltf");
+Model.displayName = "Macbook";
 
 export default Model;

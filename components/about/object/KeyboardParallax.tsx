@@ -34,10 +34,12 @@ const KeyboardParallax: React.FC<KeyboardParallaxInterface> = ({
       <Physics>
         <Keyboard
           ref={keyboardRef}
-          position={[0, 0, 0]}
-          rotation={rotation}
-          castShadow
-          color={color}
+          {...{
+            position: [0, 0, 0],
+            rotation: rotation,
+            castShadow: true,
+            color: color,
+          }}
         />
       </Physics>
       <group>

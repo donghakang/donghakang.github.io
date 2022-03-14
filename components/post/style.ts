@@ -20,8 +20,8 @@ export const PostTitleStyle = styled(motion.div)`
   .title-info {
     display: flex;
     align-items: center;
-    img {
-      width: 75px;
+    
+    .memoji {
       background-color: greenyellow;
       border-radius: 50px;
     }

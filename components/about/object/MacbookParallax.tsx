@@ -1,5 +1,5 @@
 import React, { Suspense, useRef, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, ThreeEvent } from "@react-three/fiber";
 
 import { OrthographicCamera } from "@react-three/drei";
 import { Macbook } from "../../object";
@@ -18,7 +18,7 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
 }) => {
   const lightRef1 = useRef();
   const lightRef2 = useRef();
-  const macbookRef = useRef();
+  const macbookRef = useRef<THREE.Mesh>();
 
   const [rot, setRot] = useState(0);
 
@@ -35,10 +35,12 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
       <Physics>
         <Macbook
           ref={macbookRef}
-          position={[0, 0, 0]}
-          rotation={rotation}
-          castShadow
-          color={color}
+          {...{
+            position: [0, 0, 0],
+            rotation: rotation,
+            castShadow: true,
+            color: color,
+          }}
         />
       </Physics>
       <group>

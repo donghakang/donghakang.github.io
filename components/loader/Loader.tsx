@@ -20,18 +20,19 @@ const Loader = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const loadingQuotes = [
-    "creating...🎨",
-    "brainstorming...⚡️",
-    "thinking...🧠",
-    "cooking...👨🏻‍🍳",
-    "meditating...🧘🏻",
-    "dreaming...🛌",
-    "processing...",
-    "printing...📝",
-  ];
-  const quote = useMemo(() => loadingQuotes[Math.floor(Math.random() * loadingQuotes.length)], [])
-
+  const quote = useMemo(() => {
+    const loadingQuotes = [
+      "creating...🎨",
+      "brainstorming...⚡️",
+      "thinking...🧠",
+      "cooking...👨🏻‍🍳",
+      "meditating...🧘🏻",
+      "dreaming...🛌",
+      "processing...",
+      "printing...📝",
+    ];
+    return loadingQuotes[Math.floor(Math.random() * loadingQuotes.length)];
+  }, []);
 
   return (
     <div
@@ -51,24 +52,30 @@ const Loader = () => {
         <Physics>
           <Macbook
             ref={macbookRef}
-            position={[2, 2, 2]}
-            rotation={[0.4, rotation / 100, 0.4]}
-            castShadow
-            color={theme.colors.blue_1}
+            {...{
+              position: [2, 2, 2],
+              rotation: [0.4, rotation / 100, 0.4],
+              castShadow: true,
+              color: theme.colors.blue_1,
+            }}
           />
           <Keyboard
             ref={macbookRef}
-            position={[-2, 0, 0]}
-            rotation={[rotation / 100, 0.3, 0]}
-            castShadow
-            color={theme.colors.main_blue}
+            {...{
+              position: [-2, 0, 0],
+              rotation: [rotation / 100, 0.3, 0],
+              castShadow: true,
+              color: theme.colors.main_blue,
+            }}
           />
           <Headphone
             ref={macbookRef}
-            position={[2, 0, -1]}
-            rotation={[rotation / 100, 0.3, 0.9]}
-            castShadow
-            color={theme.colors.alternate_blue_1}
+            {...{
+              position: [2, 0, -1],
+              rotation: [rotation / 100, 0.3, 0.9],
+              castShadow: true,
+              color: theme.colors.alternate_blue_1,
+            }}
           />
         </Physics>
         <group>

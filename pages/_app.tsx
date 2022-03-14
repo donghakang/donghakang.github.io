@@ -25,10 +25,23 @@ function MyApp({ Component, pageProps }: AppProps) {
       setLoading(false);
     };
 
+    const handleError = (url: string) => {
+      console.log(url, "error!");
+      setLoading(false);
+    };
+
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
-    router.events.on("routeChangeError", handleComplete);
+    router.events.on("routeChangeError", handleError);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleComplete);
+      router.events.off("routeChangeError", handleError);
+      setLoading(false);
+    };
   }, [router]);
+
 
   return (
     <>
@@ -42,12 +55,14 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Layout>
           ) : (
             <>
-              {router.pathname === "/" ? (
-                <Layout home>
+              {router.pathname === "/about" ||
+              router.pathname === "/blog" ||
+              router.pathname === "/project" ? (
+                <Layout>
                   <Component {...pageProps} />
                 </Layout>
               ) : (
-                <Layout>
+                <Layout home>
                   <Component {...pageProps} />
                 </Layout>
               )}

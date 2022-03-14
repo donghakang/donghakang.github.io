@@ -20,11 +20,11 @@ export const titleStyle = styled(motion.h1)`
   line-height: 0.8;
   letter-spacing: -0.09em;
 
-  span:nth-child(2) {
+  span:nth-of-type(2) {
     /* align-self: flex-end; */
   }
 
-  span:nth-child(3) {
+  span:nth-of-type(3) {
     align-self: flex-end;
   }
 `;
@@ -48,7 +48,7 @@ export const descriptionTextStyle = styled(motion.div)`
       margin-left: 12px;
     }
   }
-  div:nth-child(3) {
+  div:nth-of-type(3) {
     margin-top: 8px;
   }
 `;

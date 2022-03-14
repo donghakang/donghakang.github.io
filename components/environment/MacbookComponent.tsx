@@ -24,7 +24,7 @@ const MacbookComponent: React.FC<ObjectInterface> = (props) => {
     ],
   }));
 
-  return <Macbook ref={macbookRef} scale={3} color={props.color} />;
+  return <Macbook ref={macbookRef} {...{ scale: 3, color: props.color }} />;
 };
 
 export default MacbookComponent;

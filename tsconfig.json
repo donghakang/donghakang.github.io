@@ -19,6 +19,7 @@
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
     "incremental": true,
+    "typeRoots": ["@types/*"],
     "types": [
       "@emotion/react/types/css-prop"
     ]

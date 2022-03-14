@@ -19,9 +19,7 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
 }) => {
   const lightRef1 = useRef();
   const lightRef2 = useRef();
-  const macbookRef = useRef();
-
-  const [rot, setRot] = useState(0);
+  const headphoneRef = useRef<THREE.Mesh>();
 
   return (
     <Canvas shadows style={style}>
@@ -35,11 +33,13 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
       />
       <Physics>
         <Headphone
-          ref={macbookRef}
-          position={[0, 0, 0]}
-          rotation={rotation}
-          castShadow
-          color={color}
+          ref={headphoneRef}
+          {...{
+            position: [0, 0, 0],
+            rotation: rotation,
+            castShadow: true,
+            color: color,
+          }}
         />
       </Physics>
       <group>

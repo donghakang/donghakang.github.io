@@ -10,6 +10,8 @@ import Emoji from "../emoji";
 import { Chip } from "../chip";
 import { container, content } from "../animation/framer";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
 
 interface PostInterface {
   blog?: boolean;
@@ -29,7 +31,7 @@ const Post: React.FC<PostInterface> = ({
   return (
     <PostContainer variants={container} initial="hidden" animate="visible">
       {project && (
-        <PostTitleStyle>
+        <PostTitleStyle variants={content}>
           <h1>{frontMatter.title}</h1>
         </PostTitleStyle>
       )}
@@ -37,10 +39,15 @@ const Post: React.FC<PostInterface> = ({
         <PostTitleStyle variants={content}>
           <h1>{frontMatter.title}</h1>
           <div className={"title-info"}>
-            <img src="/img/memoji.png" alt="donghakang" />
+            <Image
+              src="/img/memoji.png"
+              alt="donghakang"
+              width="75px"
+              height="75px"
+              className="memoji"
+            />
             <strong>{frontMatter.author}</strong>
             <span>{frontMatter.date}</span>
-            {/* TODO: get tag data */}
           </div>
           <div className="chip-info">
             <Chip tags={frontMatter.tag} />
@@ -63,7 +70,7 @@ const Post: React.FC<PostInterface> = ({
                   `}
                 >
                   <img
-                    src={src}
+                    src={src!}
                     alt={alt}
                     css={css`
                       width: 100%;
@@ -75,6 +82,7 @@ const Post: React.FC<PostInterface> = ({
                     css={css`
                       color: #a3a3a3;
                       padding: auto;
+                      margin-top: 1rem;
                       text-align: center;
                       font-size: 0.875rem;
                     `}
@@ -84,17 +92,18 @@ const Post: React.FC<PostInterface> = ({
                 </div>
               );
             },
-            code({ node, inline, className, children, ...props }) {
+            code({ className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || "");
-              return !inline && match ? (
+              return match ? (
                 <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, "")}
                   style={okaidia}
                   language={match[1]}
                   PreTag="div"
-                  // {...props}
-                />
+                >
+                  {String(children).replace(/\n$/, "")}
+                </SyntaxHighlighter>
               ) : (
+                // {...props}
                 <code
                   className={className}
                   {...props}
