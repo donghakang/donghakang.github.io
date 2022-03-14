@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import Layout from "../components/layout";
@@ -8,10 +7,9 @@ import { CursorProvider } from "../context/CursorContext";
 import { Global } from "@emotion/react";
 import { global } from "../assets/theme/Global";
 import Cursor from "../components/cursor";
-import Router from "next/router";
 import { useEffect, useState } from "react";
-import Pacman from "../components/loader";
 import Loader from "../components/loader";
+import Seo from "../components/seo";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -42,9 +40,21 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, [router]);
 
+  let headerTitle: string;
+
+  if (router.pathname === "/about") {
+    headerTitle = "👨🏻‍💻 A B O U T M E";
+  } else if (router.pathname === "/blog") {
+    headerTitle = "📝 B L O G";
+  } else if (router.pathname === "/project") {
+    headerTitle = "👨🏻‍🔬 P R O J E C T";
+  } else {
+    headerTitle = "👋🏻 강 동 하 입 니 다";
+  }
 
   return (
     <>
+      <Seo title={headerTitle} />
       <ThemeProvider theme={theme}>
         <CursorProvider>
           <Global styles={global} />

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && echo www.donghakang.xyz > out/CNAME && git push origin --delete gh-pages && git add out/ && git commit -m \"🎉  deploy\" && git subtree push --prefix out origin gh-pages",
+    "vercel-deploy": "next build && next export"
   },
   "dependencies": {
     "@emotion/react": "^11.8.1",

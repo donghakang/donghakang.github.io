@@ -1,6 +1,39 @@
 import { css } from "@emotion/react";
 
 export const global = css`
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter.ttf");
+  }
+
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+    cursor: none;
+  }
+
+  html *,
+  body * {
+    cursor: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-family: "Inter", -apple-system, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
   :root {
     --mobile-view: 768px;
   }
