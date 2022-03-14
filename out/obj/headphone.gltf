@@ -1,0 +1,108 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v1.6.16",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [0]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "Skullcandy_Crusher_M_Skullcandy_Crusher_0",
+      "scale": [0.30000001192092896, 0.30000001192092896, 0.30000001192092896]
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0.08421140909194946, 0.1289443075656891, 0.29744645953178406
+      ],
+      "name": "Material.001",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.09471213072538376, 0.2573370933532715, 0.8000000715255737, 1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.5
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Skullcandy_Crusher_M_Skullcandy_Crusher_0",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 2893,
+      "max": [4.6846699714660645, 1.8570386171340942, 5.676685333251953],
+      "min": [-4.6846699714660645, -1.967110276222229, -3.928117275238037],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 2893,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 2893,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 11064,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 34716,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 34716,
+      "byteOffset": 34716
+    },
+    {
+      "buffer": 0,
+      "byteLength": 23144,
+      "byteOffset": 69432
+    },
+    {
+      "buffer": 0,
+      "byteLength": 22128,
+      "byteOffset": 92576
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 114704,
+      "uri": "headphone.bin"
+    }
+  ]
+}

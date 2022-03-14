@@ -1,0 +1,105 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.6.16",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Object_4.001",
+            "scale" : [
+                3.525784492492676,
+                3.525784492492676,
+                3.525784492492676
+            ]
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Object_0.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 138605,
+            "max" : [
+                0.553024172782898,
+                0.7278928160667419,
+                0.3837794065475464
+            ],
+            "min" : [
+                -0.5524775981903076,
+                -0.004449776839464903,
+                -0.6809564232826233
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 138605,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 138605,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5125,
+            "count" : 198786,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1663260,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1663260,
+            "byteOffset" : 1663260
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1108840,
+            "byteOffset" : 3326520
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 795144,
+            "byteOffset" : 4435360
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 5230504,
+            "uri" : "macbook.bin"
+        }
+    ]
+}

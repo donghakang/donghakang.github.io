@@ -1,0 +1,108 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v1.6.16",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [0]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "Keycaps_Keycaps_0.001",
+      "scale": [0.17540395259857178, 0.17540395259857178, 0.17540395259857178],
+      "translation": [
+        0.0017010867595672607, 0.004245758056640625, 0.0004930756986141205
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Material.002",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.800000011920929, 0.800000011920929, 0.800000011920929, 1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.5
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Keycaps_Keycaps_0.003",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 209700,
+      "max": [15.050654411315918, 2.189114570617676, 5.338706970214844],
+      "min": [-14.849347114562988, -1.6497712135314941, -5.505517959594727],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 209700,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 209700,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 526842,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 2516400,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2516400,
+      "byteOffset": 2516400
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1677600,
+      "byteOffset": 5032800
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2107368,
+      "byteOffset": 6710400
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 8817768,
+      "uri": "keyboard.bin"
+    }
+  ]
+}
