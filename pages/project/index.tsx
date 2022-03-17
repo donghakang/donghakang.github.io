@@ -17,10 +17,10 @@ const project: NextPage<ProjectInterface> = ({ works }) => {
 };
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join("works"));
+  const files = fs.readdirSync(path.join("project"));
   const works = files.map((filename) => {
     const markdownWithMeta = fs.readFileSync(
-      path.join("works", filename),
+      path.join("project", filename),
       "utf-8"
     );
     const { data: frontMatter } = matter(markdownWithMeta);

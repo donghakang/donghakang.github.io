@@ -53,10 +53,10 @@ const Blog: NextPage<BlogInterface> = ({ blogs }) => {
 };
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join("posts"));
+  const files = fs.readdirSync(path.join("blog"));
   const blogs = files.map((filename) => {
     const markdownWithMeta = fs.readFileSync(
-      path.join("posts", filename),
+      path.join("blog", filename),
       "utf-8"
     );
     const { data: frontMatter } = matter(markdownWithMeta);

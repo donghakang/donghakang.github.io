@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import * as Styled from "./style";
 import { useCursorState } from "../../context/CursorContext";
@@ -79,7 +79,12 @@ const Cursor = () => {
       }}
     >
       <div className="image-wrapper">
-        <Image src="/img/profile.png" alt="profile" layout="fill" className="profile_image"/>
+        <Image
+          src="/img/profile.png"
+          alt="profile"
+          layout="fill"
+          className="profile_image"
+        />
       </div>
     </Styled.Cursor>
   );

@@ -5,6 +5,8 @@ import path from "path";
 import matter from "gray-matter";
 import { NextPage } from "next";
 import Post from "../../components/post";
+import { useEffect } from "react";
+import analytics from "../../utils/firebase";
 
 export interface BlogInterface {
   frontMatter: any;
@@ -17,13 +19,20 @@ const PostPage: NextPage<BlogInterface> = ({
   slug,
   mdxSource,
 }) => {
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      analytics().logEvent(`blog_view`, {slug: slug});
+    }
+  }, []);
+
   return (
     <Post blog frontMatter={frontMatter} slug={slug} mdxSource={mdxSource} />
   );
 };
 
 export const getStaticPaths = async () => {
-  const files = fs.readdirSync(path.join("posts"));
+  const files = fs.readdirSync(path.join("blog"));
   const paths = files.map((filename) => ({
     params: {
       slug: filename.replace(".mdx", ""),
@@ -41,7 +50,7 @@ export const getStaticProps = async ({
   params: { slug: string };
 }) => {
   const markdownWithMeta = fs.readFileSync(
-    path.join("posts", slug + ".mdx"),
+    path.join("blog", slug + ".mdx"),
     "utf-8"
   );
   const { data: frontMatter, content } = matter(markdownWithMeta);

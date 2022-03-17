@@ -2,11 +2,10 @@ name: Deploy to Github pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -14,26 +13,57 @@ jobs:
         node-version: [14.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      # checkout action
+      - uses: actions/checkout@v3
+
+      # Node version
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # environment values 
+      - name: Create env file
+        run : |
+          touch .env
+          echo "NEXT_PUBLIC_API_KEY=$NEXT_PUBLIC_API_KEY" > .env
+          echo "NEXT_PUBLIC_AUTH_DOMAIN=$NEXT_PUBLIC_AUTH_DOMAIN" > .env
+          echo "NEXT_PUBLIC_PROJECT_ID=$NEXT_PUBLIC_PROJECT_ID" > .env
+          echo "NEXT_PUBLIC_STORAGE_BUCKET=$NEXT_PUBLIC_STORAGE_BUCKET" > .env
+          echo "NEXT_PUBLIC_MESSAGING_SENDER_ID=$NEXT_PUBLIC_MESSAGING_SENDER_ID" > .env
+          echo "NEXT_PUBLIC_APP_ID=$NEXT_PUBLIC_APP_ID" > .env
+          echo "NEXT_PUBLIC_MEASUREMENT_ID=$NEXT_PUBLIC_MEASUREMENT_ID" > .env
+          echo "WEBSITE_URL=$WEBSITE_URL" > .env
+          cat .env
+        env: 
+          NEXT_PUBLIC_API_KEY: ${{secrets.NEXT_PUBLIC_API_KEY}}
+          NEXT_PUBLIC_AUTH_DOMAIN: ${{secrets.NEXT_PUBLIC_AUTH_DOMAIN}}
+          NEXT_PUBLIC_PROJECT_ID: ${{secrets.NEXT_PUBLIC_PROJECT_ID}}
+          NEXT_PUBLIC_STORAGE_BUCKET: ${{secrets.NEXT_PUBLIC_STORAGE_BUCKET}}
+          NEXT_PUBLIC_MESSAGING_SENDER_ID: ${{secrets.NEXT_PUBLIC_MESSAGING_SENDER_ID}}
+          NEXT_PUBLIC_APP_ID: ${{secrets.NEXT_PUBLIC_APP_ID}}
+          NEXT_PUBLIC_MEASUREMENT_ID: ${{secrets.NEXT_PUBLIC_MEASUREMENT_ID}}
+          WEBSITE_URL: ${{secrets.WEBSITE_URL}}
+          
+      - name: Installing my packages
+        run: npm install
+
+      - name: 🔨 Build my App
+        run: npm run build
       
+      - name: 📦 Export my App
+        run: npm run export
+      
+      - name: 📝 Build sitemap
+        run: npm run sitemap
+        
+      - run: touch ./out/.nojekyll
+      - run: echo www.donghakang.xyz > out/CNAME
 
-    - name: Installing my packages
-      run: npm ci
-
-    - name: Build my App  
-      run: npm run build
-    - run: npm run export
-    - run: touch ./out/.nojekyll
-    - run: echo www.donghakang.xyz > out/CNAME
-    
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.1.4
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: out # The folder the action should deploy.
-        clean: true
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: out # The folder the action should deploy.
+          clean: true

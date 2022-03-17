@@ -10,10 +10,17 @@ import Cursor from "../components/cursor";
 import { useEffect, useState } from "react";
 import Loader from "../components/loader";
 import Seo from "../components/seo";
+import analytics from "../utils/firebase";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      analytics();
+    }
+  }, []);
 
   useEffect(() => {
     const handleStart = (url: string) => {

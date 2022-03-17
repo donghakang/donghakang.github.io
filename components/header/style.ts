@@ -99,7 +99,7 @@ export const Header = styled.nav<HeaderProps>`
         }
 
         // first element need some space.
-        li:first-child {
+        li:first-of-type {
           margin-top: 40px;
         }
       }

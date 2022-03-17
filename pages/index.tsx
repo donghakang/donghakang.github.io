@@ -56,6 +56,7 @@ const subtitleStyle = css`
 `;
 
 const Home: NextPage = () => {
+
   return (
     <div css={mainContainerStyle}>
       <Environment />

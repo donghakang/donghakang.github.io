@@ -1,16 +1,16 @@
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 import { BiMenu, BiX } from "react-icons/bi";
 import * as Styled from "./style";
 import { css, useTheme } from "@emotion/react";
 import Footer from "../footer";
 import { useRouter } from "next/router";
-// import theme from "../../assets/theme/theme";
+import { logEvent } from "firebase/analytics";
+import analytics from "../../utils/firebase";
 const LinkHeader = [
-  { id: 0, title: "ABOUT", link: "/about" },
-  { id: 1, title: "PROJECT", link: "/project" },
-  // {title: 'BLOG', link: '/tag?tag=all'}
-  { id: 2, title: "BLOG", link: "/blog" },
+  { id: 0, name: "about", title: "ABOUT", link: "/about" },
+  { id: 1, name: "project", title: "PROJECT", link: "/project" },
+  { id: 2, name: "blog", title: "BLOG", link: "/blog" },
 ];
 
 const Header: React.FC<{ home?: boolean; mobile?: boolean }> = ({
@@ -25,11 +25,20 @@ const Header: React.FC<{ home?: boolean; mobile?: boolean }> = ({
   };
   const theme = useTheme();
 
+  function handleClickHeader(
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    to: string
+  ) {
+    if (process.env.NODE_ENV === "production") {
+      analytics().logEvent(`to_${to}_view`);
+    }
+  }
+
   return (
     <Styled.Header open={open} home={home}>
       <div className="logo">
         <Link href="/">
-          <a>DH</a>
+          <a onClick={(e) => handleClickHeader(e, "home")}>DH</a>
         </Link>
       </div>
       <ul className="nav-menu">
@@ -38,6 +47,7 @@ const Header: React.FC<{ home?: boolean; mobile?: boolean }> = ({
             <Link href={content.link}>
               <a
                 className="link"
+                onClick={(e) => handleClickHeader(e, content.name)}
                 css={css`
                   color: ${content.link === router.pathname &&
                   theme.colors.main_blue};
