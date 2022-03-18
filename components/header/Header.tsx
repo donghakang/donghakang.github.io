@@ -5,8 +5,7 @@ import * as Styled from "./style";
 import { css, useTheme } from "@emotion/react";
 import Footer from "../footer";
 import { useRouter } from "next/router";
-import { logEvent } from "firebase/analytics";
-import analytics from "../../utils/firebase";
+
 const LinkHeader = [
   { id: 0, name: "about", title: "ABOUT", link: "/about" },
   { id: 1, name: "project", title: "PROJECT", link: "/project" },
@@ -29,9 +28,9 @@ const Header: React.FC<{ home?: boolean; mobile?: boolean }> = ({
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     to: string
   ) {
-    if (process.env.NODE_ENV === "production") {
-      analytics().logEvent(`to_${to}_view`);
-    }
+    // if (process.env.NODE_ENV === "production") {
+    //   analytics().logEvent(`to_${to}_view`);
+    // }
   }
 
   return (

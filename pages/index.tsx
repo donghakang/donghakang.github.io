@@ -1,5 +1,4 @@
 import { css } from "@emotion/react";
-import styled from "@emotion/styled";
 import type { NextPage } from "next";
 import Environment from "../components/environment";
 import theme from "../assets/theme/theme";

@@ -3,7 +3,6 @@ import React, { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import theme from "../../../assets/theme/theme";
-import { useTheme } from "@emotion/react";
 
 interface SkillSphereInterface {
   skills: {
@@ -71,7 +70,6 @@ const Languages: React.FC<SkillSphereInterface> = ({ skills }) => {
     <mesh
       position={[fib[index][0], fib[index][1], fib[index][2]]}
       key={l.id}
-      // onClick={(e) => console.log("click")}
     >
       <Html center distanceFactor={30} zIndexRange={[100, 0]}>
         <h3

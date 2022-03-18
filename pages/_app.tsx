@@ -10,17 +10,11 @@ import Cursor from "../components/cursor";
 import { useEffect, useState } from "react";
 import Loader from "../components/loader";
 import Seo from "../components/seo";
-import analytics from "../utils/firebase";
+import FirebaseContext from "../context/FirebaseContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
-      analytics();
-    }
-  }, []);
 
   useEffect(() => {
     const handleStart = (url: string) => {
@@ -31,7 +25,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
 
     const handleError = (url: string) => {
-      console.log(url, "error!");
       setLoading(false);
     };
 
@@ -62,31 +55,33 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Seo title={headerTitle} />
-      <ThemeProvider theme={theme}>
-        <CursorProvider>
-          <Global styles={global} />
-          <Cursor />
-          {loading ? (
-            <Layout home>
-              <Loader />
-            </Layout>
-          ) : (
-            <>
-              {router.pathname === "/about" ||
-              router.pathname === "/blog" ||
-              router.pathname === "/project" ? (
-                <Layout>
-                  <Component {...pageProps} />
-                </Layout>
-              ) : (
-                <Layout home>
-                  <Component {...pageProps} />
-                </Layout>
-              )}
-            </>
-          )}
-        </CursorProvider>
-      </ThemeProvider>
+      <FirebaseContext>
+        <ThemeProvider theme={theme}>
+          <CursorProvider>
+            <Global styles={global} />
+            <Cursor />
+            {loading ? (
+              <Layout home>
+                <Loader />
+              </Layout>
+            ) : (
+              <>
+                {router.pathname === "/about" ||
+                router.pathname === "/blog" ||
+                router.pathname === "/project" ? (
+                  <Layout>
+                    <Component {...pageProps} />
+                  </Layout>
+                ) : (
+                  <Layout home>
+                    <Component {...pageProps} />
+                  </Layout>
+                )}
+              </>
+            )}
+          </CursorProvider>
+        </ThemeProvider>
+      </FirebaseContext>
     </>
   );
 }

@@ -5,8 +5,7 @@ import path from "path";
 import matter from "gray-matter";
 import { NextPage } from "next";
 import Post from "../../components/post";
-import { useEffect } from "react";
-import analytics from "../../utils/firebase";
+import Seo from "../../components/seo";
 
 export interface BlogInterface {
   frontMatter: any;
@@ -19,15 +18,11 @@ const PostPage: NextPage<BlogInterface> = ({
   slug,
   mdxSource,
 }) => {
-
-  useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
-      analytics().logEvent(`blog_view`, {slug: slug});
-    }
-  }, []);
-
   return (
-    <Post blog frontMatter={frontMatter} slug={slug} mdxSource={mdxSource} />
+    <>
+      <Seo title={frontMatter.title} />
+      <Post blog frontMatter={frontMatter} slug={slug} mdxSource={mdxSource} />
+    </>
   );
 };
 

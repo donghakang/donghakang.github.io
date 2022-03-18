@@ -5,8 +5,9 @@ import fs from "fs";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import Post from "../../components/post";
+import Seo from "../../components/seo";
+import { useFirebase } from "../../context/FirebaseContext";
 import { useEffect } from "react";
-import analytics from "../../utils/firebase";
 
 interface ProjectInterface {
   frontMatter: any;
@@ -19,15 +20,29 @@ const ProjectPage: NextPage<ProjectInterface> = ({
   slug,
   mdxSource,
 }) => {
+  const tracking = useFirebase()
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
-      analytics().logEvent(`project_view`, {project: slug});
+    if (!tracking) {
+      return;
     }
-  }, []);
+    tracking.logEvent("project_view", {
+      project_title: frontMatter.title,
+    });
+
+  }, [frontMatter.title, tracking]);
+
 
   return (
-    <Post project frontMatter={frontMatter} slug={slug} mdxSource={mdxSource} />
+    <>
+      <Seo title={frontMatter.title} />
+      <Post
+        project
+        frontMatter={frontMatter}
+        slug={slug}
+        mdxSource={mdxSource}
+      />
+    </>
   );
 };
 
