@@ -29,7 +29,7 @@ function Experience() {
           WHERE&nbsp;&nbsp;&nbsp;WAS&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;?
         </motion.h1>
       </div>
-      <Styled.experienceContainerStyle ref={ref}>
+      <Styled.experienceContainerStyle>
         {about
           .sort((a, b) => b.id - a.id)
           .map((experience: any, idx: number) => (
@@ -80,6 +80,7 @@ function Experience() {
             </div>
           ))}
       </Styled.experienceContainerStyle>
+      <div ref={ref}></div>
     </section>
   );
 }

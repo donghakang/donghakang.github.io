@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Python",
     "slug": "python",
-    "level": 5,
+    "level": 3,
     "data": [
       "Python을 이용한 알고리즘, 자료구조 공부",
       "PyQt, tkinter를 이용한 GUI 소프트웨어를 만들어본 경험",
@@ -39,7 +39,7 @@
     "id": 4,
     "title": "Android",
     "slug": "android",
-    "level": 2,
+    "level": 1,
     "data": [
       "Java 기반의 안드로이드 앱 개발 경험",
       "다양한 API(카카오 지도 API, 영화 API, Google Ads)사용 경험"
@@ -58,7 +58,7 @@
   },
   {
     "id": 6,
-    "title": "WebGL",
+    "title": "Three.js",
     "slug": "web-gl",
     "level": 3,
     "data": [
@@ -68,13 +68,11 @@
   },
   {
     "id": 7,
-    "title": "Processing",
-    "slug": "processing",
+    "title": "@emotion",
+    "slug": "emotion",
     "level": 3,
     "data": [
-      "Java를 기반으로 한 언어로서, 물리엔진을 직접 제작한 경험",
-      "Processing을 이용한 이를 이용한 A*, Dijkstra와 같은 알고리즘 공부",
-      "Particle System, cloth simulation, path finding과 같은 다양한 프로젝트 진행"
+      "styled-component"
     ]
   },
   {
@@ -110,7 +108,7 @@
   },
   {
     "id": 11,
-    "title": "Next",
+    "title": "Next.js",
     "slug": "next",
     "level": 4,
     "data": [
@@ -126,6 +124,22 @@
     "data": [
       "Figma를 이용하여 앱 어플리케이션의 블루프린트를 제작 경험",
       "Adobe와 Figma를 이용하여 UI/UX/로고 디자인 경험"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "framer-motion",
+    "slug": "framer",
+    "level": 3,
+    "data": [
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Frontend",
+    "slug": "frontend",
+    "level": 6,
+    "data": [
     ]
   }
 ]

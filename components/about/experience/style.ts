@@ -88,7 +88,7 @@ export const containerMotion = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0,
+      // delayChildren: 1,
       staggerChildren: 0.2,
     },
   },

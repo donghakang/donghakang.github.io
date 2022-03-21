@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 export const skillStyle = css`
   margin-top: 60vh;
+  min-height: 80vh;
 `;
 
 // TITLE

@@ -17,7 +17,7 @@ interface SkillSphereInterface {
 function fibonacciSphere(samples: number) {
   let points = [];
 
-  const total_radius = 25;
+  const total_radius = 27;
   let phi = Math.PI * (3 - Math.sqrt(5));
 
   for (let i = 0; i < samples; i++) {
@@ -93,7 +93,7 @@ const SkilllSphere: React.FC<SkillSphereInterface> = ({ skills }) => {
       camera={{ position: [0, 0, -40], fov: 90 }}
       style={{
         width: "100%",
-        minHeight: "600px",
+        minHeight: "800px",
         height: "100%",
       }}
     >

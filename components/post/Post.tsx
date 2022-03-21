@@ -92,6 +92,16 @@ const Post: React.FC<PostInterface> = ({
                 </div>
               );
             },
+            a({ href, children, className }) {
+              return (
+                <a
+                  href={href}
+                  css={(theme) => ({ color: theme.colors.main_blue })}
+                >
+                  {children}
+                </a>
+              );
+            },
             code({ className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || "");
               return match ? (
@@ -103,7 +113,6 @@ const Post: React.FC<PostInterface> = ({
                   {String(children).replace(/\n$/, "")}
                 </SyntaxHighlighter>
               ) : (
-                // {...props}
                 <code
                   className={className}
                   {...props}
@@ -117,7 +126,6 @@ const Post: React.FC<PostInterface> = ({
                       monospace;
                     font-size: 0.875rem;
                     text-align: left;
-                    /* white-space: pre; */
                     word-spacing: normal;
                     word-break: normal;
                     overflow-wrap: normal;
@@ -134,6 +142,14 @@ const Post: React.FC<PostInterface> = ({
           }}
         />
       </motion.div>
+      {project && (
+        <motion.div variants={content}>
+          <h2>👷🏼‍♂️ 사용한 기술</h2>
+          <div className="chip-info">
+            <Chip tags={frontMatter.skill} />
+          </div>
+        </motion.div>
+      )}
       <motion.div variants={content}>{blog && <Utterance />}</motion.div>
     </PostContainer>
   );

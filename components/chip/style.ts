@@ -5,9 +5,10 @@ export const Chip = styled.div`
   overflow: scroll;
 
   .tag-chip {
-    background-color: lightgreen;
+    background-color: ${({ theme }) => theme.colors.alternate_blue_5};
     padding: 2px 12px;
     border-radius: 12px;
     margin: 4px 8px;
+    color: white;
   }
 `;

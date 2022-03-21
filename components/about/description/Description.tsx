@@ -39,7 +39,11 @@ function Description() {
   return (
     <div css={Styled.descriptionStyle}>
       <div css={Styled.titleContainerStyle}>
-        <Styled.titleStyle variants={titleContainer} initial="hidden" animate="visible">
+        <Styled.titleStyle
+          variants={titleContainer}
+          initial="hidden"
+          animate="visible"
+        >
           <motion.span variants={item}>HELLO,</motion.span>
           <motion.span variants={item}>MY NAME IS</motion.span>
           <motion.span
@@ -54,9 +58,21 @@ function Description() {
       <div css={Styled.descriptionContainerStyle}>
         <Styled.descriptionTextStyle>
           <motion.div className="kr">
+            <Emoji label="hello" symbol="👋🏻" />
+            <strong>
+              <span>안녕하세요!!</span>
+            </strong>
+          </motion.div>
+          <motion.div className="kr">
+            <Emoji label="learner" symbol="🧑🏻‍🏫" />
+            <span>
+              저는 변화를 두려워하지 않고 새로운 기술을 배우는 것에 흥미가 많은 개발자입니다.
+            </span>
+          </motion.div>
+          <motion.div className="kr">
             <Emoji label="artist" symbol="🧑🏻‍🎨" />
             <span>
-              저는 사용자들에게 편리함을 제공하며 동시에 재미를 주는 프론트엔드
+              저는 사용자들에게 편리함을 제공하며 동시에 시각적인 재미를 주는 프론트엔드
               개발자입니다.
             </span>
           </motion.div>

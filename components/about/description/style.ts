@@ -3,7 +3,8 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const descriptionStyle = css`
-  /* background-color: yellowgreen; */
+  position: sticky;
+  min-height: 80vh;
 `;
 
 // TITLE
@@ -31,7 +32,7 @@ export const titleStyle = styled(motion.h1)`
 
 // DESCRIPTION
 export const descriptionContainerStyle = css`
-  margin-top: 40px;
+  margin-top: 60px;
   position: relative;
   z-index: 2;
 `;
@@ -48,7 +49,13 @@ export const descriptionTextStyle = styled(motion.div)`
       margin-left: 12px;
     }
   }
-  div:nth-of-type(3) {
+
+  div:nth-of-type(1) {
+    font-size: 1.125rem;
+  }
+
+  div:nth-of-type(2) {
     margin-top: 8px;
   }
+  
 `;

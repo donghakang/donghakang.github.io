@@ -22,7 +22,7 @@ export const PostTitleStyle = styled(motion.div)`
     align-items: center;
     
     .memoji {
-      background-color: greenyellow;
+      background-color: ${({ theme }) => theme.colors.alternate_blue_5};
       border-radius: 50px;
     }
 
@@ -37,3 +37,4 @@ export const PostTitleStyle = styled(motion.div)`
     }
   }
 `;
+
