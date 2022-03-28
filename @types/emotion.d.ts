@@ -6,6 +6,7 @@ declare module "@emotion/react" {
       mobile_view: string;
       mq: {
         mobile: string;
+        web: string;
       };
     };
     colors: {

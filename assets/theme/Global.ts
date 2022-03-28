@@ -1,16 +1,14 @@
 import { css } from "@emotion/react";
 
 export const global = css`
-  @font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter.ttf");
-  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
   html,
   body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
     cursor: none;
@@ -28,6 +26,8 @@ export const global = css`
 
   h1 {
     font-family: "Inter", -apple-system, sans-serif;
+    font-weight: 800;
+    line-height: 0.8;
   }
 
   * {
@@ -57,10 +57,4 @@ export const global = css`
     }
   }
 
-  h1 {
-    font-family: "Inter", sans-serif;
-    font-weight: 800;
-    /* letter-spacing: -0.09em; */
-    line-height: 0.8;
-  }
 `;

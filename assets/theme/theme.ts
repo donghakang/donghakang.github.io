@@ -30,6 +30,7 @@ const screen = {
   mobile_view: "768px",
   mq: {
     mobile: `@media only screen and (max-width: 768px)`,
+    web: `@media only screen and (min-width: 768px)`,
   },
 };
 
