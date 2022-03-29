@@ -17,7 +17,7 @@ interface SkillSphereInterface {
 function fibonacciSphere(samples: number) {
   let points = [];
 
-  const total_radius = 27;
+  const total_radius = 25;
   let phi = Math.PI * (3 - Math.sqrt(5));
 
   for (let i = 0; i < samples; i++) {
@@ -29,7 +29,7 @@ function fibonacciSphere(samples: number) {
     let x = Math.cos(theta) * radius;
     let z = Math.sin(theta) * radius;
 
-    points.push([x * total_radius, y * total_radius, z * total_radius]);
+    points.push([x * total_radius, y * total_radius, z * total_radius * 1.25]);
   }
   return points;
 }
@@ -93,7 +93,7 @@ const SkilllSphere: React.FC<SkillSphereInterface> = ({ skills }) => {
       camera={{ position: [0, 0, -40], fov: 90 }}
       style={{
         width: "100%",
-        minHeight: "800px",
+        minHeight: "500px",
         height: "100%",
       }}
     >
@@ -101,7 +101,7 @@ const SkilllSphere: React.FC<SkillSphereInterface> = ({ skills }) => {
       <pointLight position={[10, 10, 10]} />
 
       <Languages skills={skills} />
-      <OrbitControls enableZoom={false} onClick={(e) => e.stopPropagation()} />
+      {/* <OrbitControls enableZoom={false} onClick={(e) => e.stopPropagation()} /> */}
     </Canvas>
   );
 };

@@ -3,8 +3,13 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const descriptionStyle = css`
-  position: sticky;
-  min-height: 80vh;
+  /* min-height: 80vh; */
+  padding: 1rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0;
 `;
 
 // TITLE
@@ -16,6 +21,7 @@ export const titleContainerStyle = css`
 export const titleStyle = styled(motion.h1)`
   display: flex;
   flex-direction: column;
+  margin: 0;
   padding: 0 2vw;
   font-size: calc(1.5rem + 10vw);
   line-height: 0.8;
@@ -28,11 +34,14 @@ export const titleStyle = styled(motion.h1)`
   span:nth-of-type(3) {
     align-self: flex-end;
   }
+
+  ${({ theme }) => theme.screen.mq.mobile} {
+    font-size: calc(4rem + 5vw);
+  }
 `;
 
 // DESCRIPTION
 export const descriptionContainerStyle = css`
-  margin-top: 60px;
   position: relative;
   z-index: 2;
 `;
@@ -51,7 +60,7 @@ export const descriptionTextStyle = styled(motion.div)`
   }
 
   div:nth-of-type(1) {
-    font-size: 1.125rem;
+    font-size: 1.75rem;
   }
 
   div:nth-of-type(2) {

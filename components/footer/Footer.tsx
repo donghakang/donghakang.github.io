@@ -1,6 +1,7 @@
 import React from "react";
-import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaInstagram, FaBriefcase } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { GrDocumentText } from 'react-icons/gr'
 import * as Styled from "./style";
 
 const Footer: React.FC = (): JSX.Element => {
@@ -18,6 +19,9 @@ const Footer: React.FC = (): JSX.Element => {
       <a href="mailto:dkang0602@gmail.com">
         <FiMail size={30}/>
       </a>
+      {/* <a href="https://well-market-4f7.notion.site/FE-91405b2f028a4bee8d5b3ad02daf09c9">
+        <GrDocumentText size={30}/>
+      </a> */}
     </Styled.Footer>
   );
 };

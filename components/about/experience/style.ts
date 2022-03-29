@@ -3,32 +3,44 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const experienceStyle = css`
-  margin-top: 60vh;
+  padding: 1rem;
 `;
 
 // TITLE
 export const titleContainerStyle = css`
   position: relative;
-  margin: 4em 0;
   z-index: 2;
-  display: flex;
 `;
 
 export const titleStyle = css`
   /* margin: auto; */
   z-index: 3;
-  display: flex;
-  flex-direction: column;
-  padding: 0 2vw;
-  font-size: calc(1.5rem + 6vw);
+  font-size: calc(4.25rem + 3vw);
   letter-spacing: -0.09em;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 // DESCRIPTION
+export const stickyStyle = css`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: auto;
+
+
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
 export const experienceContainerStyle = styled.div`
   max-width: var(--mobile-view);
-  margin: 4em auto;
-  padding: 1rem;
+  /* padding: 1rem; */
+  margin: auto;
   position: relative;
   z-index: 2;
 
@@ -37,24 +49,17 @@ export const experienceContainerStyle = styled.div`
     text-align: end;
 
     .sup-container {
-
       span:first-of-type {
         flex: 1;
       }
     }
   }
   .container {
-    padding: 0 0;
     display: flex;
 
     h2 {
-      font-size: 2em;
+      font-size: 1.5rem;
     }
-
-    /* &:nth-child(2n) {
-    flex-direction: row-reverse;
-    text-align: end;
-  } */
 
     .sup-container {
       display: flex;
@@ -73,8 +78,14 @@ export const experienceContainerStyle = styled.div`
   }
 
   .even-sup-container {
-    margin-right: 0;
-    margin-left: auto;
+  }
+
+  ${({ theme }) => theme.screen.mq.mobile} {
+    margin: 0;
+  }
+
+  ${({ theme }) => theme.screen.mq.web} {
+    margin: auto;
   }
 `;
 
@@ -88,7 +99,7 @@ export const containerMotion = {
   visible: {
     opacity: 1,
     transition: {
-      // delayChildren: 1,
+      delayChildren: 0,
       staggerChildren: 0.2,
     },
   },

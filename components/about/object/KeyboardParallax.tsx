@@ -10,12 +10,14 @@ interface KeyboardParallaxInterface {
   rotation: number[];
   color: string;
   style?: {};
+  zoom: number,
 }
 
 const KeyboardParallax: React.FC<KeyboardParallaxInterface> = ({
   rotation,
   color,
   style,
+  zoom
 }) => {
   const lightRef1 = useRef();
   const lightRef2 = useRef();
@@ -27,7 +29,7 @@ const KeyboardParallax: React.FC<KeyboardParallaxInterface> = ({
         makeDefault
         position={[0, 0, 0]}
         rotation={[0, 0, 0]}
-        zoom={70}
+        zoom={zoom}
         near={-100}
         far={100}
       />

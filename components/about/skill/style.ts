@@ -1,30 +1,40 @@
 import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 
 export const skillStyle = css`
-  margin-top: 60vh;
-  min-height: 80vh;
+  padding: 0 1rem;
 `;
 
 // TITLE
 export const titleContainerStyle = css`
-  display: flex;
   position: relative;
   z-index: 2;
 `;
 
 export const titleStyle = css`
-  z-index: 2;
-  display: flex;
+  /* margin: auto; */
+  z-index: 3;
+  font-size: calc(4.25rem + 3vw);
   letter-spacing: -0.09em;
-  flex-direction: column;
-  padding: 0 2vw;
-  font-size: calc(1.5rem + 6vw);
-  color: white;
+  color: white; 
+  @media only screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 // DESCRIPTION
+export const stickyStyle = css`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: auto;
+
+
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
 export const skillContainerStyle = css`
   margin-top: 40px;
   margin-bottom: 0;

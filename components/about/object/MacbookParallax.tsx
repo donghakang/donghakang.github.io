@@ -9,12 +9,14 @@ interface MacbookParallaxInterface {
   rotation: number[];
   color: string;
   style?: {};
+  zoom: number,
 }
 
 const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
   style,
   rotation,
   color,
+  zoom,
 }) => {
   const lightRef1 = useRef();
   const lightRef2 = useRef();
@@ -28,7 +30,7 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
         makeDefault
         position={[0, 1, 0]}
         rotation={[0, 0, 0]}
-        zoom={70}
+        zoom={zoom}
         near={-100}
         far={100}
       />
