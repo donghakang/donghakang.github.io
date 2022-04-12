@@ -5,9 +5,6 @@ date: "2022-02-18"
 tag: ["React"]
 ---
 
-
-
-
 솔직히 그냥 Javascript 와 CSS를 사용해도 모든 구현이 가능해질 정도로(완벽하지는 않지만) 스타일링을 익혔다.
 
 하지만 어쩔때는 그냥 Slider를 불러와서 사용하고 싶을 때도 있고, Switch 와 같은 우리가 평상시에 만들기 귀찮은 컴포넌트를 사용하고 싶을 때 언급되는 Framework중 개인적으로 MUI를 제일 선호 한다. (ant-design도 사용해 봤지만 나는 material ui 가 더 좋았다)
@@ -32,7 +29,7 @@ const theme = createTheme({
       },
     },
   },
-});
+})
 ```
 
 ```tsx
@@ -51,30 +48,30 @@ Typescript 같은 경우 declare module로 Theme의 전체적인 type을 지정�
 실제로 사용하게 된다면
 
 ```tsx
-import * as React from "react";
-import Checkbox from "@mui/material/Checkbox";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
-import { orange } from "@mui/material/colors";
+import * as React from "react"
+import Checkbox from "@mui/material/Checkbox"
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles"
+import { orange } from "@mui/material/colors"
 
 const CustomCheckbox = styled(Checkbox)(({ theme }) => ({
   color: theme.status.danger,
   "&.Mui-checked": {
     color: theme.status.danger,
   },
-}));
+}))
 
 const theme = createTheme({
   status: {
     danger: orange[500],
   },
-});
+})
 
 export default function CustomStyles() {
   return (
     <ThemeProvider theme={theme}>
       <CustomCheckbox defaultChecked />
     </ThemeProvider>
-  );
+  )
 }
 ```
 
@@ -92,10 +89,10 @@ ThemeProvider로 theme 을 설정해주고 그 안에 있는 Checkbox 또한 색
 나 같은 경우 항상 mui-styles.ts 라는 파일을 만들고 거기에 styled-components의 styled가 아닌 mui-material/styles의 styled를 넣는다
 
 ```tsx
-import MuiSlider, { SliderThumb } from "@mui/material/Slider";
-import MuiInput from "@mui/material/Input";
-import { styled } from "@mui/material/styles";
-import { theme } from "../../assets/styles/theme";
+import MuiSlider, { SliderThumb } from "@mui/material/Slider"
+import MuiInput from "@mui/material/Input"
+import { styled } from "@mui/material/styles"
+import { theme } from "../../assets/styles/theme"
 
 export const Slider = styled(MuiSlider)({
   "& .MuiSlider-track": {
@@ -112,7 +109,7 @@ export const Slider = styled(MuiSlider)({
     backgroundColor: theme.color.primary3,
     color: "white",
   },
-});
+})
 
 export const Input = styled(MuiInput)({
   color: "white",
@@ -125,7 +122,7 @@ export const Input = styled(MuiInput)({
   "&:hover:not(.Mui-focused):before": {
     borderBottomColor: "white",
   },
-});
+})
 ```
 
 저런 경우 theme.color.primary는 이미 정해놓은 styled-components에 있는 theme 색깔을 사용하고, Slider와 Input이라는 이름 변동 없이 자신만에 스타일을 입힐 수 있는거 같아서 참 좋다고 생각한다. 다만 불편한 점은 &, & .MuiSider-track 이런 점을 사용해야한다는 것인데, 그것은 console 창과 API 를 잘 사용해서 쓰면 된다.

@@ -1,9 +1,9 @@
-import React, { Suspense, useRef, useEffect, useState } from 'react'
-import { Canvas, ThreeEvent } from '@react-three/fiber'
+import React, { Suspense, useRef, useEffect, useState } from "react"
+import { Canvas, ThreeEvent } from "@react-three/fiber"
 
-import { OrthographicCamera } from '@react-three/drei'
-import { Macbook } from '../../object'
-import { Physics } from '@react-three/cannon'
+import { OrthographicCamera } from "@react-three/drei"
+import { Macbook } from "../../object"
+import { Physics } from "@react-three/cannon"
 
 interface MacbookParallaxInterface {
   rotation: number[]

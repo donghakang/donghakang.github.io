@@ -1,8 +1,8 @@
 ---
 title: Next.js - Typescript - Emotion.js
-author: 'Dongha Kang'
-date: '2022-03-15'
-tag: ['Next.js', 'TypeScript, 'emotion']
+author: "Dongha Kang"
+date: "2022-03-15"
+tag: ["Next.js", "TypeScript", "emotion"]
 ---
 
 ![Untitled](/img/emotion.png)
@@ -74,10 +74,10 @@ emotion 같은 경우도 `ThemeProvider`를 사용할 수 도있고, 그 와 동
 이를 사용하기 위해서는 최상위 페이지인 `_api.tsx` 을 보자.
 
 ```tsx
-import { ThemeProvider, Global } from '@emotion/react'
-import global from '../assets/theme/global'
-import theme from '../assets/theme/theme'
-import type { AppProps } from 'next/app'
+import { ThemeProvider, Global } from "@emotion/react"
+import global from "../assets/theme/global"
+import theme from "../assets/theme/theme"
+import type { AppProps } from "next/app"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -97,12 +97,12 @@ Global에 들어가는 global 값은 css 값이고, ThemeProvider에 들어가�
 
 ```tsx
 // global.ts
-import { css } from '@emotion/react'
+import { css } from "@emotion/react"
 
 export const global = css`
   @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter.ttf');
+    font-family: "Inter";
+    src: url("/fonts/Inter.ttf");
   }
 
   html,
@@ -114,7 +114,7 @@ export const global = css`
   }
 
   h1 {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: "Inter", -apple-system, sans-serif;
   }
 `
 ```
@@ -122,8 +122,8 @@ export const global = css`
 ```tsx
 // theme.ts
 const colors = {
-  primary: '#1e90ff',
-  secondary: '#ff8d1e',
+  primary: "#1e90ff",
+  secondary: "#ff8d1e",
 }
 
 const screen = {
@@ -153,7 +153,7 @@ ThemeProvider에 있는 theme의 타입을 설정하는데 ....
 
 ```tsx
 // /@types/emotion.d.ts
-declare module '@emotion/react' {
+declare module "@emotion/react" {
   export interface Theme {
     screen: {
       mq: {
@@ -178,9 +178,9 @@ Module '"@emotion/react"' has no exported member 'css'.ts(2305)
 
 ```tsx
 // /@types/emotion.d.ts
-import '@emotion/react'
+import "@emotion/react"
 
-declare module '@emotion/react' {
+declare module "@emotion/react" {
   export interface Theme {
     screen: {
       mq: {
