@@ -1,27 +1,27 @@
-import * as THREE from "three";
-import React, { Suspense, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
+import * as THREE from 'three'
+import React, { Suspense, useRef } from 'react'
+import { Canvas } from '@react-three/fiber'
 
-import { OrthographicCamera } from "@react-three/drei";
-import { Keyboard } from "../../object";
-import { Physics } from "@react-three/cannon";
+import { OrthographicCamera } from '@react-three/drei'
+import { Keyboard } from '../../object'
+import { Physics } from '@react-three/cannon'
 
 interface KeyboardParallaxInterface {
-  rotation: number[];
-  color: string;
-  style?: {};
-  zoom: number,
+  rotation: number[]
+  color: string
+  style?: object
+  zoom: number
 }
 
 const KeyboardParallax: React.FC<KeyboardParallaxInterface> = ({
   rotation,
   color,
   style,
-  zoom
+  zoom,
 }) => {
-  const lightRef1 = useRef();
-  const lightRef2 = useRef();
-  const keyboardRef = useRef<THREE.Mesh>(null);
+  const lightRef1 = useRef()
+  const lightRef2 = useRef()
+  const keyboardRef = useRef<THREE.Mesh>(null)
 
   return (
     <Canvas shadows style={style}>
@@ -61,7 +61,7 @@ const KeyboardParallax: React.FC<KeyboardParallaxInterface> = ({
         />
       </group>
     </Canvas>
-  );
-};
+  )
+}
 
-export default KeyboardParallax;
+export default KeyboardParallax

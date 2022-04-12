@@ -1,15 +1,15 @@
-import React, { Suspense, useRef, useEffect, useState } from "react";
-import { Canvas, ThreeEvent } from "@react-three/fiber";
+import React, { Suspense, useRef, useEffect, useState } from 'react'
+import { Canvas, ThreeEvent } from '@react-three/fiber'
 
-import { OrthographicCamera } from "@react-three/drei";
-import { Macbook } from "../../object";
-import { Physics } from "@react-three/cannon";
+import { OrthographicCamera } from '@react-three/drei'
+import { Macbook } from '../../object'
+import { Physics } from '@react-three/cannon'
 
 interface MacbookParallaxInterface {
-  rotation: number[];
-  color: string;
-  style?: {};
-  zoom: number,
+  rotation: number[]
+  color: string
+  style?: object
+  zoom: number
 }
 
 const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
@@ -18,11 +18,11 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
   color,
   zoom,
 }) => {
-  const lightRef1 = useRef();
-  const lightRef2 = useRef();
-  const macbookRef = useRef<THREE.Mesh>();
+  const lightRef1 = useRef()
+  const lightRef2 = useRef()
+  const macbookRef = useRef<THREE.Mesh>()
 
-  const [rot, setRot] = useState(0);
+  const [rot, setRot] = useState(0)
 
   return (
     <Canvas style={style}>
@@ -62,7 +62,7 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
         />
       </group>
     </Canvas>
-  );
-};
+  )
+}
 
-export default MacbookParallax;
+export default MacbookParallax

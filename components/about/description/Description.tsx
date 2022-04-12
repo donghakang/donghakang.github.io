@@ -1,17 +1,17 @@
-import * as Styled from "./style";
-import Emoji from "../../emoji";
-import { useCursorDispatch } from "../../../context/CursorContext";
-import theme from "../../../assets/theme/theme";
-import { css } from "@emotion/react";
+import * as Styled from './style'
+import Emoji from '../../emoji'
+import { useCursorDispatch } from '../../../context/CursorContext'
+import theme from '../../../assets/theme/theme'
+import { css } from '@emotion/react'
 const parentVariant = {
   hidden: {
     rotate: 0,
   },
   visible: {
     rotate: 180,
-    transition: { repeat: Infinity, duration: 2, ease: "linear" },
+    transition: { repeat: Infinity, duration: 2, ease: 'linear' },
   },
-};
+}
 
 const titleContainer = {
   hidden: { opacity: 1 },
@@ -19,11 +19,11 @@ const titleContainer = {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
-      ease: "easeInOut",
-      type: "tween",
+      ease: 'easeInOut',
+      type: 'tween',
     },
   },
-};
+}
 
 const item = {
   hidden: { rotateX: -90 },
@@ -33,7 +33,7 @@ const item = {
       duration: 0.5,
     },
   },
-};
+}
 
 const subtitleContainer = {
   hidden: { opacity: 1 },
@@ -43,10 +43,10 @@ const subtitleContainer = {
     transition: {
       delayChildren: 1,
       staggerChildren: 0.1,
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
-};
+}
 
 const subitem = {
   hidden: { opacity: 0, x: -10 },
@@ -57,10 +57,10 @@ const subitem = {
       duration: 0.4,
     },
   },
-};
+}
 
 function Description() {
-  const dispatch = useCursorDispatch();
+  const dispatch = useCursorDispatch()
 
   return (
     <div css={Styled.descriptionStyle}>
@@ -69,8 +69,8 @@ function Description() {
           <span>HELLO,</span>
           <span>MY NAME IS</span>
           <span
-            onMouseOver={() => dispatch({ type: "CURSOR_IMAGE_ON" })}
-            onMouseOut={() => dispatch({ type: "CURSOR_IMAGE_OFF" })}
+            onMouseOver={() => dispatch({ type: 'CURSOR_IMAGE_ON' })}
+            onMouseOut={() => dispatch({ type: 'CURSOR_IMAGE_OFF' })}
           >
             DONGHA KANG
           </span>
@@ -111,7 +111,7 @@ function Description() {
           <div className="kr">
             <Emoji label="resume" symbol="📝" />
             <span>
-              더 자세한 저의 소개는{" "}
+              더 자세한 저의 소개는{' '}
               <a
                 href="https://well-market-4f7.notion.site/FE-91405b2f028a4bee8d5b3ad02daf09c9"
                 css={css`
@@ -127,7 +127,7 @@ function Description() {
         </Styled.descriptionTextStyle>
       </div>
     </div>
-  );
+  )
 }
 
-export default Description;
+export default Description
