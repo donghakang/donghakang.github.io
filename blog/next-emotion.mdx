@@ -1,0 +1,200 @@
+---
+title: Next.js - Typescript - Emotion.js
+author: 'Dongha Kang'
+date: '2022-03-15'
+tag: ['Next.js', 'TypeScript, 'emotion']
+---
+
+![Untitled](/img/emotion.png)
+
+🤦🏻‍♂️ 굉장히 창피하지만 사소한 문제로 Emotional Damage를 입은 나. 그 실수를 다시는 안하게끔, 그리고 혹시 읽는 사람이 있다면 그 분도 안하게끔 여기에다가 차아아아아그으으은차아아아아그으으은 초기 설정을 좀 작성해보려 한다.
+
+## create-next-app
+
+초기 설정을 typescript로 하려면 `create-next-app` 에 `—-ts` 를 달아 주면 된다.
+
+```bash
+npx create-next-app --ts
+```
+
+그 다음에는 당연히 프로젝트 이름을 넣으면 초기 next.js 설정 끝.
+
+## @emotion
+
+뭐 styled components 를 너무 좋아하는 입장으로서, emotion이 뭐야 이랬었는데, 한번 써봐야지 하고 느꼈다.. 이제 이것만 써야지.
+
+emotion의 장점은 우선 1번, styled-components를 쓸 수 있고, (탑재 되어있음) 또한 style이라는 props 말고도 그냥 css 라는 props를 사용해서 css를 대놓고 넣을 수 있어서 코드를 읽고 고치기가 훨씬 편하다는 생각을 했다.
+
+다운로드는 항상 비슷하게.
+
+```bash
+yarn add @emotion/react @emotion/styled
+```
+
+뭐 여기 까지는 🐕나 🐄나...
+
+---
+
+## 야, 근데 웨 안뒈
+
+현재 상황에서 아무 곳에다가 css props를 넣어보면 알겠지만.. 당연히 안된다.
+
+에러는 아래와 같을 것이다.
+
+```
+Property 'css' does not exist on type
+'DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>,
+HTMLHeadingElement>'.ts(2322)
+```
+
+Typescript 에서 아직 css 를 선언을 안해줬다는 뜻이다. 아직 저 css가 뭔지 모른다는 것이다.
+
+블로그 작성일 기준, @emotion은 `v.11.8.1-2` 을 사용하는데 이 문제에 해결법은 typescript configuration에 emotion의 props를 알려주는 것이다.
+
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+    "jsxImportSource": "@emotion/react",
+    "types": ["@emotion/react/types/css-props"]
+  }
+}
+```
+
+그러면 이제 정상적으로 작동한다!
+
+---
+
+## 🌎글로발
+
+styled-components 에서는 `ThemeProvider`를 사용해서 `useContext`처럼 묶어서 Global theme을 사용할 수 가 있다.
+
+emotion 같은 경우도 `ThemeProvider`를 사용할 수 도있고, 그 와 동시에 `Global` 이라는 구성 요소도 있다.
+
+이를 사용하기 위해서는 최상위 페이지인 `_api.tsx` 을 보자.
+
+```tsx
+import { ThemeProvider, Global } from '@emotion/react'
+import global from '../assets/theme/global'
+import theme from '../assets/theme/theme'
+import type { AppProps } from 'next/app'
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeProvider theme={theme}>
+      <Global styles={global} />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
+}
+
+export default MyApp
+```
+
+이런식으로 `Global`을 선언해주면 되는데... 여기서 잠깐, `Global` 과 `ThemeProvider`의 차이점은..
+
+Global에 들어가는 global 값은 css 값이고, ThemeProvider에 들어가는 theme은 그냥 변수 값과 가깝다는 것이다. 예시를 보자면..
+
+```tsx
+// global.ts
+import { css } from '@emotion/react'
+
+export const global = css`
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter.ttf');
+  }
+
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+      Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+
+  h1 {
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+`
+```
+
+```tsx
+// theme.ts
+const colors = {
+  primary: '#1e90ff',
+  secondary: '#ff8d1e',
+}
+
+const screen = {
+  mq: {
+    mobile: `@media only screen and (max-width: 768px)`,
+  },
+}
+
+const theme = {
+  colors,
+  screen,
+}
+
+export default theme
+```
+
+- Global: @emotion/css 값이 들어가며, styles/globals.css 를 대체한다.
+- ThemeProvider: 자주 쓰이는 변수 값으로 주며, @emotion/styled 에서 사용할 수 있다.
+
+---
+
+## emotion type이 내가 이 포스트를 쓰는 이유...
+
+사건의 시작은 이러하다...
+
+ThemeProvider에 있는 theme의 타입을 설정하는데 ....
+
+```tsx
+// /@types/emotion.d.ts
+declare module '@emotion/react' {
+  export interface Theme {
+    screen: {
+      mq: {
+        mobile: string
+      }
+    }
+    colors: {
+      primary: string
+      secondary: string
+    }
+  }
+}
+```
+
+아니... 이렇게 넣었는데 갑자기 화면 전체가 빨개지면서 이런 문구가 떴다.
+
+```
+Module '"@emotion/react"' has no exported member 'css'.ts(2305)
+```
+
+다 알아 본 결과 ... `import '@emotion/react’`... 🤦🏻‍♂️ x1000000000
+
+```tsx
+// /@types/emotion.d.ts
+import '@emotion/react'
+
+declare module '@emotion/react' {
+  export interface Theme {
+    screen: {
+      mq: {
+        mobile: string
+      }
+    }
+    colors: {
+      primary: string
+      secondary: string
+    }
+  }
+}
+```
+
+---
+
+이렇게 까지 했으면 초기설정은 마무리 된다. 다음부터는 바보같은 실수 하지 말자... 제발.

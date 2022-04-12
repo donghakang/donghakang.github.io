@@ -22,9 +22,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      # environment values 
+      # environment values
       - name: Create env file
-        run : |
+        run: |
           touch .env &&
           echo NEXT_PUBLIC_API_KEY=${{ secrets.NEXT_PUBLIC_API_KEY }} >> .env &&
           echo NEXT_PUBLIC_AUTH_DOMAIN=${{ secrets.NEXT_PUBLIC_AUTH_DOMAIN }} >> .env &&
@@ -35,22 +35,20 @@ jobs:
           echo NEXT_PUBLIC_MEASUREMENT_ID=${{ secrets.NEXT_PUBLIC_MEASUREMENT_ID }} >> .env &&
           echo WEBSITE_URL=${{ secrets.WEBSITE_URL }} >> .env &&
           cat .env
-        
-          
+
       - name: Installing my packages
         run: npm install
 
       - name: 🔨 Build my App
         run: npm run build
-      
+
       - name: 📦 Export my App
         run: npm run export
-      
+
       - name: 📝 Build sitemap
         run: npm run sitemap
-        
+
       - run: touch ./out/.nojekyll
-      - run: echo www.donghakang.xyz > out/CNAME
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
