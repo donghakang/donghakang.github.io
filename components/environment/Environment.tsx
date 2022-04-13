@@ -1,9 +1,9 @@
-import { Suspense, useRef } from 'react'
-import { Loader, OrthographicCamera } from '@react-three/drei'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Physics, Triplet, useBox } from '@react-three/cannon'
-import { Plane } from '../object'
-import { HeadphoneComponent, KeyboardComponent, MacbookComponent } from '.'
+import { useRef } from "react"
+import { Loader, OrthographicCamera } from "@react-three/drei"
+import { Canvas, useFrame } from "@react-three/fiber"
+import { Physics, Triplet, useBox } from "@react-three/cannon"
+import { Plane } from "../object"
+import { HeadphoneComponent, KeyboardComponent, MacbookComponent } from "."
 
 export interface ObjInterface {
   position: [number, number, number]
@@ -17,7 +17,7 @@ const Obj: React.FC<ObjInterface> = ({ position, rotation, obj }) => {
       <KeyboardComponent
         rotation={rotation}
         position={position}
-        color={'#0078f4'}
+        color={"#0078f4"}
       />
     )
   } else if (obj === 1) {
@@ -25,7 +25,7 @@ const Obj: React.FC<ObjInterface> = ({ position, rotation, obj }) => {
       <HeadphoneComponent
         rotation={rotation}
         position={position}
-        color={'#67a6ff'}
+        color={"#67a6ff"}
       />
     )
   } else {
@@ -33,7 +33,7 @@ const Obj: React.FC<ObjInterface> = ({ position, rotation, obj }) => {
       <MacbookComponent
         rotation={rotation}
         position={position}
-        color={'#004dc0'}
+        color={"#004dc0"}
       />
     )
   }
@@ -43,7 +43,7 @@ const PointerHandle: React.FC<{ size: number }> = ({ size }) => {
   const position: Triplet = [0, 0, 0]
   const args: Triplet = [size / 2, size, size / 2]
 
-  const [ref, api] = useBox(() => ({ args, position, type: 'Kinematic' }))
+  const [ref, api] = useBox(() => ({ args, position, type: "Kinematic" }))
 
   useFrame(({ mouse: { x, y }, viewport: { height, width } }) => {
     api.position.set(x * width, 0, -1 * y * height)
@@ -73,7 +73,7 @@ const Environment = () => {
     <>
       <Canvas
         resize={{ scroll: false }}
-        style={{ width: '100vw', height: '100vh' }}
+        style={{ width: "100vw", height: "100vh" }}
       >
         <OrthographicCamera
           makeDefault
@@ -88,27 +88,27 @@ const Environment = () => {
           <Plane
             position={[0, -3, 0]}
             rotation={[-Math.PI / 2, 0, 0]}
-            color={'#ffffff'}
+            color={"#ffffff"}
           />
           <Plane
             position={[0, -3, 10]}
             rotation={[0, Math.PI, 0]}
-            color={'#ffffff'}
+            color={"#ffffff"}
           />
           <Plane
             position={[0, -3, -10]}
             rotation={[0, 0, 0]}
-            color={'#ffffff'}
+            color={"#ffffff"}
           />
           <Plane
             position={[-10, -3, 0]}
             rotation={[0, Math.PI / 2.0, 0]}
-            color={'#ffffff'}
+            color={"#ffffff"}
           />
           <Plane
             position={[10, -3, 0]}
             rotation={[0, -Math.PI / 2.0, 0]}
-            color={'#ffffff'}
+            color={"#ffffff"}
           />
           {items.map((item) => (
             <Obj
@@ -145,7 +145,7 @@ const Environment = () => {
         </group>
         {/* <OrbitControls /> */}
       </Canvas>
-      <Loader containerStyles={{ backgroundColor: 'orange' }} />
+      <Loader containerStyles={{ backgroundColor: "orange" }} />
     </>
   )
 }

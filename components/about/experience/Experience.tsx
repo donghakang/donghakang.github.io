@@ -1,14 +1,10 @@
-import { css } from "@emotion/react";
-import { motion, useAnimation, useViewportScroll } from "framer-motion";
-import { useEffect } from "react";
-import { Timeline, Tween } from "react-gsap";
-import { useInView } from "react-intersection-observer";
-import { Scene } from "react-scrollmagic";
-import about from "../../../data/about.json";
-import * as Styled from "./style";
+import { motion } from "framer-motion"
+import { Timeline, Tween } from "react-gsap"
+import { Scene } from "react-scrollmagic"
+import about from "../../../data/about.json"
+import * as Styled from "./style"
 
 function Experience() {
-
   return (
     <section css={Styled.experienceStyle}>
       <Scene triggerHook="onLeave" duration={1000} pin>
@@ -90,7 +86,7 @@ function Experience() {
         )}
       </Scene>
     </section>
-  );
+  )
 }
 
-export default Experience;
+export default Experience

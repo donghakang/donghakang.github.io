@@ -5,10 +5,9 @@ date: "2021-11-20"
 tag: ["Webpack", "JavaScript"]
 ---
 
+![Webpack](/img/blog/webpack.png)
 
-![Webpack](/img/webpack.png)
 > **Webpack**은 여러개의 파일들을 하나의 파일로 합쳐주는 module bundler 입니다.
-> 
 
 ## Installation
 
@@ -37,7 +36,7 @@ package.json
 
 ```html
 <html>
-...
+  ...
   <script src="..."></script>
   <script src="..."></script>
   <script src="..."></script>
@@ -59,15 +58,15 @@ Webpack configuration을 하지 않았던 지금은 `index.js` 을 찾았었고 
 
 ```jsx
 // webpack.config.js
-const path = require("path");
+const path = require("path")
 
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-  filename: "main.js",
-  path: path.resolve(__dirname, "dist")
-  }
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+  },
 }
 ```
 
@@ -91,7 +90,7 @@ module.exports = {
 
 ## 🚀 Loaders
 
-loaders 는 js 파일 뿐만 아니라 다른 파일들을 import 할 수 있게끔 도와준다. (css, sass, svg 등등..) 
+loaders 는 js 파일 뿐만 아니라 다른 파일들을 import 할 수 있게끔 도와준다. (css, sass, svg 등등..)
 
 loaders는 다양한 종류들이 있는데, style-loader, file-loader 등등... 그것은 [여기](https://webpack.js.org/loaders/)에서 확인하면 된다.
 
@@ -121,7 +120,7 @@ module.exports = {
 
 ⚠️
 
-**css-loader**: css 코드를 가지고 javascript 파일에서도 eval 할 수 있게끔 도와준다. 
+**css-loader**: css 코드를 가지고 javascript 파일에서도 eval 할 수 있게끔 도와준다.
 
 **style-loader**: 변환된 javascript 파일을 이용해서 style을 해준다. Inject styles into DOM
 
@@ -133,7 +132,7 @@ module.exports = {
 
 ## 🚀 Cache Busting & Plugins
 
-웹사이트를 들어갈때마다, 새로고침을 하던, 하드 새로고침을 해보면 Network 에 Cache가 저장된거를 가끔씩 본 적이 있을 것이다. 
+웹사이트를 들어갈때마다, 새로고침을 하던, 하드 새로고침을 해보면 Network 에 Cache가 저장된거를 가끔씩 본 적이 있을 것이다.
 
 만약에 그 Cache가 업데이트 된 뒤에도 이전 Cache를 사용된다면 업데이트가 된 이후로도 예전 버전의 css 나 js 파일을 가지고 있을 것이다. 그 outdate 버전을 보여주는것을 방지하기 위해서 *content hash*를 사용해보자!
 
@@ -141,14 +140,14 @@ Cache busting을 사용함으로서 실제 코드를 바꾸면 output file을 �
 
 ```jsx
 // webpack.config.js
-const path = require("path");
+const path = require("path")
 
 module.exports = {
   entry: "./src/index.js",
   output: {
-  filename: "main.[contentHash].js",
-  path: path.resolve(__dirname, "dist")
-  }
+    filename: "main.[contentHash].js",
+    path: path.resolve(__dirname, "dist"),
+  },
 }
 ```
 
@@ -166,34 +165,32 @@ module.exports = {
 npm install --save-dev html-webpack-plugin
 ```
 
-사용 방법은 아래와 같다. 
+사용 방법은 아래와 같다.
 
 ```jsx
 // webpack.config.js
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require("path");
+var HtmlWebpackPlugin = require("html-webpack-plugin")
+const path = require("path")
 
 module.exports = {
   entry: "./src/index.js",
   output: {
-  filename: "main.[contentHash].js",
-  path: path.resolve(__dirname, "dist")
+    filename: "main.[contentHash].js",
+    path: path.resolve(__dirname, "dist"),
   },
   plugins: [
-  new HtmlWebpackPlugin(
-    {
-    template: "./src/template.html"
-    }
-  )
-  ]
+    new HtmlWebpackPlugin({
+      template: "./src/template.html",
+    }),
+  ],
 }
 ```
 
-`plugins: [new HtmlWebpackPlugin()]`  를 넣어 주고 dist (out directory)폴더를 보면 새로운 `index.html`이 생긴것을 확인 할 수 있다. 
+`plugins: [new HtmlWebpackPlugin()]` 를 넣어 주고 dist (out directory)폴더를 보면 새로운 `index.html`이 생긴것을 확인 할 수 있다.
 
 argument인 `template.html` 은 index.html와 비슷한 이미지 이고 그 이미지를 토대로 새로운 index.html을 dist 폴더 안에 넣어준다.
 
-즉, plugin을 사용해서 index.html을 새롭게 만들어 줄수 있다. 
+즉, plugin을 사용해서 index.html을 새롭게 만들어 줄수 있다.
 
 미래에 CRA 형식 처럼 public 폴더, src 폴더를 따로 만들었다면 `template.html`은 `./public/index.html`로 변경 가능하다.
 
@@ -232,7 +229,7 @@ prod.js 나 dev.js 파일을 가지고 있는 것만으로도 npm start, npm run
   "scripts": {
   "start": "webpack --config webpack.dev.js",
   "build": "webpack --config webpack.prod.js",
-  }	
+  }
 }
 ```
 
@@ -249,7 +246,7 @@ npm install --save-dev webpack-dev-server
   "scripts": {
   "start": "webpack-dev-server --config webpack.dev.js --open",
   "build": "webpack --config webpack.prod.js",
-  }	
+  }
 }
 ```
 
@@ -362,9 +359,9 @@ module.exports = {
 ```jsx
 module.exports = {
   entry: {
-  main: "./src/index.js",
-  vendor: "./src/vendor.js",
-  }
+    main: "./src/index.js",
+    vendor: "./src/vendor.js",
+  },
 }
 ```
 
@@ -459,8 +456,9 @@ module.exports = {
     }})]}
 ```
 
-> 확실히 CRA는 편리하게 시작할 수 있지만, Web 상에서 더 많은 관리와 내가 원하는 입 맛으로 설정을 하고 싶다면 무조건 webpack & babel을 써야한다고 생각한다. 
-본인 같은 경우는 markdown 파일을 CRA에서 읽으려고 할때 마음대로 되지 않았는데, webpack이라는 것을 알게 되고 문제를 한방에 해결할 수 있었다..
+> 확실히 CRA는 편리하게 시작할 수 있지만, Web 상에서 더 많은 관리와 내가 원하는 입 맛으로 설정을 하고 싶다면 무조건 webpack & babel을 써야한다고 생각한다.
+> 본인 같은 경우는 markdown 파일을 CRA에서 읽으려고 할때 마음대로 되지 않았는데, webpack이라는 것을 알게 되고 문제를 한방에 해결할 수 있었다..
 
 잘가라, CRA...
+
 >

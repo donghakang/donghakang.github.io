@@ -1,10 +1,10 @@
-import * as THREE from 'three'
-import React, { Suspense, useRef } from 'react'
-import { Canvas } from '@react-three/fiber'
+import * as THREE from "three"
+import React, { useRef } from "react"
+import { Canvas } from "@react-three/fiber"
 
-import { OrthographicCamera } from '@react-three/drei'
-import { Keyboard } from '../../object'
-import { Physics } from '@react-three/cannon'
+import { OrthographicCamera } from "@react-three/drei"
+import { Keyboard } from "../../object"
+import { Physics } from "@react-three/cannon"
 
 interface KeyboardParallaxInterface {
   rotation: number[]

@@ -1,24 +1,23 @@
-import { css } from "@emotion/react";
-import { Physics } from "@react-three/cannon";
-import { OrthographicCamera } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { MacbookParallax } from "../about/object";
-import { Macbook, Keyboard, Headphone } from "../object";
-import theme from "../../assets/theme/theme";
+import { css } from "@emotion/react"
+import { Physics } from "@react-three/cannon"
+import { OrthographicCamera } from "@react-three/drei"
+import { Canvas } from "@react-three/fiber"
+import { useEffect, useMemo, useRef, useState } from "react"
+import { Macbook, Keyboard, Headphone } from "../object"
+import theme from "../../assets/theme/theme"
 
 const Loader = () => {
-  const lightRef1 = useRef();
-  const lightRef2 = useRef();
-  const macbookRef = useRef();
-  const [rotation, setRotation] = useState(0);
+  const lightRef1 = useRef()
+  const lightRef2 = useRef()
+  const macbookRef = useRef()
+  const [rotation, setRotation] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRotation((rotation) => (rotation += 1));
-    }, 10);
-    return () => clearInterval(interval);
-  }, []);
+      setRotation((rotation) => (rotation += 1))
+    }, 10)
+    return () => clearInterval(interval)
+  }, [])
 
   const quote = useMemo(() => {
     const loadingQuotes = [
@@ -30,9 +29,9 @@ const Loader = () => {
       "dreaming...🛌",
       "processing...",
       "printing...📝",
-    ];
-    return loadingQuotes[Math.floor(Math.random() * loadingQuotes.length)];
-  }, []);
+    ]
+    return loadingQuotes[Math.floor(Math.random() * loadingQuotes.length)]
+  }, [])
 
   return (
     <div
@@ -108,7 +107,7 @@ const Loader = () => {
         {quote}
       </h1>
     </div>
-  );
-};
+  )
+}
 
-export default Loader;
+export default Loader

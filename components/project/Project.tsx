@@ -1,13 +1,12 @@
-import Link from "next/link";
-import work from "../../data/work.json";
-import { linkStyle, listStyle, projectContainer, ulContainer } from "./style";
-import { motion } from "framer-motion";
+import Link from "next/link"
+import { linkStyle, listStyle, projectContainer, ulContainer } from "./style"
+import { motion } from "framer-motion"
 
 export interface ProjectInterface {
   works: {
-    frontMatter: any;
-    slug: string;
-  }[];
+    frontMatter: any
+    slug: string
+  }[]
 }
 
 const container = {
@@ -20,7 +19,7 @@ const container = {
       staggerChildren: 0.1,
     },
   },
-};
+}
 
 const content = {
   hidden: { y: 20, opacity: 0 },
@@ -28,7 +27,7 @@ const content = {
     y: 0,
     opacity: 1,
   },
-};
+}
 
 const Project: React.FC<ProjectInterface> = ({ works }) => {
   return (
@@ -53,7 +52,7 @@ const Project: React.FC<ProjectInterface> = ({ works }) => {
           ))}
       </motion.ul>
     </div>
-  );
-};
+  )
+}
 
-export default Project;
+export default Project

@@ -39,7 +39,7 @@ npx create-react-app <project name> --template cra-template-pwa-typescript
 ```jsx
 // src/index.js
 
-serviceWorkerRegistration.register();
+serviceWorkerRegistration.register()
 ```
 
 ```bash
@@ -80,7 +80,7 @@ workbox generateSW workbox-config.js
 
 이제 serve -s build 를 사용해서 정적 웹사이트를 보게 된다면 ...
 
-![Workbox 예시](/img/workbox.png)
+![Workbox 예시](/img/blog/workbox.png)
 
 제대로 Cache와 service worker가 작동 되는 것을 알 수 있다.
 

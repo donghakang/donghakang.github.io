@@ -1,13 +1,12 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { motion } from "framer-motion";
+import styled from "@emotion/styled"
+import { motion } from "framer-motion"
 
 // BLOG POST
 export const PostContainer = styled(motion.div)`
   margin: auto;
   max-width: ${({ theme }) => theme.screen.mobile_view};
   padding: 1rem;
-`;
+`
 
 export const PostTitleStyle = styled(motion.div)`
   margin: 4rem auto;
@@ -20,7 +19,7 @@ export const PostTitleStyle = styled(motion.div)`
   .title-info {
     display: flex;
     align-items: center;
-    
+
     .memoji {
       background-color: ${({ theme }) => theme.colors.alternate_blue_5};
       border-radius: 50px;
@@ -36,5 +35,4 @@ export const PostTitleStyle = styled(motion.div)`
       font-size: 3rem;
     }
   }
-`;
-
+`

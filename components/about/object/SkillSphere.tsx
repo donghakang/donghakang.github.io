@@ -1,8 +1,8 @@
-import * as THREE from 'three'
-import React, { Suspense, useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Html, OrbitControls } from '@react-three/drei'
-import theme from '../../../assets/theme/theme'
+import * as THREE from "three"
+import React, { useRef } from "react"
+import { Canvas, useFrame } from "@react-three/fiber"
+import { Html } from "@react-three/drei"
+import theme from "../../../assets/theme/theme"
 
 interface SkillSphereInterface {
   skills: {
@@ -58,7 +58,7 @@ const Languages: React.FC<SkillSphereInterface> = ({ skills }) => {
     }
   }
 
-  useFrame((state) => {
+  useFrame(() => {
     if (mesh.current !== null) {
       mesh.current.rotation.y += 0.01
       mesh.current.rotation.x += 0.01
@@ -88,9 +88,9 @@ const SkilllSphere: React.FC<SkillSphereInterface> = ({ skills }) => {
     <Canvas
       camera={{ position: [0, 0, -40], fov: 90 }}
       style={{
-        width: '100%',
-        minHeight: '500px',
-        height: '100%',
+        width: "100%",
+        minHeight: "500px",
+        height: "100%",
       }}
     >
       <ambientLight />

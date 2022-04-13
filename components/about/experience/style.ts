@@ -1,16 +1,15 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { motion } from "framer-motion";
+import { css } from "@emotion/react"
+import styled from "@emotion/styled"
 
 export const experienceStyle = css`
   padding: 1rem;
-`;
+`
 
 // TITLE
 export const titleContainerStyle = css`
   position: relative;
   z-index: 2;
-`;
+`
 
 export const titleStyle = css`
   /* margin: auto; */
@@ -21,7 +20,7 @@ export const titleStyle = css`
   @media only screen and (max-width: 768px) {
     font-size: 2.5rem;
   }
-`;
+`
 
 // DESCRIPTION
 export const stickyStyle = css`
@@ -31,11 +30,10 @@ export const stickyStyle = css`
   justify-content: space-evenly;
   margin: auto;
 
-
   @media only screen and (max-width: 768px) {
     justify-content: center;
   }
-`;
+`
 
 export const experienceContainerStyle = styled.div`
   max-width: var(--mobile-view);
@@ -87,12 +85,12 @@ export const experienceContainerStyle = styled.div`
   ${({ theme }) => theme.screen.mq.web} {
     margin: auto;
   }
-`;
+`
 
 export const titleMotion = {
   hidden: { x: 300 },
   visible: { x: 0 },
-};
+}
 
 export const containerMotion = {
   hidden: { opacity: 1 },
@@ -103,9 +101,9 @@ export const containerMotion = {
       staggerChildren: 0.2,
     },
   },
-};
+}
 
 export const supMotion = {
   hidden: { scale: 0 },
   visible: { scale: 1 },
-};
+}

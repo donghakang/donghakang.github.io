@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/head"
 
 const Seo: React.FC<{ title: string }> = ({ title }) => {
   return (
@@ -11,7 +11,7 @@ const Seo: React.FC<{ title: string }> = ({ title }) => {
       />
       <title>{title}</title>
     </Head>
-  );
-};
+  )
+}
 
-export default Seo;
+export default Seo

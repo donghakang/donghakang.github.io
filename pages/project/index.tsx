@@ -1,40 +1,38 @@
-import fs from "fs";
-import path from "path";
-import { NextPage } from "next";
-import { motion } from "framer-motion";
-import work from "../../data/work.json";
-import Project from "../../components/project";
-import matter from "gray-matter";
-import { ProjectInterface } from "../../components/project/Project";
-
+import fs from "fs"
+import path from "path"
+import { NextPage } from "next"
+import { motion } from "framer-motion"
+import Project from "../../components/project"
+import matter from "gray-matter"
+import { ProjectInterface } from "../../components/project/Project"
 
 const project: NextPage<ProjectInterface> = ({ works }) => {
   return (
     <motion.div>
-      <Project works={works}/>
+      <Project works={works} />
     </motion.div>
-  );
-};
+  )
+}
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join("project"));
+  const files = fs.readdirSync(path.join("project"))
   const works = files.map((filename) => {
     const markdownWithMeta = fs.readFileSync(
       path.join("project", filename),
       "utf-8"
-    );
-    const { data: frontMatter } = matter(markdownWithMeta);
+    )
+    const { data: frontMatter } = matter(markdownWithMeta)
     return {
       frontMatter,
       slug: filename.split(".")[0],
-    };
-  });
+    }
+  })
 
   return {
     props: {
       works,
     },
-  };
-};
+  }
+}
 
-export default project;
+export default project

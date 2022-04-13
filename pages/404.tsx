@@ -1,17 +1,16 @@
-import { css, useTheme } from "@emotion/react";
-import { Physics } from "@react-three/cannon";
-import { OrthographicCamera } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
-import { HeadphoneComponent } from "../components/environment";
-import { Headphone, Keyboard, Macbook, Plane } from "../components/object";
+import { css, useTheme } from "@emotion/react"
+import { Physics } from "@react-three/cannon"
+import { OrthographicCamera } from "@react-three/drei"
+import { Canvas } from "@react-three/fiber"
+import Link from "next/link"
+import { useRef } from "react"
+import { HeadphoneComponent } from "../components/environment"
+import { Plane } from "../components/object"
 
 const ErrorPage = () => {
-  const lightRef1 = useRef();
-  const lightRef2 = useRef();
-  const theme = useTheme();
+  const lightRef1 = useRef()
+  const lightRef2 = useRef()
+  const theme = useTheme()
 
   return (
     <div
@@ -88,9 +87,9 @@ const ErrorPage = () => {
             transform: translate(-50%, -50%);
 
             &:hover {
-                animation: all 0.5s;
-                color: orange;
-                transform: translate(-50%, -50%) scale(1, 0.8);
+              animation: all 0.5s;
+              color: orange;
+              transform: translate(-50%, -50%) scale(1, 0.8);
             }
           `}
         >
@@ -98,7 +97,7 @@ const ErrorPage = () => {
         </h1>
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default ErrorPage;
+export default ErrorPage

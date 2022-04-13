@@ -1,31 +1,29 @@
-import { MDXRemote } from "next-mdx-remote";
-import { BlogInterface } from "../../pages/blog";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { MDXRemote } from "next-mdx-remote"
+
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 // import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
-import okaidia from "react-syntax-highlighter/dist/cjs/styles/prism/okaidia";
-import { PostContainer, PostTitleStyle } from "./style";
-import { css } from "@emotion/react";
-import Utterance from "./Utterance";
-import Emoji from "../emoji";
-import { Chip } from "../chip";
-import { container, content } from "../animation/framer";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useState } from "react";
+import okaidia from "react-syntax-highlighter/dist/cjs/styles/prism/okaidia"
+import { PostContainer, PostTitleStyle } from "./style"
+import { css } from "@emotion/react"
+import Utterance from "./Utterance"
+
+import { Chip } from "../chip"
+import { container, content } from "../animation/framer"
+import { motion } from "framer-motion"
+import Image from "next/image"
 
 interface PostInterface {
-  blog?: boolean;
-  project?: boolean;
-  frontMatter: any;
-  slug: string;
-  mdxSource: any;
+  blog?: boolean
+  project?: boolean
+  frontMatter: any
+  slug: string
+  mdxSource: any
 }
 
 const Post: React.FC<PostInterface> = ({
   blog,
   project,
   frontMatter,
-  slug,
   mdxSource,
 }) => {
   return (
@@ -58,7 +56,7 @@ const Post: React.FC<PostInterface> = ({
         <MDXRemote
           {...mdxSource}
           components={{
-            img({ alt, src, children, className }) {
+            img({ alt, src, children }) {
               return (
                 <div
                   css={css`
@@ -90,9 +88,9 @@ const Post: React.FC<PostInterface> = ({
                     {alt}
                   </span>
                 </div>
-              );
+              )
             },
-            a({ href, children, className }) {
+            a({ href, children }) {
               return (
                 <a
                   href={href}
@@ -100,10 +98,10 @@ const Post: React.FC<PostInterface> = ({
                 >
                   {children}
                 </a>
-              );
+              )
             },
             code({ className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || "");
+              const match = /language-(\w+)/.exec(className || "")
               return match ? (
                 <SyntaxHighlighter
                   style={okaidia}
@@ -137,7 +135,7 @@ const Post: React.FC<PostInterface> = ({
                 >
                   {children}
                 </code>
-              );
+              )
             },
           }}
         />
@@ -152,7 +150,7 @@ const Post: React.FC<PostInterface> = ({
       )}
       <motion.div variants={content}>{blog && <Utterance />}</motion.div>
     </PostContainer>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post

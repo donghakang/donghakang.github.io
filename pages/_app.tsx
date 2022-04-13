@@ -1,55 +1,55 @@
-import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
-import Layout from "../components/layout";
-import { ThemeProvider } from "@emotion/react";
-import theme from "../assets/theme/theme";
-import { CursorProvider } from "../context/CursorContext";
-import { Global } from "@emotion/react";
-import { global } from "../assets/theme/Global";
-import Cursor from "../components/cursor";
-import { useEffect, useState } from "react";
-import Loader from "../components/loader";
-import Seo from "../components/seo";
-import FirebaseContext from "../context/FirebaseContext";
+import type { AppProps } from "next/app"
+import { useRouter } from "next/router"
+import Layout from "../components/layout"
+import { ThemeProvider } from "@emotion/react"
+import theme from "../assets/theme/theme"
+import { CursorProvider } from "../context/CursorContext"
+import { Global } from "@emotion/react"
+import { global } from "../assets/theme/Global"
+import Cursor from "../components/cursor"
+import { useEffect, useState } from "react"
+import Loader from "../components/loader"
+import Seo from "../components/seo"
+import FirebaseContext from "../context/FirebaseContext"
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-  const [loading, setLoading] = useState<boolean>(false);
+  const router = useRouter()
+  const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
     const handleStart = (url: string) => {
-      url !== router.pathname ? setLoading(true) : setLoading(false);
-    };
-    const handleComplete = (url: string) => {
-      setLoading(false);
-    };
+      url !== router.pathname ? setLoading(true) : setLoading(false)
+    }
+    const handleComplete = () => {
+      setLoading(false)
+    }
 
-    const handleError = (url: string) => {
-      setLoading(false);
-    };
+    const handleError = () => {
+      setLoading(false)
+    }
 
-    router.events.on("routeChangeStart", handleStart);
-    router.events.on("routeChangeComplete", handleComplete);
-    router.events.on("routeChangeError", handleError);
+    router.events.on("routeChangeStart", handleStart)
+    router.events.on("routeChangeComplete", handleComplete)
+    router.events.on("routeChangeError", handleError)
 
     return () => {
-      router.events.off("routeChangeStart", handleStart);
-      router.events.off("routeChangeComplete", handleComplete);
-      router.events.off("routeChangeError", handleError);
-      setLoading(false);
-    };
-  }, [router]);
+      router.events.off("routeChangeStart", handleStart)
+      router.events.off("routeChangeComplete", handleComplete)
+      router.events.off("routeChangeError", handleError)
+      setLoading(false)
+    }
+  }, [router])
 
-  let headerTitle: string;
+  let headerTitle: string
 
   if (router.pathname === "/about") {
-    headerTitle = "👨🏻‍💻 A B O U T M E";
+    headerTitle = "👨🏻‍💻 A B O U T M E"
   } else if (router.pathname === "/blog") {
-    headerTitle = "📝 B L O G";
+    headerTitle = "📝 B L O G"
   } else if (router.pathname === "/project") {
-    headerTitle = "👨🏻‍🔬 P R O J E C T";
+    headerTitle = "👨🏻‍🔬 P R O J E C T"
   } else {
-    headerTitle = "👋🏻 강 동 하 입 니 다";
+    headerTitle = "👋🏻 강 동 하 입 니 다"
   }
 
   return (
@@ -83,7 +83,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </ThemeProvider>
       </FirebaseContext>
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

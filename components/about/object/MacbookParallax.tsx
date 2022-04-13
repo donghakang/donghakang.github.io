@@ -1,5 +1,5 @@
-import React, { Suspense, useRef, useEffect, useState } from "react"
-import { Canvas, ThreeEvent } from "@react-three/fiber"
+import React, { useRef } from "react"
+import { Canvas } from "@react-three/fiber"
 
 import { OrthographicCamera } from "@react-three/drei"
 import { Macbook } from "../../object"
@@ -21,8 +21,6 @@ const MacbookParallax: React.FC<MacbookParallaxInterface> = ({
   const lightRef1 = useRef()
   const lightRef2 = useRef()
   const macbookRef = useRef<THREE.Mesh>()
-
-  const [rot, setRot] = useState(0)
 
   return (
     <Canvas style={style}>

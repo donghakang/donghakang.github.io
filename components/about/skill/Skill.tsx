@@ -1,30 +1,24 @@
-import SkillSphere from "../object";
-import * as Styled from "./style";
+import SkillSphere from "../object"
+import * as Styled from "./style"
 // import SkillScene from "./SkillScene";
-import skills from "../../../data/skillData.json";
-import { css } from "@emotion/react";
-import {
-  motion,
-  useAnimation,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { Scene } from "react-scrollmagic";
-import { Timeline, Tween } from "react-gsap";
+import skills from "../../../data/skillData.json"
+import { useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { useEffect } from "react"
+import { Scene } from "react-scrollmagic"
+import { Timeline, Tween } from "react-gsap"
 
 const SkillLayer = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const controls = useAnimation()
+  const [, inView] = useInView()
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      controls.start("visible")
     } else {
-      controls.start("hidden");
+      controls.start("hidden")
     }
-  }, [controls, inView]);
+  }, [controls, inView])
 
   return (
     <section css={Styled.skillStyle}>
@@ -55,7 +49,7 @@ const SkillLayer = () => {
         )}
       </Scene>
     </section>
-  );
-};
+  )
+}
 
-export default SkillLayer;
+export default SkillLayer
