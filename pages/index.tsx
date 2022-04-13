@@ -1,20 +1,23 @@
-import { css } from "@emotion/react";
-import type { NextPage } from "next";
-import Environment from "../components/environment";
-import theme from "../assets/theme/theme";
+import { css } from "@emotion/react"
+import type { NextPage } from "next"
+import Environment from "../components/environment"
+import theme from "../assets/theme/theme"
+import { useProgress } from "@react-three/drei"
+import Loader from "../components/loader"
+import { motion } from "framer-motion"
 
 const mainContainerStyle = css`
   position: relative;
   width: 100vw;
   height: 100vh;
-`;
+`
 
 const containerStyle = css`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-`;
+`
 
 const titleStyle = css`
   font-size: 30vw;
@@ -31,7 +34,7 @@ const titleStyle = css`
       display: none;
     }
   }
-`;
+`
 
 const subtitleStyle = css`
   position: absolute;
@@ -52,30 +55,40 @@ const subtitleStyle = css`
     letter-spacing: -0.05em;
     padding: 0;
   }
-`;
+`
 
 const Home: NextPage = () => {
+  const { active } = useProgress()
 
   return (
-    <div css={mainContainerStyle}>
-      <Environment />
-      <div css={containerStyle}>
-        <h1 css={titleStyle}>
-          DONG
-          <br />
-          HA
-          <br />
-          KANG
-        </h1>
+    <>
+      {!active && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          css={mainContainerStyle}
+        >
+          <Environment />
+          <div css={containerStyle}>
+            <h1 css={titleStyle}>
+              DONG
+              <br />
+              HA
+              <br />
+              KANG
+            </h1>
 
-        <div css={subtitleStyle}>
-          There are things that can describe myself, <br /> headphones that I
-          listen, keyboards that I smash, and laptop that I abuse. <br />{" "}
-          Welcome to my personal space.
-        </div>
-      </div>
-    </div>
-  );
-};
+            <div css={subtitleStyle}>
+              There are things that can describe myself, <br /> headphones that
+              I listen, keyboards that I smash, and laptop that I abuse. <br />{" "}
+              Welcome to my personal space.
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </>
+  )
+}
 
-export default Home;
+export default Home

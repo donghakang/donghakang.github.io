@@ -2,16 +2,8 @@ import * as Styled from "./style"
 import Emoji from "../../emoji"
 import { useCursorDispatch } from "../../../context/CursorContext"
 import theme from "../../../assets/theme/theme"
+import { motion } from "framer-motion"
 import { css } from "@emotion/react"
-const parentVariant = {
-  hidden: {
-    rotate: 0,
-  },
-  visible: {
-    rotate: 180,
-    transition: { repeat: Infinity, duration: 2, ease: "linear" },
-  },
-}
 
 const titleContainer = {
   hidden: { opacity: 1 },
@@ -36,25 +28,13 @@ const item = {
 }
 
 const subtitleContainer = {
-  hidden: { opacity: 1 },
+  hidden: { opacity: 0 },
   visible: {
-    delay: 1,
     opacity: 1,
     transition: {
-      delayChildren: 1,
-      staggerChildren: 0.1,
+      delay: 1,
+      duration: 1,
       ease: "easeInOut",
-    },
-  },
-}
-
-const subitem = {
-  hidden: { opacity: 0, x: -10 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.4,
     },
   },
 }
@@ -65,15 +45,20 @@ function Description() {
   return (
     <div css={Styled.descriptionStyle}>
       <div css={Styled.titleContainerStyle}>
-        <Styled.titleStyle>
-          <span>HELLO,</span>
-          <span>MY NAME IS</span>
-          <span
+        <Styled.titleStyle
+          variants={titleContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.span variants={item}>HELLO,</motion.span>
+          <motion.span variants={item}>MY NAME IS</motion.span>
+          <motion.span
+            variants={item}
             onMouseOver={() => dispatch({ type: "CURSOR_IMAGE_ON" })}
             onMouseOut={() => dispatch({ type: "CURSOR_IMAGE_OFF" })}
           >
             DONGHA KANG
-          </span>
+          </motion.span>
         </Styled.titleStyle>
       </div>
       <div css={Styled.descriptionContainerStyle}>

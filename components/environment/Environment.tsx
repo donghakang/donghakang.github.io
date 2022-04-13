@@ -70,83 +70,72 @@ const Environment = () => {
   // const size = useWindowSize();
 
   return (
-    <>
-      <Canvas
-        resize={{ scroll: false }}
-        style={{ width: "100vw", height: "100vh" }}
-      >
-        <OrthographicCamera
-          makeDefault
-          position={[-1, 1, 1]}
-          rotation={[-Math.PI / 4.0, -Math.PI / 8.0, -Math.PI / 8.0]}
-          zoom={100}
-          near={-100}
-          far={100}
+    <Canvas
+      resize={{ scroll: false }}
+      style={{ width: "100vw", height: "100vh" }}
+    >
+      <OrthographicCamera
+        makeDefault
+        position={[-1, 1, 1]}
+        rotation={[-Math.PI / 4.0, -Math.PI / 8.0, -Math.PI / 8.0]}
+        zoom={100}
+        near={-100}
+        far={100}
+      />
+      <Physics gravity={[0, -9.81, 0]}>
+        <PointerHandle size={3} />
+        <Plane
+          position={[0, -3, 0]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          color={"#ffffff"}
         />
-        <Physics gravity={[0, -9.81, 0]}>
-          <PointerHandle size={3} />
-          <Plane
-            position={[0, -3, 0]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            color={"#ffffff"}
+        <Plane
+          position={[0, -3, 10]}
+          rotation={[0, Math.PI, 0]}
+          color={"#ffffff"}
+        />
+        <Plane position={[0, -3, -10]} rotation={[0, 0, 0]} color={"#ffffff"} />
+        <Plane
+          position={[-10, -3, 0]}
+          rotation={[0, Math.PI / 2.0, 0]}
+          color={"#ffffff"}
+        />
+        <Plane
+          position={[10, -3, 0]}
+          rotation={[0, -Math.PI / 2.0, 0]}
+          color={"#ffffff"}
+        />
+        {items.map((item) => (
+          <Obj
+            key={`obj-${item}`}
+            obj={item % 3}
+            rotation={[Math.random() * 3, Math.random() * 3, Math.random() * 3]}
+            position={[
+              Math.random() * 10 - 5,
+              Math.random() * 5 + 20,
+              Math.random() * 10 - 5,
+            ]}
           />
-          <Plane
-            position={[0, -3, 10]}
-            rotation={[0, Math.PI, 0]}
-            color={"#ffffff"}
-          />
-          <Plane
-            position={[0, -3, -10]}
-            rotation={[0, 0, 0]}
-            color={"#ffffff"}
-          />
-          <Plane
-            position={[-10, -3, 0]}
-            rotation={[0, Math.PI / 2.0, 0]}
-            color={"#ffffff"}
-          />
-          <Plane
-            position={[10, -3, 0]}
-            rotation={[0, -Math.PI / 2.0, 0]}
-            color={"#ffffff"}
-          />
-          {items.map((item) => (
-            <Obj
-              key={`obj-${item}`}
-              obj={item % 3}
-              rotation={[
-                Math.random() * 3,
-                Math.random() * 3,
-                Math.random() * 3,
-              ]}
-              position={[
-                Math.random() * 10 - 5,
-                Math.random() * 5 + 20,
-                Math.random() * 10 - 5,
-              ]}
-            />
-          ))}
-        </Physics>
-        <group>
-          <ambientLight intensity={0.4} ref={lightRef1} />
-          <directionalLight
-            castShadow
-            ref={lightRef2}
-            position={[2.5, 8, 5]}
-            intensity={1.5}
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-            shadow-camera-far={50}
-            shadow-camera-left={-10}
-            shadow-camera-right={10}
-            shadow-camera-top={10}
-            shadow-camera-bottom={-10}
-          />
-        </group>
-        {/* <OrbitControls /> */}
-      </Canvas>
-      <Loader containerStyles={{ backgroundColor: "orange" }} />
-    </>
+        ))}
+      </Physics>
+      <group>
+        <ambientLight intensity={0.4} ref={lightRef1} />
+        <directionalLight
+          castShadow
+          ref={lightRef2}
+          position={[2.5, 8, 5]}
+          intensity={1.5}
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+          shadow-camera-far={50}
+          shadow-camera-left={-10}
+          shadow-camera-right={10}
+          shadow-camera-top={10}
+          shadow-camera-bottom={-10}
+        />
+      </group>
+      {/* <OrbitControls /> */}
+    </Canvas>
   )
 }
 
