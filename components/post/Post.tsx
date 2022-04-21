@@ -52,7 +52,7 @@ const Post: React.FC<PostInterface> = ({
           </div>
         </PostTitleStyle>
       )}
-      <motion.div variants={content}>
+      <motion.div className="markdown-container" variants={content}>
         <MDXRemote
           {...mdxSource}
           components={{
@@ -60,33 +60,18 @@ const Post: React.FC<PostInterface> = ({
               return (
                 <div
                   css={css`
-                    padding: 1rem;
+                    min-height: 400px;
                     width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
+                    height: 100%;
+                    position: relative;
                   `}
                 >
-                  <img
-                    src={src!}
+                  <Image
                     alt={alt}
-                    css={css`
-                      width: 100%;
-                    `}
-                  >
-                    {children}
-                  </img>
-                  <span
-                    css={css`
-                      color: #a3a3a3;
-                      padding: auto;
-                      margin-top: 1rem;
-                      text-align: center;
-                      font-size: 0.875rem;
-                    `}
-                  >
-                    {alt}
-                  </span>
+                    src={src!}
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </div>
               )
             },

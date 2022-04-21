@@ -18,6 +18,11 @@
     "typeRoots": ["@types/*"],
     "types": ["@emotion/react/types/css-prop"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/about/experience/Experience.jsx"
+  ],
   "exclude": ["node_modules"]
 }

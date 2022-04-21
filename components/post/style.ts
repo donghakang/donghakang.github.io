@@ -6,6 +6,12 @@ export const PostContainer = styled(motion.div)`
   margin: auto;
   max-width: ${({ theme }) => theme.screen.mobile_view};
   padding: 1rem;
+
+  .markdown-container {
+    // background-color: red;
+    width: 100%;
+    height: 100%;
+  }
 `
 
 export const PostTitleStyle = styled(motion.div)`
