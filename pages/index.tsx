@@ -62,7 +62,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      {!active && (
+      {!active ? (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -86,6 +86,8 @@ const Home: NextPage = () => {
             </div>
           </div>
         </motion.div>
+      ) : (
+        <Loader />
       )}
     </>
   )

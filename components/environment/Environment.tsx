@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { Loader, OrthographicCamera } from "@react-three/drei"
+import { OrthographicCamera } from "@react-three/drei"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { Physics, Triplet, useBox } from "@react-three/cannon"
 import { Plane } from "../object"
