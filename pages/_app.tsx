@@ -10,7 +10,7 @@ import Cursor from "../components/cursor"
 import { useEffect, useState } from "react"
 import Loader from "../components/loader"
 import Seo from "../components/seo"
-import FirebaseContext from "../context/FirebaseContext"
+import Script from "next/script"
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -54,34 +54,48 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Script
+        id="google-tag-manager"
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+
+      <Script id="gtag-layer" strategy="lazyOnload">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+        page_path: window.location.pathname,
+        });
+    `}
+      </Script>
       <Seo title={headerTitle} />
-      <FirebaseContext>
-        <ThemeProvider theme={theme}>
-          <CursorProvider>
-            <Global styles={global} />
-            <Cursor />
-            {loading ? (
-              <Layout home>
-                <Loader />
-              </Layout>
-            ) : (
-              <>
-                {router.pathname === "/about" ||
-                router.pathname === "/blog" ||
-                router.pathname === "/project" ? (
-                  <Layout>
-                    <Component {...pageProps} />
-                  </Layout>
-                ) : (
-                  <Layout home>
-                    <Component {...pageProps} />
-                  </Layout>
-                )}
-              </>
-            )}
-          </CursorProvider>
-        </ThemeProvider>
-      </FirebaseContext>
+      <ThemeProvider theme={theme}>
+        <CursorProvider>
+          <Global styles={global} />
+          <Cursor />
+          {loading ? (
+            <Layout home>
+              <Loader />
+            </Layout>
+          ) : (
+            <>
+              {router.pathname === "/about" ||
+              router.pathname === "/blog" ||
+              router.pathname === "/project" ? (
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              ) : (
+                <Layout home>
+                  <Component {...pageProps} />
+                </Layout>
+              )}
+            </>
+          )}
+        </CursorProvider>
+      </ThemeProvider>
     </>
   )
 }
