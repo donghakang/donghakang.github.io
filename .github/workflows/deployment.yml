@@ -32,7 +32,7 @@ jobs:
           cat .env
 
       - name: 😰 Delete npm cache
-        run: npm cache clean -f
+        run: rm -rf node_modules package-lock.json && npm cache clean -f
 
       - name: 🤖 Installing my packages
         run: npm install
