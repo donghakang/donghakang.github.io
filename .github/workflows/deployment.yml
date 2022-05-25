@@ -31,7 +31,10 @@ jobs:
 
           cat .env
 
-      - name: Installing my packages
+      - name: 😰 Delete npm cache
+        run: npm cache clean -f
+
+      - name: 🤖 Installing my packages
         run: npm install
 
       - name: 🔨 Build my App

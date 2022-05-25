@@ -5,7 +5,6 @@ import matter from "gray-matter"
 import { serialize } from "next-mdx-remote/serialize"
 import Post from "../../components/post"
 import Seo from "../../components/seo"
-import { useFirebase } from "../../context/FirebaseContext"
 import { useEffect } from "react"
 
 interface ProjectInterface {
@@ -19,17 +18,6 @@ const ProjectPage: NextPage<ProjectInterface> = ({
   slug,
   mdxSource,
 }) => {
-  const tracking = useFirebase()
-
-  useEffect(() => {
-    if (!tracking) {
-      return
-    }
-    tracking.logEvent("project_view", {
-      project_title: frontMatter.title,
-    })
-  }, [frontMatter.title, tracking])
-
   return (
     <>
       <Seo title={frontMatter.title} />
