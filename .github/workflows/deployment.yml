@@ -28,6 +28,7 @@ jobs:
           touch .env &&
           echo NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }} >> .env &&
           echo WEBSITE_URL=${{ secrets.WEBSITE_URL }} >> .env &&
+
           cat .env
 
       - name: Installing my packages
