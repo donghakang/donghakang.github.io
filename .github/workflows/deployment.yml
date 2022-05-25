@@ -33,7 +33,9 @@ jobs:
           echo NEXT_PUBLIC_MESSAGING_SENDER_ID=${{ secrets.NEXT_PUBLIC_MESSAGING_SENDER_ID }} >> .env &&
           echo NEXT_PUBLIC_APP_ID=${{ secrets.NEXT_PUBLIC_APP_ID }} >> .env &&
           echo NEXT_PUBLIC_MEASUREMENT_ID=${{ secrets.NEXT_PUBLIC_MEASUREMENT_ID }} >> .env &&
+          echo NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }} >> .env &&
           echo WEBSITE_URL=${{ secrets.WEBSITE_URL }} >> .env &&
+
           cat .env
 
       - name: Installing my packages

@@ -1,0 +1,156 @@
+---
+title: gitflow 📊
+author: "Dongha Kang"
+date: "2022-04-13"
+tag: ["git"]
+---
+
+## git 을 왜 사용할까?
+
+git 은 당연히 코드의 저장과 revert등 다양한 기능들을 사용하고 있지만, git을 현업에서 가장 많이 사용하는 이유는 당연컨데 다른 개발자들과의 공유와 프로젝트 협업을 위해서 사용되는 경우가 많다.
+
+git을 토대로 다양한 개발자들이 push 와 pull을 해가며 코드를 업데이트 하고 공유하는것이 너무나도 편해졌지만 이런 공유를 하는 과정에서도 git에 대한 완벽한 지식이 없다면 의도 되지 않은 merge conflict가 일어날 수 도 있다. 
+이를 방지하기 위해서 개발자들 간에 규칙이 있어야하고 그 것을 가지고 git workflow 라고 한다.
+
+## git workflow - gitflow
+
+Git Workflow/gitflow 란, Git 에서 좀 더 일관성있고 실용적으로 업무를 실행하기 위해서 권장하는 git 규칙이라고 생각하면 된다.
+
+### main 브랜치들
+
+코어에는, 개발을 진행하는 브랜치 배포하는 브랜치로 나뉘게 되는데
+
+- master: 기준 브랜치이며 배포를 진행하는 브랜치
+- develop: 개발 브랜치이며 그 다음 버전 배포를 진행하기 위해서 수정되는 브랜치
+
+![Untitled](/img/blog/git1.png)
+
+### supporting 브랜치들
+
+코어 옆, 개발 하면서 타 개발자들 끼리 더 편리하게 소통하기 위해 더 다양한 브랜치들을 나누고 그로 인해 실제 배포되는 코드를 더 빠르고 정확하게 고칠 수 있다. 이는 나중에 삭제 된다.
+
+- feature: develop에서 브랜치 되며, 새로운 feature나 미래에 새롭게 개발 될만한 코드들을 여기에 작성한다. 개발이 끝나면 develop과 merge 한다.
+- release: develop에서 브랜치 되며, 다음 버전을 배포하기전 production 모드이다. 프로덕션이 준비되면 develop 혹은 master에 merge 한다.
+- hotfix: master에서 브랜치 되며, 예기치 못한 업데이트 사항을 적용시키거나 수정하려 할때 바로 develop이나 master에 업데이트 시킨다. 개발이 완료 되면 develop이나 master에 merge한다.
+
+---
+
+## —no—ff
+
+![--no-ff](/img/blog/git2.png)
+
+우선 ff는 fast forward의 약자이며, 기본 git merge는 다른 브랜치가 여태 까지 했었던 commit 들을 한 branch로 병합 시킨다.
+
+하지만 —no—ff라는 태그를 쓰면 기존 브랜치에 변경사항들은 저장이 되어있으며 merge 후에는 위 사진 처럼 새로운 feature만 병합이 된다. 
+
+즉 git flow 를 사용하며 develop 에 feature branch를 병합할때는 —no-ff 를 씀으로서 branch의 로스를 최소화 할 수 있다.
+
+---
+
+## git flow avh
+
+git flow avh 는 위 브랜치 모델을 토대로 만들어진 git의 확장 프로그램이다.
+
+### 🏗 설치 방법
+
+```bash
+brew install git-flow-avh
+```
+
+### 🎉 초기 설정
+
+git 리포지터리를 생성 혹은 git 리포지터리에 이동을 한 뒤 git flow 를 설정한다.
+
+```bash
+git flow init
+```
+
+이 명령어를 실행하면 아래와 같은 문구들이 나온다.
+
+```bash
+> git flow init
+No branches exist yet. Base branches must be created now.
+Branch name for production releases: [master]
+Branch name for "next release" development: [develop]
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Bugfix branches? [bugfix/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? []
+Hooks and filters directory? [/Users/chlee/Desktop/dongha/study-something/.git/hooks]
+```
+
+처음 부터 끝까지 Enter만 눌렀는데, 이중에서 master, develop 등 브랜치 이름을 바꾸고 싶으면 이 공간에서 직접 설정할 수 있다.
+
+### 🔥 사용 방법
+
+위에 초기 설정을 했듯이 브랜치의 종류는 feature, bugfix, release, hotfix, support을 사용한 총 5가지가 되는데 이 커맨드를 사용해서 git flow를 사용할 수 있다.
+
+```bash
+git flow feature
+git flow feature start <name> [<base> / develop by default]
+git flow feature finish <name>
+git flow feature delete <name>
+git flow feature publish <name>
+git flow feature track <name>
+```
+
+`git flow feature`: 현재 feature 브랜치의 리스트
+
+`git flow feature start <name>` : feature/<name> 이라는 브랜치를 생성한다. (base) 가 없으면 develop에서 브랜치된다.
+
+`git flow feature finish <name>` : feature<name>이라는 브랜치가 종료될때 실행한다.
+
+`git flow feature delete <name>` : feature/<name>이라는 브랜치를 삭제한다.
+
+`git flow feature publish <name>` : feature/<name>이라는 브랜치를 깃 헙에 push 한다.
+
+`git flow feature track <name>` : feature/<name>이라는 브랜치를 깃헙에서 pull
+
+### 🧹 **정리**
+
+1. 처음으로 git repository를 만들고 (master 혹은 main)브랜치를 clone 한다.
+
+```bash
+git clone <project url>
+```
+
+1. 터미널 창에서 project 폴더로 들어간 뒤, git flow init 을 실행시켜준다.
+
+```bash
+git flow init 
+```
+
+이는 초기설정과 동시에, develop이라는 브랜치를 생성하는데 이도 git push 해준다.
+
+```bash
+git push --set-upstream origin develop
+```
+
+1. 위에 커맨드를 이용하여 새로운 브랜치 (flow)를 생성한다.
+
+```bash
+git flow feature start layout
+```
+
+이 브랜치에서 코드를 (layout에 관련된) 코드를 수정하고 코드를 github으로 push 한다.
+
+```bash
+git push --set-upstream origin feature/layout
+```
+
+1. 메시지에서 Pull Request 를 확인 하고 다른 사람들에게 github에 있는 Pull Request에 공유하고 merge가 되기를 기다리자.
+2. 만약 branch가 끝나면 flow를 종료 시키자
+
+```bash
+git flow feature finish 
+```
+
+---
+
+## 참고
+
+- [https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model/)

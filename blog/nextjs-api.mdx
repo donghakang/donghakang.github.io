@@ -1,0 +1,208 @@
+---
+title: Next.js API
+author: "Dongha Kang"
+date: "2022-05-24"
+tag: ["Next.js"]
+---
+
+# Next.js API
+
+어떻게 보면 Next.js 는 Fullstack으로도 사용할 수 있는 것 같다..
+
+이는 Next.js 상에서 API를 만들 수 있기 때문인데.. 간단하게 
+
+## 간단하게!
+
+```
+# folder structure
+/pages 
+└── /api
+		└── hello.ts
+```
+
+```jsx
+export default function handler(req, res) {
+	res.status(200).json({ name : 'Home API route' })
+}
+```
+
+다시 새로고침을 하고 실행을 한뒤 [localhost:3000/api/hello](http://localhost:3000/api/hello) 를 들어간다면, api를 확인 할 수 있게 된다.
+
+참 쉽죠?
+
+## GET
+
+버튼을 누른뒤에 API request가 오고 가는 경우가 더 많다. 그런경우에 GET, POST를 사용해야하는데 사용방법은 이와같다.
+
+```jsx
+// pages/api/hello.ts
+import data from '../../data';
+
+export default function handler(req, res) {
+	res.status(200).json(data);
+}
+```
+
+아래는 그 API 통신을 하는 버튼이 있는 페이지라고 가정하자.
+
+```jsx
+// pages/index.ts
+
+const Home: NextPage = () => {
+	const [d, setData] = useState([])
+
+	const fetchData = async () => {
+		const response = await fetch('/api/hello')
+		const data = await response.json()
+		setData(data);
+	}	
+
+	return (
+		<>
+			<button onClick={fetchData}>Click to GET</button>
+			{/*...DO SOMETHING WITH FETCHED DATA */}
+		</>
+	)
+}
+```
+
+위와 같이 fetchData 라는 async 데이터를 만들고 주소 같은 경우 기존에 우리가 만든 통신 주소를 사용해서 바로 사용할 수 있다.
+
+## POST
+
+위와 동일한 방식으로 진행이 되지만 API 측에서 살짝 다르다. 예시로 보자
+
+```jsx
+// pages/api/hello.ts
+import data from '../../data';
+
+export default function handler(req, res) {
+	if (req.method === 'GET') {
+		// 메서드가 GET이라면...
+		res.status(200).json(data);
+	} else {
+		const comment = req.body.str // 밑에 예시에서 표시한 body 가 여기에 들어간다
+		const newComment = {
+			id: Date.now(),
+			text: str
+		}		
+		data.push(newComment)
+		res.status(201).json(data)   // 201 response
+	}
+}
+```
+
+```jsx
+// pages/index.ts
+
+const Home: NextPage = () => {
+	const [str, setStr] = useState('')
+	const [d, setData] = useState([])
+
+	const fetchData = async () => {
+		// ...
+	}	
+
+	const submitData = async () => {
+		const response = await fetch('/api/hello', {
+			method: 'POST',
+			body: JSON.stringify({str}),
+			headers: {
+				'Content-Type': 'application/json',
+			}
+		})
+		const data = await response.json()
+		console.log(data)
+	}
+
+	return (
+		<>
+			<input type='text' value={str} onChange={e => setStr(e.target.value)}/>
+			{/*...DO SOMETHING WITH NEW TEXT */}
+			<button onClick={fetchData}>Click to GET</button>
+			{/*...DO SOMETHING WITH FETCHED DATA */}
+		</>
+	)
+}
+```
+
+## 동적 API 라우팅
+
+[localhost:3000/api/hello?dataId=20](http://localhost:3000/api/hello?dataId=20) 이런식의 동적 라우팅은 어떻게 하면 될까? 
+
+다른 Next.js의 페이지 동적 라우팅과 비슷하게 [  ] 을 사용해서 파일을 생서하면 된다. `[dataId].tsx` 이런식으로 
+
+이를 불러올 때는 ..
+
+```jsx
+// pages/api/hello.ts
+import data from '../../data';
+
+export default function handler(req, res) {
+	const { dataId } = req.query
+	const finalData = data.find(d => d.id === dataId)
+	res.status(200).json(finalData);
+}
+```
+
+위와 같이 해결하면 된다. 
+
+## Catch All
+
+위는 동적 라우팅이지만 만약에 … 까지 붙이면 어떻게 될까 […params].tsx
+
+```jsx
+// pages/api/[...params].tsx
+export default function handler(req, res) {
+	const params = req.query.params
+	console.log(params)
+	res.status(200).json(params)
+}
+```
+
+➡️ localhost:3000/api/one = [”one”]
+
+➡️ localhost:3000/api/one/two = [”one”, “two”]
+
+➡️ localhost:3000/api/one/two/three = [”one”, “two”, “three”]
+
+P.S. [[…params]].tsx 은 Optional parameter를 받기도해서 [localhost:3000/api](http://localhost:3000/api) 도 (index.tsx 가 없다는 가정하에) undefined를 받게 된다.
+
+---
+
+## 내가 맞이한 CORS 문제
+
+💡 외부 api 같은 경우 그냥 받아오면 되지만, Nest 를 사용하거나 localhost에서 같은 포트 외의 API를 가져온다면 주로 이런 에러를 많이 봤었을텐데…
+
+> 🚨 Access to fetch at “API” from origin ‘[http://localhost:3000](http://localhost:3000/)’ has been blocked by CORS policy: No ‘Access-Control-Allow-Origin’ header is present on the requested resource. If an opaque response serves your needs, set the request’s mode to ‘no-cors’ to fetch the resource with CORS disabled.
+> 
+
+이런 경우에는 next.config.js 를 업데이트 해야한다.
+
+```jsx
+//next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: `API주소/:path*`,
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;
+```
+
+[`rewrites`](https://nextjs.org/docs/api-reference/next.config.js/rewrites) function은 들어오는 request path를 새로운 destination path로 보내버리(?)는 거다. 또한 URL proxy 처럼 일을 하기도 한다.
+
+그 후 나중에 API 는 기존에 사용한 방식으로
+
+```jsx
+fetch('http://localhost:3000/api').then(res => res.json()) ...
+```
+
+사용하면 된다.
