@@ -68,7 +68,11 @@ git flow init
 이 명령어를 실행하면 아래와 같은 문구들이 나온다.
 
 ```bash
+<<<<<<< HEAD
 ] git flow init
+=======
+> git flow init
+>>>>>>> master
 No branches exist yet. Base branches must be created now.
 Branch name for production releases: [master]
 Branch name for "next release" development: [develop]
@@ -91,11 +95,19 @@ Hooks and filters directory? [/Users/chlee/Desktop/dongha/study-something/.git/h
 
 ```bash
 git flow feature
+<<<<<<< HEAD
 git flow feature start [name] [[base] / develop by default]
 git flow feature finish [name]
 git flow feature delete [name]
 git flow feature publish [name]
 git flow feature track [name]
+=======
+git flow feature start <name> [<base> / develop by default]
+git flow feature finish <name>
+git flow feature delete <name>
+git flow feature publish <name>
+git flow feature track <name>
+>>>>>>> master
 ```
 
 `git flow feature`: 현재 feature 브랜치의 리스트
