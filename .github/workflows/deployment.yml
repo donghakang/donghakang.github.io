@@ -32,19 +32,19 @@ jobs:
           cat .env
 
       - name: 😰 Delete npm cache
-        run: rm -rf node_modules package-lock.json out .next && npm cache clean -f
+        run: rm -rf node_modules package-lock.json yarn.lock out .next && npm cache clean -f
 
       - name: 🤖 Installing my packages
-        run: yarn
+        run: npm i
 
       - name: 🔨 Build my App
-        run: yarn build
+        run: npm run build
 
       - name: 📦 Export my App
-        run: yarn export
+        run: npm run export
 
       - name: 📝 Build sitemap
-        run: yarn sitemap
+        run: npm run sitemap
 
       - run: touch ./out/.nojekyll
 
