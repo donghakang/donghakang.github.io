@@ -1,0 +1,221 @@
+---
+title: CRA 없이 React 🏃‍♂️ 빠르게
+author: "Dongha Kang"
+date: "2022-06-02"
+tag: ["React"]
+---
+
+1. 폴더 만들고 그안에 처음으로 초 초 초기 설정
+    
+    ```bash
+    npm init      # 천천히
+    npm init -y   # 그냥 빠르게
+    ```
+    
+2. 리액트 받으셈 / 타입스크립트
+    
+    ```bash
+    yarn add react react-dom
+    yarn add -D typescript @types/react @types/react-dom
+    ```
+    
+3. 타입스크립트 레스기릿
+    
+    ```bash
+    tsc --init      # tsconfig.json 설정
+    ```
+    
+4. babel 과 webpack 우선 다운로드
+    
+    ```bash
+    # babel
+    yarn add -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript @babel/plugin-transform-runtime
+    
+    # webpack
+    yarn add -D webpack-dev-server webpack-cli webpack
+    ```
+    
+5. loader들 다운로드
+    
+    ```bash
+    yarn add -D html-webpack-plugin ts-loader
+    ```
+    
+6. babel.config.js
+    
+    ```jsx
+    // babel.config.js
+    module.exports = {
+      presets: [
+        "@babel/preset-react",
+        "@babel/preset-env",
+        "@babel/preset-typescript",
+      ],
+    };
+    ```
+    
+7. tsconfig.json
+    
+    ```jsx
+    {
+      "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        // "noEmit": true,
+        // "noEmitOnError": true,
+        "jsx": "react-jsx"
+      },
+      "include": ["src"]
+    }
+    ```
+    
+8. webpack.config.js
+    
+    ```jsx
+    const path = require("path");
+    const HtmlWebpackPlugin = require("html-webpack-plugin");
+    const webpack = require("webpack");
+    const mode = process.env.NODE_ENV || "development";
+    
+    const SRC_DIR = path.join(__dirname, "./src");
+    const DIST_DIR = path.join(__dirname, "./dist");
+    const PUBLIC_DIR = path.join(__dirname, "./public");
+    
+    module.exports = {
+      mode,
+      devServer: {
+        hot: true,
+        host: "localhost",
+        port: 3000,
+        historyApiFallback: true,
+      },
+      entry: {
+        app: path.join(SRC_DIR, "index.tsx"),
+      },
+    
+      resolve: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    
+      module: {
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: [
+              {
+                loader: "babel-loader",
+              },
+            ],
+          },
+          {
+            test: /\.(ts|tsx)$/,
+            use: "ts-loader",
+            exclude: /node_modules/,
+          },
+        ],
+      },
+    
+      output: {
+        publicPath: "/",
+        path: DIST_DIR,
+        filename: "[name].js",
+      },
+    
+      plugins: [
+        new webpack.ProvidePlugin({
+          React: "react",
+        }),
+        new HtmlWebpackPlugin({
+          template: "./public/index.html",
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+      ],
+    };
+    ```
+    
+9. 폴더 구조
+    
+    ```bash
+    mkdir public src
+    
+    touch public/index.html
+    touch src/index.ts
+    ```
+    
+10. index.html
+    
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React App</title>
+      </head>
+      <body>
+        <div id="root"></div>
+      </body>
+    </html>
+    ```
+    
+11. index.tsx
+    
+    ```jsx
+    // ⚠️ React v18.1.0
+    
+    import React from "react";
+    import ReactDOM from "react-dom/client";
+    import App from "./App";
+    
+    const root = ReactDOM.createRoot(
+      document.getElementById("root") as HTMLElement
+    );
+    root.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    );
+    ```
+    
+12. App.tsx
+    
+    ```jsx
+    import React from "react";
+    
+    function App() {
+      return <div className="App">React</div>;
+    }
+    
+    export default App;
+    ```
+    
+13. package.json
+    
+    ```json
+    ...
+    "scripts": {
+      "dev": "webpack server --mode development --open --hot",
+      "build": "webpack --mode production",
+      "prestart": "cross-env NODE_ENV=production npm run build",
+      "start": "webpack --mode development"
+    },
+    ...
+    ```
+    
+
+---
+
+emotion 사용하기

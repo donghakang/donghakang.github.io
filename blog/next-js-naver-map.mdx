@@ -1,0 +1,54 @@
+---
+title: Next.js 와 Naver map
+author: "Dongha Kang"
+date: "2022-06-03"
+tag: ["Next.js", "JavaScript"]
+---
+
+
+Kakao API와 비슷하겠지만, 이번에는 Naver Map API 도 사용해보고 싶은 욕심 때문에 어떻게 하면 될지 알아보았다.
+
+네이버 지도 같은 경우는 Naver Cloud Platform을 사용하는데, [여기](https://www.ncloud.com/)로 이동해서 아이디를 생성하고 콘솔로 들어가보자
+
+AI-NAVER API 중 Application에 검색을 몇번 해보면 Map을 쉽게 찾을 수 있다. 아래 내가 사용하는 API는 전부 무료이지만… 대신 ! 카드 정보는 입력해야한다…
+
+![스크린샷 2022-06-03 오후 3.12.35.png](/img/blog/naver-map1.png)
+
+아니 뭐 Next.js 와 엮는 법을 적기 위해서 이 포스트를 적는거기 때문에… 생략하고 대신 이거를 모를 수 도 있으니 [링크](https://m.blog.naver.com/n_cloudplatform/222012109447)… 걸고 바로 코드를 볼거다.
+
+---
+
+1.  API KEY를 받아온다.
+
+![스크린샷 2022-06-03 오후 3.16.46.png](/img/blog/naver-map2.png)
+
+여기서 API KEY는 Client ID 이며, 약 10자로 된 영문숫자가 섞인 키일 것이다. 이것을 Next.js 프로젝트에서 `.env` 파일에 넣자
+
+```
+// .env
+NEXT_PUBLIC_NAVER_API_KEY=xxxxxxxxxxx
+```
+
+1. `_app.tsx`를 수정한다.
+
+```jsx
+import type { AppProps } from 'next/app'
+import Script from 'next/script'
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+			<Script
+        type="text/javascript"
+        src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NAVER_API_KEY}`}
+        strategy="beforeInteractive"
+      ></Script>
+	    <Component {...pageProps} />
+    </>
+  )
+}
+
+export default MyApp
+```
+
+1. 사용하는 컴포넌트에서 Map을 써보자
