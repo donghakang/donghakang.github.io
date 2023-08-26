@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Dongha Kang's Playground" />
+
+  <!-- og tag  -->
+  <meta property="og:title" content="프론트엔드 개발자 강동하" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.donghakang.xyz" />
+  <meta property="og:description" content="FE 개발자 강동하의 놀이터" />
+  <meta property="og:image" content="/me.png" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GA_MEASUREMENT_ID%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', '%REACT_APP_GA_MEASUREMENT_ID%')
+  </script>
+  <link rel="preload" href="/fonts/NeueMontreal-Light.woff" as="font" type="font/woff" crossorigin />
+  <link rel="preload" href="/fonts/NeueMontreal-Regular.woff" as="font" type="font/woff" crossorigin />
+  <link rel="preload" href="/fonts/Pretendard-Light.woff" as="font" type="font/woff" crossorigin />
+  <link rel="preload" href="/fonts/Pretendard-Thin.woff" as="font" type="font/woff" crossorigin />
+  <link rel="apple-touch-icon" href="/logo192.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <title>강동하의 포트폴리오</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/index.tsx"></script>
+</body>
+
+</html>

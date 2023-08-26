@@ -1,12 +1,14 @@
-# BLOG !!
+# 👋🏻 안녕하세요, FE 개발자 강동하입니다.
 
-이 공간은 제가 자유롭게 뛰어 놀고 저를 소개함과 동시에 저의 블로그도 같이 운영하는 공간입니다.
-사용된 기술들은 아래와 같습니다!
+링크: [https://donghakang.xyz](https://donghakang.xyz)
 
-- Next.js - React - TypeScript
-- emotion - styled-component
-- Firebase
-- ESLint - Prettier - Commitlint
-- Three.js - react-three/fiber
-- MDX
-- sitemap
+<p align="center"><img src="https://user-images.githubusercontent.com/50029346/183016568-00eb9a6a-6c27-4fb8-a867-dc71f011aaf5.png" width="280px" height="280px" style="border-radius: 50%"/></p>
+
+#### 🎉 저는 현재,
+
+서울대학교병원에서 진행하는 연구의 일원으로 웹 개발을 주로 담당하고 있습니다. 현재 제가 개발한 웹 소프트웨어(DICOM-Web-Viewer)는 CT이미지를 웹상에서 보여주는 웹사이트이며 React, TypeScript, PWA, gitflow 등 다양한 기술을 접했으며 현재 11개의 병원 영상의학과에서 사용중입니다. 또한 이 DICOM Viewer를 접한 MD.ai 과 Gradient Health(메디컬 이미징 회사)에서 협업 제안도 받았었습니다.
+
+#### 👨🏻‍💻 저는 개발자로서,
+
+저는 단순히 코딩을 하는 프로그래머가 아닌 세상에 있는 문제를 해결하는 개발자가 되어 사용자들에게 편리하고 필요한 것을 찾으려고 노력합니다. 이를 성취하기 위해 개발 동아리(Prography)에서 활발하게 활동하며 서비스를 배포한 경험이 있고, 현재는 다양한 분야의 개발자들과 MAU 1000명을 달성하기 위한 대규모 프로젝트도 진행하고 있습니다.
+저는 서비스를 더욱 더 개선하기 위해 사용자들과 소통을 아끼지 않는 개발자입니다. 현재 병원에서 개발한 웹사이트도 마찬가지로 배포에서 멈추지 않고 Iowa 대학병원, 서울대병원 외 11개의 병원 사용자들과 주기적으로 미팅을 가지며 UI/UX 를 개선해 나가고 있고 거기에서 굉장한 뿌듯함과 행복을 얻습니다.
