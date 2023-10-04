@@ -1,0 +1,11 @@
+Model Information:
+* title:	Buddha - Four Faces
+* source:	https://sketchfab.com/3d-models/buddha-four-faces-18405445c05e48fabbc915d69ae2ccc2
+* author:	T.Koeniger (https://sketchfab.com/3D-hannover)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Buddha - Four Faces" (https://sketchfab.com/3d-models/buddha-four-faces-18405445c05e48fabbc915d69ae2ccc2) by T.Koeniger (https://sketchfab.com/3D-hannover) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

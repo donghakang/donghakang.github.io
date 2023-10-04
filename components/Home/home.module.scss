@@ -1,0 +1,8 @@
+@import 'styles/utils';
+
+.HomeContainer {
+  height: 100vh;
+  position: relative;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+}

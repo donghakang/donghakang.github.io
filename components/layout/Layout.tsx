@@ -1,23 +1,11 @@
-import Header from "../header"
-import Footer from "../footer"
-import { useMobileView } from "../../utils/hooks/useMobileView"
-interface LayoutProps {
-  children: React.ReactNode
-  home?: boolean
-}
+import React from 'react'
+import Header from './Header'
 
-const Layout: React.FC<LayoutProps> = ({ children, home }) => {
-  const isMobileView = useMobileView()
-
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Header home={home} mobile={isMobileView} />
-      {home ? (
-        <>{children}</>
-      ) : (
-        <div style={{ marginTop: "60px" }}>{children}</div>
-      )}
-      {!isMobileView && <Footer />}
+      <Header />
+      {children}
     </>
   )
 }

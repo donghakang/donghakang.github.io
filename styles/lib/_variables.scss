@@ -1,0 +1,33 @@
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+
+
+$breakpoints: (
+  small: $sm,
+  medium: $md,
+  large: $lg,
+  x-large: $xl,
+);
+
+
+// color
+$primary: #34df00;
+$black: #000;
+$white: #fff;
+$gray50: #f9fafb;
+$gray100: #f3f4f6;
+$gray200: #e5e7eb;
+$gray300: #d1d5db;
+$gray400: #9ca3af;
+$gray500: #6b7280;
+$gray600: #4b5563;
+$gray700: #374151;
+$gray800: #1f2937;
+$gray900: #111827;
+$gray950: #030712;
+
+
+// screen
+$max-width: 120rem;

@@ -1,0 +1,25 @@
+@import "./variables";
+
+@mixin screen-sm {
+  @media only screen and (min-width: #{$sm}) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media only screen and (min-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media only screen and (min-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media only screen and (min-width: #{$xl}) {
+    @content;
+  }
+}

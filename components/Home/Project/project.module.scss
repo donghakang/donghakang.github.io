@@ -1,0 +1,157 @@
+@import '/styles/utils';
+
+// Project Container
+.ProjectContainer {
+  padding-top: 6rem;
+  position: relative;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: scroll;
+  scroll-snap-align: start;
+  background-color: #{$white};
+
+  .projectWrapper {
+    margin: auto;
+    width: 80%;
+  }
+
+  .animationWrapper {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    width: 200px;
+    height: 100px;
+  }
+
+  .projectListWrapper {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+// Project Item
+.opened {
+  .content {
+    max-height: 100vh;
+  }
+}
+
+.closed {
+  .content {
+    max-height: 0vh;
+  }
+}
+
+.ProjectItem {
+  cursor: pointer;
+  border-bottom: 1px solid #{$primary};
+  text-transform: uppercase;
+
+  .phoneViewImage {
+    transition: opacity 400ms ease-in-out;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0;
+  }
+
+  .title {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+
+    .mainImageWrapper {
+      position: relative;
+      height: 80px;
+      width: 0;
+      overflow: hidden;
+
+      margin-right: 0;
+
+      .previewImage {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+      }
+    }
+  }
+
+
+  .content {
+    overflow: hidden;
+    transition: max-height 400ms ease-in-out;
+
+    // Swiper
+    .swiper {
+      margin: 2rem 0;
+      width: 100%;
+      height: 100%;
+
+      .swiperWrapper {
+        display: flex;
+        width: 100%;
+
+        .swiperSlide {
+          display: flex;
+          align-items: flex-end;
+
+          .thumbWrapper {
+            position: relative;
+
+            img {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+
+    .dateText {
+      font-size: 1rem;
+    }
+  }
+}
+
+
+// Project Description
+.ProjectDescription {
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 200;
+}
+
+
+// TechStack
+.TechStack {
+  display: flex;
+  list-style-type: none;
+  margin: 0.875rem 0;
+  gap: 8px;
+
+  .techName {
+    border: 1px solid #{$primary};
+    border-radius: 1rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 14px;
+    font-weight: 300;
+    color: #{$primary};
+  }
+}

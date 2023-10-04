@@ -1,103 +1,18 @@
-import type { AppProps } from "next/app"
-import { useRouter } from "next/router"
-import Layout from "../components/layout"
-import { ThemeProvider } from "@emotion/react"
-import theme from "../assets/theme/theme"
-import { CursorProvider } from "../context/CursorContext"
-import { Global } from "@emotion/react"
-import { global } from "../assets/theme/Global"
-import Cursor from "../components/cursor"
-import { useEffect, useState } from "react"
-import Loader from "../components/loader"
-import Seo from "../components/seo"
-import Script from "next/script"
+import Layout from '@/components/Layout'
+import '@/styles/globals.scss'
+import type { AppProps } from 'next/app'
+import { Inter, Cousine } from 'next/font/google'
+import cx from 'classnames'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter()
-  const [loading, setLoading] = useState<boolean>(false)
+export const inter = Inter({ subsets: ['latin'] })
+export const cousine = Cousine({ subsets: ['latin'], weight: ['400', '700'] })
 
-  useEffect(() => {
-    const handleStart = (url: string) => {
-      url !== router.pathname ? setLoading(true) : setLoading(false)
-    }
-    const handleComplete = () => {
-      setLoading(false)
-    }
-
-    const handleError = () => {
-      setLoading(false)
-    }
-
-    router.events.on("routeChangeStart", handleStart)
-    router.events.on("routeChangeComplete", handleComplete)
-    router.events.on("routeChangeError", handleError)
-
-    return () => {
-      router.events.off("routeChangeStart", handleStart)
-      router.events.off("routeChangeComplete", handleComplete)
-      router.events.off("routeChangeError", handleError)
-      setLoading(false)
-    }
-  }, [router])
-
-  let headerTitle: string
-
-  if (router.pathname === "/about") {
-    headerTitle = "👨🏻‍💻 A B O U T M E"
-  } else if (router.pathname === "/blog") {
-    headerTitle = "📝 B L O G"
-  } else if (router.pathname === "/project") {
-    headerTitle = "👨🏻‍🔬 P R O J E C T"
-  } else {
-    headerTitle = "👋🏻 강 동 하 입 니 다"
-  }
-
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Script
-        id="google-tag-manager"
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-
-      <Script id="gtag-layer" strategy="lazyOnload">
-        {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-        page_path: window.location.pathname,
-        });
-    `}
-      </Script>
-      <Seo title={headerTitle} />
-      <ThemeProvider theme={theme}>
-        <CursorProvider>
-          <Global styles={global} />
-          <Cursor />
-          {loading ? (
-            <Layout home>
-              <Loader />
-            </Layout>
-          ) : (
-            <>
-              {router.pathname === "/about" ||
-              router.pathname === "/blog" ||
-              router.pathname === "/project" ? (
-                <Layout>
-                  <Component {...pageProps} />
-                </Layout>
-              ) : (
-                <Layout home>
-                  <Component {...pageProps} />
-                </Layout>
-              )}
-            </>
-          )}
-        </CursorProvider>
-      </ThemeProvider>
-    </>
+    <main className={cx(inter.className)}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </main>
   )
 }
-
-export default MyApp

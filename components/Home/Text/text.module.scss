@@ -1,0 +1,89 @@
+@import 'styles/utils';
+
+
+.container {
+  background-color: #{$white};
+}
+
+.TextContent {
+  @include px;
+  max-width: #{$max-width};
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  scroll-snap-align: center;
+  // background-color: #{$white};
+}
+
+.MainTitle {
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 3rem;
+  letter-spacing: -0.04rem;
+
+
+  text-transform: uppercase;
+  color: #{$black};
+}
+
+.FirstMainTitle {
+  text-indent: 3.5rem;
+}
+
+.SecondMainTitle {
+  text-indent: 5rem;
+}
+
+.ThirdMainTitle {
+  text-indent: 4rem;
+}
+
+@include screen-md {
+  .MainTitle {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .FirstMainTitle {
+    text-indent: 7rem;
+  }
+
+  .SecondMainTitle {
+    text-indent: 21rem;
+  }
+
+  .ThirdMainTitle {
+    text-indent: 14rem;
+  }
+}
+
+@include screen-lg {
+  .MainTitle {
+    text-indent: 10rem;
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+
+  .FirstMainTitle {
+    text-indent: 10rem;
+  }
+
+  .SecondMainTitle {
+    text-indent: 30rem;
+  }
+
+  .ThirdMainTitle {
+    text-indent: 15rem;
+  }
+}
+
+@include screen-xl {
+  .MainTitle {
+    font-size: 5.75rem;
+    line-height: 5.75rem;
+  }
+}
