@@ -3,9 +3,24 @@ import React, { useRef, useState } from 'react'
 import cx from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode, Mousewheel } from 'swiper/modules'
+import { motion } from 'framer-motion'
+import theme from '@/styles/theme'
 import TechStack from './TechStack'
 import ProjectDescription from './ProjectDescription'
 import styles from './project.module.scss'
+
+const sidebar = {
+  open: () => ({
+    opacity: 1,
+    y: 0,
+    height: '10vh',
+  }),
+  closed: {
+    opacity: 0,
+    y: -10,
+    height: '0vh',
+  },
+}
 
 function ProjectItem({
   title,
@@ -17,57 +32,31 @@ function ProjectItem({
   const [opened, setOpened] = useState<boolean>(false)
   const ref = useRef<HTMLLIElement>(null)
 
+  const handleProjectItemClick = () => {
+    setOpened((prev) => !prev)
+    // ref.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <li
-      role="presentation"
-      className={cx(styles.ProjectItem, opened ? styles.opened : styles.closed)}
-      onClick={() => {
-        setOpened((prev) => !prev)
-        ref.current?.scrollIntoView({ behavior: 'smooth' })
-      }}
+    <motion.li
+      className={cx(
+        styles.ProjectItemWrapper,
+        opened ? styles.opened : styles.closed,
+      )}
+      onClick={handleProjectItemClick}
       ref={ref}
+      aria-hidden="true"
+      initial={{ x: 0 }}
+      whileHover={{
+        x: 20,
+      }}
+      transition={{ x: { duration: 0.4 } }}
     >
-      <img
-        src={images[0]}
-        className={cx(styles.phoneViewImage)}
-        alt="phone preview"
-      />
-      <h2 className={cx(styles.title)}>
-        <div className={cx(styles.mainImageWrapper)}>
-          <img
-            className={cx(styles.previewImage)}
-            src={images[0]}
-            alt="preview"
-          />
-        </div>
-        {title}
-      </h2>
-      <div className={cx(styles.content)}>
-        <span className={cx(styles.dateText)}>{date}</span>
-        <Swiper
-          modules={[FreeMode, Mousewheel]}
-          spaceBetween={20}
-          slidesPerView="auto"
-          //   loop={true}
-          //   loopedSlides={5}
-          freeMode
-          mousewheel={{ releaseOnEdges: true }}
-        >
-          {images.map((img: string, idx: number) => (
-            <SwiperSlide key={img}>
-              <div className="thumb-wrapper">
-                <img src={img} alt={`project screenshot-${idx}`} />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <TechStack stack={stack} />
-        <ProjectDescription
-          main={description.main}
-          detail={description.detail}
-        />
-      </div>
-    </li>
+      <motion.div initial={false} animate={opened ? 'open' : 'closed'}>
+        <h1 className={cx(styles.ProjectItemTitle)}>{title}</h1>
+        <motion.div variants={sidebar}>check out motion</motion.div>
+      </motion.div>
+    </motion.li>
   )
 }
 
