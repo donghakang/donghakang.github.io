@@ -5,14 +5,15 @@
   padding-top: 6rem;
   position: relative;
   min-height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
   scroll-snap-align: start;
   background-color: #{$white};
 }
 
 .ProjectListWrapper {
   padding: 0 1rem;
-  background-color: green;
+  background-color: #{$primary};
+  height: 100%;
 }
 
 .ProjectItemWrapper {

@@ -3,7 +3,7 @@
 .AboutSection {
   padding: 20vh 0;
   max-height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
   scroll-snap-align: start;
   background-color: #{$white};
   position: relative;

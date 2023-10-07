@@ -87,7 +87,7 @@ const PROJECT = [
   },
   {
     id: 3,
-    title: 'github.io',
+    title: 'Momokji',
     images: [
       '/assets/png/projects/github/1.gif',
       '/assets/png/projects/github/2.png',
@@ -116,6 +116,68 @@ const PROJECT = [
       github: 'https://www.github.com/donghakang/donghakang.github.io',
     },
   },
+  {
+    id: 4,
+    title: 'moreon-morein',
+    images: [
+      '/assets/png/projects/github/1.gif',
+      '/assets/png/projects/github/2.png',
+      '/assets/png/projects/github/3.png',
+      '/assets/png/projects/github/4.png',
+      '/assets/png/projects/github/5.png',
+    ],
+    date: '2022.03 - 2022.07',
+    stack: ['Next.js', 'emotion', 'TypeScript'],
+    description: {
+      main: [
+        'UX에 집착해보는 나만의 웹사이트.',
+        '개발자라면 충분히 개인 블로그를 만들어야 하지 않나? 라는 개인적인 생각을 토대로 제작한 개인 블로그 입니다.',
+        '현재 이 웹 사이트를 이용하여 개인 공부 기록을 하고 있으며, 현재 더 쉽게 업로드 하는 방법을 구축하기 위해 보수 작업 중입니다.',
+      ],
+      detail: [
+        '개인 블로그를 공유하고 사용자들의 유입하기 위해 만든 개인 블로그 이며 현재 방문자 수는 100명 정도 됩니다. 이를 파악하기 위해 Google Analytics를 사용하였습니다.',
+        'SaaS를 이용하여 웹사이트를 배포했습니다.',
+        '사용자들의 시각적 즐거움을 주기위해 Three.js, framer-motion 사용하였습니다.',
+        '곂치는 컴포넌트를 재사용하고 파악하기 위해 storybook을 도입하여 중복되는 컴포넌트들을 제거 했습니다.',
+        '많은 사용자들이 핸드폰으로 유입한다는 점을 고려하여 Responsive Web Design으로 개발하였습니다.',
+      ],
+    },
+    link: {
+      www: 'https://donghakang.github.io',
+      github: 'https://www.github.com/donghakang/donghakang.github.io',
+    },
+  },
+  // {
+  //   id: 3,
+  //   title: 'github.io',
+  //   images: [
+  //     '/assets/png/projects/github/1.gif',
+  //     '/assets/png/projects/github/2.png',
+  //     '/assets/png/projects/github/3.png',
+  //     '/assets/png/projects/github/4.png',
+  //     '/assets/png/projects/github/5.png',
+  //   ],
+  //   date: '2022.03 - 2022.07',
+  //   stack: ['Next.js', 'emotion', 'TypeScript'],
+  //   description: {
+  //     main: [
+  //       'UX에 집착해보는 나만의 웹사이트.',
+  //       '개발자라면 충분히 개인 블로그를 만들어야 하지 않나? 라는 개인적인 생각을 토대로 제작한 개인 블로그 입니다.',
+  //       '현재 이 웹 사이트를 이용하여 개인 공부 기록을 하고 있으며, 현재 더 쉽게 업로드 하는 방법을 구축하기 위해 보수 작업 중입니다.',
+  //     ],
+  //     detail: [
+  //       '개인 블로그를 공유하고 사용자들의 유입하기 위해 만든 개인 블로그 이며 현재 방문자 수는 100명 정도 됩니다. 이를 파악하기 위해 Google Analytics를 사용하였습니다.',
+  //       'SaaS를 이용하여 웹사이트를 배포했습니다.',
+  //       '사용자들의 시각적 즐거움을 주기위해 Three.js, framer-motion 사용하였습니다.',
+  //       '곂치는 컴포넌트를 재사용하고 파악하기 위해 storybook을 도입하여 중복되는 컴포넌트들을 제거 했습니다.',
+  //       '많은 사용자들이 핸드폰으로 유입한다는 점을 고려하여 Responsive Web Design으로 개발하였습니다.',
+  //     ],
+  //   },
+  //   link: {
+  //     www: 'https://donghakang.github.io',
+  //     github: 'https://www.github.com/donghakang/donghakang.github.io',
+  //   },
+  // },
 ]
 
 export default PROJECT

@@ -8,7 +8,7 @@ import ProjectItem from './ProjectItem'
 
 function ProjectContainer() {
   return (
-    <section className={cx(styles.ProjectContainer)}>
+    <div className={cx(styles.ProjectContainer)}>
       <ul className={cx(styles.ProjectListWrapper)}>
         {PROJECT.map((projectItem: ProjectProps) => (
           <ProjectItem
@@ -22,7 +22,7 @@ function ProjectContainer() {
           />
         ))}
       </ul>
-    </section>
+    </div>
   )
 }
 

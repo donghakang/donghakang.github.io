@@ -26,9 +26,6 @@ function Header() {
         <Link onClick={() => setMenuOpen(false)} href="/">
           HOME.
         </Link>
-        <Link onClick={() => setMenuOpen(false)} href="/me">
-          ME.
-        </Link>
         <Link onClick={() => setMenuOpen(false)} href="/note">
           NOTE.
         </Link>

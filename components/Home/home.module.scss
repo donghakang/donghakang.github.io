@@ -3,6 +3,6 @@
 .HomeContainer {
   height: 100vh;
   position: relative;
-  overflow: scroll;
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }

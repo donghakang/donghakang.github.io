@@ -18,7 +18,18 @@ function NotePage({ notes }: InferGetStaticPropsType<typeof getStaticProps>) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Note.List notes={notes} />
+      {/* <Note.List notes={notes} /> */}
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        NO NOTES AT THIS MOMENT
+      </div>
     </>
   )
 }
