@@ -1,0 +1,93 @@
+{
+  "name": "Dongha Radio 23.10",
+  "tracks": [
+    {
+      "track": "Can You Hear The Music",
+      "artists": ["Ludwig Göransson"],
+      "duration": "01:50"
+    },
+    { "track": "Boogie Nights", "artists": ["Heatwave"], "duration": "05:03" },
+    {
+      "track": "Keep the Fire Burning",
+      "artists": ["Gwen McCrae"],
+      "duration": "05:44"
+    },
+    {
+      "track": "Oh Sheit it's X",
+      "artists": ["Thundercat"],
+      "duration": "03:47"
+    },
+    {
+      "track": "Let Love Flow On",
+      "artists": ["Sonya Spence"],
+      "duration": "03:42"
+    },
+    { "track": "Body & Soul", "artists": ["SPEED"], "duration": "05:02" },
+    { "track": "NEO SOUL", "artists": ["Silica Gel"], "duration": "04:19" },
+    { "track": "Bodies", "artists": ["Black Marble"], "duration": "04:34" },
+    {
+      "track": "The Caliphate (feat. Vince Staples)",
+      "artists": ["Earl Sweatshirt", "The Alchemist", "Vince Staples"],
+      "duration": "03:50"
+    },
+    {
+      "track": "Vive La France (Hardcore Muzik)",
+      "artists": ["Aamu Kuu"],
+      "duration": "02:19"
+    },
+    {
+      "track": "FAKENGGAS",
+      "artists": ["Destroy Lonely"],
+      "duration": "03:00"
+    },
+    { "track": "Holding On", "artists": ["Jungle"], "duration": "03:16" },
+    {
+      "track": "My Barn My Rules",
+      "artists": ["MCR-T", "horsegiirL"],
+      "duration": "04:26"
+    },
+    {
+      "track": "Help Me Realise You (feat. Emm)",
+      "artists": ["Arnheim", "Emm"],
+      "duration": "04:32"
+    },
+    {
+      "track": "Will Anybody Ever Love Me?",
+      "artists": ["Sufjan Stevens"],
+      "duration": "04:09"
+    },
+    { "track": "Really Love", "artists": ["D'Angelo"], "duration": "05:44" },
+    { "track": "Psalm 62", "artists": ["Foggieraw"], "duration": "02:51" },
+    { "track": "Sound On Sound", "artists": ["Antoniou"], "duration": "11:39" },
+    {
+      "track": "Picture in My Mind",
+      "artists": ["PinkPantheress", "Sam Gellaitry"],
+      "duration": "02:56"
+    },
+    { "track": "Kali", "artists": ["OSHUN"], "duration": "03:33" },
+    {
+      "track": "Comme Des Garçons (Like The Boys)",
+      "artists": ["Rina Sawayama"],
+      "duration": "03:01"
+    },
+    {
+      "track": "Thousand Finger Man",
+      "artists": ["Candido"],
+      "duration": "09:06"
+    },
+    {
+      "track": "黄昏のBAY CITY",
+      "artists": ["Junko Yagami"],
+      "duration": "04:10"
+    },
+    { "track": "Reflektor", "artists": ["Arcade Fire"], "duration": "07:33" },
+    {
+      "track": "Again",
+      "artists": ["Oneohtrix Point Never"],
+      "duration": "04:44"
+    }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/4wyQ9JYwEgSxzsezevfjTa",
+  "apple_url": "",
+  "youtube_url": ""
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Dongha Radio 4",
+  "tracks": [
+    {
+      "track": "Trees Sleep At Night",
+      "artists": ["Masahiro Takahashi"],
+      "duration": "03:13"
+    },
+    {
+      "track": "Pictures of You",
+      "artists": ["Drugdealer", "Kate Bollinger"],
+      "duration": "03:09"
+    },
+    {
+      "track": "Magazine",
+      "artists": ["Toro y Moi", "Salami Rose Joe Louis"],
+      "duration": "03:11"
+    },
+    { "track": "Jealousy", "artists": ["George Riley"], "duration": "02:18" },
+    { "track": "Loretta", "artists": ["Ginger Root"], "duration": "03:10" },
+    {
+      "track": "Just Say Play",
+      "artists": ["Jerry Paper"],
+      "duration": "03:35"
+    },
+    { "track": "Saint", "artists": ["Blood Orange"], "duration": "03:12" },
+    { "track": "FIESTA", "artists": ["IZ*ONE"], "duration": "03:37" },
+    {
+      "track": "On My Mind (Jorja Smith X Preditah)",
+      "artists": ["Jorja Smith", "Preditah"],
+      "duration": "03:01"
+    },
+    { "track": "Galaxy", "artists": ["War"], "duration": "08:14" },
+    { "track": "君は天然色", "artists": ["大滝詠一"], "duration": "05:06" },
+    { "track": "topspin", "artists": ["Deekapz"], "duration": "02:28" },
+    {
+      "track": "Me Myself and I",
+      "artists": ["De La Soul"],
+      "duration": "03:49"
+    },
+    {
+      "track": "Boogie Wonderland",
+      "artists": ["Earth, Wind & Fire", "The Emotions"],
+      "duration": "04:48"
+    },
+    {
+      "track": "20220302",
+      "artists": ["Ryuichi Sakamoto"],
+      "duration": "02:52"
+    }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/2rCNJiH7nACsp9l523ZCHh",
+  "apple_url": "",
+  "youtube_url": ""
+}

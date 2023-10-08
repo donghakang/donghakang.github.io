@@ -1,0 +1,76 @@
+{
+  "name": "Dongha Radio 1",
+  "tracks": [
+    {
+      "track": "十四時過ぎのカゲロウ",
+      "artists": ["KIRINJI"],
+      "duration": "04:58"
+    },
+    {
+      "track": "DOGTOOTH",
+      "artists": ["Tyler, The Creator"],
+      "duration": "02:41"
+    },
+    {
+      "track": "Memory Box",
+      "artists": ["Peter Cat Recording Co."],
+      "duration": "08:03"
+    },
+    {
+      "track": "YA!",
+      "artists": ["Oscar #Worldpeace", "ayrtn"],
+      "duration": "02:15"
+    },
+    {
+      "track": "In the Field",
+      "artists": ["HiTech", "Milf Melly", "King Milo"],
+      "duration": "01:52"
+    },
+    {
+      "track": "()vȯ)) ̷̨ʅ(۝ʅ(Ɵʅ():::()̵̳̗̊(Ɵʅ()vȯ)) ̷̨ʅ",
+      "artists": ["⣎⡇ꉺლ༽இ•̛)ྀ◞ ༎ຶ ༽ৣৢ؞ৢ؞ؖ ꉺლ"],
+      "duration": "04:31"
+    },
+    {
+      "track": "From: Disco To: Disco - Remastered",
+      "artists": ["Whirlpool Productions"],
+      "duration": "05:57"
+    },
+    {
+      "track": "그녀가 웃잖아....",
+      "artists": ["김형중"],
+      "duration": "04:29"
+    },
+    { "track": "Sinnerman", "artists": ["Tutankhamun"], "duration": "04:10" },
+    { "track": "Palco", "artists": ["Gilberto Gil"], "duration": "04:26" },
+    {
+      "track": "Dapper (feat. Anderson .Paak)",
+      "artists": ["Domo Genesis", "Anderson .Paak"],
+      "duration": "03:13"
+    },
+    {
+      "track": "CATS GROOVE",
+      "artists": ["Kaelin Ellis", "Tony Rosenberg"],
+      "duration": "01:31"
+    },
+    { "track": "A.Y.A", "artists": ["Yogee New Waves"], "duration": "03:40" },
+    {
+      "track": "비밀의 화원",
+      "artists": ["Lee Sang-Eun"],
+      "duration": "04:09"
+    },
+    {
+      "track": "Quero Dizer",
+      "artists": ["Bruno Berle", "batata boy"],
+      "duration": "03:50"
+    },
+    {
+      "track": "Bar Mediterraneo",
+      "artists": ["Nu Genea"],
+      "duration": "03:04"
+    }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/4BmwYdl1f7GyzS3YSXdKip",
+  "apple_url": "",
+  "youtube_url": ""
+}

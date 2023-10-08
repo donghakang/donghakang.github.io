@@ -1,0 +1,63 @@
+{
+  "name": "Dongha Radio 2",
+  "tracks": [
+    {
+      "track": "Exotica Dance Club",
+      "artists": ["Nu Genea"],
+      "duration": "05:27"
+    },
+    {
+      "track": "Curser's Lament",
+      "artists": ["Cosmo Pyke"],
+      "duration": "04:25"
+    },
+    { "track": "Wütendes Glas", "artists": ["Grauzone"], "duration": "03:21" },
+    { "track": "Athgal Damm", "artists": ["Lil Asaf"], "duration": "03:22" },
+    {
+      "track": "Passion - Extended Mix",
+      "artists": ["Eskuche"],
+      "duration": "06:38"
+    },
+    {
+      "track": "It's Your Turn",
+      "artists": ["Delegation"],
+      "duration": "03:24"
+    },
+    {
+      "track": "Just a Joke",
+      "artists": ["Yurie Kokubu"],
+      "duration": "03:09"
+    },
+    {
+      "track": "This Is Business",
+      "artists": ["Dance System", "Mike James"],
+      "duration": "04:19"
+    },
+    {
+      "track": "Nothing's Free",
+      "artists": ["Angel Olsen"],
+      "duration": "04:38"
+    },
+    {
+      "track": "Eternal Sunshine",
+      "artists": ["Lou Val"],
+      "duration": "04:01"
+    },
+    { "track": "Hollywood Baby", "artists": ["100 gecs"], "duration": "03:07" },
+    {
+      "track": "Katmandu - Jazzanova Remix",
+      "artists": ["Ivan Conti", "Jazzanova"],
+      "duration": "05:33"
+    },
+    {
+      "track": "SEXY DANCE",
+      "artists": ["Masayoshi Takanaka"],
+      "duration": "05:52"
+    },
+    { "track": "Ocho Rios", "artists": ["Daniel Caesar"], "duration": "02:33" },
+    { "track": "Seaforth", "artists": ["King Krule"], "duration": "04:05" }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/1IP9GKS9J58v4vLwILnQ4t",
+  "apple_url": "",
+  "youtube_url": ""
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Dongha Radio 10",
+  "tracks": [
+    {
+      "track": "RYDEEN",
+      "artists": ["YELLOW MAGIC ORCHESTRA", "Norio Yoshizawa"],
+      "duration": "04:26"
+    },
+    {
+      "track": "I'm A King Bee",
+      "artists": ["The Stone Foxes"],
+      "duration": "03:19"
+    },
+    {
+      "track": "He's the Greatest Dancer - 1995 Remaster",
+      "artists": ["Sister Sledge"],
+      "duration": "06:15"
+    },
+    { "track": "Big Hammer", "artists": ["James Blake"], "duration": "04:00" },
+    {
+      "track": "Splendido splendente",
+      "artists": ["Donatella Rettore"],
+      "duration": "03:27"
+    },
+    { "track": "Yours", "artists": ["maye"], "duration": "03:40" },
+    { "track": "late nite", "artists": ["[bsd.u]"], "duration": "01:13" },
+    {
+      "track": "The Bus to Nowhere.",
+      "artists": ["Marcoca", "Nice Guys"],
+      "duration": "04:49"
+    },
+    {
+      "track": "De alegria raiou o dia",
+      "artists": ["Carlos Dafé"],
+      "duration": "03:38"
+    },
+    {
+      "track": "Will I See You Again?",
+      "artists": ["Thee Sacred Souls"],
+      "duration": "04:00"
+    },
+    { "track": "Upside Down", "artists": ["Diana Ross"], "duration": "04:05" },
+    { "track": "Estrelar", "artists": ["Marcos Valle"], "duration": "05:13" },
+    {
+      "track": "Remember Where You Are",
+      "artists": ["Jessie Ware"],
+      "duration": "05:34"
+    },
+    {
+      "track": "Have It All (feat. Pharrell)",
+      "artists": ["Gucci Mane", "Pharrell Williams"],
+      "duration": "03:43"
+    }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/00G5JpRaw4Fg9xjvkPsSXk",
+  "apple_url": "",
+  "youtube_url": ""
+}
