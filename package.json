@@ -2,6 +2,7 @@
   "name": "dongha",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://donghakang.github.io",
   "scripts": {
     "start": "next dev",
     "build": "next build",
