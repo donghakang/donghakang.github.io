@@ -33,14 +33,14 @@ function Circles({ color }: CirclesType) {
         className={cx(styles.stick, styles.six)}
         style={{ backgroundColor: color }}
       />
-      <div
+      {/* <div
         className={cx(styles.stick, styles.seven)}
         style={{ backgroundColor: color }}
       />
       <div
         className={cx(styles.stick, styles.eight)}
         style={{ backgroundColor: color }}
-      />
+      /> */}
     </div>
   )
 }

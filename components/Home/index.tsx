@@ -15,8 +15,8 @@ function HomeContainer() {
       <TextContainer />
       <BasicContainer />
       <VisualContainer />
-      {/* <AboutContainer /> */}
-      {/* <ProjectContainer /> */}
+      <AboutContainer />
+      <ProjectContainer />
     </main>
   )
 }

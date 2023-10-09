@@ -59,6 +59,11 @@
     }
   ],
   "spotify_url": "https://open.spotify.com/playlist/0ZqVoAtTErfXD7BT9Bs0Np",
-  "apple_url": "",
-  "youtube_url": ""
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-7/pl.u-kv9l2adCJpY08LD?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "black",
+    "opacity": 0.7,
+    "background": "white"
+  }
 }

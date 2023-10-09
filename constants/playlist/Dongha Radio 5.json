@@ -67,6 +67,11 @@
     { "track": "youth+", "artists": ["Jean Dawson"], "duration": "02:45" }
   ],
   "spotify_url": "https://open.spotify.com/playlist/2BQSndpUgs3yEycisPJP6K",
-  "apple_url": "",
-  "youtube_url": ""
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-5/pl.u-gxblgJ4Fb4Arogl?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "#a64028",
+    "opacity": 0.7,
+    "background": "#c0b3a0"
+  }
 }

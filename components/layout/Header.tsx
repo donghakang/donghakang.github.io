@@ -32,6 +32,9 @@ function Header() {
         <Link onClick={() => setMenuOpen(false)} href="/space">
           SPACE.
         </Link>
+        <Link onClick={() => setMenuOpen(false)} href="/playlist">
+          PLAY.
+        </Link>
         {/* <Link href="/contact">CALLME.</Link> */}
         <a
           onClick={() => setMenuOpen(false)}

@@ -58,6 +58,11 @@
     { "track": "Seaforth", "artists": ["King Krule"], "duration": "04:05" }
   ],
   "spotify_url": "https://open.spotify.com/playlist/1IP9GKS9J58v4vLwILnQ4t",
-  "apple_url": "",
-  "youtube_url": ""
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-2/pl.u-2aoq8ZYSGoXpga2?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "white",
+    "opacity": 0.7,
+    "background": "#705A39"
+  }
 }

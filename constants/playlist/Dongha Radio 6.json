@@ -46,6 +46,11 @@
     { "track": "Midnight", "artists": ["Jimi Hendrix"], "duration": "05:32" }
   ],
   "spotify_url": "https://open.spotify.com/playlist/1ULyYuOX0J96R2DnQX6bYn",
-  "apple_url": "",
-  "youtube_url": ""
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-6/pl.u-2aoq8yyTGoXpga2?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "#d82a2b",
+    "opacity": 0.7,
+    "background": "#95bad0"
+  }
 }

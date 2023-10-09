@@ -17,36 +17,36 @@
 }
 
 .one {
-  transform: translateY(-50%) rotateZ(90deg);
+  transform: translateY(-50%) rotateZ(0deg);
 }
 
 .two {
-  transform: translateY(-50%) rotateZ(45deg);
+  transform: translateY(-50%) rotateZ(30deg);
 }
 
 .three {
-  transform: translateY(-50%) rotateZ(-45deg);
+  transform: translateY(-50%) rotateZ(60deg);
 }
 
 .four {
-  transform: translateY(-50%) rotateZ(22.5deg);
+  transform: translateY(-50%) rotateZ(90deg);
 }
 
 .five {
-  transform: translateY(-50%) rotateZ(67.5deg);
+  transform: translateY(-50%) rotateZ(-30deg);
 }
 
 .six {
-  transform: translateY(-50%) rotateZ(-22.5deg);
+  transform: translateY(-50%) rotateZ(-60deg);
 }
 
-.seven {
-  transform: translateY(-50%) rotateZ(-67.5deg);
-}
+// .seven {
+//   transform: translateY(-50%) rotateZ(-67.5deg);
+// }
 
-.eight {
-  transform: translateY(-50%) rotateZ(0deg);
-}
+// .eight {
+//   transform: translateY(-50%) rotateZ(0deg);
+// }
 
 @-webkit-keyframes rotating {
   from {

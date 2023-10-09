@@ -53,6 +53,11 @@
     }
   ],
   "spotify_url": "https://open.spotify.com/playlist/00G5JpRaw4Fg9xjvkPsSXk",
-  "apple_url": "",
-  "youtube_url": ""
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-10/pl.u-xlyNEmYtJENVP9v?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "#45699c",
+    "opacity": 0.7,
+    "background": "#fddf89"
+  }
 }

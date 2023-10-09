@@ -88,6 +88,11 @@
     }
   ],
   "spotify_url": "https://open.spotify.com/playlist/4wyQ9JYwEgSxzsezevfjTa",
-  "apple_url": "",
-  "youtube_url": ""
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-23-09/pl.u-8aAVZ5ycvZMbKjJ?l=en-GB",
+  "youtube_url": "https://music.youtube.com/playlist?list=PL1I4LkKQjmc3z9NkkgPfYYc-ETVBtWt_r&si=V3AOmRRjexUVsgxP",
+  "theme": {
+    "color": "#ffa79c",
+    "opacity": 0.7,
+    "background": "#2b2f21"
+  }
 }
