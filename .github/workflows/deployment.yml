@@ -26,16 +26,16 @@ jobs:
         run: rm -rf node_modules package-lock.json yarn.lock out .next && npm cache clean -f
 
       - name: 🤖 Install
-        run: npm i
+        run: yarn
 
       - name: 🔨 Build
-        run: npm run build
+        run: yarn build
 
       - name: 📦 Export
-        run: npm run export
+        run: yarn export
 
       - name: 📝 Build sitemap
-        run: npm run sitemap
+        run: yarn sitemap
 
       - run: touch ./out/.nojekyll
 
