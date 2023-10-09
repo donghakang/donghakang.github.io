@@ -13,7 +13,7 @@
   align-items: center;
   transition: 0.5s;
   z-index: 999;
-
+  mix-blend-mode: difference;
 }
 
 .MenuLine1 {
@@ -21,7 +21,8 @@
   height: 3px;
   background: #000;
   transition: 0.6s;
-  background-color: #{$primary};
+  // background-color: #{$primary};
+  background-color: #a014c4;
 }
 
 .MenuLine2 {
@@ -30,11 +31,13 @@
   background: #000;
   margin-top: 0.7rem;
   transition: 0.6s;
-  background-color: #{$primary};
+  // background-color: #{$primary};
+  background-color: #a014c4;
 }
 
 .Rotate {
   transform: rotateZ(180deg);
+  mix-blend-mode: normal;
 }
 
 .Rotate1 {
