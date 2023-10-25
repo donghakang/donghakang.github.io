@@ -1,6 +1,4 @@
-import Space from '@/components/Space'
 import Head from 'next/head'
-import React from 'react'
 
 function SpacePage() {
   return (

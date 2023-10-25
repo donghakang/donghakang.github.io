@@ -1,10 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
-import Circles from '@/components/animation'
-import theme from '@/styles/theme'
 import PROJECT from '@/constants/PROJECT'
-import styles from './project.module.scss'
+import cx from 'classnames'
 import ProjectItem from './ProjectItem'
+import styles from './project.module.scss'
 
 function ProjectContainer() {
   return (

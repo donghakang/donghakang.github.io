@@ -1,10 +1,6 @@
-import React from 'react'
 import cx from 'classnames'
-import Circles from '@/components/animation'
-import { FaHandSparkles } from 'react-icons/fa'
-import theme from '@/styles/theme'
-import styles from './about.module.scss'
 import Timeline from './Timeline'
+import styles from './about.module.scss'
 
 function AboutContainer() {
   return (

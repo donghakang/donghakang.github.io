@@ -27,7 +27,10 @@ function PlayList({ list }: PlayListType) {
       <Videos />
       <div className={cx(styles.DetailLinkWrapper)}>
         {list.map((radio) => (
-          <Link href={`playlist/${radio.replace('Dongha Radio ', '')}`}>
+          <Link
+            key={radio}
+            href={`playlist/${radio.replace('Dongha Radio ', '')}`}
+          >
             <span className={cx(styles.DetailLink)}>{radio}</span>
           </Link>
         ))}

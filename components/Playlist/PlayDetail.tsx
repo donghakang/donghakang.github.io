@@ -64,7 +64,7 @@ function PlayDetail({ content }: { content: string }) {
         style={{ color: songlist.theme.color }}
       >
         {songlist.tracks.map((track: PlaylistTrack) => (
-          <div className={cx(styles.TrackWrapper)}>
+          <div key={track.track} className={cx(styles.TrackWrapper)}>
             <div className={cx(styles.song)}>
               {track.track}
               <div className={cx(styles.CircleWrapper)}>

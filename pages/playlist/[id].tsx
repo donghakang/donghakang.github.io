@@ -9,6 +9,8 @@ import { ParsedUrlQuery } from 'querystring'
 function PlayDetailPage({
   content,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log(content)
+
   return (
     <>
       <Head>
@@ -17,7 +19,7 @@ function PlayDetailPage({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Play.Detail content={content} />
+      {content && <Play.Detail content={content} />}
     </>
   )
 }

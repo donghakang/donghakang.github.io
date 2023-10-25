@@ -1,15 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import Note from '@/components/Note'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function NotePage({ notes }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(notes)
-
   return (
     <>
       <Head>
