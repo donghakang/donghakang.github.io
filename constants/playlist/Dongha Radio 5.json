@@ -1,0 +1,77 @@
+{
+  "name": "Dongha Radio 5",
+  "tracks": [
+    {
+      "track": "Rap Song Tutorial",
+      "artists": ["Injury Reserve"],
+      "duration": "02:22"
+    },
+    {
+      "track": "Movie Scenes",
+      "artists": ["Lloyd Banks"],
+      "duration": "02:42"
+    },
+    { "track": "Run To The Sun", "artists": ["N.E.R.D"], "duration": "04:51" },
+    {
+      "track": "Things Fall Apart - Vocal",
+      "artists": ["Steve Monite"],
+      "duration": "05:32"
+    },
+    {
+      "track": "TRUMPETS",
+      "artists": ["_BY.ALEXANDER", "070 Shake"],
+      "duration": "03:55"
+    },
+    {
+      "track": "Around the House",
+      "artists": ["Charles Stepney"],
+      "duration": "04:14"
+    },
+    {
+      "track": "TELL ME IM RIGHT",
+      "artists": ["Eem Triplin"],
+      "duration": "02:47"
+    },
+    { "track": "BLOOD", "artists": ["Sean Leon"], "duration": "02:03" },
+    {
+      "track": "SaintLaurentYSL - The Martinez Brothers Re-Edit",
+      "artists": ["Lil Yachty", "Lil Baby", "The Martinez Brothers"],
+      "duration": "06:03"
+    },
+    { "track": "One Touch", "artists": ["BAMBII"], "duration": "03:00" },
+    {
+      "track": "Lock Your Doors",
+      "artists": ["Death Grips"],
+      "duration": "03:52"
+    },
+    {
+      "track": "A Lizard State",
+      "artists": ["King Krule"],
+      "duration": "04:19"
+    },
+    {
+      "track": "Enough",
+      "artists": ["Fred again..", "Brian Eno"],
+      "duration": "05:22"
+    },
+    {
+      "track": "III. Urn",
+      "artists": ["Childish Gambino"],
+      "duration": "01:13"
+    },
+    {
+      "track": "Idaho Alien",
+      "artists": ["Youth Lagoon"],
+      "duration": "03:23"
+    },
+    { "track": "youth+", "artists": ["Jean Dawson"], "duration": "02:45" }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/2BQSndpUgs3yEycisPJP6K",
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-5/pl.u-gxblgJ4Fb4Arogl?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "#a64028",
+    "opacity": 0.7,
+    "background": "#c0b3a0"
+  }
+}

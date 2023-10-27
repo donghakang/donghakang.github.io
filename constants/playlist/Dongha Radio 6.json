@@ -1,0 +1,56 @@
+{
+  "name": "Dongha Radio 6",
+  "tracks": [
+    {
+      "track": "Peace of Mind",
+      "artists": ["Wendell Harrison"],
+      "duration": "07:19"
+    },
+    {
+      "track": "津軽じょんがら節(新節)(青森県民謡)",
+      "artists": ["Takeshi Terauchi"],
+      "duration": "05:26"
+    },
+    {
+      "track": "Eve, Psyche & The Bluebeard’s wife",
+      "artists": ["LE SSERAFIM"],
+      "duration": "03:05"
+    },
+    {
+      "track": "If Only It Was Warmth",
+      "artists": ["King Krule"],
+      "duration": "03:17"
+    },
+    {
+      "track": "Chega Mais (Imaginei Você Dançando)",
+      "artists": ["Banda Black Rio"],
+      "duration": "02:51"
+    },
+    { "track": "11khz", "artists": ["Mogwaa"], "duration": "05:31" },
+    { "track": "자유 FREEDOM", "artists": ["CADEJO"], "duration": "02:32" },
+    { "track": "The Narcissist", "artists": ["Blur"], "duration": "04:05" },
+    {
+      "track": "The Mint (feat. Navy Blue)",
+      "artists": ["Earl Sweatshirt", "Navy Blue"],
+      "duration": "02:45"
+    },
+    { "track": "SHRETTR", "artists": ["Psychi"], "duration": "02:10" },
+    { "track": "Sah", "artists": ["Al Massrieen"], "duration": "03:44" },
+    { "track": "Romance", "artists": ["Hiroshi Suzuki"], "duration": "05:56" },
+    {
+      "track": "My wrist (with Young Thug)",
+      "artists": ["Yeat", "Young Thug"],
+      "duration": "03:10"
+    },
+    { "track": "Bambi", "artists": ["Bb trickz"], "duration": "02:12" },
+    { "track": "Midnight", "artists": ["Jimi Hendrix"], "duration": "05:32" }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/1ULyYuOX0J96R2DnQX6bYn",
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-6/pl.u-2aoq8yyTGoXpga2?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "#d82a2b",
+    "opacity": 0.7,
+    "background": "#95bad0"
+  }
+}

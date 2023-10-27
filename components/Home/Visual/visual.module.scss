@@ -1,0 +1,28 @@
+@import 'styles/utils';
+
+.container {
+  background-color: #{$primary};
+}
+
+.VisualContent {
+  @include px;
+  max-width: #{$max-width};
+  min-height: 100vh;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  scroll-snap-align: center;
+  background-color: #{$white};
+}
+
+.Icons {
+  // font-weight: 500;
+  font-size: calc(100vw / 5.5);
+  letter-spacing: calc(-100vw / 60);
+
+  line-height: calc(100vw / 5.5);
+}

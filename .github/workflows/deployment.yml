@@ -1,0 +1,48 @@
+name: Deploy to Github pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout action
+      - name: Checkout 🛎️
+      - uses: actions/checkout@v3
+
+      # environment values
+      - name: Environment 🐈
+        run: |
+          touch .env &&
+          echo NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }} >> .env &&
+          echo WEBSITE_URL=${{ secrets.WEBSITE_URL }} >> .env &&
+
+          cat .env
+
+      - name: 😰 Clear cache
+        run: rm -rf node_modules package-lock.json yarn.lock out .next && npm cache clean -f
+
+      - name: 🤖 Install
+        run: yarn
+
+      - name: 🔨 Build
+        run: yarn build
+
+      - name: 📦 Export
+        run: yarn export
+
+      - name: 📝 Build sitemap
+        run: yarn sitemap
+
+      - run: touch ./out/.nojekyll
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: out # The folder the action should deploy.
+          clean: true

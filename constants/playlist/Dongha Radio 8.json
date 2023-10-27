@@ -1,0 +1,80 @@
+{
+  "name": "Dongha Radio 8",
+  "tracks": [
+    { "track": "Please Summer!", "artists": ["인디고"], "duration": "04:07" },
+    { "track": "SHYNESS BOY", "artists": ["Anri"], "duration": "03:16" },
+    {
+      "track": "Summer Blue",
+      "artists": ["Bread And Butter"],
+      "duration": "03:59"
+    },
+    {
+      "track": "Rebuke",
+      "artists": ["KAYTRAMINÉ", "Aminé", "KAYTRANADA"],
+      "duration": "01:58"
+    },
+    {
+      "track": "Feels Like Summer",
+      "artists": ["Childish Gambino"],
+      "duration": "04:57"
+    },
+    {
+      "track": "Death with Dignity",
+      "artists": ["Sufjan Stevens"],
+      "duration": "03:59"
+    },
+    {
+      "track": "Oh I Miss Her So",
+      "artists": ["Holy Hive", "Mary Lattimore"],
+      "duration": "04:11"
+    },
+    {
+      "track": "Han Jan - Edit",
+      "artists": ["Peggy Gou"],
+      "duration": "04:02"
+    },
+    {
+      "track": "Snake Oil - Giom Remix",
+      "artists": ["PREP", "Giom"],
+      "duration": "04:48"
+    },
+    {
+      "track": "2000 chevy malibu",
+      "artists": ["Channel Tres"],
+      "duration": "02:42"
+    },
+    {
+      "track": "I Am So Happy With My Little Dog",
+      "artists": [
+        "Shabason & Krgovich",
+        "Joseph Shabason",
+        "Nicholas Krgovich"
+      ],
+      "duration": "04:14"
+    },
+    { "track": "4:00A.M.", "artists": ["Taeko Onuki"], "duration": "05:36" },
+    {
+      "track": "Chicken Tenders",
+      "artists": ["Dominic Fike"],
+      "duration": "02:50"
+    },
+    {
+      "track": "Ain't Gonna Cry",
+      "artists": ["Universal Togetherness Band"],
+      "duration": "05:30"
+    },
+    {
+      "track": "Cuz It's You, Girl",
+      "artists": ["James Walsh Gypsy Band"],
+      "duration": "04:01"
+    }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/03pU8KCSBfNDTyGUjzjN1K",
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-8/pl.u-xlyNE3PtJENVP9v?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "#6fd2f2",
+    "opacity": 0.7,
+    "background": "#ea566c"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "name": "Dongha Radio 23.08",
+  "tracks": [
+    { "track": "Freewave 1", "artists": ["LUCKI"], "duration": "02:24" },
+    {
+      "track": "FE!N (feat. Playboi Carti)",
+      "artists": ["Travis Scott", "Playboi Carti"],
+      "duration": "03:11"
+    },
+    { "track": "once wen't west", "artists": ["aya"], "duration": "02:28" },
+    { "track": "Oegno Aep", "artists": ["Mount XLR"], "duration": "03:34" },
+    {
+      "track": "In The Yuma (feat. Aatig)",
+      "artists": ["Chris Lake", "Aatig"],
+      "duration": "02:36"
+    },
+    {
+      "track": "I Love You Fantomas",
+      "artists": ["YAME", "Arsanit"],
+      "duration": "07:53"
+    },
+    {
+      "track": "Work Bitch",
+      "artists": ["Britney Spears"],
+      "duration": "04:07"
+    },
+    { "track": "Purple Music", "artists": ["Prince"], "duration": "10:58" },
+    {
+      "track": "Sanso (Interlude)",
+      "artists": ["Beenzino"],
+      "duration": "01:03"
+    },
+    { "track": "VENT", "artists": ["Ovrkast."], "duration": "02:40" },
+    {
+      "track": "SUPERMODELCHICK",
+      "artists": ["ATTNWH0RE", "ManMan Savage", "Shad Da God"],
+      "duration": "03:09"
+    },
+    {
+      "track": "Too Often",
+      "artists": ["Radamiz", "Thelonious Martin"],
+      "duration": "02:14"
+    },
+    {
+      "track": "A Madman's Dream - Dirty",
+      "artists": ["The East Flatbush Project"],
+      "duration": "05:11"
+    },
+    { "track": "WALKED IN", "artists": ["Eem Triplin"], "duration": "02:22" },
+    { "track": "BULLET MAN", "artists": ["Paris Texas"], "duration": "02:58" },
+    {
+      "track": "O Gato",
+      "artists": ["Yuksek", "Diogo Strausz"],
+      "duration": "04:40"
+    },
+    { "track": "TERRITORY", "artists": ["The Blaze"], "duration": "04:36" },
+    { "track": "Topdown", "artists": ["Channel Tres"], "duration": "03:50" },
+    { "track": "New Jeans", "artists": ["NewJeans"], "duration": "01:48" },
+    { "track": "Far Away", "artists": ["Lacuna"], "duration": "05:09" },
+    {
+      "track": "Junk Of The Heart (Happy)",
+      "artists": ["The Kooks"],
+      "duration": "03:07"
+    },
+    {
+      "track": "Milanesa al Pan",
+      "artists": ["Juan Wauters", "Zoe Gotusso"],
+      "duration": "02:49"
+    },
+    { "track": "All Woman", "artists": ["Kathy Diamond"], "duration": "06:07" },
+    {
+      "track": "Friday Night",
+      "artists": ["Teaspoon and The Waves"],
+      "duration": "08:36"
+    },
+    {
+      "track": "Se você for a salvador",
+      "artists": ["Brylho"],
+      "duration": "03:45"
+    }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/6Fm2LozdcnY3xK6NCpvYF9",
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-23-08/pl.u-KVXBkA6TLDjB3V0?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "red",
+    "opacity": 0.7,
+    "background": "white"
+  }
+}

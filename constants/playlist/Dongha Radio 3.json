@@ -1,0 +1,65 @@
+{
+  "name": "Dongha Radio 3",
+  "tracks": [
+    {
+      "track": "Ring of Past",
+      "artists": ["Men I Trust"],
+      "duration": "03:21"
+    },
+    {
+      "track": "Aleluia",
+      "artists": ["Robson Jorge", "Lincoln Olivetti"],
+      "duration": "03:52"
+    },
+    {
+      "track": "Dolphin Dance",
+      "artists": ["Ahmad Jamal Trio"],
+      "duration": "05:09"
+    },
+    { "track": "Body Rap", "artists": ["Wynd Chymes"], "duration": "04:11" },
+    {
+      "track": "Duffle Bag Juke",
+      "artists": ["DJ Rashad", "DJ Chi Boogie"],
+      "duration": "03:23"
+    },
+    {
+      "track": "コズミック・サーフィン",
+      "artists": ["Haruomi Hosono"],
+      "duration": "05:02"
+    },
+    {
+      "track": "Intro",
+      "artists": ["Alan Braxe", "Fred Falke"],
+      "duration": "04:54"
+    },
+    {
+      "track": "In My Garden",
+      "artists": ["Yoon Jiyoung"],
+      "duration": "03:42"
+    },
+    { "track": "Actually", "artists": ["Dan Kye"], "duration": "03:47" },
+    { "track": "Que Bandeira", "artists": ["Evinha"], "duration": "02:29" },
+    { "track": "coogie", "artists": ["Dijon"], "duration": "03:09" },
+    {
+      "track": "Familiarity",
+      "artists": ["Teezo Touchdown"],
+      "duration": "03:27"
+    },
+    { "track": "Leave Her", "artists": ["LUCKI"], "duration": "02:17" },
+    { "track": "Good Booth", "artists": ["Emma DJ"], "duration": "03:03" },
+    { "track": "7-b01", "artists": ["RX-101"], "duration": "04:53" },
+    {
+      "track": "L.F.O.",
+      "artists": ["SBTRKT", "Sampha", "George Riley"],
+      "duration": "04:31"
+    }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/1LoLn4gwIa7RrVgDipjnED",
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-3/pl.u-xlyNEylIJENVP9v?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "#8FFD19",
+    "opacity": 0.7,
+    "background": "gray"
+  }
+}

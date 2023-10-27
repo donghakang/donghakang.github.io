@@ -1,0 +1,102 @@
+{
+  "name": "Dongha Radio 23.09",
+  "tracks": [
+    {
+      "track": "Looking Up to You",
+      "artists": ["Michael Wycoff"],
+      "duration": "05:20"
+    },
+    {
+      "track": "I Love You",
+      "artists": ["Weldon Irvine"],
+      "duration": "03:02"
+    },
+    {
+      "track": "THINK ABOUT` CHU",
+      "artists": ["Asoto Union"],
+      "duration": "04:41"
+    },
+    {
+      "track": "Middle of Nowhere",
+      "artists": ["Macabre Plaza"],
+      "duration": "01:01"
+    },
+    { "track": "Tendency", "artists": ["Jan Jelinek"], "duration": "07:21" },
+    {
+      "track": "adore u",
+      "artists": ["Fred again..", "Obongjayar"],
+      "duration": "03:40"
+    },
+    {
+      "track": "The Soaring Seagull",
+      "artists": ["ELECTRO KEYBOARD ORCHESTRA"],
+      "duration": "04:45"
+    },
+    {
+      "track": "Dmtri",
+      "artists": ["Action Bronson", "The Alchemist"],
+      "duration": "04:34"
+    },
+    {
+      "track": "Bis",
+      "artists": ["Arthur Verocai", "Azymuth"],
+      "duration": "03:58"
+    },
+    { "track": "Hard Times", "artists": ["Baby Huey"], "duration": "03:23" },
+    {
+      "track": "You Never Told Me That You Cared",
+      "artists": ["Sun Ra"],
+      "duration": "05:31"
+    },
+    {
+      "track": "Trouble In Mind",
+      "artists": ["Nina Simone"],
+      "duration": "02:40"
+    },
+    { "track": "Zombie", "artists": ["Fela Kuti"], "duration": "12:25" },
+    { "track": "Lihue", "artists": ["Nohelani Cypriano"], "duration": "03:20" },
+    {
+      "track": "Can We Pretend",
+      "artists": ["Bill Withers"],
+      "duration": "03:49"
+    },
+    {
+      "track": "What The World Needs Now Is Love",
+      "artists": ["Jackie DeShannon"],
+      "duration": "03:06"
+    },
+    {
+      "track": "Heaven or Las Vegas",
+      "artists": ["Cocteau Twins"],
+      "duration": "04:58"
+    },
+    { "track": "Oooh, Baby", "artists": ["Pamoja"], "duration": "03:40" },
+    { "track": "Queixume", "artists": ["Tom & Joy"], "duration": "03:46" },
+    {
+      "track": "影になって",
+      "artists": ["Yumi Matsutoya"],
+      "duration": "05:32"
+    },
+    {
+      "track": "YOU'RE MY BABY",
+      "artists": ["Hiroshi Sato"],
+      "duration": "03:49"
+    },
+    { "track": "Colombus", "artists": ["Limousine"], "duration": "03:42" },
+    { "track": "Just You", "artists": ["Teddy Adhitya"], "duration": "03:02" },
+    { "track": "Drawing", "artists": ["Silas Short"], "duration": "04:48" },
+    {
+      "track": "Ghost of Your Guitar Solo",
+      "artists": ["MJ Lenderman"],
+      "duration": "04:45"
+    }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/0WkgpOkZSkA8MUbSSBlm3k",
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-23-09/pl.u-8aAVZ5ycvZMbKjJ?l=en-GB",
+  "youtube_url": "https://music.youtube.com/playlist?list=PL1I4LkKQjmc331neTuHelqM1t4Nw69u-c&si=32YyXB18ag1ZWofY",
+  "theme": {
+    "color": "#375164",
+    "opacity": 0.7,
+    "background": "#dedfda"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "name": "Dongha Radio 9",
+  "tracks": [
+    { "track": "See Through", "artists": ["Chief Keef"], "duration": "02:30" },
+    {
+      "track": "Challas",
+      "artists": ["Bizzey", "Mula B", "Louis"],
+      "duration": "03:19"
+    },
+    {
+      "track": "A Noite Vai Chegar",
+      "artists": ["Lady Zu"],
+      "duration": "03:54"
+    },
+    {
+      "track": "Going To America",
+      "artists": ["Cheng Qiong Mei"],
+      "duration": "03:24"
+    },
+    {
+      "track": "Euro Trash Girl",
+      "artists": ["Chicks On Speed"],
+      "duration": "04:02"
+    },
+    {
+      "track": "Everyday People",
+      "artists": ["Sly & The Family Stone"],
+      "duration": "02:21"
+    },
+    {
+      "track": "Aykedashem Lebe",
+      "artists": ["Tlahoun Gessesse"],
+      "duration": "04:58"
+    },
+    {
+      "track": "Glasshouse",
+      "artists": ["The Temptations"],
+      "duration": "03:54"
+    },
+    {
+      "track": "Skate",
+      "artists": ["Bruno Mars", "Anderson .Paak", "Silk Sonic"],
+      "duration": "03:23"
+    },
+    {
+      "track": "Move Along",
+      "artists": ["The All-American Rejects"],
+      "duration": "03:58"
+    },
+    { "track": "Times", "artists": ["Wu-Lu"], "duration": "05:18" },
+    {
+      "track": "Wave",
+      "artists": ["Antônio Carlos Jobim"],
+      "duration": "02:56"
+    },
+    {
+      "track": "12.38 (feat. 21 Savage, Ink & Kadhja Bonet)",
+      "artists": ["Childish Gambino", "21 Savage", "Ink", "Kadhja Bonet"],
+      "duration": "06:32"
+    },
+    {
+      "track": "Elliot's Song - From \"Euphoria\" An HBO Original Series",
+      "artists": ["Dominic Fike", "Zendaya"],
+      "duration": "02:30"
+    },
+    {
+      "track": "Thread(1.11)",
+      "artists": ["YANGHONGWON"],
+      "duration": "04:53"
+    },
+    {
+      "track": "Too Late for Goodbyes",
+      "artists": ["Julian Lennon"],
+      "duration": "03:33"
+    }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/2FRDQxw4nviukYTo4whcG5",
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-9/pl.u-kv9l2MlTJpY08LD?l=en-GB",
+  "youtube_url": "",
+  "theme": {
+    "color": "#e6d2c5",
+    "opacity": 0.7,
+    "background": "#59322c"
+  }
+}
