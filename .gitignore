@@ -11,6 +11,7 @@
 # production
 /build
 .next
+out
 
 # misc
 .DS_Store
@@ -29,5 +30,4 @@ yarn-error.log*
 .eslintcache
 
 ./scripts/getPlaylists.js
-
 ./scripts

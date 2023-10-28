@@ -6,7 +6,6 @@
   "scripts": {
     "start": "next dev",
     "build": "next build",
-    "export": "next export",
     "start:prod": "next start",
     "lint": "next lint",
     "serve": "npx http-server out"
