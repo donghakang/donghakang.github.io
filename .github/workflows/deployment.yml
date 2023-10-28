@@ -31,8 +31,8 @@ jobs:
       - name: 🔨 Build
         run: yarn build
 
-      # - name: 📦 Export
-      #   run: yarn export
+      - name: 📦 Export
+        run: yarn export
 
       # - name: 📝 Build sitemap
       #   run: yarn sitemap

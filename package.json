@@ -6,8 +6,10 @@
   "scripts": {
     "start": "next dev",
     "build": "next build",
+    "export": "next export",
     "start:prod": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "serve": "npx http-server out"
   },
   "dependencies": {
     "@react-three/drei": "9.69.1",
