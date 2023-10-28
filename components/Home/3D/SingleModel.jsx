@@ -5,7 +5,9 @@ import { useFrame } from '@react-three/fiber'
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF(
-    'http://localhost:3000/assets/3d/scene.gltf',
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000/assets/3d/scene.gltf'
+      : 'https://donghakang.github.io/assets/3d/scene.gltf',
   )
 
   const meshRef = useRef()
