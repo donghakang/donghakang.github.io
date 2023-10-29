@@ -19,7 +19,7 @@ function Model(props) {
   }))
 
   return (
-    <Suspense fallback={'loading'}>
+    <Suspense fallback={<>Loading</>}>
       <Canvas
         resize={{ scroll: false }}
         style={{
