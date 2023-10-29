@@ -27,7 +27,7 @@ function PlaylistBackground({
       <motion.div
         style={{
           background,
-          position: 'absolute',
+          position: 'fixed',
           opacity: 0.4,
           top: 0,
           left: 0,
