@@ -28,7 +28,7 @@ function Videos({
         loop
         onLoadedData={() => setIsVideoLoaded((prev) => [true, prev[1]])}
       >
-        <source src="/assets/mov/play.mov" type="video/mp4" />
+        <source src="/assets/mov/play3.mov" type="video/mp4" />
       </video>
       <video
         className={cx(styles.BackgroundVideo2)}
@@ -37,7 +37,7 @@ function Videos({
         loop
         onLoadedData={() => setIsVideoLoaded((prev) => [prev[0], true])}
       >
-        <source src="/assets/mov/play2.mov" type="video/mp4" />
+        <source src="/assets/mov/play23.mov" type="video/mp4" />
       </video>
     </>
   )

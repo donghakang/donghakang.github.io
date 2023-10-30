@@ -14,6 +14,7 @@
   padding: 0 1rem;
   background-color: #{$primary};
   height: 100%;
+  overflow: hidden;
 }
 
 .ProjectItemWrapper {
@@ -24,7 +25,12 @@
 }
 
 .ProjectItemTitle {
-  font-size: 6.5rem;
+  font-size: 5rem;
   text-transform: uppercase;
   letter-spacing: -0.125rem;
+  text-overflow: ellipsis;
+
+  @include screen-lg {
+    font-size: 6.5rem;
+  }
 }
