@@ -67,7 +67,7 @@
 .PlaylistItemWrapper {
   position: relative;
   padding: 6rem 1rem;
-  font-size: 1rem;
+  font-size: 0.625rem;
   font-weight: 500;
   text-transform: uppercase;
   z-index: 10;
@@ -87,12 +87,24 @@
 }
 
 .CircleWrapper {
-  width: 1rem;
-  height: 1rem;
+  width: 0.625rem;
+  height: 0.625rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+@include screen-md {
+  .PlaylistItemWrapper {
+    font-size: 1rem;
+  }
+
+  .CircleWrapper {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
 
 .LinkWrapper {
   position: relative;
