@@ -8,11 +8,11 @@ function VisualContainer() {
     <div className={cx(styles.container)}>
       <div className={cx(styles.VisualContent)}>
         <Scene />
-        <h1 className={styles.Icons}>
+        {/* <h1 className={styles.Icons}>
           DONGHA—
           <br />
           KANG
-        </h1>
+        </h1> */}
       </div>
     </div>
   )
