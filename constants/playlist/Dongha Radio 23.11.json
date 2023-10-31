@@ -105,11 +105,11 @@
     { "track": "Red", "artists": ["Taylor Swift"], "duration": "03:43" }
   ],
   "spotify_url": "https://open.spotify.com/playlist/09YyHjAXBgz620OSCJCgbt",
-  "apple_url": "",
-  "youtube_url": "",
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-23-11/pl.u-oZylDgYCGXNj9pa?l=en-GB",
+  "youtube_url": "https://music.youtube.com/playlist?list=PL1I4LkKQjmc2ECRGo0wv6RZp1zhfnHVTs&si=JJDnGoJZVrP7ZqV7",
   "theme": {
-    "color": "#d34d39",
+    "color": "#ff4d39",
     "opacity": 0.8,
-    "background": "#6da4b0"
+    "background": "#6dc4e2"
   }
 }
