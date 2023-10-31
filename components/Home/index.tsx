@@ -1,11 +1,9 @@
-import React from 'react'
-import styles from './home.module.scss'
-import TextContainer from './Text'
 import BasicContainer from './Basic'
 import ImageContainer from './Image'
-import VisualContainer from './Visual'
-import AboutContainer from './About'
 import ProjectContainer from './Project'
+import TextContainer from './Text'
+import VisualContainer from './Visual'
+import styles from './home.module.scss'
 
 function HomeContainer() {
   return (
