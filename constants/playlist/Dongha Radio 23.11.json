@@ -1,0 +1,111 @@
+{
+  "name": "Dongha Radio 23.11",
+  "tracks": [
+    {
+      "track": "The Secret Recipe",
+      "artists": ["Lil Yachty", "J. Cole"],
+      "duration": "04:08"
+    },
+    {
+      "track": "Check Out the Groove",
+      "artists": ["Bobby Thurston"],
+      "duration": "07:29"
+    },
+    {
+      "track": "Can You Handle It",
+      "artists": ["Sharon Redd"],
+      "duration": "06:26"
+    },
+    {
+      "track": "Alane - Radio Version",
+      "artists": ["Wes"],
+      "duration": "03:40"
+    },
+    {
+      "track": "AH TXE TXE",
+      "artists": ["GIANT", "TYSON"],
+      "duration": "02:22"
+    },
+    {
+      "track": "Tears - Original Mix",
+      "artists": ["HNNY"],
+      "duration": "06:04"
+    },
+    {
+      "track": "Out of This Mess",
+      "artists": ["Marker Starling"],
+      "duration": "03:52"
+    },
+    { "track": "Delora", "artists": ["KESMAR"], "duration": "03:32" },
+    {
+      "track": "Mates",
+      "artists": ["John Carroll Kirby"],
+      "duration": "04:57"
+    },
+    {
+      "track": "Musta Been a Ghost",
+      "artists": ["Próxima Parada"],
+      "duration": "03:40"
+    },
+    {
+      "track": "Swingin' Spathiphyllums",
+      "artists": ["Mort Garson"],
+      "duration": "02:58"
+    },
+    {
+      "track": "Fighting My Demons",
+      "artists": ["Ken Carson"],
+      "duration": "02:30"
+    },
+    { "track": "Ow Wow", "artists": ["Villager"], "duration": "03:54" },
+    { "track": "With Them", "artists": ["Young Thug"], "duration": "03:17" },
+    {
+      "track": "Rollin'",
+      "artists": [
+        "Dungeon Family",
+        "André 3000",
+        "CeeLo Green",
+        "Society Of Soul"
+      ],
+      "duration": "04:20"
+    },
+    { "track": "Cat Fight", "artists": ["Jeremiah Jae"], "duration": "02:25" },
+    {
+      "track": "B-Side",
+      "artists": ["Khruangbin", "Leon Bridges"],
+      "duration": "04:34"
+    },
+    {
+      "track": "Gira Girou (Round n' Round)",
+      "artists": ["Paul Desmond"],
+      "duration": "04:32"
+    },
+    {
+      "track": "I'm Confessin' (That I Love You)",
+      "artists": ["Thelonious Monk"],
+      "duration": "02:37"
+    },
+    {
+      "track": "Ode ao Gato",
+      "artists": ["Pedro Ricardo"],
+      "duration": "02:48"
+    },
+    {
+      "track": "(They Long To Be) Close To You",
+      "artists": ["Carpenters"],
+      "duration": "04:33"
+    },
+    { "track": "Tokai", "artists": ["Taeko Onuki"], "duration": "05:10" },
+    {
+      "track": "가깝고도 머언 Close far away",
+      "artists": ["Kim Il Du"],
+      "duration": "04:14"
+    },
+    { "track": "Say Yes", "artists": ["Elliott Smith"], "duration": "02:20" },
+    { "track": "Red", "artists": ["Taylor Swift"], "duration": "03:43" }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/09YyHjAXBgz620OSCJCgbt",
+  "apple_url": "",
+  "youtube_url": "",
+  "color": "red"
+}
