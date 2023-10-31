@@ -107,5 +107,9 @@
   "spotify_url": "https://open.spotify.com/playlist/09YyHjAXBgz620OSCJCgbt",
   "apple_url": "",
   "youtube_url": "",
-  "color": "red"
+  "theme": {
+    "color": "#d34d39",
+    "opacity": 0.8,
+    "background": "#6da4b0"
+  }
 }
