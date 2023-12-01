@@ -7,7 +7,7 @@ type PlayListType = {
 }
 
 function PlayList({ list }: PlayListType) {
-y  return (
+return (
     <div>
       <div className={cx(styles.PlaylistContainer)}>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}

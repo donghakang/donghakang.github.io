@@ -1,0 +1,110 @@
+{
+  "name": "Dongha Radio 23.12",
+  "tracks": [
+    {
+      "track": "Vultures",
+      "artists": ["¥$", "Kanye West", "Ty Dolla $ign", "Bump J"],
+      "duration": "03:57"
+    },
+    { "track": "Hanen", "artists": ["Carthago"], "duration": "04:56" },
+    { "track": "Haven", "artists": ["Svaneborg Kardyb"], "duration": "03:32" },
+    {
+      "track": "Inspector Norse",
+      "artists": ["Todd Terje"],
+      "duration": "06:59"
+    },
+    {
+      "track": "かくれんぼ",
+      "artists": ["宮間利之とニュー・ハード"],
+      "duration": "04:08"
+    },
+    { "track": "Decoy", "artists": ["Fievel Is Glauque"], "duration": "02:02" },
+    {
+      "track": "midnight cruisin'",
+      "artists": ["Kingo Hamada"],
+      "duration": "04:43"
+    },
+    {
+      "track": "Rock Co.Kane Flow (feat. MF DOOM)",
+      "artists": ["De La Soul", "MF DOOM"],
+      "duration": "03:05"
+    },
+    {
+      "track": "House Of My Soul (You Light The Rooms)",
+      "artists": ["Langhorne Slim"],
+      "duration": "02:53"
+    },
+    {
+      "track": "Swervo",
+      "artists": ["G Herbo", "Southside"],
+      "duration": "03:12"
+    },
+    {
+      "track": "Let Me Go",
+      "artists": ["Chicago Gangsters"],
+      "duration": "02:47"
+    },
+    { "track": "Golden Boys", "artists": ["Res"], "duration": "04:38" },
+    {
+      "track": "夜空のイヤリング",
+      "artists": ["Junko Yagami"],
+      "duration": "03:58"
+    },
+    {
+      "track": "Pieces of Clouds",
+      "artists": ["Car, the garden"],
+      "duration": "03:40"
+    },
+    {
+      "track": "Witches",
+      "artists": ["Alice Phoebe Lou"],
+      "duration": "03:15"
+    },
+    {
+      "track": "Str8 Outta Mumbai",
+      "artists": ["Jai Paul"],
+      "duration": "02:42"
+    },
+    {
+      "track": "Dreams for Radha Part I, II and III - Original Mix",
+      "artists": ["Ryo Kawasaki"],
+      "duration": "07:51"
+    },
+    { "track": "You Are the One", "artists": ["Sunrize"], "duration": "04:02" },
+    { "track": "Be Humble", "artists": ["Pugilist"], "duration": "04:42" },
+    {
+      "track": "Outstanding",
+      "artists": ["The Gap Band"],
+      "duration": "03:18"
+    },
+    {
+      "track": "Hellcats SRTs 2 (with Lil Durk)",
+      "artists": ["Sexyy Red", "Lil Durk"],
+      "duration": "02:45"
+    },
+    {
+      "track": "Can't Play Myself (A Tribute To Amy)",
+      "artists": ["Skepta", "Amy Winehouse"],
+      "duration": "02:54"
+    },
+    {
+      "track": "Ride Like the Wind",
+      "artists": ["Christopher Cross"],
+      "duration": "04:35"
+    },
+    {
+      "track": "I Gotta Try",
+      "artists": ["Michael McDonald"],
+      "duration": "03:55"
+    },
+    { "track": "Venus As A Boy", "artists": ["Björk"], "duration": "04:42" }
+  ],
+  "spotify_url": "https://open.spotify.com/playlist/0dRBOIkRGUHahxcK9DghJv",
+  "apple_url": "https://music.apple.com/kr/playlist/dongha-radio-23-12/pl.u-8aAVZ6eSvZMbKjJ",
+  "youtube_url": "https://music.youtube.com/playlist?list=PL1I4LkKQjmc3c3NcBCQOGifbLtkZL2LyS&si=Dd6QiUusfeESGHze",
+  "theme": {
+    "color": "#6f6056",
+    "opacity": 0.7,
+    "background": "#d3e4eb"
+  }
+}
